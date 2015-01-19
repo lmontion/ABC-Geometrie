@@ -1,0 +1,1766 @@
+/BEGIN_TABLE AMCHEAD
+NAME A30
+VERS A8
+USER A30
+/BEGIN_DATA AMCHEAD
+PowerAMC/MCD
+6.0.0
+
+/END_TABLE AMCHEAD
+
+/BEGIN_TABLE AMCMODL
+@       N5
+OID     N8
+MODL    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+POID    N8
+PNAM    A80
+PCOD    A80
+USER    A80
+VERS    A8
+CDAT    N12
+MDAT    N12
+EDAT    N12
+PART    N1
+ACCS    N5
+/BEGIN_DATA AMCMODL
+3
+1
+1
+Modèle_1
+MODELE_1
+
+
+
+0
+
+
+
+
+1421654480
+1421656229
+0
+0
+0
+/END_TABLE AMCMODL
+
+/BEGIN_TABLE AMCDOMN
+@       N5
+OID     N8
+DOMN    N8
+NAME    A80
+CODE    A80
+DESC    TXT
+NOTE    TXT
+LABL    A254
+DTTP    A30
+MLEN    N8
+PREC    N2
+UNIT    A8
+FRMT    A20
+LVAL    A20
+HVAL    A20
+DVAL    A30
+UPPR    N1
+LOWR    N1
+NMDF    N1
+VALS    TXT
+CRUL    TXT
+SRUL    TXT
+/BEGIN_DATA AMCDOMN
+/END_TABLE AMCDOMN
+
+/BEGIN_TABLE AMCINFO
+@       N5
+OID     N8
+INFO    N8
+MODL    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+DOMN    N8
+DTTP    A30
+MLEN    N8
+PREC    N2
+UNIT    A8
+FRMT    A20
+LVAL    A20
+HVAL    A20
+DVAL    A30
+UPPR    N1
+LOWR    N1
+NMDF    N1
+VALS    TXT
+CRUL    TXT
+SRUL    TXT
+/BEGIN_DATA AMCINFO
+3
+26
+26
+1
+idUtilisateur
+IDUTILISATEUR
+
+
+
+0
+<UNDEF>
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+3
+28
+28
+1
+login
+LOGIN
+
+
+
+0
+<UNDEF>
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+3
+30
+30
+1
+admin
+ADMIN
+
+
+
+0
+<UNDEF>
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+3
+32
+32
+1
+moteDePasse
+MOTEDEPASSE
+
+
+
+0
+<UNDEF>
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+3
+34
+34
+1
+idQuestion
+IDQUESTION
+
+
+
+0
+<UNDEF>
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+3
+36
+36
+1
+libelle
+LIBELLE
+
+
+
+0
+<UNDEF>
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+3
+38
+38
+1
+bonneImage
+IMAGEOK
+
+
+
+0
+<UNDEF>
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+3
+40
+40
+1
+mauvaiseImage1
+MAUVAISEIMAGE1
+
+
+
+0
+<UNDEF>
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+3
+42
+42
+1
+mauvaiseImage2
+MAUVAISEIMAGE2
+
+
+
+0
+<UNDEF>
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+3
+44
+44
+1
+mauvaiseImage3
+MAUVAISEIMAGE3
+
+
+
+0
+<UNDEF>
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+3
+46
+46
+1
+idContrat
+IDCONTRAT
+
+
+
+0
+<UNDEF>
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+3
+49
+49
+1
+point
+POINT
+
+
+
+0
+<UNDEF>
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+3
+51
+51
+1
+idNiveau
+IDNIVEAU
+
+
+
+0
+<UNDEF>
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+3
+54
+54
+1
+tempsPassé
+TEMPSPASSE
+
+
+
+0
+<UNDEF>
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+3
+56
+56
+1
+nbQuestionPosé
+NBQUESTIONPOSE
+
+
+
+0
+<UNDEF>
+0
+0
+
+
+
+
+
+0
+0
+0
+
+
+
+/END_TABLE AMCINFO
+
+/BEGIN_TABLE AMCENTT
+@       N5
+OID     N8
+ENTT    N8
+MODL    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+NBRC    N8
+GENE    N1
+/BEGIN_DATA AMCENTT
+3
+1
+1
+1
+Utilisateur
+ENT_1
+
+
+
+0
+1
+3
+2
+2
+1
+Niveau
+ENT_2
+
+
+
+0
+1
+3
+3
+3
+1
+Contrat
+ENT_3
+
+
+
+0
+1
+3
+4
+4
+1
+Question
+ENT_4
+
+
+
+0
+1
+/END_TABLE AMCENTT
+
+/BEGIN_TABLE AMCASSC
+@       N5
+OID     N8
+ASSC    N8
+MODL    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+NBRC    N8
+GENE    N1
+/BEGIN_DATA AMCASSC
+3
+8
+8
+1
+Avoir
+ASSOC_8
+
+
+
+0
+1
+3
+11
+11
+1
+Appartenir
+ASSOC_11
+
+
+
+0
+1
+3
+14
+14
+1
+Souscrire
+ASSOC_14
+
+
+
+0
+1
+3
+17
+17
+1
+Ajouter
+ASSOC_17
+
+
+
+0
+1
+/END_TABLE AMCASSC
+
+/BEGIN_TABLE AMCLINK
+@       N5
+OID     N8
+LINK    N8
+NAME    A80
+ENTT    N8
+ASSC    N8
+CMIN    A10
+CMAX    A10
+RELT    N1
+/BEGIN_DATA AMCLINK
+3
+9
+9
+
+2
+8
+1
+n
+0
+3
+10
+10
+
+3
+8
+1
+1
+0
+3
+12
+12
+
+4
+11
+1
+n
+0
+3
+13
+13
+
+3
+11
+1
+n
+0
+3
+15
+15
+
+1
+14
+1
+n
+0
+3
+16
+16
+
+3
+14
+1
+n
+0
+1
+18
+18
+
+1
+17
+0
+n
+0
+3
+19
+19
+
+4
+17
+1
+1
+0
+/END_TABLE AMCLINK
+
+/BEGIN_TABLE AMCPENT
+@       N5
+OID     N8
+PENT    N8
+ENTT    N8
+INFO    N8
+IDTF    N1
+MAND    N1
+DISP    N1
+NUMR    N8
+/BEGIN_DATA AMCPENT
+3
+27
+27
+1
+26
+1
+1
+1
+1
+3
+29
+29
+1
+28
+0
+0
+1
+2
+3
+33
+33
+1
+32
+0
+0
+1
+3
+3
+31
+31
+1
+30
+0
+0
+1
+4
+3
+52
+52
+2
+51
+1
+1
+1
+1
+3
+53
+53
+2
+36
+0
+0
+1
+2
+3
+47
+47
+3
+46
+1
+1
+1
+1
+3
+48
+48
+3
+36
+0
+0
+1
+2
+3
+50
+50
+3
+49
+0
+0
+1
+3
+3
+35
+35
+4
+34
+1
+1
+1
+1
+3
+37
+37
+4
+36
+0
+0
+1
+2
+3
+39
+39
+4
+38
+0
+0
+1
+3
+3
+41
+41
+4
+40
+0
+0
+1
+4
+3
+43
+43
+4
+42
+0
+0
+1
+5
+3
+45
+45
+4
+44
+0
+0
+1
+6
+/END_TABLE AMCPENT
+
+/BEGIN_TABLE AMCPASS
+@       N5
+OID     N8
+PASS    N8
+ASSC    N8
+INFO    N8
+MAND    N1
+DISP    N1
+NUMR    N8
+/BEGIN_DATA AMCPASS
+3
+55
+55
+14
+54
+0
+1
+1
+3
+57
+57
+14
+56
+0
+1
+2
+/END_TABLE AMCPASS
+
+/BEGIN_TABLE AMCINHR
+@       N5
+OID     N8
+INHR    N8
+ENTT    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+EXCL    N1
+INHA    N1
+SATN    A80
+SATC    A80
+DTTP    A30
+MLEN    N8
+/BEGIN_DATA AMCINHR
+/END_TABLE AMCINHR
+
+/BEGIN_TABLE AMCLINH
+@       N5
+OID     N8
+LINH    N8
+INHR    N8
+ENTT    N8
+/BEGIN_DATA AMCLINH
+/END_TABLE AMCLINH
+
+/BEGIN_TABLE AMCRULE
+@       N5
+OID     N8
+RULE    N8
+NAME    A80
+CODE    A80
+LABL    A254
+DESC    TXT
+NOTE    TXT
+TYPE    N5
+FLAG    N5
+CEXP    TXT
+SEXP    TXT
+LOBJ    TXT
+/BEGIN_DATA AMCRULE
+/END_TABLE AMCRULE
+
+/BEGIN_TABLE AMCRPRT
+@       N5
+OID     N8
+RPRT    N8
+FLGS    N8
+NAME    A64
+DESC    A254
+TMLT    BIN
+/BEGIN_DATA AMCRPRT
+/END_TABLE AMCRPRT
+
+/BEGIN_TABLE AMCSLCT
+RPRT    N8
+MODL    N8
+LOBJ    TXT
+/BEGIN_DATA AMCSLCT
+/END_TABLE AMCSLCT
+
+/BEGIN_TABLE AMCFONT
+FONT    N5
+FNAM    A32
+FSIZ    N5
+FSTY    N5
+/BEGIN_DATA AMCFONT
+1
+Arial
+8
+0
+2
+MS Sans Serif
+8
+0
+3
+Arial
+8
+8
+/END_TABLE AMCFONT
+
+/BEGIN_TABLE AMCPENS
+PENS    N5
+PSTY    N5
+PCLR    N8
+PWID    N5
+/BEGIN_DATA AMCPENS
+1
+1
+0
+0
+2
+1
+255
+0
+/END_TABLE AMCPENS
+
+/BEGIN_TABLE AMCBRSH
+BRSH    N5
+BSTY    N5
+BCLR    N8
+BHAT    N5
+/BEGIN_DATA AMCBRSH
+1
+0
+16777215
+0
+2
+0
+65280
+0
+3
+0
+255
+0
+/END_TABLE AMCBRSH
+
+/BEGIN_TABLE AMCPROP
+PROP    N5
+MODL    N8
+SUBM    N8
+SECT    A50
+NPRO    A30
+VPRO    A80
+/BEGIN_DATA AMCPROP
+0
+1
+0
+Données
+Shadow
+no
+1
+1
+0
+Données
+AutoAdjust
+yes
+2
+1
+0
+Données
+LineStyle
+0
+3
+1
+0
+Données
+PrnScale
+100
+4
+1
+0
+Données
+Orientation
+1
+5
+1
+0
+Données
+LengthName
+80
+6
+1
+0
+Données
+UpprCaseName
+no
+7
+1
+0
+Données
+LowrCaseName
+no
+8
+1
+0
+Données
+AllowAllName
+yes
+9
+1
+0
+Données
+AllowChrName
+<Null>
+10
+1
+0
+Données
+InvldChrName
+"+-*/\.,!:;"
+11
+1
+0
+Données
+NoAccentName
+no
+12
+1
+0
+Données
+LengthCode
+80
+13
+1
+0
+Données
+UpprCaseCode
+yes
+14
+1
+0
+Données
+LowrCaseCode
+no
+15
+1
+0
+Données
+AllowAllCode
+no
+16
+1
+0
+Données
+AllowChrCode
+'a'-'z', 'A'-'Z', '0'-'9', "_"
+17
+1
+0
+Données
+InvldChrCode
+<Null>
+18
+1
+0
+Données
+NoAccentCode
+yes
+19
+1
+0
+Données
+NoSplitting
+yes
+20
+1
+0
+Données
+Truncation
+no
+21
+1
+0
+Données
+Wrapping
+no
+22
+1
+0
+Données
+WrapLength
+80
+23
+1
+0
+Données
+WrapChar
+" !""#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+24
+1
+0
+Données
+CdmShowName
+yes
+25
+1
+0
+Données
+CdmShowIdtf
+yes
+26
+1
+0
+Données
+CdmShowProp
+yes
+27
+1
+0
+Données
+CdmShowDttp
+no
+28
+1
+0
+Données
+CdmShowNameRlsh
+yes
+29
+1
+0
+Données
+CdmShowNameLink
+yes
+30
+1
+0
+Données
+CdmInfoUnique
+yes
+31
+1
+0
+Données
+CdmInfoAllowReuse
+yes
+32
+1
+0
+Données
+CdmInfoReuse
+yes
+33
+1
+0
+Données
+CdmInfoDmnNoDiv
+no
+34
+1
+0
+Données
+CdmInfoDmnDivInd
+1
+35
+1
+0
+Données
+CdmDefDttp
+
+36
+1
+0
+Données
+Language
+1036
+37
+1
+0
+Données
+CdmInfoNoDmnDiv
+no
+/END_TABLE AMCPROP
+
+/BEGIN_TABLE AMCSYMB
+@       N5
+SID     N8
+TSYM    N5
+SSYM    N8
+NUMR    N8
+CSID    N8
+SID1    N8
+SID2    N8
+CLND    N8
+CLNN    N5
+RCX1    N8
+RCY1    N8
+RCX2    N8
+RCY2    N8
+PENS    N5
+BRSH    N5
+CTXT    N8
+FONT    N5
+JUST    N5
+WOVL    N8
+HOVL    N8
+SARR    N5
+CARR    N5
+TARR    N5
+NBPT    N8
+LSPT    BIN
+LSTY    N5
+TEXT    TXT
+PICT    PIC
+BTMP    BMP
+GRPH    N8
+OID     N8
+OLE     BIN
+/BEGIN_DATA AMCSYMB
+3
+2
+257
+0
+1
+0
+0
+0
+0
+0
+-23737
+12449
+-17888
+17923
+2
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1
+1
+
+3
+3
+257
+0
+2
+0
+0
+0
+0
+0
+-10502
+-14212
+-6017
+-10688
+2
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1
+2
+
+3
+4
+257
+0
+3
+0
+0
+0
+0
+0
+-11059
+-134
+-5460
+4365
+2
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1
+3
+
+3
+5
+257
+0
+4
+0
+0
+0
+0
+0
+-598
+11474
+6676
+18898
+2
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1
+4
+
+3
+11
+258
+0
+5
+0
+0
+0
+0
+0
+-10444
+-7351
+-6074
+-4802
+2
+2
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1
+8
+
+3
+16
+258
+0
+6
+0
+0
+0
+0
+0
+452
+841
+5626
+3390
+2
+2
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1
+11
+
+3
+21
+258
+0
+7
+0
+0
+0
+0
+0
+-25284
+353
+-16342
+3877
+2
+2
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1
+14
+
+3
+26
+258
+0
+8
+0
+0
+0
+0
+0
+-10445
+13912
+-6075
+16461
+2
+2
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+
+
+
+1
+17
+
+3
+12
+259
+0
+9
+0
+3
+11
+0
+0
+0
+0
+0
+0
+2
+3
+0
+0
+0
+0
+0
+0
+0
+0
+2
+bcdfffff5ecfffffbddfffff43e8ffff
+0
+
+
+
+1
+9
+
+3
+14
+259
+0
+10
+0
+4
+11
+0
+0
+0
+0
+0
+0
+2
+3
+0
+0
+0
+0
+0
+0
+0
+0
+2
+bcdfffff43080000bddfffff43e8ffff
+0
+
+
+
+1
+10
+
+3
+17
+259
+0
+11
+0
+5
+16
+0
+0
+0
+0
+0
+0
+2
+3
+0
+0
+0
+0
+0
+0
+0
+0
+2
+df0b0000523b0000df0b000043080000
+0
+
+
+
+1
+12
+
+3
+19
+259
+0
+12
+0
+4
+16
+0
+0
+0
+0
+0
+0
+2
+3
+0
+0
+0
+0
+0
+0
+0
+0
+2
+bcdfffff43080000df0b000043080000
+0
+
+
+
+1
+13
+
+3
+22
+259
+0
+13
+0
+2
+21
+0
+0
+0
+0
+0
+0
+2
+3
+0
+0
+0
+0
+0
+0
+0
+0
+2
+b3aeffff523b0000b3aeffff43080000
+0
+
+
+
+1
+15
+
+3
+24
+259
+0
+14
+0
+4
+21
+0
+0
+0
+0
+0
+0
+2
+3
+0
+0
+0
+0
+0
+0
+0
+0
+2
+bcdfffff43080000b3aeffff43080000
+0
+
+
+
+1
+16
+
+3
+27
+259
+0
+15
+0
+2
+26
+0
+0
+0
+0
+0
+0
+2
+3
+0
+0
+0
+0
+0
+0
+0
+0
+2
+b3aeffff523b0000bcdfffff523b0000
+0
+
+
+
+1
+18
+
+3
+29
+259
+0
+16
+0
+5
+26
+0
+0
+0
+0
+0
+0
+2
+3
+0
+0
+0
+0
+0
+0
+0
+0
+2
+df0b0000523b0000bcdfffff523b0000
+0
+
+
+
+1
+19
+
+/END_TABLE AMCSYMB
+
+
