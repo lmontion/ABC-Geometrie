@@ -5,7 +5,7 @@
     android:paddingRight="10px"
     android:paddingTop="20px"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:background="#ff68a8ff">
+    android:background="#ff1791de">
 
     <LinearLayout
         android:orientation="vertical"
@@ -61,6 +61,7 @@
             android:background="@drawable/carreorange"/>
 
     </LinearLayout>
+
         <LinearLayout
         android:orientation="horizontal"
         android:layout_width="724dp"
