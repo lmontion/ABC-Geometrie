@@ -6,11 +6,14 @@ import android.view.WindowManager;
 
 import com.abcgeometrie.R;
 
-public class ChooseLevelActivity extends Activity {
+/**
+ * Created by Yanick on 20/01/2015.
+ */
+public class AdminUnderLvlQuestionActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_level);
+        setContentView(R.layout.activity_admin_under_level_question);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 }
