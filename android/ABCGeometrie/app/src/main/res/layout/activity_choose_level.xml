@@ -16,19 +16,20 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button"
+            android:id="@+id/btnLang"
             android:layout_gravity="right"
-            android:width="140px"
-            android:height="81px"
+            android:width="80px"
+            android:height="46px"
             android:background="@drawable/france"/>
 
         <TextView
             android:layout_width="fill_parent"
             android:gravity="center"
             android:layout_height="97dp"
-            android:text="Choissis un niveau"
+            android:text="@string/selectLvl"
             android:textSize="85px"
-            android:textColor="#ffffffff" />
+            android:textColor="#ffffffff"
+            android:id="@+id/txtViewSelectLvl"/>
 
         <LinearLayout
             android:orientation="horizontal"
@@ -37,35 +38,35 @@
             android:layout_marginTop="100px">
 
             <TextView
-                android:id="@+id/num_txt"
+                android:id="@+id/txtViewLvl1"
                 android:layout_width="200px"
                 android:layout_height="200px"
                 android:layout_marginLeft="175px"
                 android:layout_marginRight="150px"
                 android:background="@drawable/circle"
                 android:gravity="center"
-                android:text="1"
+                android:text="@string/lvl1"
                 android:textColor="#FFFFFF"
                 android:textSize="75dp" />
 
             <TextView
-                android:id="@+id/num_txt2"
+                android:id="@+id/txtViewLvl2"
                 android:layout_width="200px"
                 android:layout_height="200px"
                 android:layout_marginRight="150px"
                 android:background="@drawable/square"
                 android:gravity="center"
-                android:text="2"
+                android:text="@string/lvl2"
                 android:textColor="#FFFFFF"
                 android:textSize="75dp" />
 
             <TextView
-                android:id="@+id/num_txt3"
+                android:id="@+id/txtViewLvl3"
                 android:layout_width="200px"
                 android:layout_height="200px"
                 android:background="@drawable/diamond"
                 android:gravity="center"
-                android:text="3"
+                android:text="@string/lvl3"
                 android:textColor="#FFFFFF"
                 android:textSize="75dp" />
         </LinearLayout>

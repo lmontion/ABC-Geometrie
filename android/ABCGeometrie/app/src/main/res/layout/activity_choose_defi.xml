@@ -5,7 +5,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.abcgeometrie.ChooseDefiActivity"
-    android:background="#ff68a8ff">
+    android:background="#1791DE">
 
     <LinearLayout
         android:orientation="vertical"
@@ -26,7 +26,7 @@
             android:layout_width="fill_parent"
             android:gravity="center"
             android:layout_height="97dp"
-            android:text="@string/titleDefi"
+            android:text="@string/chooseDefi"
             android:textSize="85px"
             android:layout_marginTop="50px"
             android:textColor="#ffffffff"/>
@@ -40,7 +40,7 @@
             <Button
                 android:layout_width="700px"
                 android:layout_height="100px"
-                android:text="10 pts"
+                android:text="@string/dixPts"
                 android:id="@+id/btn10"
                 android:background="#ffa2c037"
                 android:layout_marginBottom="30px"
@@ -53,7 +53,7 @@
             <Button
                 android:layout_width="900px"
                 android:layout_height="100px"
-                android:text="20 pts"
+                android:text="@string/vingtsPts"
                 android:id="@+id/btn20"
                 android:background="#ffd1b000"
                 android:layout_marginBottom="30px"
@@ -66,7 +66,7 @@
             <Button
                 android:layout_width="1100px"
                 android:layout_height="100px"
-                android:text="40 pts"
+                android:text="@string/quarantePts"
                 android:id="@+id/btn40"
                 android:background="#ffd17500"
                 android:textSize="70px"

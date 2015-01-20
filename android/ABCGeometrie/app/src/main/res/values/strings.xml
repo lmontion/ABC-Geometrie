@@ -5,4 +5,22 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <string name="administrator">Administrateur</string>
+    <string name="addQuestion">Ajout Question</string>
+    <string name="logOut">Déconnexion</string>
+    <string name="labelQuest1">Questions du niveau 1</string>
+
+    <string name="chooseDefi">Choisis un défi :</string>
+    <string name="dixPts">10 pts</string>
+    <string name="vingtsPts">20 pts</string>
+    <string name="quarantePts"></string>
+
+    <string name="selectLvl">Choisis un niveau :</string>
+    <string name="lvl1">1</string>
+    <string name="lvl2">2</string>
+    <string name="lvl3">3</string>
+
+
+
+
 </resources>

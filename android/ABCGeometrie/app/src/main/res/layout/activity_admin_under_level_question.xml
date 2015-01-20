@@ -27,7 +27,7 @@
             <TextView
                 android:layout_width="400px"
                 android:layout_height="100px"
-                android:text="Administrateur"
+                android:text="@string/administrator"
                 android:textSize="40px"
                 android:layout_marginLeft="45px"
                 android:textColor="#ffffffff"
@@ -35,29 +35,29 @@
                 android:paddingLeft="15px"
                 android:paddingTop="25px"
                 android:gravity="center_horizontal"
-                android:id="@+id/textView2" />
+                android:id="@+id/txtViewAdmin" />
 
             <Button
                 android:layout_width="400px"
                 android:layout_height="100px"
-                android:text="Ajout Question"
+                android:text="@string/addQuestion"
                 android:textAllCaps="false"
                 android:textSize="40px"
                 android:layout_marginLeft="40px"
                 android:textColor="#ffffffff"
                 android:background="#ffd1b000"
-                android:id="@+id/button3" />
+                android:id="@+id/btnAddQuestion" />
 
             <Button
                 android:layout_width="300px"
                 android:layout_height="100px"
                 android:textAllCaps="false"
-                android:text="Déconnexion"
+                android:text="@string/logOut"
                 android:textSize="40px"
                 android:layout_marginLeft="40px"
                 android:textColor="#ffffffff"
                 android:background="#CB4F24"
-                android:id="@+id/button4" />
+                android:id="@+id/btnLogOut" />
         </LinearLayout>
 
         <LinearLayout
@@ -71,9 +71,8 @@
                 android:gravity="center"
                 android:textColor="#FFFFFF"
                 android:textSize="75px"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Question du niveau 1"
-                android:id="@+id/textView3"
+                android:text="@string/labelQuest1"
+                android:id="@+id/txtViewQuest"
                 android:layout_gravity="center_vertical"/>
         </LinearLayout>
 
