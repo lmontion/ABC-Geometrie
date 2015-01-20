@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="10px"
+    android:paddingRight="10px"
+    android:paddingTop="20px"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="#ff68a8ff">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+            android:layout_width="726dp"
+            android:gravity="left"
+            android:layout_height="97dp"
+            android:text="Clique sur le carré blanc :"
+            android:textSize="85px"
+            android:textColor="#ffffffff" />
+
+            <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button"
+            android:layout_gravity="right"
+            android:layout_marginLeft="100px"
+            android:width="139px"
+            android:height="81px" />
+        </LinearLayout>
+
+        <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="721dp"
+        android:layout_height="193dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rep1"
+            android:layout_gravity="right"
+            android:width="267px"
+            android:height="200px"
+            android:layout_marginLeft="100px"
+            android:layout_marginRight="100px"
+            android:background="@drawable/carreblanc"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rep2"
+            android:width="267px"
+            android:height="200px"
+            android:background="@drawable/carreorange"/>
+
+    </LinearLayout>
+        <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="724dp"
+        android:layout_height="219dp"
+        android:layout_marginTop="15px">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rep3"
+            android:layout_gravity="right"
+            android:width="267px"
+            android:height="200px"
+            android:layout_marginLeft="100px"
+            android:layout_marginRight="100px"
+            android:background="@drawable/carrerouge"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rep4"
+            android:layout_gravity="right"
+            android:width="267px"
+            android:height="200px"
+            android:background="@drawable/carrevert"/>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
