@@ -49,6 +49,14 @@ public class ChooseDefiActivity extends Activity {
                 startActivity(i);
             }
         });
+
+        btn10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ChooseDefiActivity.this, QuestionActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
 }

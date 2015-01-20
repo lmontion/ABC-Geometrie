@@ -46,6 +46,7 @@
                 android:layout_marginBottom="30px"
                 android:textSize="70px"
                 android:textColor="#ffffffff"
+                android:textAllCaps="false"
                 android:singleLine="true"
                 android:gravity="right"
                 android:paddingRight="70dp"/>
@@ -57,6 +58,7 @@
                 android:id="@+id/btn20"
                 android:background="#ffd1b000"
                 android:layout_marginBottom="30px"
+                android:textAllCaps="false"
                 android:textSize="70px"
                 android:textColor="#ffffffff"
                 android:singleLine="true"
@@ -69,6 +71,7 @@
                 android:text="@string/quarantePts"
                 android:id="@+id/btn40"
                 android:background="#ffd17500"
+                android:textAllCaps="false"
                 android:textSize="70px"
                 android:textColor="#ffffffff"
                 android:singleLine="true"
