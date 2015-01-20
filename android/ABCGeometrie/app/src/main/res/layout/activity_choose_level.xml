@@ -18,8 +18,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/button"
             android:layout_gravity="right"
-            android:width="139px"
-            android:height="81px" />
+            android:width="140px"
+            android:height="81px"
+            android:background="@drawable/france"/>
 
         <TextView
             android:layout_width="fill_parent"
