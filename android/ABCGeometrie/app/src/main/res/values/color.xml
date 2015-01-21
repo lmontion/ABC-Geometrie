@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="monBleu">#1791de</color>
+    <color name="monBleuFonce">#2970ff</color>
+    <color name="monOrange">#d17500</color>
+    <color name="monJaune">#d1b000</color>
+    <color name="monRouge">#cb4f24</color>
+    <color name="monVert">#A2C037</color>
+    <color name="monBlanc">#ffffff</color>
+    <color name="monNoir">#000000</color>
+</resources>

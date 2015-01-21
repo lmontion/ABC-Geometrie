@@ -13,13 +13,23 @@ import com.abcgeometrie.R;
 
 public class MainActivity extends ActionBarActivity {
 
-    private Button btn;
+    private Button btn, btnAdmin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btn = (Button) findViewById(R.id.button2);
+        btn = (Button) findViewById(R.id.button8);
+        btnAdmin = (Button) findViewById(R.id.btnAdmin);
+
+        btnAdmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, AdminQuestionsActivity.class);
+                startActivity(i);
+            }
+        });
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
