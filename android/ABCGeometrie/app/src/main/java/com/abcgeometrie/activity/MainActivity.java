@@ -23,6 +23,7 @@ public class MainActivity extends Activity {
     private ImageButton btnTeam;
     private RelativeLayout relativeLayout;
     private TextView abc, dela, geo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +50,7 @@ public class MainActivity extends Activity {
         btnAdmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, AdminQuestionsActivity.class);
+                Intent i = new Intent(MainActivity.this, AndroidTextToSpeechActivity.class);
                 startActivity(i);
             }
         });
