@@ -33,9 +33,10 @@
 
     <string name="labelQuest">Clique sur le carré blanc :</string>
 
-
-
-
-
+    <string name="labelTeam">Présentation équipe</string>
+    <string name="tristan">Tristan</string>
+    <string name="yanick">Yanick</string>
+    <string name="manon">Manon</string>
+    <string name="lucas">Lucas</string>
 
 </resources>
