@@ -16,6 +16,38 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.ChooseDefiActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".activity.ChooseLevelActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".activity.QuestionActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".activity.AdminQuestionsActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".activity.AdminUnderLvlQuestionActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".activity.CreateQuestionActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".activity.TeamActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".activity.AndroidTextToSpeechActivity">
+        </activity>
     </application>
 
 </manifest>
