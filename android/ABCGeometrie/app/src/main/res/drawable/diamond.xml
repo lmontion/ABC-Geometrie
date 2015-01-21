@@ -11,6 +11,6 @@
         android:height="100dp"
         android:width="100dp" />
     <solid
-        android:color="#D17500"/>
+        android:color="@color/monOrange"/>
     </shape>
 </rotate>
