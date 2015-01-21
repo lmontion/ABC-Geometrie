@@ -8,6 +8,7 @@
     <string name="administrator">Administrateur</string>
     <string name="logOut">Déconnexion</string>
     <string name="addQuestion">Ajout Question</string>
+    <string name="valid">Valider</string>
 
     <string name="chooseDefi">Choisis un défi :</string>
     <string name="dixPts">10 Pts</string>

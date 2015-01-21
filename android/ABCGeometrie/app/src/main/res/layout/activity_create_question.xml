@@ -40,7 +40,7 @@
             <Button
                 android:layout_width="400px"
                 android:layout_height="100px"
-                android:text="@string/addQuestion"
+                android:text="@string/valid"
                 android:textAllCaps="false"
                 android:textSize="40px"
                 android:layout_marginLeft="40px"
@@ -155,11 +155,11 @@
             android:layout_marginTop="5px">
 
             <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/radioGrpCreateQuest"
-            android:orientation="horizontal"
-            android:layout_marginLeft="230px">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioGrpCreateQuest"
+                android:orientation="horizontal"
+                android:layout_marginLeft="230px">
 
                 <RadioButton
                     android:layout_width="wrap_content"

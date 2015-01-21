@@ -1,17 +1,16 @@
 package com.abcgeometrie.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.abcgeometrie.R;
 
-/**
- * Created by Yanick on 20/01/2015.
- */
 public class AdminUnderLvlQuestionActivity extends Activity {
 
     private Button btnAddQuestion, btnLogOut;
@@ -35,5 +34,21 @@ public class AdminUnderLvlQuestionActivity extends Activity {
         btnAddQuestion.setTypeface(tfMedium);
         btnLogOut.setTypeface(tfMedium);
         txtViewQuest.setTypeface(tfLight);
+
+        btnLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AdminUnderLvlQuestionActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
+
+        btnAddQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AdminUnderLvlQuestionActivity.this, CreateQuestionActivity.class);
+                startActivity(i);
+            }
+        });
     }
 }

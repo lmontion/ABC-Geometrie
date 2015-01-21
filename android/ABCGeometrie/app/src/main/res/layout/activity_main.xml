@@ -1,31 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/monBleu"
+    android:id="@+id/relativeLayoutHome">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
+
+    <RelativeLayout
+        android:id="@+id/bandeSuperieur"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="165dp"
+        android:background="@color/monVert"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/textViewAbc"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="abc "
+            android:textSize="150dp"
+            android:textColor="@color/monBlanc"/>
+
+        <TextView
+            android:id="@+id/textViewDeLa"
+            android:layout_toRightOf="@+id/textViewAbc"
+            android:layout_alignBottom="@+id/textViewAbc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="de la"
+            android:textSize="70dp"
+            android:textColor="@color/monBlanc"/>
+
+        <ImageButton
+            android:id="@+id/btnIUT"
+            android:layout_toRightOf="@id/textViewDeLa"
+            android:layout_width="170dp"
+            android:layout_height="match_parent" />
+
+        <ImageButton
+            android:id="@+id/btnAlizaza"
+            android:layout_toRightOf="@+id/btnIUT"
+            android:layout_width="170dp"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView" />
+        android:layout_below="@+id/bandeSuperieur">
 
-    <Button
-        android:layout_width="500px"
-        android:layout_height="500px"
-        android:text="Click ici pour rever !!"
-        android:id="@+id/button8"
-        android:layout_below="@+id/textView"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_marginTop="275dp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ADMIN"
-        android:id="@+id/btnAdmin"
-        android:layout_below="@+id/textView"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView"
-        android:layout_marginTop="83dp" />
+        <TextView
+            android:id="@+id/textViewGeometrie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Géométrie"
+            android:textSize="125dp"
+            android:textColor="@color/monBlanc"/>
+
+        <TextView
+            android:id="@+id/triangleDebut"
+            android:layout_toRightOf="@+id/textViewGeometrie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="▲"
+            android:textSize="125dp"
+            android:textColor="@color/monBlanc"/>
+
+        <ImageView
+            android:id="@+id/rectangle"
+            android:layout_toRightOf="@+id/triangleDebut"
+            android:layout_alignBottom="@+id/textViewGeometrie"
+            android:background="@drawable/logo_rectangle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/triangleFin"
+            android:layout_toRightOf="@+id/rectangle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="►"
+            android:textSize="125dp"
+            android:textColor="@color/monBlanc"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:background="@color/monJaune"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/btnConnexion"
+            android:layout_centerVertical="true"
+            android:text="Connexion "
+            android:textSize="45dp"
+            android:background="@color/monRouge"
+            android:textColor="@color/monBlanc"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/logo_rectangle"
+            android:textAllCaps="false"
+            />
+
+    </RelativeLayout>
 
 </RelativeLayout>
+

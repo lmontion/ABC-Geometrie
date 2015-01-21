@@ -8,9 +8,6 @@ import android.widget.TextView;
 
 import com.abcgeometrie.R;
 
-/**
- * Created by Yanick on 20/01/2015.
- */
 public class QuestionActivity extends Activity {
 
     private TextView txtViewQuestion;
@@ -21,7 +18,7 @@ public class QuestionActivity extends Activity {
         setContentView(R.layout.activity_question);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        Typeface tfLight = Typeface.createFromAsset(getAssets(),"fonts/orbitron-light.otf");
+        Typeface tfLight = Typeface.createFromAsset(getAssets(), "fonts/orbitron-light.otf");
         Typeface tfMedium = Typeface.createFromAsset(getAssets(),"fonts/orbitron-medium.otf");
         txtViewQuestion = (TextView) findViewById(R.id.txtViewQuestion);
 

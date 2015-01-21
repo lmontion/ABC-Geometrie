@@ -42,14 +42,6 @@ public class ChooseDefiActivity extends Activity {
         btn20.setTypeface(tfMedium);
         btn40.setTypeface(tfMedium);
 
-        btnLang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(ChooseDefiActivity.this, ChooseLevelActivity.class);
-                startActivity(i);
-            }
-        });
-
         btn10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

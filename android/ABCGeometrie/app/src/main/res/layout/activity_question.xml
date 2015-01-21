@@ -33,9 +33,9 @@
             android:layout_marginBottom="50px"/>
 
         <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="721dp"
-        android:layout_height="193dp">
+            android:orientation="horizontal"
+            android:layout_width="721dp"
+            android:layout_height="193dp">
 
             <Button
                 android:layout_width="wrap_content"
@@ -58,10 +58,10 @@
         </LinearLayout>
 
         <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="724dp"
-        android:layout_height="219dp"
-        android:layout_marginTop="15px">
+            android:orientation="horizontal"
+            android:layout_width="724dp"
+            android:layout_height="219dp"
+            android:layout_marginTop="15px">
 
             <Button
                 android:layout_width="wrap_content"

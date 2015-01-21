@@ -1,8 +1,10 @@
 package com.abcgeometrie.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,9 +12,6 @@ import android.widget.TextView;
 
 import com.abcgeometrie.R;
 
-/**
- * Created by Yanick on 20/01/2015.
- */
 public class CreateQuestionActivity extends Activity {
 
     private Button btnCreateQuest, btnLogOut, btnOk, import1, import2, import3, import4;
@@ -48,5 +47,13 @@ public class CreateQuestionActivity extends Activity {
         import3.setTypeface(tfMedium);
         import4.setTypeface(tfMedium);
         intituleQuest.setTypeface(tfLight);
+
+        btnLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(CreateQuestionActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
     }
 }

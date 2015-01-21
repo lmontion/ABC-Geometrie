@@ -1,11 +1,13 @@
 package com.abcgeometrie.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
@@ -40,5 +42,21 @@ public class AdminQuestionsActivity extends Activity {
         deco.setTypeface(tfMedium);
 
         tv.setTypeface(tfLight);
+
+        q1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AdminQuestionsActivity.this, AdminUnderLvlQuestionActivity.class);
+                startActivity(i);
+            }
+        });
+
+        deco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AdminQuestionsActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
     }
 }
