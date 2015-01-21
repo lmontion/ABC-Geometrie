@@ -71,7 +71,7 @@
                 android:gravity="center"
                 android:textColor="#FFFFFF"
                 android:textSize="75px"
-                android:text="@string/labelQuest1"
+                android:text="@string/questLvl1"
                 android:id="@+id/txtViewQuest"
                 android:layout_gravity="center_vertical"/>
         </LinearLayout>

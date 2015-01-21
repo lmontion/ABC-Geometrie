@@ -27,7 +27,7 @@
             <TextView
                 android:layout_width="400px"
                 android:layout_height="100px"
-                android:text="Administrateur"
+                android:text="@string/administrator"
                 android:textSize="40px"
                 android:layout_marginLeft="45px"
                 android:textColor="#ffffffff"
@@ -35,29 +35,29 @@
                 android:paddingLeft="15px"
                 android:paddingTop="25px"
                 android:gravity="center_horizontal"
-                android:id="@+id/textView2" />
+                android:id="@+id/txtViewAdmin" />
 
             <Button
                 android:layout_width="400px"
                 android:layout_height="100px"
-                android:text="Ajout Question"
+                android:text="@string/addQuestion"
                 android:textAllCaps="false"
                 android:textSize="40px"
                 android:layout_marginLeft="40px"
                 android:textColor="#ffffffff"
                 android:background="#ffd1b000"
-                android:id="@+id/button3" />
+                android:id="@+id/btnCreateQuest" />
 
             <Button
                 android:layout_width="300px"
                 android:layout_height="100px"
                 android:textAllCaps="false"
-                android:text="Déconnexion"
+                android:text="@string/logOut"
                 android:textSize="40px"
                 android:layout_marginLeft="40px"
                 android:textColor="#ffffffff"
                 android:background="#CB4F24"
-                android:id="@+id/button4" />
+                android:id="@+id/btnLogOut" />
         </LinearLayout>
 
         <LinearLayout
@@ -72,8 +72,8 @@
                 android:textColor="#FFFFFF"
                 android:textSize="75px"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Ajout question niveau 1 :"
-                android:id="@+id/textView3"
+                android:text="@string/createQuestLvl1"
+                android:id="@+id/txtViewLabelCreateQuest"
                 android:layout_gravity="center_vertical"/>
         </LinearLayout>
 
@@ -88,17 +88,17 @@
                 android:layout_marginLeft="190px"
                 android:textSize="40px"
                 android:background="#ffffff"
-                android:id="@+id/editText" />
+                android:id="@+id/intituleQuest" />
 
             <Button
                 android:layout_width="70px"
                 android:layout_height="100px"
-                android:text="OK"
+                android:text="@string/ok"
                 android:textAllCaps="false"
                 android:textSize="40px"
                 android:textColor="#ffffffff"
                 android:background="#A2C037"
-                android:id="@+id/buttonOk" />
+                android:id="@+id/btnOk" />
         </LinearLayout>
 
         <LinearLayout
@@ -110,7 +110,7 @@
             <Button
                 android:layout_width="200px"
                 android:layout_height="200px"
-                android:text="IMG1"
+                android:text="@string/img1"
                 android:textSize="40px"
                 android:layout_marginLeft="150px"
                 android:textColor="#000000"
@@ -120,7 +120,7 @@
             <Button
                 android:layout_width="200px"
                 android:layout_height="200px"
-                android:text="IMG2"
+                android:text="@string/img2"
                 android:textSize="40px"
                 android:layout_marginLeft="50px"
                 android:textColor="#000000"
@@ -130,7 +130,7 @@
             <Button
                 android:layout_width="200px"
                 android:layout_height="200px"
-                android:text="IMG3"
+                android:text="@string/img3"
                 android:textSize="40px"
                 android:layout_marginLeft="50px"
                 android:textColor="#000000"
@@ -140,7 +140,7 @@
             <Button
                 android:layout_width="200px"
                 android:layout_height="200px"
-                android:text="IMG4"
+                android:text="@string/img4"
                 android:textSize="40px"
                 android:layout_marginLeft="50px"
                 android:textColor="#000000"
@@ -157,7 +157,7 @@
             <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/myRadioGroup"
+            android:id="@+id/radioGrpCreateQuest"
             android:orientation="horizontal"
             android:layout_marginLeft="230px">
 

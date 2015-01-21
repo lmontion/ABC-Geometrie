@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="0px"
-    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingRight="20px"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:background="#ff1791de">
@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <Button
@@ -27,6 +27,7 @@
             android:gravity="center"
             android:layout_height="97dp"
             android:text="@string/selectLvl"
+            android:layout_marginTop="50px"
             android:textSize="85px"
             android:textColor="#ffffffff"
             android:id="@+id/txtViewSelectLvl"/>

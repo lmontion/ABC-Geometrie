@@ -6,11 +6,11 @@
     android:background="#ff1791de">
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:width="200px"
-        android:textSize="30px"
-        android:text="Déconnexion"
+        android:layout_width="300px"
+        android:layout_height="100px"
+        android:width="250px"
+        android:textSize="40px"
+        android:text="@string/logOut"
         android:background="#ffcb4f24"
         android:textAllCaps="false"
         android:id="@+id/btnDeco"
@@ -19,6 +19,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:textColor="#ffffffff"/>
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -29,18 +30,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 -->
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:width="200px"
-                android:textSize="30px"
-                android:text="Administrateur"
-                android:layout_marginLeft="50px"
-                android:background="#ffa2c037"
-                android:textAllCaps="false"
-                android:id="@+id/btnTv"
-                android:textColor="#ffffffff"
-                android:singleLine="true"/>
+        <TextView
+            android:layout_width="400px"
+            android:layout_height="100px"
+            android:text="@string/administrator"
+            android:textSize="40px"
+            android:layout_marginLeft="45px"
+            android:textColor="#ffffffff"
+            android:background="#A2C037"
+            android:paddingLeft="15px"
+            android:paddingTop="25px"
+            android:gravity="center_horizontal"
+            android:id="@+id/txtViewAdmin" />
 
 
        <!-- </LinearLayout>-->
@@ -49,8 +50,8 @@
             android:layout_width="fill_parent"
             android:gravity="center"
             android:layout_height="97dp"
-            android:text="Administration questions :"
-            android:textSize="85px"
+            android:text="@string/adminQuest"
+            android:textSize="75px"
             android:id="@+id/tvAdmin"
             android:layout_marginTop="30px"
             android:textColor="#ffffffff"/>
@@ -67,16 +68,16 @@
                 android:paddingTop="40px"
                 android:paddingBottom="40px"
                 android:background="#ff2970ff"
-                android:layout_marginTop="30px">
+                android:layout_marginTop="25px">
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Question du niveau 1"
+                    android:text="@string/questLvl1"
                     android:textAllCaps="false"
                     android:background="#ffd1b000"
-                    android:width="500px"
-                    android:textSize="30px"
+                    android:width="550px"
+                    android:textSize="40px"
                     android:id="@+id/btn1"
                     android:textColor="#ffffffff"
                     android:layout_gravity="center"
@@ -94,11 +95,11 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Question du niveau 2"
+                    android:text="@string/questLvl2"
                     android:textAllCaps="false"
                     android:background="#ffd17500"
-                    android:width="500px"
-                    android:textSize="30px"
+                    android:width="550px"
+                    android:textSize="40px"
                     android:id="@+id/btn2"
                     android:textColor="#ffffffff"
                     android:layout_gravity="center"
@@ -116,11 +117,11 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Question du niveau 3"
+                    android:text="@string/questLvl3"
                     android:textAllCaps="false"
                     android:background="#ffd1b000"
-                    android:width="500px"
-                    android:textSize="30px"
+                    android:width="550px"
+                    android:textSize="40px"
                     android:id="@+id/btn3"
                     android:layout_gravity="center"
                     android:textColor="#ffffffff"
