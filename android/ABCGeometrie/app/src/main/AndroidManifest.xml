@@ -46,6 +46,10 @@
             android:screenOrientation="landscape" >
         </activity>
         <activity
+            android:name=".activity.AlizazaActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
             android:name=".activity.AdminUnderLvlQuestionActivity"
             android:screenOrientation="landscape" >
         </activity>

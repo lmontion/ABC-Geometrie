@@ -20,7 +20,7 @@ import com.abcgeometrie.R;
 public class MainActivity extends Activity {
 
     private Button btnAdmin;
-    private ImageButton btnTeam;
+    private ImageButton btnTeam, btnAlizaza;
     private RelativeLayout relativeLayout;
     private TextView abc, dela, geo;
 
@@ -36,6 +36,7 @@ public class MainActivity extends Activity {
         abc = (TextView) findViewById(R.id.textViewAbc);
         dela = (TextView) findViewById(R.id.textViewDeLa);
         geo = (TextView) findViewById(R.id.textViewGeometrie);
+        btnAlizaza = (ImageButton) findViewById(R.id.btnAlizaza);
 
         relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayoutHome);
         btnTeam = (ImageButton) findViewById(R.id.btnIUT);
@@ -59,6 +60,14 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, TeamActivity.class);
+                startActivity(i);
+            }
+        });
+
+        btnAlizaza.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, AlizazaActivity.class);
                 startActivity(i);
             }
         });
