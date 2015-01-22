@@ -18,7 +18,7 @@
             android:id="@+id/textViewAbc"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="abc"
+            android:text="@string/abc"
             android:textSize="150dp"
             android:layout_marginLeft="50dp"
             android:textColor="@color/monBlanc"/>
@@ -29,8 +29,8 @@
             android:layout_alignBaseline="@+id/textViewAbc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" de la"
-            android:textSize="68dp"
+            android:text="@string/of_the"
+            android:textSize="65dp"
             android:textColor="@color/monBlanc"/>
 
         <ImageButton
@@ -62,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="-15dp"
-            android:text="G"
+            android:text="@string/geometry1"
             android:textSize="120dp"
             android:textColor="@color/monBlanc"/>
 
@@ -72,7 +72,7 @@
             android:layout_alignBaseline="@+id/textViewGeometrie01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="éométrie "
+            android:text="@string/geometry2"
             android:textSize="82dp"
             android:textColor="@color/monBlanc"/>
 
@@ -109,7 +109,7 @@
             android:layout_marginTop="-10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="De 4 à 77 ans... et plus !"
+            android:text="@string/baseLine"
             android:textSize="33dp"
             android:textColor="@color/monBlanc"/>
 

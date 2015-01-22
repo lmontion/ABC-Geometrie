@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
 
     private ImageButton btnTeam, btnAlizaza;
     private RelativeLayout relativeLayout;
-    private TextView abc, dela, geo1, geo2;
+    private TextView abc, dela, geo1, geo2, baseLine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,7 @@ public class MainActivity extends Activity {
         geo1 = (TextView) findViewById(R.id.textViewGeometrie01);
         geo2 = (TextView) findViewById(R.id.textViewGeometrie02);
         btnAlizaza = (ImageButton) findViewById(R.id.btnAlizaza);
+        baseLine = (TextView) findViewById(R.id.textViewBaseLine);
 
         relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayoutHome);
         btnTeam = (ImageButton) findViewById(R.id.btnIUT);
@@ -45,6 +46,7 @@ public class MainActivity extends Activity {
         dela.setTypeface(tfLight);
         geo1.setTypeface(tfLight);
         geo2.setTypeface(tfLight);
+        baseLine.setTypeface(tfLight);
 
 
         btnTeam.setOnClickListener(new View.OnClickListener() {
