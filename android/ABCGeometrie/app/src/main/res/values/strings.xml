@@ -33,5 +33,16 @@
     <string name="manon">Manon</string>
     <string name="lucas">Lucas</string>
     <string name="title_activity_android_text_to_speech">AndroidTextToSpeechActivity</string>
+    <string name="choixtheme">Choisis un thème</string>
+    <string name="couleurs">Couleurs</string>
+    <string name="formes">Formes</string>
+    <string name="couleursformes">Couleurs ET Formes</string>
+    <string name="gg">Bravo !!</string>
+    <string name="score">Ton score : </string>
+    <string name="temps">Ton temps : </string>
+    <string name="nbQuestion">Nombre de questions nécessaires : </string>
+    <string name="newRecord">Nouveau record !! </string>
+    <string name="pseudo">Entre ton pseudo : </string>
+    <string name="board">Tableau des scores</string>
 
 </resources>

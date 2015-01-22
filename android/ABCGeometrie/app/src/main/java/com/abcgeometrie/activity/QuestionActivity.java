@@ -1,8 +1,10 @@
 package com.abcgeometrie.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
@@ -24,5 +26,20 @@ public class QuestionActivity extends Activity {
         txtViewQuestion = (TextView) findViewById(R.id.txtViewQuestion);
 
         txtViewQuestion.setTypeface(tfLight);
+
+        txtViewQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(QuestionActivity.this, EndGameActivity.class);
+                startActivity(i);
+            }
+        });
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        onNewIntent(getIntent());
+        overridePendingTransition(0,R.anim.slide_out_return);
     }
 }

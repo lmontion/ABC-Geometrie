@@ -29,7 +29,20 @@
             android:screenOrientation="landscape" >
         </activity>
         <activity
+            android:name=".activity.EndGameActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".activity.ChooseThemeActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
             android:name=".activity.AdminQuestionsActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".activity.BoardActivity"
             android:screenOrientation="landscape" >
         </activity>
         <activity

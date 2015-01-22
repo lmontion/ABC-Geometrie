@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.abcgeometrie.activity.AdminQuestionsActivity"
+    android:background="@color/monBleu">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="175px"
+        android:layout_marginTop="25px"
+        android:id="@+id/imgRecord"
+        android:src="@drawable/record"
+        android:layout_gravity="bottom"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:height="46px"
+        android:id="@+id/btnTTS"
+        android:src="@drawable/btnspeaker"
+        android:layout_marginLeft="50px"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnLang"
+            android:layout_gravity="right"
+            android:width="80px"
+            android:height="46px"
+            android:background="@drawable/france"
+            android:layout_marginRight="20px"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:gravity="center"
+            android:layout_height="97dp"
+            android:text="@string/gg"
+            android:textSize="85px"
+            android:layout_marginTop="125px"
+            android:id="@+id/txtViewBravo"
+            android:textColor="@color/monBlanc"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/score"
+                    android:textSize="50px"
+                    android:layout_marginLeft="100px"
+                    android:id="@+id/score"
+                    android:textColor="@color/monBlanc"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="11.250"
+                    android:textSize="50px"
+                    android:layout_marginLeft="20px"
+                    android:layout_weight="1"
+                    android:id="@+id/scoreJoueur"
+                    android:textColor="@color/monBlanc"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temps"
+                    android:textSize="50px"
+                    android:layout_marginLeft="100px"
+                    android:id="@+id/temps"
+                    android:textColor="@color/monBlanc"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2'29"
+                    android:textSize="50px"
+                    android:layout_marginLeft="20px"
+                    android:layout_weight="1"
+                    android:id="@+id/tempsJoueur"
+                    android:textColor="@color/monBlanc"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nbQuestion"
+                    android:textSize="50px"
+                    android:layout_marginLeft="100px"
+                    android:id="@+id/nbQuestion"
+                    android:textColor="@color/monBlanc"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12"
+                    android:textSize="50px"
+                    android:layout_marginLeft="20px"
+                    android:layout_weight="1"
+                    android:id="@+id/nbQuestionJoueur"
+                    android:textColor="@color/monBlanc"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/monVert"
+                android:layout_marginTop="25px"
+                android:layout_marginBottom="15px">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="50px"
+                    android:text="@string/newRecord"
+                    android:gravity="center"
+                    android:id="@+id/newRecord"
+                    android:textColor="@color/monBlanc"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10px">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="50px"
+                    android:layout_marginLeft="100px"
+                    android:text="@string/pseudo"
+                    android:id="@+id/pseudo"
+                    android:textColor="@color/monBlanc"/>
+
+                <EditText
+                    android:layout_width="500px"
+                    android:layout_height="50px"
+                    android:layout_marginLeft="10px"
+                    android:textSize="40px"
+                    android:background="@color/monBlanc"
+                    android:id="@+id/saisiePseudo" />
+
+                <Button
+                    android:layout_width="70px"
+                    android:layout_height="50px"
+                    android:text="@string/ok"
+                    android:textAllCaps="false"
+                    android:textSize="40px"
+                    android:textColor="@color/monBlanc"
+                    android:background="@color/monVert"
+                    android:id="@+id/btnOk" />
+             </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
