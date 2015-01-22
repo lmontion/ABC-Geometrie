@@ -3,7 +3,6 @@ package com.abcgeometrie.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -93,5 +92,12 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        onNewIntent(getIntent());
+        overridePendingTransition(0,R.anim.fade_out);
     }
 }

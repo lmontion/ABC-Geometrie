@@ -25,6 +25,7 @@ public class ChooseDefiActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_defi);
+        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         tv = (TextView) findViewById(R.id.textChooseDefi);
@@ -49,6 +50,13 @@ public class ChooseDefiActivity extends Activity {
                 startActivity(i);
             }
         });
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        onNewIntent(getIntent());
+        overridePendingTransition(0,R.anim.slide_haut_return);
     }
 
 }

@@ -20,6 +20,7 @@ public class ChooseLevelActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_level);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
 
         txtViewLvl3 = (TextView) findViewById(R.id.txtViewLvl3);
         txtViewLvl2 = (TextView) findViewById(R.id.txtViewLvl2);
@@ -42,5 +43,12 @@ public class ChooseLevelActivity extends Activity {
                 startActivity(i);
             }
         });
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        onNewIntent(getIntent());
+        overridePendingTransition(0,R.anim.slide_out_return);
     }
 }
