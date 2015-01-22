@@ -19,10 +19,9 @@ import com.abcgeometrie.R;
 
 public class MainActivity extends Activity {
 
-    private Button btnAdmin;
     private ImageButton btnTeam, btnAlizaza;
     private RelativeLayout relativeLayout;
-    private TextView abc, dela, geo;
+    private TextView abc, dela, geo1, geo2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,26 +34,18 @@ public class MainActivity extends Activity {
 
         abc = (TextView) findViewById(R.id.textViewAbc);
         dela = (TextView) findViewById(R.id.textViewDeLa);
-        geo = (TextView) findViewById(R.id.textViewGeometrie);
+        geo1 = (TextView) findViewById(R.id.textViewGeometrie01);
+        geo2 = (TextView) findViewById(R.id.textViewGeometrie02);
         btnAlizaza = (ImageButton) findViewById(R.id.btnAlizaza);
 
         relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayoutHome);
         btnTeam = (ImageButton) findViewById(R.id.btnIUT);
-        btnAdmin = (Button) findViewById(R.id.btnConnexion);
 
         abc.setTypeface(tfLight);
         dela.setTypeface(tfLight);
-        geo.setTypeface(tfLight);
+        geo1.setTypeface(tfLight);
+        geo2.setTypeface(tfLight);
 
-        btnAdmin.setTypeface(tfMedium);
-
-        btnAdmin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, AndroidTextToSpeechActivity.class);
-                startActivity(i);
-            }
-        });
 
         btnTeam.setOnClickListener(new View.OnClickListener() {
             @Override
