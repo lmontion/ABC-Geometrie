@@ -34,7 +34,7 @@
             android:layout_marginLeft="125px"
             android:layout_marginRight="100px"
             android:background="@drawable/avatartristan"
-            android:textSize="100px"/>
+            android:textSize="100px" />
 
         <TextView
             android:layout_width="179px"

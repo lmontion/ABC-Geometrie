@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.abcgeometrie.R;
 
@@ -54,6 +55,8 @@ public class AndroidTextToSpeechActivity extends Activity implements
     @Override
     public void onInit(int status) {
         // TODO Auto-generated method stub
+
+        Toast.makeText(getApplicationContext(), "bidon", Toast.LENGTH_SHORT).show();
 
         if (status == TextToSpeech.SUCCESS) {
 

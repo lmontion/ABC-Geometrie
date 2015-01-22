@@ -4,16 +4,21 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.abcgeometrie.R;
 
-public class ChooseLevelActivity extends Activity {
+public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInitListener{
 
     private TextView txtViewLvl2, txtViewLvl3, txtViewLvl1, txtViewSelectLvl;
+    private ImageView speak, home;
+    private TextToSpeech tts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +26,14 @@ public class ChooseLevelActivity extends Activity {
         setContentView(R.layout.activity_choose_level);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+        tts = new TextToSpeech(this,this);
 
         txtViewLvl3 = (TextView) findViewById(R.id.txtViewLvl3);
         txtViewLvl2 = (TextView) findViewById(R.id.txtViewLvl2);
         txtViewLvl1 = (TextView) findViewById(R.id.txtViewLvl1);
         txtViewSelectLvl = (TextView) findViewById(R.id.txtViewSelectLvl);
+        home = (ImageView) findViewById(R.id.btnHome);
+        speak = (ImageView) findViewById(R.id.btnTTS);
         //btnLang = (Button) findViewById(R.id.btnLang);
 
         Typeface tfLight = Typeface.createFromAsset(getAssets(), "fonts/orbitron-light.otf");
@@ -43,6 +51,22 @@ public class ChooseLevelActivity extends Activity {
                 startActivity(i);
             }
         });
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ChooseLevelActivity.this, MainActivity.class);
+                startActivity(i);
+                overridePendingTransition(0,R.anim.fade_out);
+            }
+        });
+
+        speak.setOnClickListener(new TextView.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech("FR",txtViewSelectLvl.getText().toString(),tts);
+            }
+        });
     }
 
     @Override
@@ -50,5 +74,10 @@ public class ChooseLevelActivity extends Activity {
         super.onRestart();
         onNewIntent(getIntent());
         overridePendingTransition(0,R.anim.slide_out_return);
+    }
+
+    @Override
+    public void onInit(int status) {
+
     }
 }
