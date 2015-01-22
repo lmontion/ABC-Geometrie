@@ -19,10 +19,9 @@ import com.abcgeometrie.R;
  */
 public class BoardActivity extends Activity implements TextToSpeech.OnInitListener{
 
-    private ImageView speak;
+    private ImageView speak, home;
     private TextToSpeech tts;
     private TextView txtViewBoard;
-    private Button home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +31,7 @@ public class BoardActivity extends Activity implements TextToSpeech.OnInitListen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         tts = new TextToSpeech(this,this);
-        home = (Button) findViewById(R.id.btnHome);
+        home = (ImageView) findViewById(R.id.btnHome);
         speak = (ImageView) findViewById(R.id.btnTTS);
 
         Typeface tfLight = Typeface.createFromAsset(getAssets(), "fonts/orbitron-light.otf");
