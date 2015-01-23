@@ -15,6 +15,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.abcgeometrie.R;
+import com.abcgeometrie.metier.DbAdapter;
+
+import java.util.ArrayList;
 
 
 public class MainActivity extends Activity {
@@ -47,6 +50,31 @@ public class MainActivity extends Activity {
         geo1.setTypeface(tfLight);
         geo2.setTypeface(tfLight);
         baseLine.setTypeface(tfLight);
+
+
+        DbAdapter db = new DbAdapter(this);
+        db.open();
+        // Tests insert
+        /*ArrayList<String> contrats = db.getContrat();
+        ArrayList<String> gagnants = db.getGagnant();
+        ArrayList<String> question = db.getQuestion();
+        ArrayList<String> appartenir = db.getAppartenir();*/
+        // Récupération menu contrat (lvl 2 ou 3)
+        //ArrayList<String> contratsByNiveau = db.getContratsByNiveau(2);
+        // Récupération menu theme (lvl 1)
+        //ArrayList<String> themesContrats = db.getThemeByNiveau(1);
+        // Récupération des contrats selon le niveau et le theme choisis (lvl 1)
+        //ArrayList<String> contratsByNiveauAndTheme = db.getcontratsByNiveauAndTheme(1,"couleurs");
+        // Récupération des questions selon le contrat choisit
+        //ArrayList<String> getQuestionByContrat = db.getQuestionByContrat(15);
+        // Récupération du nombre de bonne réponse nécessaire à la validation du contrat
+        //ArrayList<String> getNbPointByContrat = db.getNbPointByContrat(1);
+        // Récupération des 10 premiers meilleurs score
+        //ArrayList<String> getScoreByContrat = db.getScoreByContrat(15);
+        // Insertion d'un nouveau meilleure score si score meilleur que les 10 sortis
+        //db.insertScore("Pierre", 800, 15);
+        // Vérification
+        //ArrayList<String> getScoreByContrat = db.getScoreByContrat(15);
 
 
         btnTeam.setOnClickListener(new View.OnClickListener() {
