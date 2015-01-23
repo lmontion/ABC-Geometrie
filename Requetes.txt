@@ -1,0 +1,27 @@
+====================> LISTE DES REQUETES NECESSAIRES POUR L'APPLICATION <====================
+
+
+********** Affichage selon le niveau choisis **********
+getContratByNiveau(int niveau) // Lvl 2 et 3
+getThemeByNiveau(int niveau) // Lvl 1
+
+********** Affichage contrat selon theme **********
+getContratByTheme(int theme) // Lvl 1
+
+********** Récupération de la liste des questions selon le contrat **********
+getQuestionByThemeEtContrat(int theme, int contrat) // Lvl 1
+getQuestionByContrat(int idContrat) // lvl 2 et 3
+
+********** Récupération du nombre de bonne réponses nécessaire pour valider le contrat **********
+getNbPointByContrat (int idContrat) // All
+
+********** Le Jeu **********
+X
+
+********** Score **********
+getScoreByContrat(idContrat) // All récupération des 20 premiers et si meilleur insert
+insertScore(string pseudo, int score, int idContrat) // insertion et rappel de getScore
+
+
+
+
