@@ -1,0 +1,10 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">48dp</dimen>
+    <dimen name="activity_vertical_margin">20dp</dimen>
+    <dimen name="size_text_btn_pick_lvl">105dp</dimen>
+    <dimen name="margin_btn_lvl">100dp</dimen>
+    <dimen name="choose_lvl_margin_bottom">55dp</dimen>
+    <dimen name="size_flag_lang_width">108dp</dimen>
+    <dimen name="size_flag_lang_height">63dp</dimen>
+</resources>

@@ -1,50 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingRight="20px"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.abcgeometrie.activity.AdminQuestionsActivity"
     android:background="@color/monBleu">
 
-    <ImageView
-        android:layout_width="wrap_content"
+    <!--Bande de Boutons en haut -->
+    <RelativeLayout
+        android:id="@+id/barreBoutonHaut"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:height="46px"
-        android:id="@+id/btnHome"
-        android:src="@drawable/btnaccueil"
-        android:layout_marginLeft="50px"/>
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_alignParentTop="true">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:height="46px"
-        android:id="@+id/btnTTS"
-        android:src="@drawable/btnspeaker"
-        android:layout_marginLeft="180px"/>
+        <ImageView
+            android:id="@+id/btnHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btnaccueil"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btnHome"
+            android:id="@+id/btnTTS"
+            android:src="@drawable/btnspeaker"
+            android:layout_marginLeft="30dp"/>
+
+        <Button
+            android:id="@+id/btnLang"
+            android:layout_width="@dimen/size_flag_lang_width"
+            android:layout_height="@dimen/size_flag_lang_height"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:background="@drawable/france"/>
+
+    </RelativeLayout>
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnLang"
-            android:layout_gravity="right"
-            android:width="80px"
-            android:height="46px"
-            android:background="@drawable/france"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="140dp">
 
         <TextView
             android:layout_width="fill_parent"
             android:gravity="center"
-            android:layout_height="97dp"
+            android:layout_height="wrap_content"
             android:text="@string/choixtheme"
             android:textSize="85px"
             android:id="@+id/txtViewChooseTheme"
-            android:layout_marginTop="60px"
             android:textColor="@color/monBlanc"/>
 
         <LinearLayout

@@ -127,7 +127,7 @@
             android:id="@+id/drapeauAngleterre"
             android:layout_toLeftOf="@+id/drapeauFrance"
             android:layout_centerVertical="true"
-            android:background="@drawable/angleterre_accueil"
+            android:background="@drawable/angleterre"
             android:layout_width="150dp"
             android:layout_height="87dp" />
 
@@ -135,7 +135,7 @@
             android:id="@+id/drapeauFrance"
             android:layout_centerVertical="true"
             android:layout_centerInParent="true"
-            android:background="@drawable/france_accueil"
+            android:background="@drawable/france"
             android:layout_marginLeft="35dp"
             android:layout_marginRight="35dp"
             android:layout_width="150dp"
@@ -145,7 +145,7 @@
             android:id="@+id/drapeauEspagne"
             android:layout_toRightOf="@+id/drapeauFrance"
             android:layout_centerVertical="true"
-            android:background="@drawable/espagne_accueil"
+            android:background="@drawable/espagne"
             android:layout_width="150dp"
             android:layout_height="87dp" />
 

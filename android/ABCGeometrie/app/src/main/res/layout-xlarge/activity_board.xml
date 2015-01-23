@@ -30,12 +30,10 @@
         android:layout_height="match_parent">
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/size_flag_lang_width"
+            android:layout_height="@dimen/size_flag_lang_height"
             android:id="@+id/btnLang"
             android:layout_gravity="right"
-            android:width="80px"
-            android:height="46px"
             android:layout_marginRight="20px"
             android:background="@drawable/france"/>
 
