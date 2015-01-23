@@ -12,21 +12,18 @@ public class DbAdapter {
     private DatabaseHelper mDbHelper;
     private SQLiteDatabase mDb;
 
-    private static final String CREATE_TABLE_UTILISATEUR =
-            "create table utilisateur (_id integer primary key autoincrement, login text not null, mdp text, admin boolean);";
+    private static final String CREATE_TABLE_CONTRAT =
+            "create table contrat (_id integer primary key autoincrement, libelle text not null, nbPoints int, niveau text);";
+    private static final String CREATE_TABLE_GAGNANT =
+            "create table gagnant (_id integer primary key autoincrement, pseudo text not null, score integer);";
     private static final String CREATE_TABLE_QUESTION =
-            "create table question (_id integer primary key autoincrement, libelle text not null, bonneImage text, mauvaiseImage1 text, mauvaiseImage2 text, mauvaiseImage3 text);";
-    private static final String CREATE_TABLE_SONDAGE =
-            "create table sondage (_id integer primary key autoincrement, libelle text not null, point integer);";
-    private static final String CREATE_TABLE_NIVEAU =
-            "create table niveau (_id integer primary key autoincrement, libelle text not null);";
-    private static final String CREATE_TABLE_SOUSCRIRE =
-            "create table souscrire (idUser integer primary key,idContrat primary key, tempsPasse integer not null, nbQuestionsPosees integer);";
+            "create table question (_id integer primary key autoincrement, libelleFR text, libelleAN text, libelleFR text," +
+                    " urlImgSol text, urlImg1 text, urlImg2 text, urlImg3 text, theme text);";
     private static final String CREATE_TABLE_APPARTENIR =
-            "create table appartenir (idContrat integer primary key, idQuestion integer primary key);";
+            "create table appartenir (idContrat primary key, idQuestion primary key);";
 
-    private static final String DATABASE_NAME = "ABCGeometrie";
-    private static final String DATABASE_TABLE_UTILISATEUR = "utilisateur";
+
+    private static final String DATABASE_NAME = "ABC_Geometrie";
     private static final int DATABASE_VERSION = 1;
     private final Context mCtx;
 
@@ -39,11 +36,9 @@ public class DbAdapter {
 
         @Override
         public void onCreate(SQLiteDatabase db) {
-            db.execSQL(CREATE_TABLE_UTILISATEUR);
+            db.execSQL(CREATE_TABLE_CONTRAT);
+            db.execSQL(CREATE_TABLE_CONTRAT);
             db.execSQL(CREATE_TABLE_QUESTION);
-            db.execSQL(CREATE_TABLE_SONDAGE);
-            db.execSQL(CREATE_TABLE_NIVEAU);
-            db.execSQL(CREATE_TABLE_SOUSCRIRE);
             db.execSQL(CREATE_TABLE_APPARTENIR);
         }
 

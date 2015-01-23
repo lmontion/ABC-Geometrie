@@ -3,13 +3,13 @@ package com.abcgeometrie.metier;
 /**
  * Created by lucas on 21/01/15.
  */
-public class Score {
+public class Gagnant {
 
     private int id, score;
     private String pseudo;
     private Contrat con;
 
-    public Score(int id, int score, String pseudo, Contrat con) {
+    public Gagnant(int id, int score, String pseudo, Contrat con) {
         this.id = id;
         this.score = score;
         this.pseudo = pseudo;
