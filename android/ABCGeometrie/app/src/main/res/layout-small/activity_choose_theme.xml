@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingRight="20px"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.abcgeometrie.activity.AdminQuestionsActivity"
+    android:background="@color/monBleu">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:height="46px"
+        android:id="@+id/btnHome"
+        android:src="@drawable/btnaccueil"
+        android:layout_marginLeft="50px"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:height="46px"
+        android:id="@+id/btnTTS"
+        android:src="@drawable/btnspeaker"
+        android:layout_marginLeft="180px"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnLang"
+            android:layout_gravity="right"
+            android:width="80px"
+            android:height="46px"
+            android:background="@drawable/france"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:gravity="center"
+            android:layout_height="97dp"
+            android:text="@string/choixtheme"
+            android:textSize="85px"
+            android:id="@+id/txtViewChooseTheme"
+            android:layout_marginTop="60px"
+            android:textColor="@color/monBlanc"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20px"
+                android:paddingTop="40px">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="80px"
+                    android:text="@string/couleurs"
+                    android:textAllCaps="false"
+                    android:background="@color/monVert"
+                    android:width="650px"
+                    android:textSize="40px"
+                    android:id="@+id/btnThemeColor"
+                    android:textColor="@color/monBlanc"
+                    android:layout_gravity="center"
+                    android:singleLine="true"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20px"
+                android:paddingBottom="20px"
+                android:singleLine="true">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="80px"
+                    android:text="@string/formes"
+                    android:textAllCaps="false"
+                    android:background="@color/monJaune"
+                    android:width="650px"
+                    android:textSize="40px"
+                    android:id="@+id/btnThemeForm"
+                    android:textColor="@color/monBlanc"
+                    android:layout_gravity="center"
+                    android:singleLine="true"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20px"
+                android:paddingBottom="20px">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="80px"
+                    android:text="@string/couleursformes"
+                    android:textAllCaps="false"
+                    android:background="@color/monOrange"
+                    android:width="650px"
+                    android:textSize="40px"
+                    android:id="@+id/btnThemeColorAndForm"
+                    android:layout_gravity="center"
+                    android:textColor="@color/monBlanc"
+                    android:singleLine="true"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

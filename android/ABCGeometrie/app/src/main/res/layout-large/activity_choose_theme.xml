@@ -1,59 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingRight="20px"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.abcgeometrie.activity.AdminQuestionsActivity"
     android:background="@color/monBleu">
 
-    <Button
-        android:layout_width="300px"
-        android:layout_height="100px"
-        android:width="250px"
-        android:textSize="40px"
-        android:text="@string/logOut"
-        android:background="@color/monRouge"
-        android:textAllCaps="false"
-        android:id="@+id/btnDeco"
-        android:layout_marginRight="50px"
-        android:layout_gravity="right"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:textColor="@color/monBlanc"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:height="46px"
+        android:id="@+id/btnHome"
+        android:src="@drawable/btnaccueil"
+        android:layout_marginLeft="50px"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:height="46px"
+        android:id="@+id/btnTTS"
+        android:src="@drawable/btnspeaker"
+        android:layout_marginLeft="180px"/>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- <LinearLayout
-             android:orientation="horizontal"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content">
- -->
-        <TextView
-            android:layout_width="400px"
-            android:layout_height="100px"
-            android:text="@string/administrator"
-            android:textSize="40px"
-            android:layout_marginLeft="45px"
-            android:textColor="@color/monBlanc"
-            android:background="@color/monVert"
-            android:paddingLeft="15px"
-            android:paddingTop="25px"
-            android:gravity="center_horizontal"
-            android:id="@+id/txtViewAdmin" />
-
-
-        <!-- </LinearLayout>-->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnLang"
+            android:layout_gravity="right"
+            android:width="80px"
+            android:height="46px"
+            android:background="@drawable/france"/>
 
         <TextView
             android:layout_width="fill_parent"
             android:gravity="center"
             android:layout_height="97dp"
-            android:text="@string/adminQuest"
-            android:textSize="75px"
-            android:id="@+id/tvAdmin"
-            android:layout_marginTop="30px"
+            android:text="@string/choixtheme"
+            android:textSize="85px"
+            android:id="@+id/txtViewChooseTheme"
+            android:layout_marginTop="60px"
             android:textColor="@color/monBlanc"/>
 
         <LinearLayout
@@ -65,20 +56,18 @@
                 android:orientation="vertical"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="40px"
-                android:paddingBottom="40px"
-                android:background="@color/monBleuFonce"
-                android:layout_marginTop="25px">
+                android:paddingBottom="20px"
+                android:paddingTop="40px">
 
                 <Button
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/questLvl1"
+                    android:layout_height="80px"
+                    android:text="@string/couleurs"
                     android:textAllCaps="false"
                     android:background="@color/monVert"
-                    android:width="550px"
+                    android:width="650px"
                     android:textSize="40px"
-                    android:id="@+id/btn1"
+                    android:id="@+id/btnThemeColor"
                     android:textColor="@color/monBlanc"
                     android:layout_gravity="center"
                     android:singleLine="true"/>
@@ -88,19 +77,19 @@
                 android:orientation="vertical"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="40px"
-                android:paddingBottom="40px"
+                android:paddingTop="20px"
+                android:paddingBottom="20px"
                 android:singleLine="true">
 
                 <Button
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/questLvl2"
+                    android:layout_height="80px"
+                    android:text="@string/formes"
                     android:textAllCaps="false"
                     android:background="@color/monJaune"
-                    android:width="550px"
+                    android:width="650px"
                     android:textSize="40px"
-                    android:id="@+id/btn2"
+                    android:id="@+id/btnThemeForm"
                     android:textColor="@color/monBlanc"
                     android:layout_gravity="center"
                     android:singleLine="true"/>
@@ -110,19 +99,18 @@
                 android:orientation="vertical"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="40px"
-                android:paddingBottom="40px"
-                android:background="@color/monBleuFonce">
+                android:paddingTop="20px"
+                android:paddingBottom="20px">
 
                 <Button
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/questLvl3"
+                    android:layout_height="80px"
+                    android:text="@string/couleursformes"
                     android:textAllCaps="false"
                     android:background="@color/monOrange"
-                    android:width="550px"
+                    android:width="650px"
                     android:textSize="40px"
-                    android:id="@+id/btn3"
+                    android:id="@+id/btnThemeColorAndForm"
                     android:layout_gravity="center"
                     android:textColor="@color/monBlanc"
                     android:singleLine="true"/>
