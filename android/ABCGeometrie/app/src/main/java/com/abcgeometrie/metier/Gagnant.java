@@ -7,13 +7,13 @@ public class Gagnant {
 
     private int id, score;
     private String pseudo;
-    private Contrat con;
+    private Contrat contrat;
 
-    public Gagnant(int id, int score, String pseudo, Contrat con) {
+    public Gagnant(int id, int score, String pseudo, Contrat contrat) {
         this.id = id;
         this.score = score;
         this.pseudo = pseudo;
-        this.con = con;
+        this.contrat = contrat;
     }
 
     public int getId() {
@@ -40,11 +40,11 @@ public class Gagnant {
         this.pseudo = pseudo;
     }
 
-    public Contrat getCon() {
-        return con;
+    public Contrat getContrat() {
+        return contrat;
     }
 
-    public void setCon(Contrat con) {
-        this.con = con;
+    public void setContrat(Contrat contrat) {
+        this.contrat = contrat;
     }
 }

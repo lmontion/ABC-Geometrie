@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+
 import java.util.ArrayList;
 
 public class DbAdapter {
@@ -127,33 +128,153 @@ public class DbAdapter {
         mDbHelper.close();
     }
 
-    public ArrayList<String> getContrat(){
-        Cursor contrat = mDb.query("contrat", new String[]{"libelle"}, null, null, null, null, null);
-        ArrayList<String> contrat2 = new ArrayList<String>();
-        while(contrat.moveToNext()){
-            contrat2.add(contrat.getString(0));
-        }
-        return contrat2;
-    }
-
-    public ArrayList<String> getGagnant(){
-        Cursor c = mDb.query("gagnant", new String[]{"pseudo"}, null, null, null, null, null);
-        ArrayList<String> gagnants = new ArrayList<String>();
+    /*
+        Récupère la liste des questions d'un contrat
+        @Param idContrat : id du contrat dont on veut la liste de questions
+    */
+    public ArrayList<Question> getQuestionByContrat(int idContrat){
+        Cursor c = mDb.query("contrat as c, appartenir as a, question", new String[]{"question._id", "question.libelleFR", "question.libelleEN", "question.libelleES",
+                            "question.urlImgSol", "question.urlImg1", "question.urlImg2", "question.urlImg3" }, "(a.idQuestion=question._id AND c._id="+idContrat+" " +
+                            "AND c._id = a.idContrat)", null, null, null, null);
+        ArrayList<Question> lstQuestions = new ArrayList<Question>();
         while(c.moveToNext()){
-            gagnants.add(c.getString(0));
+            Question question = new Question(c.getInt(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4), c.getString(5), c.getString(6), c.getString(7));
+            lstQuestions.add(question);
         }
-        return gagnants;
+        return lstQuestions;
     }
 
-    public ArrayList<String> getQuestion(){
-        Cursor c = mDb.query("question", new String[]{"libelleFR"}, null, null, null, null, null);
-        ArrayList<String> questions = new ArrayList<String>();
+    /*
+        Récupèration d'un contrat spécifique avec sa liste de question
+        @Param idContrat : contrat que l'on souhaite récupérer
+    */
+    public Contrat getContratById(int idContrat){
+        Cursor c = mDb.query("contrat", new String[]{"_id, nbPoints, libelle, niveau, theme"}, "(_id ="+idContrat+")", null, null, null, null);
+        Contrat contrat = null;
         while(c.moveToNext()){
-            questions.add(c.getString(0));
+            ArrayList<Question> lstQuestion = getQuestionByContrat(c.getInt(0));
+            contrat = new Contrat(c.getInt(0), c.getInt(1), c.getString(2), c.getString(3), c.getString(4), lstQuestion);
         }
-        return questions;
+        return contrat;
     }
 
+    /*
+        Récupération de la liste des contrats selon le niveau sélectionné
+        @Param niveau : niveau selectionné
+    */
+    public ArrayList<Contrat> getContratsByNiveau(int niveau){
+        Cursor c = mDb.query("contrat", new String[]{"_id, nbPoints, libelle, niveau, theme"}, "niveau="+niveau, null, null, null, null);
+        ArrayList<Contrat> lstContrats = new ArrayList<Contrat>();
+        while(c.moveToNext()){
+            ArrayList<Question> lstQuestion = getQuestionByContrat(c.getInt(0));
+            Contrat contrat = new Contrat(c.getInt(0), c.getInt(1), c.getString(2), c.getString(3), c.getString(4), lstQuestion);
+            lstContrats.add(contrat);
+        }
+        return lstContrats;
+    }
+
+    /*
+        Récupère la liste des contrats selon le niveau selectionné ainsi que le theme
+        @Param niveau : niveau selectionné par le joueur
+        @Param theme : theme selectionné par le joueur
+    */
+    public ArrayList<Contrat> getcontratsByNiveauAndTheme(int niveau, String theme){
+        Cursor c = mDb.query("contrat", new String[]{"_id, nbPoints, libelle, niveau, theme"}, "(niveau="+niveau+" AND theme='"+theme+"')", null, null, null, null);
+        ArrayList<Contrat> lstContrats = new ArrayList<Contrat>();
+        while(c.moveToNext()){
+            ArrayList<Question> lstQuestion = getQuestionByContrat(c.getInt(0));
+            Contrat contrat = new Contrat(c.getInt(0), c.getInt(1), c.getString(2), c.getString(3), c.getString(4), lstQuestion);
+            lstContrats.add(contrat);
+        }
+        return lstContrats;
+    }
+
+    /*
+        Récupère les gagnants d'un contrat spécifique
+        @Param idContrat : id du contrat pour lequel on souhaite connaitre les gagnants
+    */
+    public ArrayList<Gagnant> getGagnantsByIdContrat (int idContrat){
+        Cursor c = mDb.query("gagnant", new String[]{"_id, score, pseudo, idContrat"}, "idContrat="+idContrat, null, null, null, "score desc", "10");
+        ArrayList<Gagnant> lstGagnants = new ArrayList<Gagnant>();
+        while(c.moveToNext()){
+            Contrat contrat = getContratById(c.getInt(3));
+            Gagnant gagnant = new Gagnant(c.getInt(0), c.getInt(1), c.getString(2), contrat);
+            lstGagnants.add(gagnant);
+        }
+        return lstGagnants;
+    }
+
+    /*
+        Insertion d'un nouveau gagnant selon son pseudo, son score et l'id du contrat effectué
+        @Param pseudo : pseudo indiqué par le joueur
+        @Param score : score effectué a la fin du contrat
+        @Param idContrat : id du contrat effectué
+    */
+    public void insertScore(String pseudo, int score, int idContrat){
+        ContentValues val = new ContentValues();
+        val.put("pseudo", pseudo);
+        val.put("score", score);
+        val.put("idContrat", idContrat);
+        mDb.insert("gagnant", null, val);
+    }
+
+
+
+
+    /*******************************************************************************************/
+    /*******************************************************************************************/
+    /*                              Requetes Tests inserts                                     */
+    /*******************************************************************************************/
+    /*******************************************************************************************/
+
+    /*
+        Récupère la liste des contrats avec leurs liste de questions
+        @test pour les inserts
+    */
+    public ArrayList<Contrat> getContrat(){
+        Cursor c = mDb.query("contrat", new String[]{"_id, nbPoints, libelle, niveau, theme"}, null, null, null, null, null);
+        ArrayList<Contrat> lstContrats = new ArrayList<Contrat>();
+        while(c.moveToNext()){
+            ArrayList<Question> lstQuestion = getQuestionByContrat(c.getInt(0));
+            Contrat contrat = new Contrat(c.getInt(0), c.getInt(1), c.getString(2), c.getString(3), c.getString(4), lstQuestion);
+            lstContrats.add(contrat);
+        }
+        return lstContrats;
+    }
+
+    /*
+        Récupère la liste des gagnants en base avec le contrat associé
+        @test pour les inserts
+    */
+    public ArrayList<Gagnant> getGagnant(){
+        Cursor c = mDb.query("gagnant", new String[]{"_id, score, pseudo, idContrat"}, null, null, null, null, null);
+        ArrayList<Gagnant> lstGagnants = new ArrayList<Gagnant>();
+        while(c.moveToNext()){
+            Contrat contrat = getContratById(c.getInt(3));
+            Gagnant gagnant = new Gagnant(c.getInt(0), c.getInt(1), c.getString(2), contrat);
+            lstGagnants.add(gagnant);
+        }
+        return lstGagnants;
+    }
+
+    /*
+       Récupère la liste des questions
+       @test pour les inserts
+    */
+    public ArrayList<Question> getQuestion(){
+        Cursor c = mDb.query("question", new String[]{"_id, libelleFR, libelleEN, question.libelleES, urlImgSol, urlImg1, urlImg2, urlImg3"}, null, null, null, null, null);
+        ArrayList<Question> lstQuestions = new ArrayList<Question>();
+        while(c.moveToNext()){
+            Question question = new Question(c.getInt(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4), c.getString(5), c.getString(6), c.getString(7));
+            lstQuestions.add(question);
+        }
+        return lstQuestions;
+    }
+
+    /*
+        Vérification de l'état de la table
+        @test pour les inserts
+    */
     public ArrayList<String> getAppartenir(){
         Cursor c = mDb.query("appartenir", new String[]{"idContrat", "idQuestion"}, null, null, null, null, null);
         ArrayList<String> appartenir = new ArrayList<String>();
@@ -161,73 +282,6 @@ public class DbAdapter {
             appartenir.add(c.getString(0));
         }
         return appartenir;
-    }
-
-    public ArrayList<String> getContratsByNiveau(int niveau){
-        Cursor c = mDb.query("contrat", new String[]{"_id", "libelle"}, "niveau="+niveau, null, null, null, null);
-        ArrayList<String> contrats = new ArrayList<String>();
-        while(c.moveToNext()){
-            contrats.add(c.getString(0));
-            contrats.add(c.getString(1));
-        }
-        return contrats;
-    }
-
-    public ArrayList<String> getThemeByNiveau(int niveau){
-        Cursor c = mDb.query(true,"contrat", new String[]{"theme"}, "niveau="+niveau, null, null, null, null, null);
-        ArrayList<String> themes = new ArrayList<String>();
-        while(c.moveToNext()){
-            themes.add(c.getString(0));
-        }
-        return themes;
-    }
-
-    public ArrayList<String> getcontratsByNiveauAndTheme(int niveau, String theme){
-        Cursor c = mDb.query("contrat", new String[]{"_id", "libelle"}, "(niveau="+niveau+" AND theme='"+theme+"')", null, null, null, null);
-        ArrayList<String> contrats = new ArrayList<String>();
-        while(c.moveToNext()){
-            contrats.add(c.getString(0));
-            contrats.add(c.getString(1));
-        }
-        return contrats;
-    }
-
-    public ArrayList<String> getQuestionByContrat(int idContrat){
-        Cursor c = mDb.query("contrat as c, appartenir as a, question", new String[]{"c._id", "question._id", "question.libelleFR"}, "(a.idQuestion=question._id AND c._id="+idContrat+" AND c._id = a.idContrat)", null, null, null, null);
-        ArrayList<String> contrats = new ArrayList<String>();
-        while(c.moveToNext()){
-            contrats.add(c.getString(0));
-            contrats.add(c.getString(1));
-            contrats.add(c.getString(2));
-        }
-        return contrats;
-    }
-
-    public ArrayList<String> getNbPointByContrat(int idContrat){
-        Cursor c = mDb.query("contrat", new String[]{"nbPoints"}, "_id="+idContrat, null, null, null, null);
-        ArrayList<String> nbPoints = new ArrayList<String>();
-        while(c.moveToNext()){
-            nbPoints.add(c.getString(0));
-        }
-        return nbPoints;
-    }
-
-    public ArrayList<String> getScoreByContrat(int idContrat){
-        Cursor c = mDb.query("gagnant", new String[]{"pseudo", "score"}, "idContrat="+idContrat, null, null, null, "score desc", "10");
-        ArrayList<String> scores = new ArrayList<String>();
-        while(c.moveToNext()){
-            scores.add(c.getString(0));
-            scores.add(c.getString(1));
-        }
-        return scores;
-    }
-
-    public void insertScore(String pseudo, int score, int idContrat){
-        ContentValues val = new ContentValues();
-        val.put("pseudo", pseudo);
-        val.put("score", score);
-        val.put("idContrat", idContrat);
-        mDb.insert("gagnant", null, val);
     }
 }
 

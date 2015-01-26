@@ -7,14 +7,15 @@ import java.util.ArrayList;
  */
 public class Contrat {
     private int id, nbPoints;
-    private String libelle, niveau;
+    private String libelle, niveau, theme;
     private ArrayList<Question> lstQuestions;
 
-    public Contrat(int id, int nbPoints, String libelle, String niveau, ArrayList<Question> lstQuestions) {
+    public Contrat(int id, int nbPoints, String libelle, String niveau, String theme, ArrayList<Question> lstQuestions) {
         this.id = id;
         this.nbPoints = nbPoints;
         this.libelle = libelle;
         this.niveau = niveau;
+        this.theme = theme;
         this.lstQuestions = lstQuestions;
     }
 
@@ -48,6 +49,14 @@ public class Contrat {
 
     public void setNiveau(String niveau) {
         this.niveau = niveau;
+    }
+
+    public String getTheme() {
+        return theme;
+    }
+
+    public void setTheme(String theme) {
+        this.theme = theme;
     }
 
     public ArrayList<Question> getLstQuestions() {

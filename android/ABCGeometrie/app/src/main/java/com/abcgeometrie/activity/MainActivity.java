@@ -15,7 +15,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.abcgeometrie.R;
+import com.abcgeometrie.metier.Contrat;
 import com.abcgeometrie.metier.DbAdapter;
+import com.abcgeometrie.metier.Gagnant;
+import com.abcgeometrie.metier.Question;
 
 import java.util.ArrayList;
 
@@ -54,27 +57,26 @@ public class MainActivity extends Activity {
 
         DbAdapter db = new DbAdapter(this);
         db.open();
+
         // Tests insert
-        /*ArrayList<String> contrats = db.getContrat();
-        ArrayList<String> gagnants = db.getGagnant();
-        ArrayList<String> question = db.getQuestion();
-        ArrayList<String> appartenir = db.getAppartenir();*/
-        // Récupération menu contrat (lvl 2 ou 3)
-        //ArrayList<String> contratsByNiveau = db.getContratsByNiveau(2);
-        // Récupération menu theme (lvl 1)
-        //ArrayList<String> themesContrats = db.getThemeByNiveau(1);
-        // Récupération des contrats selon le niveau et le theme choisis (lvl 1)
-        //ArrayList<String> contratsByNiveauAndTheme = db.getcontratsByNiveauAndTheme(1,"couleurs");
-        // Récupération des questions selon le contrat choisit
-        //ArrayList<String> getQuestionByContrat = db.getQuestionByContrat(15);
-        // Récupération du nombre de bonne réponse nécessaire à la validation du contrat
-        //ArrayList<String> getNbPointByContrat = db.getNbPointByContrat(1);
-        // Récupération des 10 premiers meilleurs score
-        //ArrayList<String> getScoreByContrat = db.getScoreByContrat(15);
+        //ArrayList<Contrat> lstContrats = db.getContrat();
+        //ArrayList<Gagnan> lstGagnants = db.getGagnant();
+        ArrayList<Question> lstQuestions = db.getQuestion();
+        //ArrayList<String> appartenir = db.getAppartenir();
+
+        // Récupération des 10 premiers gagnant d'un contrat avec classes
+        ArrayList<Gagnant> lstGagnants = db.getGagnantsByIdContrat(15);
+        // Récupération des contrats selon le niveau selectionné avec classes
+        ArrayList<Contrat> lstContrats = db.getContratsByNiveau(2);
+        // Récupération des contrats selon un niveau et un theme avec classes
+        ArrayList<Contrat> lstContrats2 = db.getcontratsByNiveauAndTheme(1, "couleurs");
+        // Récupération d'un contrat selon son id avec classes
+        Contrat contrat = db.getContratById(2);
+
         // Insertion d'un nouveau meilleure score si score meilleur que les 10 sortis
-        //db.insertScore("Pierre", 800, 15);
+        //db.insertScore("Paul", 850, 15);
         // Vérification
-        //ArrayList<String> getScoreByContrat = db.getScoreByContrat(15);
+        //ArrayList<Gagnant> lstGagnants = db.getGagnantsByIdContrat(15);
 
 
         btnTeam.setOnClickListener(new View.OnClickListener() {

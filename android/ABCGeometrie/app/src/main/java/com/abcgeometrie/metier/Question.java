@@ -7,20 +7,17 @@ import java.util.ArrayList;
  */
 public class Question {
     private int id;
-    private String libelleFR, libelleAN, libelleES, urlImgSol, urlImg1, urlImg2, urlImg3, theme;
-    private ArrayList<Contrat> lstContrat;
+    private String libelleFR, libelleEN, libelleES, urlImgSol, urlImg1, urlImg2, urlImg3;
 
-    public Question(int id, String libelleFR, String libelleAN, String libelleES, String urlImgSol, String urlImg1, String urlImg2, String urlImg3, String theme, ArrayList<Contrat> lstContrat) {
+    public Question(int id, String libelleFR, String libelleEN, String libelleES, String urlImgSol, String urlImg1, String urlImg2, String urlImg3) {
         this.id = id;
         this.libelleFR = libelleFR;
-        this.libelleAN = libelleAN;
+        this.libelleEN = libelleEN;
         this.libelleES = libelleES;
         this.urlImgSol = urlImgSol;
         this.urlImg1 = urlImg1;
         this.urlImg2 = urlImg2;
         this.urlImg3 = urlImg3;
-        this.theme = theme;
-        this.lstContrat = lstContrat;
     }
 
     public int getId() {
@@ -39,12 +36,12 @@ public class Question {
         this.libelleFR = libelleFR;
     }
 
-    public String getLibelleAN() {
-        return libelleAN;
+    public String getLibelleEN() {
+        return libelleEN;
     }
 
-    public void setLibelleAN(String libelleAN) {
-        this.libelleAN = libelleAN;
+    public void setLibelleEN(String libelleEN) {
+        this.libelleEN = libelleEN;
     }
 
     public String getLibelleES() {
@@ -85,21 +82,5 @@ public class Question {
 
     public void setUrlImg3(String urlImg3) {
         this.urlImg3 = urlImg3;
-    }
-
-    public String getTheme() {
-        return theme;
-    }
-
-    public void setTheme(String theme) {
-        this.theme = theme;
-    }
-
-    public ArrayList<Contrat> getLstContrat() {
-        return lstContrat;
-    }
-
-    public void setLstContrat(ArrayList<Contrat> lstContrat) {
-        this.lstContrat = lstContrat;
     }
 }
