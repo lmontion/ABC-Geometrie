@@ -29,13 +29,13 @@ public class AndroidTextToSpeech implements TextToSpeech.OnInitListener {
     private void langue(){
         int result = 0;
 
-        if (lang == "FR"){
+        if (lang == "fr"){
             result = tts.setLanguage(Locale.FRENCH);
         }
-        if (lang == "ENG"){
+        if (lang == "en"){
             result = tts.setLanguage(Locale.US);
         }
-        if (lang == "ESP"){
+        if (lang == "es"){
             Locale locSpanish = new Locale("spa", "ESP");
             result = tts.setLanguage(locSpanish);
         }

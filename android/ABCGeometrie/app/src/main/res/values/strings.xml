@@ -2,17 +2,12 @@
 <resources>
 
     <string name="app_name">ABC de la géometrie</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
     <string name="abc">abc</string>
     <string name="of_the">" de la"</string>
     <string name="geometry1">G</string>
     <string name="geometry2">"éométrie "</string>
     <string name="baseLine">De 4 à 77 ans... et plus !</string>
-    <string name="administrator">Administrateur</string>
-    <string name="logOut">Déconnexion</string>
-    <string name="addQuestion">Ajout Question</string>
-    <string name="valid">Valider</string>
+
     <string name="chooseDefi">Choisis un défi :</string>
     <string name="dixPts">10 Pts</string>
     <string name="vingtsPts">20 Pts</string>
@@ -21,34 +16,32 @@
     <string name="lvl1">1</string>
     <string name="lvl2">2</string>
     <string name="lvl3">3</string>
-    <string name="adminQuest">Administration questions :</string>
-    <string name="questLvl1">Questions du niveau 1</string>
-    <string name="questLvl2">Questions du niveau 2</string>
-    <string name="questLvl3">Questions du niveau 3</string>
-    <string name="createQuestLvl1">Question du niveau 1 :</string>
-    <string name="ok">OK</string>
-    <string name="img1">IMG1</string>
-    <string name="img2">IMG2</string>
-    <string name="img3">IMG3</string>
-    <string name="img4">IMG4</string>
+
     <string name="labelQuest">Clique sur le carré blanc :</string>
+
     <string name="labelTeam">Présentation équipe</string>
     <string name="tristan">Tristan</string>
     <string name="yanick">Yanick</string>
     <string name="manon">Manon</string>
     <string name="lucas">Lucas</string>
-    <string name="title_activity_android_text_to_speech">AndroidTextToSpeechActivity</string>
+
     <string name="choixtheme">Choisis un thème</string>
     <string name="couleurs">Couleurs</string>
     <string name="formes">Formes</string>
     <string name="couleursformes">Couleurs ET Formes</string>
+
     <string name="gg">Bravo !!</string>
     <string name="score">Ton score : </string>
     <string name="temps">Ton temps : </string>
     <string name="nbQuestion">Nombre de questions nécessaires : </string>
     <string name="newRecord">Nouveau record !! </string>
     <string name="pseudo">Entre ton pseudo : </string>
+    <string name="ok">OK</string>
+
     <string name="board">Tableau des scores</string>
+
     <string name="labeleAlizaza">La Caverne de Alizaza</string>
+
+    <string name="action_settings">Option</string>
 
 </resources>

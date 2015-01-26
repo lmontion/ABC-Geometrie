@@ -22,6 +22,7 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
     private Button btnThemeColor, btnThemeForm, btnThemeColorAndForm;
     private ImageView speak, home;
     private TextToSpeech tts;
+    private String lang = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,10 +64,11 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
             }
         });
 
+        lang = getBaseContext().getResources().getConfiguration().locale.getLanguage();
         speak.setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech("FR",txtViewChooseTheme.getText().toString(),tts);
+                AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang,txtViewChooseTheme.getText().toString(),tts);
             }
         });
     }

@@ -29,6 +29,24 @@
             android:layout_marginLeft="30dp"/>
 
         <Button
+            android:id="@+id/btnEs"
+            android:layout_width="@dimen/size_flag_lang_width"
+            android:layout_height="@dimen/size_flag_lang_height"
+            android:layout_marginLeft="720px"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:background="@drawable/espagne"/>
+
+        <Button
+            android:id="@+id/btnEn"
+            android:layout_width="@dimen/size_flag_lang_width"
+            android:layout_height="@dimen/size_flag_lang_height"
+            android:layout_marginLeft="900px"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:background="@drawable/angleterre"/>
+
+        <Button
             android:id="@+id/btnLang"
             android:layout_width="@dimen/size_flag_lang_width"
             android:layout_height="@dimen/size_flag_lang_height"

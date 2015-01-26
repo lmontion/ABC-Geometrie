@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ABC de la géometrie</string>
+    <string name="abc">abc</string>
+    <string name="of_the">" de la"</string>
+    <string name="geometry1">G</string>
+    <string name="geometry2">"éométrie "</string>
+    <string name="baseLine">7 y 77 años... y màs !</string>
+
+    <string name="chooseDefi">selecciona un reto :</string>
+    <string name="dixPts">10 Pts</string>
+    <string name="vingtsPts">20 Pts</string>
+    <string name="quarantePts">40 Pts</string>
+
+    <string name="selectLvl">Elija un nivel :</string>
+    <string name="lvl1">1</string>
+    <string name="lvl2">2</string>
+    <string name="lvl3">3</string>
+
+    <string name="labelQuest">haga clic en el cuadrado blanco :</string>
+
+    <string name="labelTeam">Presentación del Equipo</string>
+    <string name="tristan">Tristan</string>
+    <string name="yanick">Yanick</string>
+    <string name="manon">Manon</string>
+    <string name="lucas">Lucas</string>
+
+    <string name="choixtheme">Elige un tema</string>
+    <string name="couleurs">Colores</string>
+    <string name="formes">Formas</string>
+    <string name="couleursformes">Formas y Colores</string>
+
+    <string name="gg">Bien Hecho !!</string>
+    <string name="score">Su puntaje : </string>
+    <string name="temps">Su tiempo : </string>
+    <string name="nbQuestion">Número requerido de preguntas : </string>
+    <string name="newRecord">Nuevo récord !! </string>
+    <string name="pseudo">Introduzca su nombre de usuario : </string>
+    <string name="ok">OKAY</string>
+
+    <string name="board">Tabla puntuación</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="labeleAlizaza">La Caverne de Alizaza</string>
+
+</resources>
