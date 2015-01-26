@@ -109,41 +109,19 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
 
         btnEn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if(lang == "en"){
-                    btnEs.setVisibility(View.VISIBLE);
-                    btnFr.setVisibility(View.VISIBLE);
-                }else{
-                    lang = "en";
-                    changeLang(lang);
-                    startActivity(new Intent(getBaseContext(), ChooseLevelActivity.class));
-                }
+                onCreateDialog();
             }
         });
 
         btnFr.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if(lang == "fr"){
-                    btnEs.setVisibility(View.VISIBLE);
-                    btnEn.setVisibility(View.VISIBLE);
-                }else{
-                    lang = "fr";
-                    changeLang(lang);
-                    startActivity(new Intent(getBaseContext(), ChooseLevelActivity.class));
-                }
-                //onCreateDialog();
+                onCreateDialog();
             }
         });
 
         btnEs.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if(lang == "es"){
-                    btnEn.setVisibility(View.VISIBLE);
-                    btnFr.setVisibility(View.VISIBLE);
-                }else{
-                    lang = "es";
-                    changeLang(lang);
-                    startActivity(new Intent(getBaseContext(), ChooseLevelActivity.class));
-                }
+                onCreateDialog();
             }
         });
 
@@ -156,12 +134,27 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
         Button esp = (Button) v.findViewById(R.id.btnEs);
         esp.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                lang = "es";
+                changeLang(lang);
+                startActivity(new Intent(getBaseContext(), ChooseLevelActivity.class));
+            }
+        });
+        Button fr = (Button) v.findViewById(R.id.btnLang);
+        fr.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                lang = "fr";
+                changeLang(lang);
+                startActivity(new Intent(getBaseContext(), ChooseLevelActivity.class));
+            }
+        });
+        Button eng = (Button) v.findViewById(R.id.btnEn);
+        eng.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
                 lang = "en";
                 changeLang(lang);
                 startActivity(new Intent(getBaseContext(), ChooseLevelActivity.class));
             }
         });
-
         builder.setView(v);
         builder.show();
     }

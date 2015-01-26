@@ -32,7 +32,7 @@
             android:id="@+id/btnEs"
             android:layout_width="@dimen/size_flag_lang_width"
             android:layout_height="@dimen/size_flag_lang_height"
-            android:layout_marginLeft="720px"
+            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:background="@drawable/espagne"/>
@@ -41,7 +41,7 @@
             android:id="@+id/btnEn"
             android:layout_width="@dimen/size_flag_lang_width"
             android:layout_height="@dimen/size_flag_lang_height"
-            android:layout_marginLeft="900px"
+            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:background="@drawable/angleterre"/>
