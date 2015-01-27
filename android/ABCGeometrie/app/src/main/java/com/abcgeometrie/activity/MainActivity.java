@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
@@ -15,17 +16,24 @@ import com.abcgeometrie.metier.DbAdapter;
 import com.abcgeometrie.metier.Gagnant;
 import com.abcgeometrie.metier.Question;
 import java.util.ArrayList;
+import java.util.Locale;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements TextToSpeech.OnInitListener{
 
-    private ImageButton btnTeam, btnAlizaza;
+    private ImageButton btnTeam, btnAlizaza, france, angleterre, espagne;
     private RelativeLayout relativeLayout;
     private TextView abc, dela, geo1, geo2, baseLine;
+    private TextToSpeech tts;
+    private String lang = "";
+    private Locale myLocale;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Récupération langue en cours + event speaker
+        tts = new TextToSpeech(this,this);
 
         // Plein écran
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -90,6 +98,42 @@ public class MainActivity extends Activity {
         //db.insertScore("Paul", 850, 15);
         // Vérification
         //ArrayList<Gagnant> lstGagnants = db.getGagnantsByIdContrat(15);
+
+        // Récupération des images boutons + event
+        france = (ImageButton) findViewById(R.id.drapeauFrance);
+        angleterre = (ImageButton) findViewById(R.id.drapeauAngleterre);
+        espagne = (ImageButton) findViewById(R.id.drapeauEspagne);
+        france.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                lang = "fr";
+                changeLang(lang);
+                startActivity(new Intent(MainActivity.this, ChooseLevelActivity.class));
+            }
+        });
+        angleterre.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                lang = "en";
+                changeLang(lang);
+                startActivity(new Intent(MainActivity.this, ChooseLevelActivity.class));
+            }
+        });
+        espagne.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                lang = "es";
+                changeLang(lang);
+                startActivity(new Intent(MainActivity.this, ChooseLevelActivity.class));
+            }
+        });
+    }
+
+    public void changeLang(String lang){
+        if (lang.equalsIgnoreCase(""))
+            return;
+        myLocale = new Locale(lang);
+        Locale.setDefault(myLocale);
+        android.content.res.Configuration config = new android.content.res.Configuration();
+        config.locale = myLocale;
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
     }
 
     @Override
@@ -98,4 +142,7 @@ public class MainActivity extends Activity {
         onNewIntent(getIntent());
         overridePendingTransition(0,R.anim.fade_out);
     }
+
+    @Override
+    public void onInit(int status) {}
 }
