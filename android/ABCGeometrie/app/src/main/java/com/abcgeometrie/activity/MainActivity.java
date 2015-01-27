@@ -32,7 +32,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Récupération langue en cours + event speaker
+        // Cheat pour réduire le temps de lancement de tts
         tts = new TextToSpeech(this,this);
 
         // Plein écran

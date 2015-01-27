@@ -2,14 +2,48 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingBottom="0px"
     android:background="@color/monBleu">
+
+    <!--Bande de Boutons en haut -->
+    <RelativeLayout
+        android:id="@+id/barreBoutonHaut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/btnHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btnaccueil"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btnHome"
+            android:id="@+id/btnTTS"
+            android:src="@drawable/btnspeaker"
+            android:layout_marginLeft="30dp"/>
+
+        <Button
+            android:id="@+id/btnLang"
+            android:layout_width="@dimen/size_flag_lang_width"
+            android:layout_height="@dimen/size_flag_lang_height"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:background="@drawable/france"/>
+
+    </RelativeLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp">
 
         <TextView
             android:layout_width="fill_parent"
@@ -26,7 +60,7 @@
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250px">
+        android:layout_marginTop="250dp">
 
         <TextView
             android:layout_width="179px"
@@ -61,7 +95,7 @@
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="450px"
+        android:layout_marginTop="390dp"
         android:paddingLeft="5px">
 
         <TextView
@@ -100,5 +134,16 @@
             android:textColor="@color/monBlanc"
             android:textSize="45px" />
     </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/labelDawin"
+        android:textSize="40px"
+        android:textColor="@color/monBlanc"
+        android:background="@color/monBleuFonce"
+        android:gravity="center"
+        android:id="@+id/txtViewDawin"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

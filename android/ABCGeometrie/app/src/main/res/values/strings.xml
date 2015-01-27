@@ -19,7 +19,8 @@
 
     <string name="labelQuest">Clique sur le carré blanc :</string>
 
-    <string name="labelTeam">Présentation équipe</string>
+    <string name="labelTeam">Présentation de l\'équipe</string>
+    <string name="labelDawin"><i>Licence Dawin 2014-2015 - IUT Bordeaux 1</i></string>
     <string name="tristan">Tristan</string>
     <string name="yanick">Yanick</string>
     <string name="manon">Manon</string>
