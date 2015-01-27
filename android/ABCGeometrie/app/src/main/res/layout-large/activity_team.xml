@@ -139,7 +139,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/labelDawin"
-        android:textSize="40px"
+        android:textSize="30px"
         android:textColor="@color/monBlanc"
         android:background="@color/monBleuFonce"
         android:gravity="center"

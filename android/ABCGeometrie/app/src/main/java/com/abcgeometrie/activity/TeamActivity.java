@@ -17,7 +17,7 @@ import com.abcgeometrie.R;
  */
 public class TeamActivity extends Activity implements TextToSpeech.OnInitListener {
 
-    private TextView txtViewTeam, txtTristant, txtManon, txtYanick, txtLucas;
+    private TextView txtViewTeam, txtTristant, txtManon, txtYanick, txtLucas, txtViewDawin;
     private ImageView speak, home;
     private Button btnLang;
     private TextToSpeech tts;
@@ -44,9 +44,11 @@ public class TeamActivity extends Activity implements TextToSpeech.OnInitListene
         txtManon = (TextView) findViewById(R.id.txtManon);
         txtYanick = (TextView) findViewById(R.id.txtYanick);
         txtLucas = (TextView) findViewById(R.id.txtLucas);
+        txtViewDawin = (TextView) findViewById(R.id.txtViewDawin);
         Typeface tfLight = Typeface.createFromAsset(getAssets(),"fonts/orbitron-light.otf");
         Typeface tfMedium = Typeface.createFromAsset(getAssets(),"fonts/orbitron-medium.otf");
         txtViewTeam.setTypeface(tfLight);
+        txtViewDawin.setTypeface(tfLight);
         txtTristant.setTypeface(tfLight);
         txtManon.setTypeface(tfLight);
         txtYanick.setTypeface(tfLight);

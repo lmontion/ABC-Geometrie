@@ -41,7 +41,9 @@
 
     <string name="board">Tableau des scores</string>
 
-    <string name="labeleAlizaza">La Caverne de Alizaza</string>
+    <string name="labeleAlizaza">La Caverne d\'Alizaza</string>
+    <string name="labelSiteAlizaza"><i>http://www.lacavernedalizaza.fr/</i></string>
+    <string name="activiteAlizaza">Conception, fabrication et préparation de jeux à but pédagogique</string>
 
     <string name="action_settings">Option</string>
 

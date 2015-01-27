@@ -44,6 +44,9 @@
 
     <string name="action_settings">Settings</string>
 
-    <string name="labeleAlizaza">La Caverne de Alizaza</string>
+    <string name="labeleAlizaza">La Caverne d\'Alizaza</string>
+    <string name="labelSiteAlizaza"><i>http://www.lacavernedalizaza.fr/</i></string>
+    <string name="activiteAlizaza">Diseño, fabricación y preparación juegos educativos</string>
+
 
 </resources>

@@ -20,7 +20,7 @@
 
     <string name="labelQuest">Click on the white square :</string>
 
-    <string name="labelTeam">Team présentation</string>
+    <string name="labelTeam">Team presentation</string>
     <string name="labelDawin"><i>Licence Dawin 2014-2015 - IUT Bordeaux 1</i></string>
     <string name="tristan">Tristan</string>
     <string name="yanick">Yanick</string>
@@ -44,6 +44,8 @@
 
     <string name="action_settings">Settings</string>
 
-    <string name="labeleAlizaza">La Caverne de Alizaza</string>
+    <string name="labeleAlizaza">La Caverne d\'Alizaza</string>
+    <string name="labelSiteAlizaza"><i>http://www.lacavernedalizaza.fr/</i></string>
+    <string name="activiteAlizaza">Design, manufacture and preparation of educational games</string>
 
 </resources>
