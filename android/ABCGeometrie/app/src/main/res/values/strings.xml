@@ -26,10 +26,10 @@
     <string name="manon">Manon</string>
     <string name="lucas">Lucas</string>
 
-    <string name="choixtheme">Choisis un thème</string>
+    <string name="choixtheme">Choisis un thème :</string>
     <string name="couleurs">Couleurs</string>
     <string name="formes">Formes</string>
-    <string name="couleursformes">Couleurs ET Formes</string>
+    <string name="couleursformes">Mixte</string>
 
     <string name="gg">Bravo !!</string>
     <string name="score">Ton score : </string>

@@ -15,14 +15,14 @@
 
         <ImageView
             android:id="@+id/btnHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/size_btn_home_speak"
+            android:layout_height="@dimen/size_btn_home_speak"
             android:src="@drawable/btnaccueil"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/size_btn_home_speak"
+            android:layout_height="@dimen/size_btn_home_speak"
             android:layout_toRightOf="@+id/btnHome"
             android:id="@+id/btnTTS"
             android:src="@drawable/btnspeaker"
@@ -45,10 +45,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_marginTop="140dp"
+            android:layout_marginTop="112dp"
             android:layout_centerHorizontal="true"
             android:text="@string/selectLvl"
-            android:textSize="85px"
+            android:textSize="@dimen/title_size"
             android:textColor="@color/monBlanc"/>
 
         <!--BOUTONS 1 2 3 -->
@@ -60,8 +60,8 @@
 
             <TextView
                 android:id="@+id/txtViewLvl1"
-                android:layout_width="190dp"
-                android:layout_height="190dp"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
                 android:layout_toLeftOf="@+id/txtViewLvl2"
                 android:background="@drawable/circle"
                 android:gravity="center"
@@ -72,21 +72,22 @@
 
             <TextView
                 android:id="@+id/txtViewLvl2"
-                android:layout_width="175dp"
-                android:layout_height="175dp"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
                 android:background="@drawable/square"
                 android:gravity="center"
                 android:layout_marginLeft="@dimen/margin_btn_lvl"
                 android:layout_marginRight="@dimen/margin_btn_lvl"
                 android:layout_centerInParent="true"
                 android:text="@string/lvl2"
+
                 android:textColor="@color/monBlanc"
                 android:textSize="@dimen/size_text_btn_pick_lvl" />
 
             <TextView
                 android:id="@+id/txtViewLvl3"
-                android:layout_width="230dp"
-                android:layout_height="230dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_toRightOf="@+id/txtViewLvl2"
                 android:gravity="center"
                 android:layout_centerVertical="true"

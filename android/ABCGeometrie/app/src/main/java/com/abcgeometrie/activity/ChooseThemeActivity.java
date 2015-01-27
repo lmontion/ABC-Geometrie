@@ -8,6 +8,7 @@ import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.abcgeometrie.R;
@@ -19,6 +20,7 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
 
     private TextView txtViewChooseTheme;
     private Button btnThemeColor, btnThemeForm, btnThemeColorAndForm,btnLang;
+	private ImageButton arrowThemeColor;
     private ImageView speak, home;
     private TextToSpeech tts;
     private String lang = "";
@@ -39,6 +41,7 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
         dl = new DialogLang(ChooseThemeActivity.this);
 
         // Récupération des Boutons choix du theme + event
+		arrowThemeColor = (ImageButton) findViewById(R.id.flecheGauche);
         btnThemeColor = (Button) findViewById(R.id.btnThemeColor);
         btnThemeForm = (Button) findViewById(R.id.btnThemeForm);
         btnThemeColorAndForm = (Button) findViewById(R.id.btnThemeColorAndForm);
@@ -49,6 +52,13 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
                 startActivity(i);
             }
         });
+		 arrowThemeColor.setOnClickListener(new ImageButton.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ChooseThemeActivity.this, ChooseDefiActivity.class);
+                startActivity(i);
+            }
+    });
         btnThemeForm.setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {

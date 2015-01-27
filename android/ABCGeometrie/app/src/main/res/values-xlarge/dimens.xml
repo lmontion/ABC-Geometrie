@@ -1,10 +1,26 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">48dp</dimen>
-    <dimen name="activity_vertical_margin">20dp</dimen>
-    <dimen name="size_text_btn_pick_lvl">105dp</dimen>
+    <dimen name="activity_horizontal_margin">60dp</dimen>
+    <dimen name="activity_vertical_margin">50dp</dimen>
+    <dimen name="size_text_btn_pick_lvl">125dp</dimen>
     <dimen name="margin_btn_lvl">100dp</dimen>
-    <dimen name="choose_lvl_margin_bottom">55dp</dimen>
+    <dimen name="choose_lvl_margin_bottom">85dp</dimen>
     <dimen name="size_flag_lang_width">108dp</dimen>
     <dimen name="size_flag_lang_height">63dp</dimen>
+    <dimen name="title_size">75dp</dimen>
+
+    <!-- Page Choix défis -->
+    <dimen name="pts_size">65dp</dimen>
+    <dimen name="band_10pts_width">600dp</dimen>
+    <dimen name="band_20pts_width">750dp</dimen>
+    <dimen name="band_40pts_width">900dp</dimen>
+    <dimen name="band_height">80dp</dimen>
+    <dimen name="band_margin_right">70dp</dimen>
+
+    <!-- Page Choix theme -->
+    <dimen name="btn_theme_size_typo">40dp</dimen>
+    <dimen name="theme_btn_margin">95dp</dimen>
+    <dimen name="choose_theme_margin_bottom">85dp</dimen>
+    <dimen name="choose_theme_arrow_margin">290dp</dimen>
+    <dimen name="choose_theme_arrow_margin_top">15dp</dimen>
 </resources>
