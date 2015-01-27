@@ -1,12 +1,10 @@
 package com.abcgeometrie.activity;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -21,34 +19,28 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
     private TextView txtViewLvl2, txtViewLvl3, txtViewLvl1, txtViewSelectLvl;
     private ImageView speak, home;
     private TextToSpeech tts;
-    private Button btnEn, btnFr, btnEs;
-    private Locale myLocale;
+    private Button btnLang;
     private String lang = "";
+    private DialogLang dl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_level);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
-        tts = new TextToSpeech(this,this);
 
+        // Plein écran
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        // Animation
+        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+
+        // Boite de dialogue changement langue et affichage drapeaux
+        dl = new DialogLang(ChooseLevelActivity.this);
+
+        // Récupération des textView choix des niveaux + event
         txtViewLvl3 = (TextView) findViewById(R.id.txtViewLvl3);
         txtViewLvl2 = (TextView) findViewById(R.id.txtViewLvl2);
         txtViewLvl1 = (TextView) findViewById(R.id.txtViewLvl1);
-        txtViewSelectLvl = (TextView) findViewById(R.id.txtViewSelectLvl);
-
-        home = (ImageView) findViewById(R.id.btnHome);
-        speak = (ImageView) findViewById(R.id.btnTTS);
-
-        Typeface tfLight = Typeface.createFromAsset(getAssets(), "fonts/orbitron-light.otf");
-        Typeface tfMedium = Typeface.createFromAsset(getAssets(),"fonts/orbitron-medium.otf");
-
-        txtViewSelectLvl.setTypeface(tfLight);
-        txtViewLvl1.setTypeface(tfMedium);
-        txtViewLvl2.setTypeface(tfMedium);
-        txtViewLvl3.setTypeface(tfMedium);
-
         txtViewLvl1.setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +48,6 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
                 startActivity(i);
             }
         });
-
         txtViewLvl2.setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,7 +55,6 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
                 startActivity(i);
             }
         });
-
         txtViewLvl3.setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,6 +63,17 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
             }
         });
 
+        // Application de la police
+        txtViewSelectLvl = (TextView) findViewById(R.id.txtViewSelectLvl);
+        Typeface tfLight = Typeface.createFromAsset(getAssets(), "fonts/orbitron-light.otf");
+        Typeface tfMedium = Typeface.createFromAsset(getAssets(),"fonts/orbitron-medium.otf");
+        txtViewSelectLvl.setTypeface(tfLight);
+        txtViewLvl1.setTypeface(tfMedium);
+        txtViewLvl2.setTypeface(tfMedium);
+        txtViewLvl3.setTypeface(tfMedium);
+
+        // Retour accueil
+        home = (ImageView) findViewById(R.id.btnHome);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,6 +83,9 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
             }
         });
 
+        // Récupération langue en cours + event speaker
+        tts = new TextToSpeech(this,this);
+        speak = (ImageView) findViewById(R.id.btnTTS);
         lang = getBaseContext().getResources().getConfiguration().locale.getLanguage();
         speak.setOnClickListener(new TextView.OnClickListener() {
             @Override
@@ -90,83 +94,13 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
             }
         });
 
-        btnEn = (Button) findViewById(R.id.btnEn);
-        btnFr = (Button) findViewById(R.id.btnLang);
-        btnEs = (Button) findViewById(R.id.btnEs);
-
-        if(lang.equals("fr")){
-            btnEn.setVisibility(View.GONE);
-            btnEs.setVisibility(View.GONE);
-        }
-        if(lang.equals("es")){
-            btnEn.setVisibility(View.GONE);
-            btnFr.setVisibility(View.GONE);
-        }
-        if(lang.equals("en")){
-            btnEs.setVisibility(View.GONE);
-            btnFr.setVisibility(View.GONE);
-        }
-
-        btnEn.setOnClickListener(new View.OnClickListener() {
+        // Drapeaux et event changement langue
+        btnLang = (Button) findViewById(R.id.btnLang);
+        btnLang.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                onCreateDialog();
+                dl.onCreateDialog();
             }
         });
-
-        btnFr.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                onCreateDialog();
-            }
-        });
-
-        btnEs.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                onCreateDialog();
-            }
-        });
-
-    }
-
-    public void onCreateDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        LayoutInflater layout = getLayoutInflater();
-        View v = layout.inflate(R.layout.actvity_dialog, null);
-        Button esp = (Button) v.findViewById(R.id.btnEs);
-        esp.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                lang = "es";
-                changeLang(lang);
-                startActivity(new Intent(getBaseContext(), ChooseLevelActivity.class));
-            }
-        });
-        Button fr = (Button) v.findViewById(R.id.btnLang);
-        fr.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                lang = "fr";
-                changeLang(lang);
-                startActivity(new Intent(getBaseContext(), ChooseLevelActivity.class));
-            }
-        });
-        Button eng = (Button) v.findViewById(R.id.btnEn);
-        eng.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                lang = "en";
-                changeLang(lang);
-                startActivity(new Intent(getBaseContext(), ChooseLevelActivity.class));
-            }
-        });
-        builder.setView(v);
-        builder.show();
-    }
-
-    public void changeLang(String lang){
-        if (lang.equalsIgnoreCase(""))
-            return;
-        myLocale = new Locale(lang);
-        Locale.setDefault(myLocale);
-        android.content.res.Configuration config = new android.content.res.Configuration();
-        config.locale = myLocale;
-        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
     }
 
     @Override
@@ -177,7 +111,5 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
     }
 
     @Override
-    public void onInit(int status) {
-
-    }
+    public void onInit(int status) {}
 }

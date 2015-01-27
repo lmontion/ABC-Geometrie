@@ -8,10 +8,8 @@ import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.abcgeometrie.R;
 
 /**
@@ -22,25 +20,32 @@ public class BoardActivity extends Activity implements TextToSpeech.OnInitListen
     private ImageView speak, home;
     private TextToSpeech tts;
     private TextView txtViewBoard;
+    private DialogLang dl;
+    private Button btnLang;
+    private String lang = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board);
-        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+
+        // Plein écran
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        tts = new TextToSpeech(this,this);
-        home = (ImageView) findViewById(R.id.btnHome);
-        speak = (ImageView) findViewById(R.id.btnTTS);
+        // Animation
+        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
 
+        // Boite de dialogue changement langue et affichage drapeaux
+        dl = new DialogLang(BoardActivity.this);
+
+        // Application de la police
+        txtViewBoard = (TextView) findViewById(R.id.txtViewBoard);
         Typeface tfLight = Typeface.createFromAsset(getAssets(), "fonts/orbitron-light.otf");
         Typeface tfMedium = Typeface.createFromAsset(getAssets(),"fonts/orbitron-medium.otf");
-
-        txtViewBoard = (TextView) findViewById(R.id.txtViewBoard);
-
         txtViewBoard.setTypeface(tfLight);
 
+        // Retour accueil
+        home = (ImageView) findViewById(R.id.btnHome);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,10 +54,22 @@ public class BoardActivity extends Activity implements TextToSpeech.OnInitListen
             }
         });
 
+        // Récupération langue en cours + event speaker
+        tts = new TextToSpeech(this,this);
+        speak = (ImageView) findViewById(R.id.btnTTS);
+        lang = getBaseContext().getResources().getConfiguration().locale.getLanguage();
         speak.setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech("FR",txtViewBoard.getText().toString(),tts);
+                AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang,txtViewBoard.getText().toString(),tts);
+            }
+        });
+
+        // Drapeaux et event changement langue
+        btnLang = (Button) findViewById(R.id.btnLang);
+        btnLang.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                dl.onCreateDialog();
             }
         });
     }
@@ -65,7 +82,5 @@ public class BoardActivity extends Activity implements TextToSpeech.OnInitListen
     }
 
     @Override
-    public void onInit(int status) {
-
-    }
+    public void onInit(int status) {}
 }

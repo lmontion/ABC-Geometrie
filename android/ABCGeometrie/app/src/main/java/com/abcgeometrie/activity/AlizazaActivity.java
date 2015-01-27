@@ -21,14 +21,17 @@ public class AlizazaActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alizaza);
-        overridePendingTransition(R.anim.inverse_bas, R.anim.inverse_haut);
+
+        // Plein écran
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        txtViewAlizaza = (TextView) findViewById(R.id.txtViewAlizaza);
+        // Animation
+        overridePendingTransition(R.anim.inverse_bas, R.anim.inverse_haut);
 
+        // Application de la police
+        txtViewAlizaza = (TextView) findViewById(R.id.txtViewAlizaza);
         Typeface tfLight = Typeface.createFromAsset(getAssets(),"fonts/orbitron-light.otf");
         Typeface tfMedium = Typeface.createFromAsset(getAssets(),"fonts/orbitron-medium.otf");
-
         txtViewAlizaza.setTypeface(tfLight);
     }
 }
