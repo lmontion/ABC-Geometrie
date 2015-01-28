@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="monBleu">#ff18a9ff</color>
+    <color name="monBleu">#18a9ff</color>
     <color name="monBleuFonce">#2970ff</color>
     <color name="monOrange">#d17500</color>
     <color name="monJaune">#d1b000</color>

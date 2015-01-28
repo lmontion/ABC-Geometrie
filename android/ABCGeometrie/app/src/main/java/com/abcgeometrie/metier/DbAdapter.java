@@ -67,7 +67,7 @@ public class DbAdapter {
                     "('Contrat 10 points', 10, 3, '')," +
                     "('Contrat 20 points', 20, 3, '')," +
                     "('Contrat 40 points', 40, 3, '');";
-
+*/
     private static final String INSERT_TABLE_GAGNANT =
             "insert into gagnant (pseudo, score, idContrat) values" +
                     "('Bob', 450, 1)," + "('Willy', 250, 1)," + "('Steeve', 350, 1)," + "('Tom', 500, 1)," +
@@ -87,7 +87,7 @@ public class DbAdapter {
                     "('Serge', 450, 15)," + "('Pascale', 150, 15)," + "('Mathieu', 650, 15)," + "('Valentin', 550, 15)," +
                     "('Hubert', 300, 15)," + "('Seb', 400, 15)," + "('Mohammed', 200, 15)," + "('Aziz', 700, 15);";
 
-*/
+
 
     private static final String INSERT_TABLE_CONTRAT =
             "insert into contrat values" +
@@ -113,7 +113,7 @@ public class DbAdapter {
 
 
     private static final String DATABASE_NAME = "ABC_Geometrie";
-    private static final int DATABASE_VERSION = 7;
+    private static final int DATABASE_VERSION = 10;
     private final Context mCtx;
 
 
@@ -130,7 +130,8 @@ public class DbAdapter {
             db.execSQL(CREATE_TABLE_QUESTION);
             db.execSQL(CREATE_TABLE_APPARTENIR);
             db.execSQL(INSERT_TABLE_CONTRAT);
-            /*db.execSQL(INSERT_TABLE_GAGNANT);
+            db.execSQL(INSERT_TABLE_GAGNANT);
+            /*
             db.execSQL(INSERT_TABLE_QUESTION);
             db.execSQL(INSERT_TABLE_APPARTENIR);*/
             db.execSQL(INSERT_TABLE_QUESTION_LVL1);
@@ -270,7 +271,7 @@ public class DbAdapter {
         Récupère les gagnants d'un contrat spécifique
         @Param idContrat : id du contrat pour lequel on souhaite connaitre les gagnants
     */
-    public ArrayList<Gagnant> getGagnantsByIdContrat (int idContrat){
+    public Gagnant[] getGagnantsByIdContrat (int idContrat){
         Cursor c = mDb.query("gagnant", new String[]{"_id, score, pseudo, idContrat"}, "idContrat="+idContrat, null, null, null, "score desc", "10");
         ArrayList<Gagnant> lstGagnants = new ArrayList<Gagnant>();
         while(c.moveToNext()){
@@ -278,7 +279,8 @@ public class DbAdapter {
             Gagnant gagnant = new Gagnant(c.getInt(0), c.getInt(1), c.getString(2), contrat);
             lstGagnants.add(gagnant);
         }
-        return lstGagnants;
+        Gagnant[] tabGagnants = new Gagnant[lstGagnants.size()];
+        return lstGagnants.toArray(tabGagnants);
     }
 
     /*

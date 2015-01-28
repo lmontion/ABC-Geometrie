@@ -47,4 +47,9 @@ public class Gagnant {
     public void setContrat(Contrat contrat) {
         this.contrat = contrat;
     }
+
+    @Override
+    public String toString() {
+        return this.pseudo + " - " + this.score + " PTS";
+    }
 }
