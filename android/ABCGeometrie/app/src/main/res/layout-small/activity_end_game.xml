@@ -160,7 +160,7 @@
                     android:textColor="@color/monBlanc"/>
 
                 <EditText
-                    android:layout_width="500px"
+                    android:layout_width="400px"
                     android:layout_height="50px"
                     android:layout_marginLeft="10px"
                     android:textSize="40px"

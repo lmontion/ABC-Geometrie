@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="0px"
     android:background="@color/monBleu">
 
     <!--Bande de Boutons en haut -->
@@ -39,100 +39,91 @@
 
     </RelativeLayout>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp">
+
 
         <TextView
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:text="@string/labelTeam"
-            android:textSize="75px"
+            android:textSize="@dimen/title_size"
+            android:layout_marginTop="140dp"
             android:textColor="@color/monBlanc"
-            android:paddingTop="25px"
             android:gravity="center"
             android:id="@+id/txtViewTeam" />
-    </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/bandePortrait"
         android:orientation="horizontal"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="250dp">
 
-        <TextView
-            android:layout_width="179px"
+        <ImageView
+            android:layout_width="@dimen/team_picture_width"
             android:layout_height="181px"
-            android:layout_marginLeft="125px"
-            android:layout_marginRight="100px"
-            android:background="@drawable/avatartristan"
-            android:textSize="100px" />
+            android:layout_marginRight="@dimen/team_picture_margin"
+            android:background="@drawable/avatartristan" />
 
-        <TextView
-            android:layout_width="179px"
+        <ImageView
+            android:layout_width="@dimen/team_picture_width"
             android:layout_height="181px"
-            android:layout_marginRight="100px"
-            android:background="@drawable/avatarmanon"
-            android:textSize="100px" />
+            android:layout_marginRight="@dimen/team_picture_margin"
+            android:background="@drawable/avatarmanon"/>
 
-            <TextView
-            android:layout_width="179px"
+            <ImageView
+            android:layout_width="@dimen/team_picture_width"
             android:layout_height="181px"
-            android:layout_marginRight="100px"
-            android:background="@drawable/avataryanick"
-            android:textSize="100px" />
+            android:layout_marginRight="@dimen/team_picture_margin"
+            android:background="@drawable/avataryanick"/>
 
-            <TextView
-            android:layout_width="179px"
+            <ImageView
+            android:layout_width="@dimen/team_picture_width"
             android:layout_height="181px"
-            android:background="@drawable/avatarlucas"
-            android:textSize="100px" />
+            android:background="@drawable/avatarlucas" />
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="390dp"
-        android:paddingLeft="5px">
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/bandePortrait">
 
         <TextView
             android:id="@+id/txtTristant"
-            android:layout_width="179px"
-            android:layout_height="181px"
-            android:layout_marginLeft="125px"
-            android:layout_marginRight="100px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/team_text_margin"
             android:text="@string/tristan"
             android:textColor="@color/monBlanc"
-            android:textSize="45px" />
+            android:textSize="@dimen/team_text_size" />
 
         <TextView
             android:id="@+id/txtManon"
-            android:layout_width="179px"
-            android:layout_height="181px"
-            android:layout_marginRight="100px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/team_text_margin"
             android:text="@string/manon"
             android:textColor="@color/monBlanc"
-            android:textSize="45px" />
+            android:textSize="@dimen/team_text_size" />
 
         <TextView
             android:id="@+id/txtYanick"
-            android:layout_width="179px"
-            android:layout_height="181px"
-            android:layout_marginRight="100px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/team_text_margin"
             android:text="@string/yanick"
             android:textColor="@color/monBlanc"
-            android:textSize="45px" />
+            android:textSize="@dimen/team_text_size" />
 
         <TextView
             android:id="@+id/txtLucas"
-            android:layout_width="179px"
-            android:layout_height="181px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/lucas"
             android:textColor="@color/monBlanc"
-            android:textSize="45px" />
+            android:textSize="@dimen/team_text_size" />
     </LinearLayout>
 
     <TextView
