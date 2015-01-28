@@ -46,6 +46,20 @@ public class ChooseDefiActivity extends Activity implements TextToSpeech.OnInitL
                 startActivity(i);
             }
         });
+        btn20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ChooseDefiActivity.this, QuestionActivity.class);
+                startActivity(i);
+            }
+        });
+        btn40.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ChooseDefiActivity.this, QuestionActivity.class);
+                startActivity(i);
+            }
+        });
 
         // Application de la police
         tv = (TextView) findViewById(R.id.textChooseDefi);
