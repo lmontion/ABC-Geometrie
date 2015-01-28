@@ -9,6 +9,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 
+import com.abcgeometrie.R;
+
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class DbAdapter {
@@ -18,15 +26,16 @@ public class DbAdapter {
     private SQLiteDatabase mDb;
 
     private static final String CREATE_TABLE_CONTRAT =
-            "create table contrat (_id integer primary key autoincrement, libelle text not null, nbPoints integer, niveau integer, theme text);";
+            "create table contrat (_id integer primary key, libelle text not null, nbPoints integer, niveau integer, theme text);";
     private static final String CREATE_TABLE_GAGNANT =
             "create table gagnant (_id integer primary key autoincrement, pseudo text not null, score integer, idContrat integer);";
     private static final String CREATE_TABLE_QUESTION =
-            "create table question (_id integer primary key autoincrement, libelleFR text, libelleEN text, libelleES text," +
+            "create table question (_id integer primary key, libelleFR text, libelleEN text, libelleES text," +
                     " urlImgSol text, urlImg1 text, urlImg2 text, urlImg3 text);";
     private static final String CREATE_TABLE_APPARTENIR =
             "create table appartenir (idContrat integer, idQuestion integer, primary key(idContrat,idQuestion));";
 
+    /*
     private static final String INSERT_TABLE_APPARTENIR =
             "insert into appartenir (idContrat, idQuestion) values" +
                     "(1,1)," + "(2,1)," + "(3,1)," + "(4,1)," + "(5,1)," + "(6,1)," + "(7,1)," + "(8,1)," +
@@ -78,9 +87,33 @@ public class DbAdapter {
                     "('Serge', 450, 15)," + "('Pascale', 150, 15)," + "('Mathieu', 650, 15)," + "('Valentin', 550, 15)," +
                     "('Hubert', 300, 15)," + "('Seb', 400, 15)," + "('Mohammed', 200, 15)," + "('Aziz', 700, 15);";
 
+*/
+
+    private static final String INSERT_TABLE_CONTRAT =
+            "insert into contrat values" +
+                    "(0,'Contrat 10 points', 10, 1, 'couleurs')," +
+                    "(1,'Contrat 20 points', 20, 1, 'couleurs')," +
+                    "(2,'Contrat 40 points', 40, 1, 'couleurs')," +
+                    "(3,'Contrat 10 points', 10, 1, 'formes')," +
+                    "(4,'Contrat 20 points', 20, 1, 'formes')," +
+                    "(5,'Contrat 40 points', 40, 1, 'formes')," +
+                    "(6,'Contrat 10 points', 10, 1, 'couleurs et formes')," +
+                    "(7,'Contrat 20 points', 20, 1, 'couleurs et formes')," +
+                    "(8,'Contrat 40 points', 40, 1, 'couleurs et formes')," +
+                    "(9,'Contrat 10 points', 10, 2, '')," +
+                    "(10,'Contrat 20 points', 20, 2, '')," +
+                    "(11,'Contrat 40 points', 40, 2, '')," +
+                    "(12,'Contrat 10 points', 10, 3, '')," +
+                    "(13,'Contrat 20 points', 20, 3, '')," +
+                    "(14,'Contrat 40 points', 40, 3, '');";
+
+
+    private static String INSERT_TABLE_QUESTION_LVL1;
+    private static String INSERT_TABLE_APPARTENIR_LVL1;
+
 
     private static final String DATABASE_NAME = "ABC_Geometrie";
-    private static final int DATABASE_VERSION = 6;
+    private static final int DATABASE_VERSION = 7;
     private final Context mCtx;
 
 
@@ -97,9 +130,11 @@ public class DbAdapter {
             db.execSQL(CREATE_TABLE_QUESTION);
             db.execSQL(CREATE_TABLE_APPARTENIR);
             db.execSQL(INSERT_TABLE_CONTRAT);
-            db.execSQL(INSERT_TABLE_GAGNANT);
+            /*db.execSQL(INSERT_TABLE_GAGNANT);
             db.execSQL(INSERT_TABLE_QUESTION);
-            db.execSQL(INSERT_TABLE_APPARTENIR);
+            db.execSQL(INSERT_TABLE_APPARTENIR);*/
+            db.execSQL(INSERT_TABLE_QUESTION_LVL1);
+            db.execSQL(INSERT_TABLE_APPARTENIR_LVL1);
         }
 
         @Override
@@ -116,12 +151,54 @@ public class DbAdapter {
 
     public DbAdapter(Context ctx) {
         this.mCtx = ctx;
+        INSERT_TABLE_QUESTION_LVL1 = getValueQuestionNiv1();
+        INSERT_TABLE_APPARTENIR_LVL1 = getValueAppartenirNiv1();
     }
 
     public DbAdapter open() throws SQLException {
         mDbHelper = new DatabaseHelper(mCtx);
         mDb = mDbHelper.getWritableDatabase();
         return this;
+    }
+
+    public String getValueQuestionNiv1(){
+        String ligne;
+        String temp = "";
+        StringBuffer buf = new StringBuffer();
+        InputStream is = mCtx.getResources().openRawResource(R.raw.dataq1);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        try {
+            if (is!=null) {
+                while ((ligne = reader.readLine()) != null) {
+                    temp += ligne;
+                }
+
+            }
+            is.close();
+        } catch(IOException e) {
+            Log.e("file", e.getMessage());
+        }
+        return temp;
+    }
+
+    public String getValueAppartenirNiv1(){
+        String ligne;
+        String temp = "";
+        StringBuffer buf = new StringBuffer();
+        InputStream is = mCtx.getResources().openRawResource(R.raw.dataapp1);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        try {
+            if (is!=null) {
+                while ((ligne = reader.readLine()) != null) {
+                    temp += ligne;
+                }
+
+            }
+            is.close();
+        } catch(IOException e) {
+            Log.e("file", e.getMessage());
+        }
+        return temp;
     }
 
     public void close() {

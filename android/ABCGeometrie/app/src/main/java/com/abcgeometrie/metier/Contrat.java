@@ -1,7 +1,6 @@
 package com.abcgeometrie.metier;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 /**
  * Created by lucas on 21/01/15.
@@ -9,7 +8,7 @@ import java.util.Random;
 public class Contrat {
     private int id, nbPoints;
     private String libelle, niveau, theme;
-    private ArrayList<Question> lstQuestions, lstQuestionsPosees;
+    private ArrayList<Question> lstQuestions;
 
     public Contrat(int id, int nbPoints, String libelle, String niveau, String theme, ArrayList<Question> lstQuestions) {
         this.id = id;
@@ -18,7 +17,6 @@ public class Contrat {
         this.niveau = niveau;
         this.theme = theme;
         this.lstQuestions = lstQuestions;
-        this.lstQuestionsPosees = new ArrayList<Question>();
     }
 
     public int getId() {
@@ -67,23 +65,5 @@ public class Contrat {
 
     public void setLstQuestions(ArrayList<Question> lstQuestions) {
         this.lstQuestions = lstQuestions;
-    }
-
-    public Question chooseAQuestion(){
-        Random r = new Random();
-        int index = r.nextInt(lstQuestions.size());
-        Question laQuestion = lstQuestions.get(index);
-        if(dejaPosee(laQuestion) == true){
-            chooseAQuestion();
-        }
-        lstQuestionsPosees.add(laQuestion);
-        return laQuestion;
-    }
-
-    public boolean dejaPosee(Question question){
-        boolean dejaPosee = false;
-        if(lstQuestionsPosees.contains(question))
-            dejaPosee = true;
-        return dejaPosee;
     }
 }
