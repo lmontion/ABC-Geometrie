@@ -52,6 +52,8 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ChooseLevelActivity.this, ChooseDefiActivity.class);
+                i.putExtra("lvl",2);
+                i.putExtra("theme","");
                 startActivity(i);
             }
         });
@@ -59,6 +61,8 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ChooseLevelActivity.this, ChooseDefiActivity.class);
+                i.putExtra("lvl",3);
+                i.putExtra("theme","");
                 startActivity(i);
             }
         });

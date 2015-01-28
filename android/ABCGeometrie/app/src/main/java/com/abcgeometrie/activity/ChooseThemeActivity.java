@@ -49,6 +49,8 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ChooseThemeActivity.this, ChooseDefiActivity.class);
+                i.putExtra("lvl",1);
+                i.putExtra("theme","couleurs");
                 startActivity(i);
             }
         });
@@ -63,6 +65,8 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ChooseThemeActivity.this, ChooseDefiActivity.class);
+                i.putExtra("lvl",1);
+                i.putExtra("theme","formes");
                 startActivity(i);
             }
         });
@@ -70,6 +74,8 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ChooseThemeActivity.this, ChooseDefiActivity.class);
+                i.putExtra("lvl",1);
+                i.putExtra("theme","couleurs et formes");
                 startActivity(i);
             }
         });

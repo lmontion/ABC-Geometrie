@@ -1,6 +1,8 @@
 package com.abcgeometrie.activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -138,6 +140,10 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         android.content.res.Configuration config = new android.content.res.Configuration();
         config.locale = myLocale;
         getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 
     @Override

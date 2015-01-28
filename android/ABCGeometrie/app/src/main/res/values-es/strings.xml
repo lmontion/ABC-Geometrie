@@ -6,19 +6,19 @@
     <string name="of_the">" de la"</string>
     <string name="geometry1">G</string>
     <string name="geometry2">"éométrie "</string>
-    <string name="baseLine">4 y 77 años... y màs !</string>
+    <string name="baseLine">7 y 77 años... y màs !</string>
 
     <string name="chooseDefi">selecciona un reto :</string>
     <string name="dixPts">10 Pts</string>
     <string name="vingtsPts">20 Pts</string>
     <string name="quarantePts">40 Pts</string>
 
-    <string name="selectLvl">Elige un nivel :</string>
+    <string name="selectLvl">Elija un nivel :</string>
     <string name="lvl1">1</string>
     <string name="lvl2">2</string>
     <string name="lvl3">3</string>
 
-    <string name="labelQuest">Hacer clic en el cuadrado blanco :</string>
+    <string name="labelQuest">haga clic en el cuadrado blanco :</string>
 
     <string name="labelTeam">Presentación del Equipo</string>
     <string name="labelDawin"><i>Licence Dawin 2014-2015 - IUT Bordeaux 1</i></string>
@@ -30,15 +30,15 @@
     <string name="choixtheme">Elige un tema</string>
     <string name="couleurs">Colores</string>
     <string name="formes">Formas</string>
-    <string name="couleursformes">Ambos</string>
+    <string name="couleursformes">Formas y Colores</string>
 
-    <string name="gg">Muy Bien !!</string>
-    <string name="score">Tu resultado : </string>
-    <string name="temps">Tu tiempo : </string>
+    <string name="gg">Bien Hecho !!</string>
+    <string name="score">Su puntaje : </string>
+    <string name="temps">Su tiempo : </string>
     <string name="nbQuestion">Número requerido de preguntas : </string>
     <string name="newRecord">Nuevo récord !! </string>
-    <string name="pseudo">Tu nombre de usuario : </string>
-    <string name="ok">OK</string>
+    <string name="pseudo">Introduzca su nombre de usuario : </string>
+    <string name="ok">OKAY</string>
 
     <string name="board">Tabla puntuación</string>
 
