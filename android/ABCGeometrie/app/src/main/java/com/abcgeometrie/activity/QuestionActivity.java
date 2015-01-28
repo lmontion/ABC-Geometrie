@@ -8,16 +8,20 @@ import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.abcgeometrie.R;
 import com.abcgeometrie.metier.Question;
 
-public class QuestionActivity extends Activity {
+public class QuestionActivity extends Activity implements TextToSpeech.OnInitListener{
 
     private TextView txtViewQuestion;
-    private Button rep, img1, img2, img3, btnLang;
+    private Button btnLang;
+    private ImageView speak;
+    private TextToSpeech tts;
+    private ImageButton rep, img1, img2, img3;
     private DialogLang dl;
     private String lang = "";
 
@@ -36,10 +40,10 @@ public class QuestionActivity extends Activity {
         dl = new DialogLang(QuestionActivity.this);
 
         // Récupération bouton et evenement
-        rep = (Button) findViewById(R.id.rep1);
-        img1 = (Button) findViewById(R.id.rep2);
-        img2 = (Button) findViewById(R.id.rep3);
-        img3 = (Button) findViewById(R.id.rep4);
+        rep = (ImageButton) findViewById(R.id.rep1);
+        img1 = (ImageButton) findViewById(R.id.rep2);
+        img2 = (ImageButton) findViewById(R.id.rep3);
+        img3 = (ImageButton) findViewById(R.id.rep4);
         rep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,6 +57,18 @@ public class QuestionActivity extends Activity {
         Typeface tfLight = Typeface.createFromAsset(getAssets(), "fonts/orbitron-light.otf");
         Typeface tfMedium = Typeface.createFromAsset(getAssets(),"fonts/orbitron-medium.otf");
         txtViewQuestion.setTypeface(tfLight);
+
+
+        // Récupération langue en cours + event speaker
+        tts = new TextToSpeech(this, this);
+        speak = (ImageView) findViewById(R.id.btnTTS);
+        lang = getBaseContext().getResources().getConfiguration().locale.getLanguage();
+        speak.setOnClickListener(new TextView.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang,txtViewQuestion.getText().toString(),tts);
+            }
+        });
 
         // Drapeaux et event changement langue
         btnLang = (Button) findViewById(R.id.btnLang);
@@ -69,4 +85,7 @@ public class QuestionActivity extends Activity {
         onNewIntent(getIntent());
         overridePendingTransition(0,R.anim.slide_out_return);
     }
+
+    @Override
+    public void onInit(int status) {}
 }

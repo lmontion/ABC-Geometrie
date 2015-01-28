@@ -31,4 +31,14 @@
     <dimen name="team_picture_width">135dp</dimen>
     <dimen name="team_picture_height">34dp</dimen>
 
+    <!-- Page Jeu / Questions -->
+    <dimen name="label_question_top_margin">30dp</dimen>
+    <dimen name="label_question_bottom_margin">25dp</dimen>
+    <dimen name="label_question_left_margin">35dp</dimen>
+    <dimen name="question_text_size">45dp</dimen>
+    <dimen name="question_block_width">578dp</dimen>
+    <dimen name="question_answer_margin">20dp</dimen>
+    <dimen name="question_block_answer_width">315dp</dimen>
+    <dimen name="question_block_answer_height">171dp</dimen>
+
 </resources>
