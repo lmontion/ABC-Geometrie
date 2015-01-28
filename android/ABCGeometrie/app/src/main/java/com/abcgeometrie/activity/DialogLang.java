@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import com.abcgeometrie.R;
+import com.abcgeometrie.metier.Contrat;
+import com.abcgeometrie.metier.Question;
+
 import java.util.Locale;
 
 /**
@@ -17,6 +20,15 @@ public class DialogLang {
     private Locale myLocale;
     private String lang;
     private Activity act = null;
+    private Contrat con = null;
+    private Question  question = null;
+
+    public DialogLang(Activity a, Contrat c, Question q) {
+        this.act = a;
+        this.con = c;
+        this.question = q;
+        hiddenFlags();
+    }
 
     public DialogLang(Activity a) {
         this.act = a;
@@ -45,7 +57,12 @@ public class DialogLang {
             public void onClick(View v) {
                 lang = "es";
                 changeLang(lang);
-                act.startActivity(new Intent(act.getBaseContext(), act.getClass()));
+                Intent i = new Intent(act.getBaseContext(), act.getClass());
+                if (act.getClass() == QuestionActivity.class){
+                    i.putExtra("contrat", con);
+                    i.putExtra("question", question);
+                }
+                act.startActivity(i);
             }
         });
         Button fr = (Button) v.findViewById(R.id.btnLang);
@@ -53,7 +70,12 @@ public class DialogLang {
             public void onClick(View v) {
                 lang = "fr";
                 changeLang(lang);
-                act.startActivity(new Intent(act.getBaseContext(), act.getClass()));
+                Intent i = new Intent(act.getBaseContext(), act.getClass());
+                if (act.getClass() == QuestionActivity.class){
+                    i.putExtra("contrat", con);
+                    i.putExtra("question", question);
+                }
+                act.startActivity(i);
             }
         });
         Button eng = (Button) v.findViewById(R.id.btnEn);
@@ -61,7 +83,12 @@ public class DialogLang {
             public void onClick(View v) {
                 lang = "en";
                 changeLang(lang);
-                act.startActivity(new Intent(act.getBaseContext(), act.getClass()));
+                Intent i = new Intent(act.getBaseContext(), act.getClass());
+                if (act.getClass() == QuestionActivity.class){
+                    i.putExtra("contrat", con);
+                    i.putExtra("question", question);
+                }
+                act.startActivity(i);
             }
         });
         builder.setView(v);

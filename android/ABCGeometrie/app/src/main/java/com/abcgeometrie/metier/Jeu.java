@@ -3,7 +3,7 @@ package com.abcgeometrie.metier;
 /**
  * Created by lucas on 28/01/15.
  */
-public class Jeu {
+public class Jeu implements java.io.Serializable{
 
     private int tempsSec;
     private int nbQuestionsNecessaires;
