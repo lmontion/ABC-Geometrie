@@ -18,7 +18,7 @@
     <string name="lvl2">2</string>
     <string name="lvl3">3</string>
 
-    <string name="labelQuest">Clic en el cuadrado blanco :</string>
+    <string name="labelQuest">Hacer clic en el cuadrado blanco :</string>
 
     <string name="labelTeam">Presentación del Equipo</string>
     <string name="labelDawin"><i>Licence Dawin 2014-2015 - IUT Bordeaux 1</i></string>
@@ -38,7 +38,7 @@
     <string name="nbQuestion">Número requerido de preguntas : </string>
     <string name="newRecord">Nuevo récord !! </string>
     <string name="pseudo">Tu nombre de usuario : </string>
-    <string name="ok">OKAY</string>
+    <string name="ok">OK</string>
 
     <string name="board">Tabla puntuación</string>
 

@@ -6,7 +6,7 @@
     <string name="of_the">" de la"</string>
     <string name="geometry1">G</string>
     <string name="geometry2">"éométrie "</string>
-    <string name="baseLine">From 7 to 77 years.. and more !</string>
+    <string name="baseLine">From 7 to 77 years ... and more !</string>
 
     <string name="chooseDefi">Choose a challenge :</string>
     <string name="dixPts">10 Pts</string>
@@ -30,7 +30,7 @@
     <string name="choixtheme">Choose a theme</string>
     <string name="couleurs">Colors</string>
     <string name="formes">Shapes</string>
-    <string name="couleursformes">Formes and Shapes</string>
+    <string name="couleursformes">Colors and Shapes</string>
 
     <string name="gg">Well done !!</string>
     <string name="score">Your score : </string>
