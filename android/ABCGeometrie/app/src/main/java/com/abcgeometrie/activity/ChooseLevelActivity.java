@@ -51,14 +51,14 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
         txtViewLvl2.setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ChooseLevelActivity.this, ChooseDefiActivity.class);
+                Intent i = new Intent(ChooseLevelActivity.this, ChooseThemeActivity.class);
                 startActivity(i);
             }
         });
         txtViewLvl3.setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ChooseLevelActivity.this, ChooseDefiActivity.class);
+                Intent i = new Intent(ChooseLevelActivity.this, ChooseThemeActivity.class);
                 startActivity(i);
             }
         });

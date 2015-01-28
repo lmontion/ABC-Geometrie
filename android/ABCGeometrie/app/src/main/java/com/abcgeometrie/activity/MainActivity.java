@@ -93,10 +93,22 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         // Récupération des contrats selon un niveau et un theme avec classes
         //ArrayList<Contrat> lstContrats2 = db.getcontratsByNiveauAndTheme(1, "couleurs");
         // Récupération d'un contrat selon son id avec classes
-        Contrat contrat = db.getContratById(2);
+       /* Contrat contrat = db.getContratById(2);
         Question q1 = contrat.chooseAQuestion();
         Question q2 = contrat.chooseAQuestion();
-        Question q3 = contrat.chooseAQuestion();
+        Question q3 = contrat.chooseAQuestion();*/
+
+        //ArrayList<Question> lstQuestions = db.getQuestion();
+        //ArrayList<String> appartenir = db.getAppartenir();
+        // Récupération des 10 premiers gagnant d'un contrat avec classes
+        //ArrayList<Gagnant> lstGagnants = db.getGagnantsByIdContrat(15);
+        // Récupération des contrats selon le niveau selectionné avec classes
+        //ArrayList<Contrat> lstContrats = db.getContratsByNiveau(2);
+        // Récupération des contrats selon un niveau et un theme avec classes
+        //ArrayList<Contrat> lstContrats2 = db.getcontratsByNiveauAndTheme(1, "couleurs");
+        // Récupération d'un contrat selon son id avec classes
+        Contrat contrat = db.getContratById(2);
+
 
         // Insertion d'un nouveau meilleure score si score meilleur que les 10 sortis
         //db.insertScore("Paul", 850, 15);
