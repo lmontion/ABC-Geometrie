@@ -24,4 +24,11 @@
     <dimen name="choose_theme_arrow_margin">265dp</dimen>
     <dimen name="choose_theme_arrow_margin_top">15dp</dimen>
 
+    <!-- Page Equipe -->
+    <dimen name="team_picture_margin">75dp</dimen>
+    <dimen name="team_text_margin">80dp</dimen>
+    <dimen name="team_text_size">34dp</dimen>
+    <dimen name="team_picture_width">135dp</dimen>
+    <dimen name="team_picture_height">34dp</dimen>
+
 </resources>
