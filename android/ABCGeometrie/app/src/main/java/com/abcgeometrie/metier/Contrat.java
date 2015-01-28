@@ -6,7 +6,7 @@ import java.util.Random;
 /**
  * Created by lucas on 21/01/15.
  */
-public class Contrat {
+public class Contrat implements java.io.Serializable{
     private int id, nbPoints;
     private String libelle, niveau, theme;
     private ArrayList<Question> lstQuestions, lstQuestionsPosees;

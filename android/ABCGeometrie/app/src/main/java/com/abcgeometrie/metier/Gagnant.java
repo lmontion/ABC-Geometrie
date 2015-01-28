@@ -3,7 +3,7 @@ package com.abcgeometrie.metier;
 /**
  * Created by lucas on 21/01/15.
  */
-public class Gagnant {
+public class Gagnant implements java.io.Serializable{
 
     private int id, score;
     private String pseudo;
