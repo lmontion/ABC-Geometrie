@@ -20,6 +20,8 @@ public class ChooseDefiActivity extends Activity implements TextToSpeech.OnInitL
     private TextToSpeech tts;
     private DialogLang dl;
     private String lang = "";
+    private String currentTheme;
+    private int currentLvl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,9 @@ public class ChooseDefiActivity extends Activity implements TextToSpeech.OnInitL
         // Boite de dialogue changement langue et affichage drapeaux
         dl = new DialogLang(ChooseDefiActivity.this);
 
+        currentTheme = (String) getIntent().getExtras().get("theme");
+        currentLvl = (int) getIntent().getExtras().get("lvl");
+
         // Récupération des Boutons choix du contrat + event
         btn10 = (Button) findViewById(R.id.btn10);
         btn20 = (Button) findViewById(R.id.btn20);
@@ -43,6 +48,9 @@ public class ChooseDefiActivity extends Activity implements TextToSpeech.OnInitL
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ChooseDefiActivity.this, QuestionActivity.class);
+                i.putExtra("nbPoints",10);
+                i.putExtra("theme", currentTheme);
+                i.putExtra("lvl", currentLvl);
                 startActivity(i);
             }
         });
@@ -50,6 +58,9 @@ public class ChooseDefiActivity extends Activity implements TextToSpeech.OnInitL
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ChooseDefiActivity.this, QuestionActivity.class);
+                i.putExtra("nbPoints",20);
+                i.putExtra("theme", currentTheme);
+                i.putExtra("lvl", currentLvl);
                 startActivity(i);
             }
         });
@@ -57,6 +68,9 @@ public class ChooseDefiActivity extends Activity implements TextToSpeech.OnInitL
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ChooseDefiActivity.this, QuestionActivity.class);
+                i.putExtra("nbPoints",40);
+                i.putExtra("theme", currentTheme);
+                i.putExtra("lvl", currentLvl);
                 startActivity(i);
             }
         });

@@ -1,6 +1,8 @@
 package com.abcgeometrie.activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -83,7 +85,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         db.open();
         // Tests insert
         //ArrayList<Contrat> lstContrats = db.getContrat();
-        //ArrayList<Gagnant> lstGagnants = db.getGagnant();
+        //ArrayList<Gagnan> lstGagnants = db.getGagnant();
         //ArrayList<Question> lstQuestions = db.getQuestion();
         //ArrayList<String> appartenir = db.getAppartenir();
         // Récupération des 10 premiers gagnant d'un contrat avec classes
@@ -94,9 +96,9 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         //ArrayList<Contrat> lstContrats2 = db.getcontratsByNiveauAndTheme(1, "couleurs");
         // Récupération d'un contrat selon son id avec classes
         Contrat contrat = db.getContratById(2);
-        /*Question q1 = contrat.chooseAQuestion();
+        Question q1 = contrat.chooseAQuestion();
         Question q2 = contrat.chooseAQuestion();
-        Question q3 = contrat.chooseAQuestion();*/
+        Question q3 = contrat.chooseAQuestion();
 
         // Insertion d'un nouveau meilleure score si score meilleur que les 10 sortis
         //db.insertScore("Paul", 850, 15);
@@ -138,6 +140,10 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         android.content.res.Configuration config = new android.content.res.Configuration();
         config.locale = myLocale;
         getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 
     @Override

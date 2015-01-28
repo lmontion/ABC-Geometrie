@@ -52,4 +52,6 @@ public class Gagnant {
     public String toString() {
         return this.pseudo + " - " + this.score + " PTS";
     }
+
+
 }
