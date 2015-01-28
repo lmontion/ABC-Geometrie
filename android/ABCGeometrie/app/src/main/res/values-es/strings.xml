@@ -6,7 +6,7 @@
     <string name="of_the">" de la"</string>
     <string name="geometry1">G</string>
     <string name="geometry2">"éométrie "</string>
-    <string name="baseLine">7 y 77 años... y màs !</string>
+    <string name="baseLine">4 y 77 años... y màs !</string>
 
     <string name="chooseDefi">selecciona un reto :</string>
     <string name="dixPts">10 Pts</string>
@@ -30,7 +30,7 @@
     <string name="choixtheme">Elige un tema</string>
     <string name="couleurs">Colores</string>
     <string name="formes">Formas</string>
-    <string name="couleursformes">Mixto</string>
+    <string name="couleursformes">Ambos</string>
 
     <string name="gg">Muy Bien !!</string>
     <string name="score">Tu resultado : </string>
