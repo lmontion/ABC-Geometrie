@@ -1,0 +1,21 @@
+Jeu :
+-> Affichage d'une question de manière random
+-> Affichage bonne / mauvaise rep 
+-> Gestion question suivante avec hide flags
+-> Condition fin qui réoriente vers la page "Bravo" + compteur
+-> Design
+-> Implementation compteur reponse, timer (faire une class ?)
+-> Fonction calcul score et passage des variables vers la page "bravo"
+-> ProgressBar
+
+Page Bravo :
+-> Affichage de "nouveau record..." si score dans les 10 premiers sinon bouton "voir le tableau des score"
+-> Affichage variables
+-> Vérification que le changement de langue n'affecte pas l'affichage (général + variable)
+
+Page tableau des scores :
+-> Affichage dans une listeview
+
+Rq :
+-> Retour sans animation pour changement de langue
+-> Retour arrière a désactiver

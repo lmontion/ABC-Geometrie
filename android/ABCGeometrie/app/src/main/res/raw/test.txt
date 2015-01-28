@@ -1,0 +1,4 @@
+INSER INTO question VALUES
+bidon
+truc
+machin
