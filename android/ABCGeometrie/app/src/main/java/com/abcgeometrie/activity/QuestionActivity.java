@@ -52,17 +52,17 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
         currentNbPointsContrat = (int) getIntent().getExtras().get("nbPoints");
 
         // Récupération bouton et evenement
-		/*		
+
+        rep = (ImageButton) findViewById(R.id.rep1);
         rep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(QuestionActivity.this, EndGameActivity.class);
                 startActivity(i);
             }
-        });*/
+        });
 
-        
-        rep = (ImageButton) findViewById(R.id.rep1);
+
         img1 = (ImageButton) findViewById(R.id.rep2);
         img2 = (ImageButton) findViewById(R.id.rep3);
         img3 = (ImageButton) findViewById(R.id.rep4);
@@ -102,7 +102,7 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
         con = db.getcontratByNiveauAndTheme(currentLvl, currentNbPointsContrat, currentTheme);
         Question question = con.chooseAQuestion();
 
-        //txtViewQuestion.setText(question.getLibelleFR());
+        txtViewQuestion.setText(question.getLibelleFR());
 /*
         String foo = "This,that,other";
         String[] split = foo.split(",");

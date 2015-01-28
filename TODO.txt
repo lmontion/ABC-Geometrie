@@ -13,9 +13,6 @@ Page Bravo :
 -> Affichage variables
 -> Vérification que le changement de langue n'affecte pas l'affichage (général + variable)
 
-Page tableau des scores :
--> Affichage dans une listeview
-
 Rq :
 -> Retour sans animation pour changement de langue
 -> Retour arrière a désactiver

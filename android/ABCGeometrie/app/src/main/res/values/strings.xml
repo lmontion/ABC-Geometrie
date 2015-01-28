@@ -38,6 +38,7 @@
     <string name="newRecord">Nouveau record !! </string>
     <string name="pseudo">Entre ton pseudo : </string>
     <string name="ok">OK</string>
+    <string name="goScoreBoard">Voir le tableau des scores -></string>
 
     <string name="board">Tableau des scores</string>
 

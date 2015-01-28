@@ -2,6 +2,7 @@ package com.abcgeometrie.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
@@ -10,21 +11,26 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.abcgeometrie.R;
+import com.abcgeometrie.metier.DbAdapter;
+import com.abcgeometrie.metier.Gagnant;
 
 /**
  * Created by Yanick on 22/01/2015.
  */
 public class EndGameActivity extends Activity implements TextToSpeech.OnInitListener{
 
-    private TextView txtViewBravo, score, scoreJoueur, temps, tempsJoueur, nbQuestion, nbQuestionJoueur, newRecord, pseudo;
+    private TextView txtViewBravo, score, scoreJoueur, temps, tempsJoueur, nbQuestion, nbQuestionJoueur, newRecord, pseudo, goScoreBoard;
     private ImageView speak;
     private Button btnOk, btnLang;
     private EditText saisiePseudo;
     private TextToSpeech tts;
     private DialogLang dl;
     private String lang = "";
+    protected DbAdapter db;
+    private LinearLayout layoutSaisieNewRecord, layoutNewRecord;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +51,15 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(EndGameActivity.this, BoardActivity.class);
-                startActivity(i);
+                if(saisiePseudo.getText().toString().equals("")){
+                    saisiePseudo.setBackgroundColor(R.color.monRouge);
+                }else{
+                    Intent i = new Intent(EndGameActivity.this, BoardActivity.class);
+                    // TODO : faire passer le contrat
+                    i.putExtra("pseudo",saisiePseudo.getText().toString());
+                    i.putExtra("score", scoreJoueur.getText().toString());
+                    startActivity(i);
+                }
             }
         });
 
@@ -74,6 +87,39 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
         nbQuestionJoueur.setTypeface(tfLight);
         pseudo.setTypeface(tfLight);
         newRecord.setTypeface(tfMedium);
+
+        // Vérification que le score soit dans les 10 premiers
+        boolean nouveauRecord = false;
+        int sj = Integer.parseInt(scoreJoueur.getText().toString());
+        db = new DbAdapter(this);
+        db.open();
+        Gagnant[] lesGagnants = db.getGagnantsByIdContrat(15);
+        for(int i = 0; i<lesGagnants.length; i++){
+            if(lesGagnants[i].getScore() < sj){
+                nouveauRecord = true;
+            }
+        }
+        layoutSaisieNewRecord = (LinearLayout) findViewById(R.id.layoutSaisieNewRecord);
+        layoutNewRecord = (LinearLayout) findViewById(R.id.layoutNewRecord);
+        goScoreBoard = (TextView) findViewById(R.id.goScoreBoard);
+        if(nouveauRecord == false){
+            layoutNewRecord.setVisibility(View.INVISIBLE);
+            layoutSaisieNewRecord.setVisibility(View.INVISIBLE);
+            goScoreBoard.setVisibility(View.VISIBLE);
+        } else {
+            layoutNewRecord.setVisibility(View.VISIBLE);
+            layoutSaisieNewRecord.setVisibility(View.VISIBLE);
+            goScoreBoard.setVisibility(View.INVISIBLE);
+        }
+
+        // Event passage au tablau des scores sans nouveau record
+        goScoreBoard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(EndGameActivity.this, BoardActivity.class);
+                startActivity(i);
+            }
+        });
 
         // Récupération langue en cours + event speaker
         tts = new TextToSpeech(this,this);

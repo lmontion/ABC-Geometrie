@@ -66,7 +66,7 @@ public class DbAdapter {
                     "('Contrat 40 points', 40, 2, '')," +
                     "('Contrat 10 points', 10, 3, '')," +
                     "('Contrat 20 points', 20, 3, '')," +
-                    "('Contrat 40 points', 40, 3, '');";
+                    "('Contrat 40 points', 40, 3, '');";*/
 
     private static final String INSERT_TABLE_GAGNANT =
             "insert into gagnant (pseudo, score, idContrat) values" +
@@ -86,8 +86,6 @@ public class DbAdapter {
                     "('Hakim', 200, 15)," + "('Carlos', 50, 15)," + "('Adrien', 600, 15)," + "('Sophie', 150, 15)," +
                     "('Serge', 450, 15)," + "('Pascale', 150, 15)," + "('Mathieu', 650, 15)," + "('Valentin', 550, 15)," +
                     "('Hubert', 300, 15)," + "('Seb', 400, 15)," + "('Mohammed', 200, 15)," + "('Aziz', 700, 15);";
-
-*/
 
     private static final String INSERT_TABLE_CONTRAT =
             "insert into contrat values" +
@@ -113,7 +111,7 @@ public class DbAdapter {
 
 
     private static final String DATABASE_NAME = "ABC_Geometrie";
-    private static final int DATABASE_VERSION = 7;
+    private static final int DATABASE_VERSION = 12;
     private final Context mCtx;
 
 
@@ -130,8 +128,8 @@ public class DbAdapter {
             db.execSQL(CREATE_TABLE_QUESTION);
             db.execSQL(CREATE_TABLE_APPARTENIR);
             db.execSQL(INSERT_TABLE_CONTRAT);
-            /*db.execSQL(INSERT_TABLE_GAGNANT);
-            db.execSQL(INSERT_TABLE_QUESTION);
+            db.execSQL(INSERT_TABLE_GAGNANT);
+            /*db.execSQL(INSERT_TABLE_QUESTION);
             db.execSQL(INSERT_TABLE_APPARTENIR);*/
             db.execSQL(INSERT_TABLE_QUESTION_LVL1);
             db.execSQL(INSERT_TABLE_APPARTENIR_LVL1);
