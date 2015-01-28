@@ -1,0 +1,165 @@
+INSERT INTO question VALUES
+(0,'Clique sur le carré blanc','Click on the white square.','Selecciona el cuadrado blanco.','1.png','14.png','16.png','18.png'),
+(1,'Clique sur le carré bleu','Click on the blue square.','Selecciona el cuadrado azul.','17.png','18.png','19.png','22.png'),
+(2,'Clique sur le carré gris','Click on the grey square.','Selecciona el cuadrado gris','22.png','17.png','18.png','21.png'),
+(3,'Clique sur le carré jaune','Click on the yellow square.','Selecciona el cuadrado amarillo .','13.png','14.png','15.png','21.png'),
+(4,'Clique sur le carré marron','Click on the brown square.','Selecciona el cuadrado marrón.','20.png','12.png','13.png','19.png'),
+(5,'Clique sur le carré noir','Click on the black square.','Selecciona el cuadrado negro.','21.png','16.png','17.png','20.png'),
+(6,'Clique sur le carré orange','Click on the orange square.','Selecciona el cuadrado naranja.','14.png','16.png','18.png','19.png'),
+(7,'Clique sur le carré rose','Click on the pink square.','Selecciona el cuadrado rosa.','15.png','14.png','17.png','22.png'),
+(8,'Clique sur le carré rouge','Click on the red square.','Selecciona el cuadrado rojo.','16.png','14.png','17.png','19.png'),
+(9,'Clique sur le carré vert','Click on the green square.','Selecciona el cuadrado verde.','18.png','15.png','19.png','20.png'),
+(10,'Clique sur le carré violet','Click on the purple square.','Selecciona el cuadrado morado','19.png','16.png','17.png','18.png'),
+(11,'Clique sur le losange blanc','Click on the white diamond.','Selecciona el diamante blanco.','56.png','57.png','59.png','66.png'),
+(12,'Clique sur le losange bleu','Click on the blue diamond.','Selecciona el diamante azul.','61.png','59.png','62.png','63.png'),
+(13,'Clique sur le losange gris','Click on the grey diamond.','Selecciona el diamante gris.','66.png','57.png','58.png','64.png'),
+(14,'Clique sur le losange jaune','Click on the yellow diamond.','Selecciona el diamante amarillo ','57.png','60.png','62.png','64.png'),
+(15,'Clique sur le losange marron','Click on the brown diamond.','Selecciona el diamante marrón','64.png','58.png','61.png','66.png'),
+(16,'Clique sur le losange noir','Click on the black diamond.','Selecciona el diamante negro.','65.png','60.png','62.png','64.png'),
+(17,'Clique sur le losange orange','Click on the orange diamond.','Selecciona el diamante naranja.','58.png','57.png','61.png','63.png'),
+(18,'Clique sur le losange rose','Click on the pink diamond.','Selecciona el diamante rosa.','59.png','56.png','61.png','63.png'),
+(19,'Clique sur le losange rouge','Click on the red diamond.','Selecciona el diamante rojo.','60.png','56.png','61.png','62.png'),
+(20,'Clique sur le losange vert','Click on the green diamond.','Selecciona el diamante verde.','62.png','60.png','63.png','66.png'),
+(21,'Clique sur le losange violet','Click on the purple diamond.','Selecciona el diamante morado.','63.png','60.png','64.png','66.png'),
+(22,'Clique sur l ovale blanc','Click on the white oval.','Selecciona el oval blanco.','45.png','47.png','50.png','51.png'),
+(23,'Clique sur l ovale bleu','Click on the blue oval.','Selecciona el oval azul.','50.png','51.png','54.png','55.png'),
+(24,'Clique sur l ovale gris','Click on the grey oval.','Selecciona el oval gris.','55.png','47.png','51.png','53.png'),
+(25,'Clique sur l ovale jaune','Click on the yellow oval.','Selecciona el oval amarillo .','46.png','45.png','48.png','53.png'),
+(26,'Clique sur l ovale marron','Click on the brown oval.','Selecciona el oval marrón.','53.png','45.png','48.png','50.png'),
+(27,'Clique sur l ovale noir','Click on the black oval.','Selecciona el oval negro.','54.png','48.png','50.png','53.png'),
+(28,'Clique sur l ovale orange','Click on the orange oval.','Selecciona el oval naranja.','47.png','49.png','50.png','55.png'),
+(29,'Clique sur l ovale rose','Click on the pink oval.','Selecciona el oval rosa.','48.png','51.png','53.png','54.png'),
+(30,'Clique sur l ovale rouge','Click on the red oval.','Selecciona el oval rojo.','49.png','46.png','48.png','52.png'),
+(31,'Clique sur l ovale vert','Click on the green oval.','Selecciona el oval verde.','51.png','49.png','52.png','55.png'),
+(32,'Clique sur l ovale violet','Click on the purple oval.','Selecciona el oval morado.','52.png','45.png','49.png','54.png'),
+(33,'Clique sur le rectangle blanc','Click on the white rectangle.','Selecciona el rectángulo blanco.','23.png','25.png','29.png','30.png'),
+(34,'Clique sur le rectangle bleu','Click on the blue rectangle.','Selecciona el rectángulo azul.','28.png','24.png','25.png','30.png'),
+(35,'Clique sur le rectangle gris','Click on the grey rectangle.','Selecciona el rectángulo gris.','33.png','25.png','28.png','30.png'),
+(36,'Clique sur le rectangle jaune','Click on the yellow rectangle.','Selecciona el cuadrado amarillo .','24.png','25.png','26.png','29.png'),
+(37,'Clique sur le rectangle marron','Click on the brown rectangle.','Selecciona el rectángulo marrón.','31.png','25.png','27.png','33.png'),
+(38,'Clique sur le rectangle noir','Click on the black rectangle.','Selecciona el rectángulo negro.','32.png','24.png','30.png','33.png'),
+(39,'Clique sur le rectangle orange','Click on the orange rectangle.','Selecciona el rectángulo naranja.','25.png','27.png','29.png','33.png'),
+(40,'Clique sur le rectangle rose','Click on the pink rectangle.','Selecciona el rectángulo rosa.','26.png','25.png','30.png','31.png'),
+(41,'Clique sur le rectangle rouge','Click on the red rectangle.','Selecciona el rectángulo rojo.','27.png','28.png','29.png','32.png'),
+(42,'Clique sur le rectangle vert','Click on the green rectangle.','Selecciona el rectángulo verde.','29.png','23.png','28.png','31.png'),
+(43,'Clique sur le rectangle violet','Click on the purple rectangle.','Selecciona el rectángulo morado.','30.png','27.png','28.png','32.png'),
+(44,'Clique sur le rond blanc','Click on the white circle.','Selecciona el disco blanco.','01.png','11.png','4.png','6.png'),
+(45,'Clique sur le rond bleu','Click on the blue circle.','Selecciona el disco azul.','6.png','4.png','7.png','8.png'),
+(46,'Clique sur le rond gris','Click on the grey circle.','Selecciona el disco gris.','11.png','10.png','4.png','5.png'),
+(47,'Clique sur le rond jaune','Click on the yellow circle.','Selecciona el disco amarillo .','2.png','4.png','6.png','8.png'),
+(48,'Clique sur le rond marron','Click on the brown circle.','Selecciona el disco marrón.','9.png','2.png','3.png','8.png'),
+(49,'Clique sur le rond noir','Click on the black circle.','Selecciona el disco negro.','10.png','4.png','7.png','8.png'),
+(50,'Clique sur le rond orange','Click on the orange circle.','Selecciona el disco naranja.','3.png','2.png','4.png','5.png'),
+(51,'Clique sur le rond rose','Click on the pink circle.','Selecciona el disco rosa.','4.png','5.png','6.png','7.png'),
+(52,'Clique sur le rond rouge','Click on the red circle.','Selecciona el disco rojo.','5.png','3.png','6.png','7.png'),
+(53,'Clique sur le rond vert','Click on the green circle.','Selecciona el disco verde.','7.png','10.png','4.png','8.png'),
+(54,'Clique sur le rond violet','Click on the purple circle.','Selecciona el disco morado.','8.png','11.png','5.png','9.png'),
+(55,'Clique sur le triangle blanc','Click on the white triangle.','Selecciona el triángulo blanco.','34.png','35.png','42.png','43.png'),
+(56,'Clique sur le triangle bleu','Click on the blue triangle.','Selecciona el triángulo azul.','39.png','36.png','38.png','40.png'),
+(57,'Clique sur le triangle gris','Click on the grey triangle.','Selecciona el triángulo gris.','44.png','38.png','39.png','43.png'),
+(58,'Clique sur le triangle jaune','Click on the yellow triangle.','Selecciona el triángulo amarillo .','35.png','36.png','43.png','44.png'),
+(59,'Clique sur le triangle marron','Click on the brown triangle.','Selecciona el triángulo marrón.','42.png','35.png','36.png','40.png'),
+(60,'Clique sur le triangle noir','Click on the black triangle.','Selecciona el triángulo negro.','43.png','37.png','38.png','41.png'),
+(61,'Clique sur le triangle orange','Click on the orange triangle.','Selecciona el triángulo naranja.','36.png','38.png','39.png','42.png'),
+(62,'Clique sur le triangle rose','Click on the pink triangle.','Selecciona el triángulo rosa.','37.png','38.png','39.png','44.png'),
+(63,'Clique sur le triangle rouge','Click on the red triangle.','Selecciona el triángulo rojo.','38.png','35.png','40.png','42.png'),
+(64,'Clique sur le triangle vert','Click on the green triangle.','Selecciona el triángulo verde.','40.png','38.png','43.png','44.png'),
+(65,'Clique sur le triangle violet','Click on the purple triangle.','Selecciona el triángulo morado.','41.png','35.png','36.png','39.png'),
+(66,'Clique sur l ovale rouge','Click on the red oval.','Selecciona el oval rojo','49.png','22.png','25.png','64.png'),
+(67,'Clique sur le carré jaune','Click on the yellow square.','Selecciona el cuadrado amarillo .','13.png','31.png','44.png','49.png'),
+(68,'Clique sur le losange bleu','Click on the blue diamond.','Selecciona el diamante azul.','61.png','10.png','18.png','24.png'),
+(69,'Clique sur le rectangle orange','Click on the orange rectangle.','Selecciona el rectángulo naranja.','25.png','38.png','51.png','9.png'),
+(70,'Clique sur le rond blanc','Click on the white circle.','Selecciona el disco blanco.','1.png','14.png','32.png','38.png'),
+(71,'Clique sur le triangle rose','Click on the pink triangle.','Selecciona el triángulo rosa.','37.png','3.png','55.png','61.png'),
+(72,'Clique sur l ovale rose','Click on the pink oval.','Selecciona el oval rosa.','48.png','13.png','39.png','66.png'),
+(73,'Clique sur le carré blanc','Click on the white square.','Selecciona el cuadrado blanco.','12.png','30.png','36.png','50.png'),
+(74,'Clique sur le losange rouge','Click on the red diamond.','Selecciona el diamante rojo.','60.png','2.png','21.png','50.png'),
+(75,'Clique sur le rectangle jaune','Click on the yellow rectangle.','Selecciona el rectángulo amarillo .','24.png','10.png','18.png','53.png'),
+(76,'Clique sur le rond gris','Click on the grey circle.','Selecciona el disco gris.','11.png','17.png','40.png','49.png'),
+(77,'Clique sur le triangle orange','Click on the orange triangle.','Selecciona el triángulo naranja.','36.png','10.png','49.png','61.png'),
+(78,'Clique sur l ovale noir','Click on the black oval.','Selecciona el oval negro.','54.png','16.png','29.png','9.png'),
+(79,'Clique sur le carré vert','Click on the green square.','Selecciona el cuadrado verde.','18.png','30.png','38.png','55.png'),
+(80,'Clique sur le losange gris','Click on the grey diamond.','Selecciona el diamante gris.','66.png','15.png','30.png','5.png'),
+(81,'Clique sur le rectangle violet','Click on the purple rectangle.','Selecciona el rectángulo morado.','30.png','54.png','58.png','7.png'),
+(82,'Clique sur le rond bleu','Click on the blue circle.','Selecciona el disco azul.','6.png','14.png','40.png','53.png'),
+(83,'Clique sur le triangle marron','Click on the brown triangle.','Selecciona el triángulo marrón.','42.png','46.png','61.png','8.png'),
+(84,'Clique sur le carré violet','Click on the purple square.','Selecciona el cuadrado morado.','19.png','37.png','5.png','65.png'),
+(85,'Clique sur le losange blanc','Click on the white diamond.','Selecciona el diamante blanco.','56.png','28.png','36.png','5.png'),
+(86,'Clique sur le ovale gris','Click on the grey oval.','Selecciona el oval gris.','55.png','31.png','34.png','7.png'),
+(87,'Clique sur le rectangle marron','Click on the brown rectangle.','Selecciona el rectángulo marrón.','31.png','1.png','39.png','49.png'),
+(88,'Clique sur le rond vert','Click on the green circle.','Selecciona el disco verde.','7.png','15.png','27.png','44.png'),
+(89,'Clique sur le triangle noir','Click on the black triangle.','Selecciona el triángulo negro.','43.png','19.png','27.png','3.png'),
+(90,'Clique sur l ovale bleu','Click on the blue oval.','Selecciona el oval azul.','50.png','10.png','25.png','38.png'),
+(91,'Clique sur le carré orange','Click on the orange square.','Selecciona el cuadrado naranja.','14.png','27.png','52.png','7.png'),
+(92,'Clique sur le losange vert','Click on the green diamond.','Selecciona el diamante verde.','62.png','14.png','32.png','6.png'),
+(93,'Clique sur le rectangle rose','Click on the pink rectangle.','Selecciona el rectángulo rosa.','26.png','22.png','51.png','57.png'),
+(94,'Clique sur le rond jaune','Click on the yellow circle.','Selecciona el disco amarillo ','2.png','17.png','26.png','54.png'),
+(95,'Clique sur le triangle rouge','Click on the red triangle.','Selecciona el triángulo rojo.','38.png','10.png','18.png','31.png'),
+(96,'Clique sur l ovale blanc','Click on the white oval.','Selecciona el oval blanco.','45.png','14.png','28.png','41.png'),
+(97,'Clique sur le carré marron','Click on the brown square.','Selecciona el cuadrado marrón.','20.png','2.png','55.png','58.png'),
+(98,'Clique sur le losange jaune','Click on the yellow diamond.','Selecciona el diamante amarillo .','57.png','20.png','3.png','30.png'),
+(99,'Clique sur le rectangle noir','Click on the black rectangle.','Selecciona el rectángulo negro.','32.png','15.png','36.png','6.png'),
+(100,'Clique sur le rond violet','Click on the purple circle.','Selecciona el disco morado.','8.png','25.png','39.png','64.png'),
+(101,'Clique sur le triangle gris','Click on the grey triangle.','Selecciona el triángulo gris.','44.png','32.png','50.png','60.png'),
+(102,'Clique sur l ovale vert','Click on the green oval.','Selecciona el oval verde.','51.png','20.png','41.png','56.png'),
+(103,'Clique sur le  triangle bleu','Click on the blue triangle.','Selecciona el triángulo azul.','39.png','3.png','55.png','57.png'),
+(104,'Clique sur le carré rose','Click on the pink square.','Selecciona el cuadrado rosa.','15.png','24.png','40.png','55.png'),
+(105,'Clique sur le losange violet','Click on the purple diamond.','Selecciona el diamante morado.','63.png','1.png','17.png','25.png'),
+(106,'Clique sur le rectangle rouge','Click on the red rectangle.','Selecciona el rectángulo rojo.','27.png','14.png','63.png','7.png'),
+(107,'Clique sur le rond orange','Click on the orange circle.','Selecciona el disco naranja.','3.png','16.png','41.png','54.png'),
+(108,'Clique sur l ovale jaune','Click on the yellow oval.','Selecciona el oval amarillo .','46.png','15.png','3.png','40.png'),
+(109,'Clique sur le carré noir','Click on the black square.','Selecciona el cuadrado negro.','21.png','39.png','46.png','64.png'),
+(110,'Clique sur le losange orange','Click on the orange diamond.','Selecciona el diamante naranja.','58.png','15.png','2.png','30.png'),
+(111,'Clique sur le rectangle gris','Click on the grey rectangle.','Selecciona el rectángulo gris.','33.png','19.png','24.png','39.png'),
+(112,'Clique sur le rond marron','Click on the brown circle.','Selecciona el disco marrón.','9.png','27.png','36.png','50.png'),
+(113,'Clique sur le triangle blanc','Click on the white triangle.','Selecciona el triángulo blanco.','34.png','28.png','3.png','52.png'),
+(114,'Clique sur l ovale violet','Click on the purple oval.','Selecciona el oval morado.','52.png','17.png','3.png','38.png'),
+(115,'Clique sur le carré rouge','Click on the red square.','Selecciona el cuadrado rojo.','16.png','29.png','4.png','57.png'),
+(116,'Clique sur le losange marron','Click on the brown diamond.','Selecciona el diamante marrón.','64.png','25.png','52.png','6.png'),
+(117,'Clique sur le rectangle bleu','Click on the blue rectangle.','Selecciona el rectángulo azul.','28.png','13.png','49.png','59.png'),
+(118,'Clique sur le rond rose','Click on the pink circle.','Selecciona el disco rosa.','4.png','33.png','41.png','54.png'),
+(119,'Clique sur le triangle vert','Click on the green triangle.','Selecciona el triángulo verde.','40.png','22.png','28.png','49.png'),
+(120,'Clique sur l ovale orange','Click on the orange oval.','Selecciona el oval naranja.','47.png','19.png','29.png','4.png'),
+(121,'Clique sur le carré gris','Click on the grey square.','Selecciona el cuadrado gris.','22.png','29.png','38.png','46.png'),
+(122,'Clique sur le losange rose','Click on the pink diamond.','Selecciona el diamante rosa.','59.png','13.png','38.png','54.png'),
+(123,'Clique sur le rectangle blanc','Click on the white rectangle.','Selecciona el rectángulo blanco.','23.png','14.png','61.png','9.png'),
+(124,'Clique sur le rond noir','Click on the black circle.','Selecciona el disco negro.','10.png','40.png','47.png','63.png'),
+(125,'Clique sur le triangle jaune','Click on the yellow triangle.','Selecciona el triángulo amarillo .','35.png','20.png','3.png','62.png'),
+(126,'Clique sur l ovale marron','Click on the brown oval.','Selecciona el oval marrón.','53.png','21.png','36.png','6.png'),
+(127,'Clique sur le carré bleu','Click on the blue square.','Selecciona el cuadrado azul.','17.png','29.png','60.png','9.png'),
+(128,'Clique sur le losange noir','Click on the black diamond.','Selecciona el diamante negro.','65.png','27.png','37.png','46.png'),
+(129,'Clique sur le rectangle vert','Click on the green rectangle.','Selecciona el rectángulo verde.','29.png','3.png','55.png','57.png'),
+(130,'Clique sur le rond rouge','Click on the red circle.','Selecciona el disco rojo.','5.png','21.png','33.png','40.png'),
+(131,'Clique sur le triangle violet','Click on the purple triangle.','Selecciona el triángulo morado','41.png','15.png','51.png','57.png'),
+(132,'Clique sur l ovale blanc','Click on the white oval.','Selecciona el oval blanco.','45.png','1.png','12.png','23.png'),
+(133,'Clique sur l ovale bleu','Click on the blue oval.','Selecciona el oval azul.','50.png','17.png','28.png','6.png'),
+(134,'Clique sur l ovale gris','Click on the grey oval.','Selecciona el oval gris.','55.png','11.png','33.png','66.png'),
+(135,'Clique sur l ovale orange','Click on the orange oval.','Selecciona el oval anaranjado.','47.png','14.png','3.png','58.png'),
+(136,'Clique sur l ovale vert','Click on the green oval.','Selecciona el oval verde.','51.png','18.png','40.png','7.png'),
+(137,'Clique sur l ovale violet','Click on the purple oval.','Selecciona el oval morado.','52.png','19.png','63.png','8.png'),
+(138,'Clique sur le carré blanc','Click on the white square.','Selecciona el cuadrado blanco.','12.png','23.png','34.png','45.png'),
+(139,'Clique sur le carré noir','Click on the black square.','Selecciona el cuadrado negro.','21.png','43.png','54.png','65.png'),
+(140,'Clique sur le carré rose','Click on the pink square.','Selecciona el cuadrado rosa.','15.png','26.png','4.png','48.png'),
+(141,'Clique sur le carré violet','Click on the purple square.','Selecciona el cuadrado morado.','19.png','41.png','63.png','8.png'),
+(142,'Clique sur le losange jaune','Click on the yellow diamond.','Selecciona el diamante amarillo .','57.png','13.png','24.png','35.png'),
+(143,'Clique sur le losange marron','Click on the brown diamond.','Selecciona el diamante marrón.','64.png','20.png','53.png','9.png'),
+(144,'Clique sur le losange noir','Click on the black diamond.','Selecciona el diamante negro.','65.png','10.png','21.png','32.png'),
+(145,'Clique sur le losange rose','Click on the pink diamond.','Selecciona el diamante rosa.','59.png','15.png','26.png','37.png'),
+(146,'Clique sur le losange rouge','Click on the red diamond.','Selecciona el diamante rojo.','60.png','56.png','61.png','62.png'),
+(147,'Clique sur le rectangle bleu','Click on the blue rectangle.','Selecciona el rectángulo azul.','28.png','17.png','6.png','61.png'),
+(148,'Clique sur le rectangle jaune','Click on the yellow rectangle.','Selecciona el rectángulo amarillo .','25.png','13.png','35.png','46.png'),
+(149,'Clique sur le rectangle marron','Click on the brown rectangle.','Selecciona el rectángulo marrón.','31.png','20.png','42.png','53.png'),
+(150,'Clique sur le rectangle noir','Click on the black rectangle.','Selecciona el rectángulo negro.','32.png','10.png','21.png','43.png'),
+(151,'Clique sur le rectangle orange','Click on the orange rectangle.','Selecciona el rectángulo naranja.','25.png','14.png','36.png','58.png'),
+(152,'Clique sur le rectangle violet','Click on the purple rectangle.','Selecciona el rectángulo morado.','30.png','19.png','41.png','52.png'),
+(153,'Clique sur le rond gris','Click on the grey circle.','Selecciona el disco gris.','11.png','44.png','55.png','66.png'),
+(154,'Clique sur le rond jaune','Click on the yellow circle.','Selecciona el disco amarillo ','2.png','24.png','46.png','57.png'),
+(155,'Clique sur le rond marron','Click on the brown circle.','Selecciona el disco marrón.','9.png','20.png','31.png','42.png'),
+(156,'Clique sur le rond orange','Click on the orange circle.','Selecciona el disco naranja.','3.png','14.png','25.png','36.png'),
+(157,'Clique sur le rond rouge','Click on the red circle.','Selecciona el disco rojo.','5.png','27.png','38.png','49.png'),
+(158,'Clique sur le rond vert','Click on the green circle.','Selecciona el disco verde.','7.png','18.png','40.png','62.png'),
+(159,'Clique sur le triangle blanc','Click on the white triangle.','Selecciona el triángulo blanco.','34.png','1.png','23.png','56.png'),
+(160,'Clique sur le triangle gris','Click on the grey triangle.','Selecciona el triángulo gris.','44.png','33.png','55.png','66.png'),
+(161,'Clique sur le triangle rose','Click on the pink triangle.','Selecciona el triángulo rosa.','37.png','26.png','4.png','59.png'),
+(162,'Clique sur le triangle rouge','Click on the red triangle.','Selecciona el triángulo rojo.','38.png','16.png','5.png','60.png'),
+(163,'Clique sur le triangle vert','Click on the green triangle.','Selecciona el triángulo verde.','40.png','18.png','29.png','51.png');
