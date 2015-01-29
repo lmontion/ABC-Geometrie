@@ -8,4 +8,5 @@
     <color name="monVert">#A2C037</color>
     <color name="monBlanc">#ffffff</color>
     <color name="monNoir">#000000</color>
+    <color name="transparent">#00000000</color>
 </resources>

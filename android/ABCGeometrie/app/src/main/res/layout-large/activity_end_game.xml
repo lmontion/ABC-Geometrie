@@ -182,7 +182,7 @@
                     android:textColor="@color/monBlanc"
                     android:background="@color/monVert"
                     android:id="@+id/btnOk" />
-             </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
