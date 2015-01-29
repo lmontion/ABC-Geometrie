@@ -74,10 +74,11 @@ public class Contrat implements java.io.Serializable{
         Random r = new Random();
         int index = r.nextInt(lstQuestions.size());
         Question laQuestion = lstQuestions.get(index);
-        if(dejaPosee(laQuestion) == true){
-            chooseAQuestion();
-        }
-        lstQuestionsPosees.add(laQuestion);
+        //if(dejaPosee(laQuestion) == true){
+            //chooseAQuestion();
+        //}
+        //lstQuestionsPosees.add(laQuestion);
+        lstQuestions.remove(index);
         return laQuestion;
     }
 

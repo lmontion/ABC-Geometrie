@@ -87,6 +87,8 @@ public class DbAdapter {
                     "('Serge', 450, 15)," + "('Pascale', 150, 15)," + "('Mathieu', 650, 15)," + "('Valentin', 550, 15)," +
                     "('Hubert', 300, 15)," + "('Seb', 400, 15)," + "('Mohammed', 200, 15)," + "('Aziz', 700, 15);";
 
+
+
     private static final String INSERT_TABLE_CONTRAT =
             "insert into contrat values" +
                     "(0,'Contrat 10 points', 10, 1, 'couleurs')," +
@@ -111,7 +113,7 @@ public class DbAdapter {
 
 
     private static final String DATABASE_NAME = "ABC_Geometrie";
-    private static final int DATABASE_VERSION = 12;
+    private static final int DATABASE_VERSION = 10;
     private final Context mCtx;
 
 

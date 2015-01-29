@@ -61,6 +61,7 @@ public class DialogLang {
                 if (act.getClass() == QuestionActivity.class){
                     i.putExtra("contrat", con);
                     i.putExtra("question", question);
+                    i.putExtra("change", true);
                 }
                 act.startActivity(i);
             }
@@ -74,6 +75,7 @@ public class DialogLang {
                 if (act.getClass() == QuestionActivity.class){
                     i.putExtra("contrat", con);
                     i.putExtra("question", question);
+                    i.putExtra("change", true);
                 }
                 act.startActivity(i);
             }
@@ -87,6 +89,7 @@ public class DialogLang {
                 if (act.getClass() == QuestionActivity.class){
                     i.putExtra("contrat", con);
                     i.putExtra("question", question);
+                    i.putExtra("change", true);
                 }
                 act.startActivity(i);
             }

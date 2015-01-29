@@ -1,5 +1,5 @@
 INSERT INTO question VALUES
-(0,'Clique sur le carré blanc','Click on the white square.','Selecciona el cuadrado blanco.','1.png','14.png','16.png','18.png'),
+(0,'Clique sur le carré blanc','Click on the white square.','Selecciona el cuadrado blanco.','12.png','14.png','16.png','18.png'),
 (1,'Clique sur le carré bleu','Click on the blue square.','Selecciona el cuadrado azul.','17.png','18.png','19.png','22.png'),
 (2,'Clique sur le carré gris','Click on the grey square.','Selecciona el cuadrado gris','22.png','17.png','18.png','21.png'),
 (3,'Clique sur le carré jaune','Click on the yellow square.','Selecciona el cuadrado amarillo .','13.png','14.png','15.png','21.png'),
@@ -43,7 +43,7 @@ INSERT INTO question VALUES
 (41,'Clique sur le rectangle rouge','Click on the red rectangle.','Selecciona el rectángulo rojo.','27.png','28.png','29.png','32.png'),
 (42,'Clique sur le rectangle vert','Click on the green rectangle.','Selecciona el rectángulo verde.','29.png','23.png','28.png','31.png'),
 (43,'Clique sur le rectangle violet','Click on the purple rectangle.','Selecciona el rectángulo morado.','30.png','27.png','28.png','32.png'),
-(44,'Clique sur le rond blanc','Click on the white circle.','Selecciona el disco blanco.','01.png','11.png','4.png','6.png'),
+(44,'Clique sur le rond blanc','Click on the white circle.','Selecciona el disco blanco.','1.png','11.png','4.png','6.png'),
 (45,'Clique sur le rond bleu','Click on the blue circle.','Selecciona el disco azul.','6.png','4.png','7.png','8.png'),
 (46,'Clique sur le rond gris','Click on the grey circle.','Selecciona el disco gris.','11.png','10.png','4.png','5.png'),
 (47,'Clique sur le rond jaune','Click on the yellow circle.','Selecciona el disco amarillo .','2.png','4.png','6.png','8.png'),

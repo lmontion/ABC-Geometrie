@@ -123,8 +123,8 @@
             android:layout_width="50dp"
             android:layout_height="300dp"
             android:layout_centerHorizontal="true"
-            android:progress="5"
-            android:max="10"
+            android:progress="0"
+            android:max="40"
             style="@style/Widget.ProgressBar.Vertical"/>
 
         <TextView
@@ -133,7 +133,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_below="@+id/progressBarVertical"
-            android:text="18 pts"
+            android:text="0"
             android:textSize="33dp"
             android:layout_centerHorizontal="true"
             android:textColor="@color/monBlanc"/>

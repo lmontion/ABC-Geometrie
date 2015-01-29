@@ -5,22 +5,12 @@ package com.abcgeometrie.metier;
  */
 public class Jeu implements java.io.Serializable{
 
-    private int tempsSec;
     private int nbQuestionsNecessaires;
     private int nbQuestionsReussis;
 
-    public Jeu(int tempsSec, int nbQuestionsNecessaires, int nbQuestionsReussis) {
-        this.tempsSec = tempsSec;
+    public Jeu(int nbQuestionsNecessaires, int nbQuestionsReussis) {
         this.nbQuestionsNecessaires = nbQuestionsNecessaires;
         this.nbQuestionsReussis = nbQuestionsReussis;
-    }
-
-    public int getTemps() {
-        return tempsSec;
-    }
-
-    public void setTemps(int temps) {
-        this.tempsSec = temps;
     }
 
     public int getNbQuestionsNecessaires() {
@@ -39,8 +29,8 @@ public class Jeu implements java.io.Serializable{
         this.nbQuestionsReussis = nbQuestionsReussis;
     }
 
-    private int calculScore(int tempsSec){
-        return tempsSec * 10;
+    private int calculScore(){
+        return 10;
     }
 }
 

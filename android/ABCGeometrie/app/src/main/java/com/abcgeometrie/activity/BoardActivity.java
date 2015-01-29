@@ -1,18 +1,25 @@
 package com.abcgeometrie.activity;
 
+import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import com.abcgeometrie.R;
 import com.abcgeometrie.metier.DbAdapter;
 import com.abcgeometrie.metier.Gagnant;
+
+import java.util.ArrayList;
 
 /**
  * Created by Yanick on 22/01/2015.
@@ -92,6 +99,8 @@ public class BoardActivity extends ListActivity implements TextToSpeech.OnInitLi
         }
 
         // Génération de la liste des gagnants
+        DbAdapter db = new DbAdapter(this);
+        db.open();
         lstGagnants = db.getGagnantsByIdContrat(15);
         ColorArrayAdapter dataAdapter = new ColorArrayAdapter(this, R.layout.textview_gagnants, lstGagnants);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
