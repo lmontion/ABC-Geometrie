@@ -39,8 +39,13 @@ public class Jeu implements java.io.Serializable{
         this.nbQuestionsReussis = nbQuestionsReussis;
     }
 
-    private int calculScore(int tempsSec){
-        return tempsSec * 10;
+    private int calculScore(){
+        int nbMauvaiseRep = nbQuestionsNecessaires - nbQuestionsReussis;
+        int score = 50*nbQuestionsReussis - 25*nbMauvaiseRep;
+        if(score < 100) {
+            score = 100;
+        }
+        return score;
     }
 }
 

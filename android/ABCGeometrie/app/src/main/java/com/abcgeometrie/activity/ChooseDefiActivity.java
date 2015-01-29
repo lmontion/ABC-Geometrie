@@ -34,11 +34,12 @@ public class ChooseDefiActivity extends Activity implements TextToSpeech.OnInitL
         // Animation
         overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
 
-        // Boite de dialogue changement langue et affichage drapeaux
-        dl = new DialogLang(ChooseDefiActivity.this);
-
+        // Récupération des variables concernant le theme et le niveau selectionnés précedemment
         currentTheme = (String) getIntent().getExtras().get("theme");
         currentLvl = (int) getIntent().getExtras().get("lvl");
+
+        // Boite de dialogue changement langue et affichage drapeaux
+        dl = new DialogLang(ChooseDefiActivity.this, currentTheme, currentLvl);
 
         // Récupération des Boutons choix du contrat + event
         btn10 = (Button) findViewById(R.id.btn10);

@@ -2,17 +2,13 @@ Jeu :
 -> Affichage bonne / mauvaise rep 
 L -> Position des questions random 
 L -> Gestion question suivante
-L-> Condition fin qui réoriente vers la page "Bravo" + compteur
+L-> Condition fin qui réoriente vers la page "Bravo" (avec variables) + compteur
 -> Design
-Y -> Fonction calcul score et passage des variables vers la page "bravo"
 Y-> ProgressBar (compteur d'abbord)
 
 Page Bravo :
 -> Affichage variables
 -> Vérification que le changement de langue n'affecte pas l'affichage (général + variable)
-
-Page choix défi :
-Y -> débogue changement de langue
 
 Rq :
 -> Retour sans animation pour changement de langue

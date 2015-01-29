@@ -22,6 +22,8 @@ public class DialogLang {
     private Activity act = null;
     private Contrat con = null;
     private Question  question = null;
+    private String theme;
+    private int level;
 
     public DialogLang(Activity a, Contrat c, Question q) {
         this.act = a;
@@ -32,6 +34,13 @@ public class DialogLang {
 
     public DialogLang(Activity a) {
         this.act = a;
+        hiddenFlags();
+    }
+
+    public DialogLang(Activity a, String theme, int level){
+        this.act = a;
+        this.theme = theme;
+        this.level = level;
         hiddenFlags();
     }
 
@@ -58,6 +67,10 @@ public class DialogLang {
                 lang = "es";
                 changeLang(lang);
                 Intent i = new Intent(act.getBaseContext(), act.getClass());
+                if(act.getClass() == ChooseDefiActivity.class){
+                    i.putExtra("theme", theme);
+                    i.putExtra("lvl", level);
+                }
                 if (act.getClass() == QuestionActivity.class){
                     i.putExtra("contrat", con);
                     i.putExtra("question", question);
@@ -71,6 +84,10 @@ public class DialogLang {
                 lang = "fr";
                 changeLang(lang);
                 Intent i = new Intent(act.getBaseContext(), act.getClass());
+                if(act.getClass() == ChooseDefiActivity.class){
+                    i.putExtra("theme", theme);
+                    i.putExtra("lvl", level);
+                }
                 if (act.getClass() == QuestionActivity.class){
                     i.putExtra("contrat", con);
                     i.putExtra("question", question);
@@ -84,6 +101,10 @@ public class DialogLang {
                 lang = "en";
                 changeLang(lang);
                 Intent i = new Intent(act.getBaseContext(), act.getClass());
+                if(act.getClass() == ChooseDefiActivity.class){
+                    i.putExtra("theme", theme);
+                    i.putExtra("lvl", level);
+                }
                 if (act.getClass() == QuestionActivity.class){
                     i.putExtra("contrat", con);
                     i.putExtra("question", question);
