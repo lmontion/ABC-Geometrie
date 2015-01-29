@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by lucas on 21/01/15.
  */
-public class Question {
+public class Question implements java.io.Serializable{
     private int id;
     private String libelleFR, libelleEN, libelleES, urlImgSol, urlImg1, urlImg2, urlImg3;
 

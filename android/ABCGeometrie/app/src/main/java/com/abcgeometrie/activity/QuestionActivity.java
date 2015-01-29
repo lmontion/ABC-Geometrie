@@ -7,14 +7,13 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import java.util.ArrayList;
-
 import com.abcgeometrie.R;
 import com.abcgeometrie.metier.Contrat;
 import com.abcgeometrie.metier.DbAdapter;
@@ -24,14 +23,17 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
 
     private ImageView speak;
     private TextToSpeech tts;
-    private TextView txtViewQuestion, txtViewProgressBar;
+    private TextView txtViewQuestion;
     private Button btnLang;
     private ImageButton rep, img1, img2, img3;
     private DialogLang dl;
     private String lang = "";
     private String currentTheme;
     private int currentLvl, currentNbPointsContrat;
-    private Contrat con;
+    private Contrat con = null;
+    private Contrat conTemp = null;
+    private int idContrat;
+    private Question question = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,37 +46,24 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
         // Animation
         overridePendingTransition(R.anim.slide_haut, R.anim.slide_bas);
 
-        // Boite de dialogue changement langue et affichage drapeaux
-        dl = new DialogLang(QuestionActivity.this);
-
-        currentTheme = (String) getIntent().getExtras().get("theme");
-        currentLvl = (int) getIntent().getExtras().get("lvl");
-        currentNbPointsContrat = (int) getIntent().getExtras().get("nbPoints");
-
         // Récupération bouton et evenement
-		/*		
+        rep = (ImageButton) findViewById(R.id.rep1);
+        img1 = (ImageButton) findViewById(R.id.rep2);
+        img2 = (ImageButton) findViewById(R.id.rep3);
+        img3 = (ImageButton) findViewById(R.id.rep4);
         rep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(QuestionActivity.this, EndGameActivity.class);
                 startActivity(i);
             }
-        });*/
-
-        
-        rep = (ImageButton) findViewById(R.id.rep1);
-        img1 = (ImageButton) findViewById(R.id.rep2);
-        img2 = (ImageButton) findViewById(R.id.rep3);
-        img3 = (ImageButton) findViewById(R.id.rep4);
+        });
 
         // Application de la police
-        txtViewProgressBar = (TextView) findViewById(R.id.textViewProgressBar);
         txtViewQuestion = (TextView) findViewById(R.id.txtViewQuestion);
         Typeface tfLight = Typeface.createFromAsset(getAssets(), "fonts/orbitron-light.otf");
         Typeface tfMedium = Typeface.createFromAsset(getAssets(),"fonts/orbitron-medium.otf");
-        txtViewProgressBar.setTypeface(tfLight);
         txtViewQuestion.setTypeface(tfLight);
-
 
         // Récupération langue en cours + event speaker
         tts = new TextToSpeech(this, this);
@@ -86,43 +75,66 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
                 AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang,txtViewQuestion.getText().toString(),tts);
             }
         });
-        //txtViewQuestion.setText("lvl : "+currentLvl+" theme = "+currentTheme+" point contrat -> "+currentNbPointsContrat);
 
         // Drapeaux et event changement langue
+        lang = getBaseContext().getResources().getConfiguration().locale.getLanguage();
+        DbAdapter db = new DbAdapter(this);
+        db.open();
+        try{
+            conTemp = (Contrat) getIntent().getExtras().get("contrat");
+            con = conTemp;
+        }catch (Exception e){
+            Log.i("test","pas de contrat");
+        }
+
+        if (con == null){
+            currentTheme = (String) getIntent().getExtras().get("theme");
+            currentLvl = (int) getIntent().getExtras().get("lvl");
+            currentNbPointsContrat = (int) getIntent().getExtras().get("nbPoints");
+
+            con = db.getcontratByNiveauAndTheme(currentLvl, currentNbPointsContrat, currentTheme);
+        }
+
+        if (conTemp == null){
+            question = con.chooseAQuestion();
+        }else{
+            question = (Question) getIntent().getExtras().get("question");
+        }
+
+        // Boite de dialogue changement langue et affichage drapeaux
+        dl = new DialogLang(QuestionActivity.this, con, question);
         btnLang = (Button) findViewById(R.id.btnLang);
         btnLang.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 dl.onCreateDialog();
             }
         });
-
-        //lang = getBaseContext().getResources().getConfiguration().locale.getLanguage();
-
-        DbAdapter db = new DbAdapter(this);
-        db.open();
-
-        con = db.getcontratByNiveauAndTheme(currentLvl, currentNbPointsContrat, currentTheme);
-        Question question = con.chooseAQuestion();
-
-        txtViewQuestion.setText(question.getLibelleFR());
-/*
-        String foo = "This,that,other";
-        String[] split = foo.split(",");
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < split.length; i++) {
-            sb.append(split[i]);
-            if (i != split.length - 1) {
-                sb.append(" ");
-            }
+        if(lang.equals("fr")){
+            txtViewQuestion.setText(question.getLibelleFR());
         }
-        String joined = sb.toString();*/
+        if(lang.equals("es")){
+            txtViewQuestion.setText(question.getLibelleES());
+        }
+        if(lang.equals("en")){
+            txtViewQuestion.setText(question.getLibelleEN());
+        }
 
-        String test = question.getUrlImgSol();
-        String temp = test.split("\\.")[0];
+        String tempUrlSol = question.getUrlImgSol();
+        tempUrlSol = tempUrlSol.split("\\.")[0];
 
-        //String bidon = "R.drawable."+temp;
+        String tempUrlImg1 = question.getUrlImg1();
+        tempUrlImg1 = tempUrlImg1.split("\\.")[0];
 
-        //rep.setImageResource(Integer.parseInt(bidon));
+        String tempUrlImg2 = question.getUrlImg2();
+        tempUrlImg2 = tempUrlImg2.split("\\.")[0];
+
+        String tempUrlImg3 = question.getUrlImg3();
+        tempUrlImg3 = tempUrlImg3.split("\\.")[0];
+
+        rep.setImageResource(getResources().getIdentifier("a"+tempUrlSol, "drawable", getPackageName()));
+        img1.setImageResource(getResources().getIdentifier("a"+tempUrlImg1, "drawable", getPackageName()));
+        img2.setImageResource(getResources().getIdentifier("a"+tempUrlImg2, "drawable", getPackageName()));
+        img3.setImageResource(getResources().getIdentifier("a"+tempUrlImg3, "drawable", getPackageName()));
 
     }
 
@@ -137,7 +149,14 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
                 startActivity(intent);
             }
         };
-
+        DialogInterface.OnClickListener annuler = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent();
+                setResult(RESULT_OK, intent);
+                finish();
+            }
+        };
         builder.setPositiveButton("OK", ok);
         builder.setNegativeButton("Annuler", null);
         builder.show();
