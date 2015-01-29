@@ -24,7 +24,7 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
 
     private ImageView speak;
     private TextToSpeech tts;
-    private TextView txtViewQuestion;
+    private TextView txtViewQuestion, txtViewProgressBar;
     private Button btnLang;
     private ImageButton rep, img1, img2, img3;
     private DialogLang dl;
@@ -68,9 +68,11 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
         img3 = (ImageButton) findViewById(R.id.rep4);
 
         // Application de la police
+        txtViewProgressBar = (TextView) findViewById(R.id.textViewProgressBar);
         txtViewQuestion = (TextView) findViewById(R.id.txtViewQuestion);
         Typeface tfLight = Typeface.createFromAsset(getAssets(), "fonts/orbitron-light.otf");
         Typeface tfMedium = Typeface.createFromAsset(getAssets(),"fonts/orbitron-medium.otf");
+        txtViewProgressBar.setTypeface(tfLight);
         txtViewQuestion.setTypeface(tfLight);
 
 
@@ -102,7 +104,7 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
         con = db.getcontratByNiveauAndTheme(currentLvl, currentNbPointsContrat, currentTheme);
         Question question = con.chooseAQuestion();
 
-        //txtViewQuestion.setText(question.getLibelleFR());
+        txtViewQuestion.setText(question.getLibelleFR());
 /*
         String foo = "This,that,other";
         String[] split = foo.split(",");

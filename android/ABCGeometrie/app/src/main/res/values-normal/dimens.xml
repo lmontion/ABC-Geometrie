@@ -24,4 +24,25 @@
     <dimen name="choose_theme_margin_bottom">10dp</dimen>
     <dimen name="choose_theme_arrow_margin">164dp</dimen>
     <dimen name="choose_theme_arrow_margin_top">7dp</dimen>
+
+    <!-- Page Equipe -->
+    <dimen name="team_picture_margin">75dp</dimen>
+    <dimen name="team_text_margin">80dp</dimen>
+    <dimen name="team_text_size">34dp</dimen>
+    <dimen name="team_picture_width">135dp</dimen>
+    <dimen name="team_picture_height">34dp</dimen>
+
+    <!-- Page Jeu / Questions -->
+    <dimen name="label_question_top_margin">30dp</dimen>
+    <dimen name="label_question_bottom_margin">25dp</dimen>
+    <dimen name="label_question_left_margin">35dp</dimen>
+    <dimen name="question_text_size">45dp</dimen>
+    <dimen name="question_block_width">578dp</dimen>
+    <dimen name="question_answer_margin">20dp</dimen>
+    <dimen name="question_block_answer_width">315dp</dimen>
+    <dimen name="question_block_answer_height">171dp</dimen>
+
+    <!-- POP-UP changement langue -->
+    <dimen name="popup_flag_width">150dp</dimen>
+    <dimen name="popup_flag_height">81dp</dimen>
 </resources>
