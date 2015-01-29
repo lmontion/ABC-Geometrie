@@ -113,7 +113,7 @@ public class DbAdapter {
 
 
     private static final String DATABASE_NAME = "ABC_Geometrie";
-    private static final int DATABASE_VERSION = 10;
+    private static final int DATABASE_VERSION = 13;
     private final Context mCtx;
 
 

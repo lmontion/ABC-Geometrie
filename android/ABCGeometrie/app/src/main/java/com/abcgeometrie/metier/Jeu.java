@@ -29,9 +29,9 @@ public class Jeu implements java.io.Serializable{
         this.nbQuestionsReussis = nbQuestionsReussis;
     }
 
-    private int calculScore(){
-        int nbMauvaiseRep = nbQuestionsNecessaires - nbQuestionsReussis;
-        int score = 50*nbQuestionsReussis - 25*nbMauvaiseRep;
+    public int calculScore(){
+        int nbMauvaiseRep = this.nbQuestionsNecessaires - this.nbQuestionsReussis;
+        int score = 50*this.nbQuestionsReussis - 25*nbMauvaiseRep;
         if(score < 100) {
             score = 100;
         }
