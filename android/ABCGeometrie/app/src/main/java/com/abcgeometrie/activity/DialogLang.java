@@ -23,19 +23,15 @@ public class DialogLang {
     private Activity act = null;
     private Contrat con = null;
     private Question  question = null;
+    private Jeu jeu = null;
     private String theme;
     private int level;
-    private Jeu jeu = null;
 
-    public DialogLang(Activity a, Contrat c, Question q) {
+    public DialogLang(Activity a, Contrat c, Question q, Jeu j) {
         this.act = a;
         this.con = c;
         this.question = q;
-        hiddenFlags();
-    }
-
-    public DialogLang(Activity a) {
-        this.act = a;
+        this.jeu = j;
         hiddenFlags();
     }
 
@@ -45,17 +41,22 @@ public class DialogLang {
         hiddenFlags();
     }
 
-    public DialogLang(Activity a, String theme, int level){
-        this.act = a;
-        this.theme = theme;
-        this.level = level;
-        hiddenFlags();
-    }
-
     public DialogLang(Activity a, Contrat contrat, Jeu jeu) {
         this.act = a;
         this.con = contrat;
         this.jeu = jeu;
+        hiddenFlags();
+    }
+
+    public DialogLang(Activity a) {
+        this.act = a;
+        hiddenFlags();
+    }
+
+    public DialogLang(Activity a, String theme, int level){
+        this.act = a;
+        this.theme = theme;
+        this.level = level;
         hiddenFlags();
     }
 
@@ -82,13 +83,6 @@ public class DialogLang {
                 lang = "es";
                 changeLang(lang);
                 Intent i = new Intent(act.getBaseContext(), act.getClass());
-                if(act.getClass() == BoardActivity.class){
-                    i.putExtra("contrat", con);
-                }
-                if(act.getClass() == QuestionActivity.class || act.getClass() == EndGameActivity.class ){
-                    i.putExtra("jeu", jeu);
-                    i.putExtra("contrat", con);
-                }
                 if(act.getClass() == ChooseDefiActivity.class){
                     i.putExtra("theme", theme);
                     i.putExtra("lvl", level);
@@ -97,6 +91,14 @@ public class DialogLang {
                     i.putExtra("contrat", con);
                     i.putExtra("question", question);
                     i.putExtra("change", true);
+                    i.putExtra("jeu", jeu);
+                }
+                if(act.getClass() == BoardActivity.class){
+                    i.putExtra("contrat", con);
+                }
+                if(act.getClass() == EndGameActivity.class ){
+                    i.putExtra("jeu", jeu);
+                    i.putExtra("contrat", con);
                 }
                 act.startActivity(i);
             }
@@ -107,13 +109,6 @@ public class DialogLang {
                 lang = "fr";
                 changeLang(lang);
                 Intent i = new Intent(act.getBaseContext(), act.getClass());
-                if(act.getClass() == BoardActivity.class){
-                    i.putExtra("contrat", con);
-                }
-                if(act.getClass() == QuestionActivity.class || act.getClass() == EndGameActivity.class ){
-                    i.putExtra("jeu", jeu);
-                    i.putExtra("contrat", con);
-                }
                 if(act.getClass() == ChooseDefiActivity.class){
                     i.putExtra("theme", theme);
                     i.putExtra("lvl", level);
@@ -122,6 +117,14 @@ public class DialogLang {
                     i.putExtra("contrat", con);
                     i.putExtra("question", question);
                     i.putExtra("change", true);
+                    i.putExtra("jeu", jeu);
+                }
+                if(act.getClass() == BoardActivity.class){
+                    i.putExtra("contrat", con);
+                }
+                if(act.getClass() == EndGameActivity.class ){
+                    i.putExtra("jeu", jeu);
+                    i.putExtra("contrat", con);
                 }
                 act.startActivity(i);
             }
@@ -132,13 +135,6 @@ public class DialogLang {
                 lang = "en";
                 changeLang(lang);
                 Intent i = new Intent(act.getBaseContext(), act.getClass());
-                if(act.getClass() == BoardActivity.class){
-                    i.putExtra("contrat", con);
-                }
-                if(act.getClass() == QuestionActivity.class || act.getClass() == EndGameActivity.class ){
-                    i.putExtra("jeu", jeu);
-                    i.putExtra("contrat", con);
-                }
                 if(act.getClass() == ChooseDefiActivity.class){
                     i.putExtra("theme", theme);
                     i.putExtra("lvl", level);
@@ -147,6 +143,14 @@ public class DialogLang {
                     i.putExtra("contrat", con);
                     i.putExtra("question", question);
                     i.putExtra("change", true);
+                    i.putExtra("jeu", jeu);
+                }
+                if(act.getClass() == BoardActivity.class){
+                    i.putExtra("contrat", con);
+                }
+                if(act.getClass() == EndGameActivity.class ){
+                    i.putExtra("jeu", jeu);
+                    i.putExtra("contrat", con);
                 }
                 act.startActivity(i);
             }
