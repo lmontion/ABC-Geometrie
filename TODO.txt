@@ -1,14 +1,21 @@
 Jeu :
--> Affichage bonne / mauvaise rep 
 L -> Position des questions random 
-L -> Gestion question suivante
-L-> Condition fin qui réoriente vers la page "Bravo" (avec variables) + compteur
--> Design
-Y-> ProgressBar (compteur d'abbord)
+L -> Gestion de la langue
+L -> Ajout d'un timer avant de passer à la question suivante
+L -> Récupération des des questions du niveau 2
 
-Page Bravo :
--> Affichage variables
--> Vérification que le changement de langue n'affecte pas l'affichage (général + variable)
+T -> Découpage images
+T -> Design
+T -> Design dialog bouton retour
+T -> Descriptif des niveaux
 
-Rq :
--> Retour sans animation pour changement de langue
+Y -> Variable temps
+Y -> Animation par élément
+Y -> Retour sans animation pour changement de langue (bouton retour ?)
+Y -> Progress dialog
+
+M -> Maquettes affiches
+
+Autres:
+
+-> Voir pour les "'" dans les questions

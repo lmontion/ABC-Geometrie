@@ -107,6 +107,9 @@ public class DialogLang {
                 lang = "fr";
                 changeLang(lang);
                 Intent i = new Intent(act.getBaseContext(), act.getClass());
+                if(act.getClass() == BoardActivity.class){
+                    i.putExtra("contrat", con);
+                }
                 if(act.getClass() == QuestionActivity.class || act.getClass() == EndGameActivity.class ){
                     i.putExtra("jeu", jeu);
                     i.putExtra("contrat", con);
@@ -129,6 +132,9 @@ public class DialogLang {
                 lang = "en";
                 changeLang(lang);
                 Intent i = new Intent(act.getBaseContext(), act.getClass());
+                if(act.getClass() == BoardActivity.class){
+                    i.putExtra("contrat", con);
+                }
                 if(act.getClass() == QuestionActivity.class || act.getClass() == EndGameActivity.class ){
                     i.putExtra("jeu", jeu);
                     i.putExtra("contrat", con);
