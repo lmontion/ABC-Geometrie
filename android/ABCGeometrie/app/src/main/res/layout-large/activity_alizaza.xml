@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/monBleu">
 
@@ -38,64 +39,55 @@
 
     </RelativeLayout>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
+    <RelativeLayout
+        android:id="@+id/logoEtTitre"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp">
+        android:layout_marginTop="150dp">
 
         <TextView
+            android:id="@+id/txtViewAlizaza"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/logoAlizaza"
             android:text="@string/labeleAlizaza"
-            android:textSize="75px"
+            android:textSize="@dimen/title_size"
             android:textColor="@color/monBlanc"
-            android:paddingTop="25px"
-            android:gravity="center"
-            android:id="@+id/txtViewAlizaza" />
-    </LinearLayout>
+            android:paddingRight="@dimen/alizaza_logo_margin_right"
+            android:layout_centerVertical="true" />
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-        android:gravity="center">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/labeleAlizaza"
-            android:background="@drawable/alizaza"
-            android:textSize="75px"
-            android:textColor="@color/monBlanc"
-            android:paddingTop="25px"
-            android:gravity="center"
-            android:id="@+id/logoAlizaza" />
-    </LinearLayout>
+            android:id="@+id/logoAlizaza"
+            android:layout_marginRight="@dimen/alizaza_logo_margin_right"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_width="@dimen/alizaza_logo_dimension"
+            android:layout_height="@dimen/alizaza_logo_dimension"
+            android:layout_centerVertical="true"
+            android:src="@drawable/logo_alizaza"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="390dp">
+    </RelativeLayout>
 
         <TextView
+            android:id="@+id/txtActiviteAlizaza"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logoEtTitre"
             android:text="@string/activiteAlizaza"
-            android:textSize="40px"
+            android:textSize="@dimen/alizaza_text_size"
             android:textColor="@color/monBlanc"
-            android:paddingTop="25px"
+            android:layout_marginTop="@dimen/alizaza_description_margin_top"
             android:gravity="center"
-            android:id="@+id/txtActiviteAlizaza" />
-    </LinearLayout>
+            android:paddingRight="@dimen/alizaza_description_padding"
+            android:paddingLeft="@dimen/alizaza_description_padding"/>/>
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/labelSiteAlizaza"
-        android:textSize="30px"
+        android:textSize="@dimen/team_footer_text_size"
         android:textColor="@color/monBlanc"
         android:background="@color/monBleuFonce"
         android:gravity="center"

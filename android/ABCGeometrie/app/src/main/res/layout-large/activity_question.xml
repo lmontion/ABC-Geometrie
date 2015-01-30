@@ -112,16 +112,16 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="130dp"
+        android:layout_width="@dimen/block_progressbar_width"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/blocReponse"
         android:layout_toRightOf="@+id/blocReponse"
-        android:layout_marginLeft="45dp">
+        android:layout_marginLeft="@dimen/block_progressbar_margin_left">
 
         <ProgressBar
             android:id="@+id/progressBarVertical"
-            android:layout_width="50dp"
-            android:layout_height="300dp"
+            android:layout_width="@dimen/progressbar_width"
+            android:layout_height="@dimen/progressbar_height"
             android:layout_centerHorizontal="true"
             android:progress="0"
             android:max="40"
@@ -131,10 +131,10 @@
             android:id="@+id/textViewProgressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/progressbar_text_margin_top"
             android:layout_below="@+id/progressBarVertical"
-            android:text="0"
-            android:textSize="33dp"
+            android:text="22 / 40"
+            android:textSize="@dimen/progressbar_text_size"
             android:layout_centerHorizontal="true"
             android:textColor="@color/monBlanc"/>
 

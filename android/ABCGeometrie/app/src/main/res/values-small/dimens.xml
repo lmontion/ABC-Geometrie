@@ -26,10 +26,13 @@
 
     <!-- Page Equipe -->
     <dimen name="team_picture_margin">75dp</dimen>
-    <dimen name="team_text_margin">80dp</dimen>
+    <dimen name="team_text_margin">78dp</dimen>
     <dimen name="team_text_size">34dp</dimen>
     <dimen name="team_picture_width">135dp</dimen>
-    <dimen name="team_picture_height">34dp</dimen>
+    <dimen name="team_picture_height">134dp</dimen>
+    <dimen name="team_title_margin_botom">33dp</dimen>
+    <dimen name="team_footer_text_size">23dp</dimen>
+    <dimen name="team_text_margin_top">7dp</dimen>
 
     <!-- Page Jeu / Questions -->
     <dimen name="label_question_top_margin">30dp</dimen>
@@ -40,8 +43,21 @@
     <dimen name="question_answer_margin">20dp</dimen>
     <dimen name="question_block_answer_width">315dp</dimen>
     <dimen name="question_block_answer_height">171dp</dimen>
+    <dimen name="block_progressbar_width">145dp</dimen>
+    <dimen name="block_progressbar_margin_left">42dp</dimen>
+    <dimen name="progressbar_text_size">33dp</dimen>
+    <dimen name="progressbar_text_margin_top">15dp</dimen>
+    <dimen name="progressbar_width">50dp</dimen>
+    <dimen name="progressbar_height">305dp</dimen>
 
     <!-- POP-UP changement langue -->
     <dimen name="popup_flag_width">150dp</dimen>
     <dimen name="popup_flag_height">81dp</dimen>
+
+    <!-- Présentation ALIZAZA-->
+    <dimen name="alizaza_logo_dimension">185dp</dimen>
+    <dimen name="alizaza_text_size">30dp</dimen>
+    <dimen name="alizaza_logo_margin_right">35dp</dimen>
+    <dimen name="alizaza_description_margin_top">55dp</dimen>
+    <dimen name="alizaza_description_padding">15dp</dimen>
 </resources>

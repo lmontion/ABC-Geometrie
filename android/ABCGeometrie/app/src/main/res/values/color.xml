@@ -6,6 +6,7 @@
     <color name="monJaune">#d1b000</color>
     <color name="monRouge">#cb4f24</color>
     <color name="monVert">#A2C037</color>
+    <color name="vertProgressBar">#ff4cff09</color>
     <color name="monBlanc">#ffffff</color>
     <color name="monNoir">#000000</color>
     <color name="transparent">#00000000</color>

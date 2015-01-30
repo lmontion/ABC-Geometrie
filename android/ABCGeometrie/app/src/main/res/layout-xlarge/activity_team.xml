@@ -2,103 +2,150 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingBottom="0px"
     android:background="@color/monBleu">
 
+    <!--Bande de Boutons en haut -->
+    <RelativeLayout
+        android:id="@+id/barreBoutonHaut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/btnHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btnaccueil"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btnHome"
+            android:id="@+id/btnTTS"
+            android:src="@drawable/btnspeaker"
+            android:layout_marginLeft="30dp"/>
+
+        <Button
+            android:id="@+id/btnLang"
+            android:layout_width="@dimen/size_flag_lang_width"
+            android:layout_height="@dimen/size_flag_lang_height"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:background="@drawable/france"/>
+
+    </RelativeLayout>
+
     <LinearLayout
+        android:id="@+id/layoutHead"
         android:orientation="horizontal"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="190dp">
 
         <TextView
+            android:id="@+id/txtViewTeam"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:layout_marginBottom="@dimen/team_title_margin_botom"
             android:text="@string/labelTeam"
-            android:textSize="75px"
+            android:textSize="@dimen/title_size"
             android:textColor="@color/monBlanc"
-            android:paddingTop="25px"
-            android:gravity="center"
-            android:id="@+id/txtViewTeam" />
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bandeImages"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/layoutHead">
+
+        <ImageView
+            android:layout_width="@dimen/team_picture_width"
+            android:layout_height="@dimen/team_picture_height"
+            android:layout_marginRight="@dimen/team_picture_margin"
+            android:background="@drawable/avatartristan" />
+
+        <ImageView
+            android:layout_width="@dimen/team_picture_width"
+            android:layout_height="@dimen/team_picture_height"
+            android:layout_marginRight="@dimen/team_picture_margin"
+            android:background="@drawable/avatarmanon" />
+
+        <ImageView
+            android:layout_width="@dimen/team_picture_width"
+            android:layout_height="@dimen/team_picture_height"
+            android:layout_marginRight="@dimen/team_picture_margin"
+            android:background="@drawable/avataryanick"/>
+
+        <ImageView
+            android:layout_width="@dimen/team_picture_width"
+            android:layout_height="@dimen/team_picture_height"
+            android:background="@drawable/avatarlucas" />
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250px">
-
-        <TextView
-            android:layout_width="179px"
-            android:layout_height="181px"
-            android:layout_marginLeft="125px"
-            android:layout_marginRight="100px"
-            android:background="@drawable/avatartristan"
-            android:textSize="100px" />
-
-        <TextView
-            android:layout_width="179px"
-            android:layout_height="181px"
-            android:layout_marginRight="100px"
-            android:background="@drawable/avatarmanon"
-            android:textSize="100px" />
-
-            <TextView
-            android:layout_width="179px"
-            android:layout_height="181px"
-            android:layout_marginRight="100px"
-            android:background="@drawable/avataryanick"
-            android:textSize="100px" />
-
-            <TextView
-            android:layout_width="179px"
-            android:layout_height="181px"
-            android:background="@drawable/avatarlucas"
-            android:textSize="100px" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="450px"
-        android:paddingLeft="5px">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/team_text_margin_top"
+        android:layout_below="@+id/bandeImages">
 
         <TextView
             android:id="@+id/txtTristant"
-            android:layout_width="179px"
-            android:layout_height="181px"
-            android:layout_marginLeft="125px"
-            android:layout_marginRight="100px"
+            android:layout_width="@dimen/team_picture_width"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/team_text_margin"
             android:text="@string/tristan"
             android:textColor="@color/monBlanc"
-            android:textSize="45px" />
+            android:gravity="center"
+            android:textSize="@dimen/team_text_size" />
 
         <TextView
             android:id="@+id/txtManon"
-            android:layout_width="179px"
-            android:layout_height="181px"
-            android:layout_marginRight="100px"
+            android:layout_width="@dimen/team_picture_width"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/team_text_margin"
             android:text="@string/manon"
+            android:gravity="center"
             android:textColor="@color/monBlanc"
-            android:textSize="45px" />
+            android:textSize="@dimen/team_text_size" />
 
         <TextView
             android:id="@+id/txtYanick"
-            android:layout_width="179px"
-            android:layout_height="181px"
-            android:layout_marginRight="100px"
+            android:layout_width="@dimen/team_picture_width"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/team_text_margin"
             android:text="@string/yanick"
+            android:gravity="center"
             android:textColor="@color/monBlanc"
-            android:textSize="45px" />
+            android:textSize="@dimen/team_text_size" />
 
         <TextView
             android:id="@+id/txtLucas"
-            android:layout_width="179px"
-            android:layout_height="181px"
+            android:layout_width="@dimen/team_picture_width"
+            android:layout_height="wrap_content"
             android:text="@string/lucas"
+            android:gravity="center"
             android:textColor="@color/monBlanc"
-            android:textSize="45px" />
+            android:textSize="@dimen/team_text_size" />
     </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/labelDawin"
+        android:textSize="@dimen/team_footer_text_size"
+        android:textColor="@color/monBlanc"
+        android:background="@color/monBleuFonce"
+        android:gravity="center"
+        android:id="@+id/txtViewDawin"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>
