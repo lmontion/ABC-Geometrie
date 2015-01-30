@@ -182,6 +182,7 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
                 if (jeu.getNbQuestionsReussis() == con.getNbPoints()){
                     i = new Intent(QuestionActivity.this, EndGameActivity.class);
                     i.putExtra("contrat", con);
+                    jeu.stopChrono();
                 }else{
                     i = new Intent(QuestionActivity.this, QuestionActivity.class);
                     i.putExtra("contrat",con);

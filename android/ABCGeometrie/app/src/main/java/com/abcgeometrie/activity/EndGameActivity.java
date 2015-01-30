@@ -21,12 +21,14 @@ import com.abcgeometrie.metier.DbAdapter;
 import com.abcgeometrie.metier.Gagnant;
 import com.abcgeometrie.metier.Jeu;
 
+import java.text.DecimalFormat;
+
 /**
  * Created by Yanick on 22/01/2015.
  */
 public class EndGameActivity extends Activity implements TextToSpeech.OnInitListener{
 
-    private TextView txtViewBravo, score, scoreJoueur, nbQuestion, nbQuestionJoueur, newRecord, pseudo, goScoreBoard;
+    private TextView txtViewBravo, score, scoreJoueur, nbQuestion, nbQuestionJoueur, newRecord, pseudo, goScoreBoard, temps, tempsJoueur;
     private ImageView speak;
     private Button btnOk, btnLang;
     private EditText saisiePseudo;
@@ -57,6 +59,8 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
         nbQuestionJoueur = (TextView) findViewById(R.id.nbQuestionJoueur);
         newRecord = (TextView) findViewById(R.id.newRecord);
         pseudo = (TextView) findViewById(R.id.pseudo);
+        temps = (TextView) findViewById(R.id.temps);
+        tempsJoueur = (TextView) findViewById(R.id.tempsJoueur);
         Typeface tfLight = Typeface.createFromAsset(getAssets(), "fonts/orbitron-light.otf");
         Typeface tfMedium = Typeface.createFromAsset(getAssets(),"fonts/orbitron-medium.otf");
         saisiePseudo.setTypeface(tfLight);
@@ -65,6 +69,8 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
         score.setTypeface(tfLight);
         scoreJoueur.setTypeface(tfLight);
         nbQuestion.setTypeface(tfLight);
+        temps.setTypeface(tfLight);
+        tempsJoueur.setTypeface(tfLight);
         nbQuestionJoueur.setTypeface(tfLight);
         pseudo.setTypeface(tfLight);
         newRecord.setTypeface(tfMedium);
@@ -73,6 +79,17 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
         boolean nouveauRecord = true;
         Jeu currentJeu = (Jeu) getIntent().getExtras().get("jeu");
         nbQuestionJoueur.setText(String.valueOf(currentJeu.getNbQuestionsNecessaires()));
+        long tempsPasse = currentJeu.getTempsPasse();
+        if(tempsPasse > 10){
+            DecimalFormat df = new DecimalFormat("###.##");
+            float tempsConvert = ((float) tempsPasse)/60;
+            df.format(tempsConvert);
+            String tempsConvert2 = String.valueOf(tempsConvert);
+            String[] str= tempsConvert2.split("\\.");
+            tempsJoueur.setText(str[0]+"mn et "+str[1]+"s");
+        }else{
+            tempsJoueur.setText(String.valueOf(tempsPasse)+"s");
+        }
         int sj = currentJeu.calculScore();
         scoreJoueur.setText(String.valueOf(sj));
         final Contrat currentContrat = (Contrat) getIntent().getExtras().get("contrat");
