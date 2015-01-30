@@ -124,4 +124,18 @@ public class ChooseDefiActivity extends Activity implements TextToSpeech.OnInitL
 
     @Override
     public void onInit(int status) {}
+
+    @Override
+    public void onBackPressed() {
+        if (currentLvl == 1){
+            Intent intent = new Intent(ChooseDefiActivity.this, ChooseThemeActivity.class);
+            intent.putExtra("retour", true);
+            startActivity(intent);
+        }
+        if (currentLvl == 2 || currentLvl == 3){
+            Intent intent = new Intent(ChooseDefiActivity.this, ChooseLevelActivity.class);
+            intent.putExtra("retour", true);
+            startActivity(intent);
+        }
+    }
 }

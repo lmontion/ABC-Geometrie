@@ -1,17 +1,11 @@
 Jeu :
-L -> Position des questions random 
-L -> Gestion de la langue
-L -> Ajout d'un timer avant de passer à la question suivante
-L -> Récupération des des questions du niveau 2
+L -> Ajout d'un timer avant de passer à la question suivante + affichage bonnes/mauvaises rep
 
-T -> Découpage images
 T -> Design
 T -> Design dialog bouton retour
 T -> Descriptif des niveaux
 
-Y -> Variable temps
 Y -> Animation par élément
-Y -> Retour sans animation pour changement de langue (bouton retour ?)
 Y -> Progress dialog
 
 M -> Maquettes affiches

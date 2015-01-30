@@ -86,4 +86,11 @@ public class TeamActivity extends Activity implements TextToSpeech.OnInitListene
 
     @Override
     public void onInit(int status) {}
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(TeamActivity.this, MainActivity.class);
+        intent.putExtra("retour", true);
+        startActivity(intent);
+    }
 }

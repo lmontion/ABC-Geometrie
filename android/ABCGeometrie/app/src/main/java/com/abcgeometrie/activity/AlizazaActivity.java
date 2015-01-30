@@ -1,6 +1,8 @@
 package com.abcgeometrie.activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -81,4 +83,11 @@ public class AlizazaActivity extends Activity implements TextToSpeech.OnInitList
 
     @Override
     public void onInit(int status) {}
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(AlizazaActivity.this, MainActivity.class);
+        intent.putExtra("retour", true);
+        startActivity(intent);
+    }
 }

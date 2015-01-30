@@ -21,6 +21,7 @@ import com.abcgeometrie.metier.DbAdapter;
 import com.abcgeometrie.metier.Gagnant;
 import com.abcgeometrie.metier.Jeu;
 
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
 /**
@@ -79,14 +80,12 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
         boolean nouveauRecord = true;
         Jeu currentJeu = (Jeu) getIntent().getExtras().get("jeu");
         nbQuestionJoueur.setText(String.valueOf(currentJeu.getNbQuestionsNecessaires()));
-        long tempsPasse = currentJeu.getTempsPasse();
-        if(tempsPasse > 10){
-            DecimalFormat df = new DecimalFormat("###.##");
+        long tempsPasse = currentJeu.getTempsPasse()+100;
+        if(tempsPasse > 59){
             float tempsConvert = ((float) tempsPasse)/60;
-            df.format(tempsConvert);
-            String tempsConvert2 = String.valueOf(tempsConvert);
-            String[] str= tempsConvert2.split("\\.");
-            tempsJoueur.setText(str[0]+"mn et "+str[1]+"s");
+            int minutes = (int) tempsConvert;
+            int secondes = (int) tempsPasse-(60 * minutes);
+            tempsJoueur.setText(String.valueOf(minutes)+"mn et "+String.valueOf(secondes)+"s");
         }else{
             tempsJoueur.setText(String.valueOf(tempsPasse)+"s");
         }
