@@ -80,7 +80,7 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
         boolean nouveauRecord = true;
         Jeu currentJeu = (Jeu) getIntent().getExtras().get("jeu");
         nbQuestionJoueur.setText(String.valueOf(currentJeu.getNbQuestionsNecessaires()));
-        long tempsPasse = currentJeu.getTempsPasse()+100;
+        long tempsPasse = currentJeu.getTempsPasse();
         if(tempsPasse > 59){
             float tempsConvert = ((float) tempsPasse)/60;
             int minutes = (int) tempsConvert;
