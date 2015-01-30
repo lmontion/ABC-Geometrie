@@ -34,6 +34,11 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Animation
+        if (getIntent().getExtras() == null) {
+            overridePendingTransition(0,R.anim.fade_out);
+        }
+
         // Cheat pour réduire le temps de lancement de tts
         tts = new TextToSpeech(this,this);
 

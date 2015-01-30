@@ -110,10 +110,12 @@ public class DbAdapter {
 
     private static String INSERT_TABLE_QUESTION_LVL1;
     private static String INSERT_TABLE_APPARTENIR_LVL1;
+    private static String INSERT_TABLE_QUESTION_LVL2;
+    private static String INSERT_TABLE_APPARTENIR_LVL2;
 
 
     private static final String DATABASE_NAME = "ABC_Geometrie";
-    private static final int DATABASE_VERSION = 10;
+    private static final int DATABASE_VERSION = 12;
     private final Context mCtx;
 
 
@@ -135,6 +137,8 @@ public class DbAdapter {
             db.execSQL(INSERT_TABLE_APPARTENIR);*/
             db.execSQL(INSERT_TABLE_QUESTION_LVL1);
             db.execSQL(INSERT_TABLE_APPARTENIR_LVL1);
+            db.execSQL(INSERT_TABLE_QUESTION_LVL2);
+            db.execSQL(INSERT_TABLE_APPARTENIR_LVL2);
         }
 
         @Override
@@ -153,6 +157,8 @@ public class DbAdapter {
         this.mCtx = ctx;
         INSERT_TABLE_QUESTION_LVL1 = getValueQuestionNiv1();
         INSERT_TABLE_APPARTENIR_LVL1 = getValueAppartenirNiv1();
+        INSERT_TABLE_QUESTION_LVL2 = getValueQuestionNiv2();
+        INSERT_TABLE_APPARTENIR_LVL2 = getValueAppartenirNiv2();
     }
 
     public DbAdapter open() throws SQLException {
@@ -186,6 +192,46 @@ public class DbAdapter {
         String temp = "";
         StringBuffer buf = new StringBuffer();
         InputStream is = mCtx.getResources().openRawResource(R.raw.dataapp1);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        try {
+            if (is!=null) {
+                while ((ligne = reader.readLine()) != null) {
+                    temp += ligne;
+                }
+
+            }
+            is.close();
+        } catch(IOException e) {
+            Log.e("file", e.getMessage());
+        }
+        return temp;
+    }
+
+    public String getValueQuestionNiv2(){
+        String ligne;
+        String temp = "";
+        StringBuffer buf = new StringBuffer();
+        InputStream is = mCtx.getResources().openRawResource(R.raw.dataq2);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        try {
+            if (is!=null) {
+                while ((ligne = reader.readLine()) != null) {
+                    temp += ligne;
+                }
+
+            }
+            is.close();
+        } catch(IOException e) {
+            Log.e("file", e.getMessage());
+        }
+        return temp;
+    }
+
+    public String getValueAppartenirNiv2(){
+        String ligne;
+        String temp = "";
+        StringBuffer buf = new StringBuffer();
+        InputStream is = mCtx.getResources().openRawResource(R.raw.dataapp2);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         try {
             if (is!=null) {

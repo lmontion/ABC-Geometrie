@@ -147,7 +147,7 @@ INSERT INTO question VALUES
 (145,'Clique sur le losange rose','Click on the pink diamond.','Selecciona el diamante rosa.','59.png','15.png','26.png','37.png'),
 (146,'Clique sur le losange rouge','Click on the red diamond.','Selecciona el diamante rojo.','60.png','56.png','61.png','62.png'),
 (147,'Clique sur le rectangle bleu','Click on the blue rectangle.','Selecciona el rectángulo azul.','28.png','17.png','6.png','61.png'),
-(148,'Clique sur le rectangle jaune','Click on the yellow rectangle.','Selecciona el rectángulo amarillo .','25.png','13.png','35.png','46.png'),
+(148,'Clique sur le rectangle jaune','Click on the yellow rectangle.','Selecciona el rectángulo amarillo .','24.png','13.png','35.png','46.png'),
 (149,'Clique sur le rectangle marron','Click on the brown rectangle.','Selecciona el rectángulo marrón.','31.png','20.png','42.png','53.png'),
 (150,'Clique sur le rectangle noir','Click on the black rectangle.','Selecciona el rectángulo negro.','32.png','10.png','21.png','43.png'),
 (151,'Clique sur le rectangle orange','Click on the orange rectangle.','Selecciona el rectángulo naranja.','25.png','14.png','36.png','58.png'),

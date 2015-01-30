@@ -35,7 +35,9 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         // Animation
-        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+        if (getIntent().getExtras() == null) {
+            overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+        }
 
         // Boite de dialogue changement langue et affichage drapeaux
         dl = new DialogLang(ChooseThemeActivity.this);
@@ -59,8 +61,8 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
             public void onClick(View v) {
                 Intent i = new Intent(ChooseThemeActivity.this, ChooseDefiActivity.class);
                 startActivity(i);
-            }
-    });
+                }
+        });
         btnThemeForm.setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,4 +131,11 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
 
     @Override
     public void onInit(int status) {}
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(ChooseThemeActivity.this, ChooseLevelActivity.class);
+        intent.putExtra("retour", true);
+        startActivity(intent);
+    }
 }

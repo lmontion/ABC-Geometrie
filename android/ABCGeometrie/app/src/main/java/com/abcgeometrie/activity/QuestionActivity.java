@@ -4,10 +4,8 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
@@ -25,7 +23,7 @@ import com.abcgeometrie.metier.DbAdapter;
 import com.abcgeometrie.metier.Jeu;
 import com.abcgeometrie.metier.Question;
 
-import java.util.ArrayList;
+import java.util.Random;
 
 public class QuestionActivity extends Activity implements TextToSpeech.OnInitListener{
 
@@ -33,7 +31,7 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
     private TextToSpeech tts;
     private TextView txtViewQuestion, txtViewProgressBar;
     private Button btnLang;
-    private ImageButton rep, img1, img2, img3;
+    private ImageButton img0, img1, img2, img3;
     private DialogLang dl;
     private String lang = "";
     private String currentTheme;
@@ -45,7 +43,7 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
     private Jeu jeu = null;
     private boolean changementLang = false;
     private ProgressBar pb;
-
+    private int i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +55,7 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
         // Animation
         overridePendingTransition(R.anim.slide_haut, R.anim.slide_bas);
 
-        rep = (ImageButton) findViewById(R.id.rep1);
+        img0 = (ImageButton) findViewById(R.id.rep1);
         img1 = (ImageButton) findViewById(R.id.rep2);
         img2 = (ImageButton) findViewById(R.id.rep3);
         img3 = (ImageButton) findViewById(R.id.rep4);
@@ -75,6 +73,8 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
         tts = new TextToSpeech(this, this);
         speak = (ImageView) findViewById(R.id.btnTTS);
         lang = getBaseContext().getResources().getConfiguration().locale.getLanguage();
+
+        //speak.isPressed();
         speak.setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,7 +87,7 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
         // Drapeaux et event changement langue
 
 
-        lang = getBaseContext().getResources().getConfiguration().locale.getLanguage();
+        //lang = getBaseContext().getResources().getConfiguration().locale.getLanguage();
 
         DbAdapter db = new DbAdapter(this);
         db.open();
@@ -128,10 +128,15 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
             question = con.chooseAQuestion();
         }
 
+        //tts = new TextToSpeech(this, this);
+        //if (con.getNiveau() == "1"){
+        //new AndroidTextToSpeech("fr","BONJOUR LES AMIS !!",tts);
+        //}
+
         pb.setMax(con.getNbPoints());
 
         // Boite de dialogue changement langue et affichage drapeaux
-        dl = new DialogLang(QuestionActivity.this, con, question);
+        dl = new DialogLang(QuestionActivity.this, con, question, jeu);
 
         btnLang = (Button) findViewById(R.id.btnLang);
         btnLang.setOnClickListener(new View.OnClickListener() {
@@ -150,8 +155,10 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
             txtViewQuestion.setText(question.getLibelleEN());
         }
 
+        final ImageButton[] tabImg = {img0, img1, img2, img3};
 
-
+        Random r = new Random();
+        final int indexRandom = r.nextInt(4);
 
         String tempUrlSol = question.getUrlImgSol();
         tempUrlSol = tempUrlSol.split("\\.")[0];
@@ -165,25 +172,71 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
         String tempUrlImg3 = question.getUrlImg3();
         tempUrlImg3 = tempUrlImg3.split("\\.")[0];
 
-        rep.setImageResource(getResources().getIdentifier("a"+tempUrlSol, "drawable", getPackageName()));
+        String[] urls = {tempUrlImg1, tempUrlImg2, tempUrlImg3};
+
+        tabImg[indexRandom].setImageResource(getResources().getIdentifier("a" + tempUrlSol, "drawable", getPackageName()));
+
+        /*img0.setImageResource(getResources().getIdentifier("a" + tempUrlSol, "drawable", getPackageName()));
         img1.setImageResource(getResources().getIdentifier("a"+tempUrlImg1, "drawable", getPackageName()));
         img2.setImageResource(getResources().getIdentifier("a"+tempUrlImg2, "drawable", getPackageName()));
-        img3.setImageResource(getResources().getIdentifier("a"+tempUrlImg3, "drawable", getPackageName()));
+        img3.setImageResource(getResources().getIdentifier("a"+tempUrlImg3, "drawable", getPackageName()));*/
 
-        // Récupération bouton et evenement
-        rep.setOnClickListener(new View.OnClickListener() {
+        int j = 0;
+        for (i = 0; i < tabImg.length; i++){
+            if (i != indexRandom){
+                tabImg[i].setImageResource(getResources().getIdentifier("a" + urls[j], "drawable", getPackageName()));
+                tabImg[i].setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //tabImg[i].setBackgroundColor(Color.RED);
+                        tabImg[indexRandom].setBackgroundColor(Color.GREEN);
+                        jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
+                        Intent intent = new Intent(QuestionActivity.this, QuestionActivity.class);
+                        intent.putExtra("contrat", con);
+                        intent.putExtra("jeu", jeu);
+                        startActivity(intent);
+                    }
+                });
+                j++;
+            }
+
+        }
+
+        tabImg[indexRandom].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
                 jeu.setNbQuestionsReussis(jeu.getNbQuestionsReussis() + 1);
-                rep.setBackgroundColor(Color.GREEN);
+                tabImg[indexRandom].setBackgroundColor(Color.GREEN);
+                con.getLstQuestions().remove(question);
                 //pb.setProgress(pb.getProgress() + 1);
                 Intent i;
-                if (jeu.getNbQuestionsReussis() == con.getNbPoints()){
+                if (jeu.getNbQuestionsReussis() == con.getNbPoints()) {
                     i = new Intent(QuestionActivity.this, EndGameActivity.class);
-                }else{
+                    jeu.stopChrono();
+                } else {
                     i = new Intent(QuestionActivity.this, QuestionActivity.class);
-                    i.putExtra("contrat",con);
+                }
+                i.putExtra("contrat", con);
+                i.putExtra("jeu", jeu);
+                startActivity(i);
+            }
+        });
+
+       /* // Récupération bouton et evenement
+        img0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
+                jeu.setNbQuestionsReussis(jeu.getNbQuestionsReussis() + 1);
+                img0.setBackgroundColor(Color.GREEN);
+                //pb.setProgress(pb.getProgress() + 1);
+                Intent i;
+                if (jeu.getNbQuestionsReussis() == con.getNbPoints()) {
+                    i = new Intent(QuestionActivity.this, EndGameActivity.class);
+                } else {
+                    i = new Intent(QuestionActivity.this, QuestionActivity.class);
+                    i.putExtra("contrat", con);
                 }
                 i.putExtra("jeu", jeu);
                 startActivity(i);
@@ -194,7 +247,7 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
             @Override
             public void onClick(View v) {
                 img1.setBackgroundColor(Color.RED);
-                rep.setBackgroundColor(Color.GREEN);
+                img0.setBackgroundColor(Color.GREEN);
                 jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
                 Intent i = new Intent(QuestionActivity.this, QuestionActivity.class);
                 i.putExtra("contrat", con);
@@ -207,7 +260,7 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
             @Override
             public void onClick(View v) {
                 img2.setBackgroundColor(Color.RED);
-                rep.setBackgroundColor(Color.GREEN);
+                img0.setBackgroundColor(Color.GREEN);
                 jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
                 Intent i = new Intent(QuestionActivity.this, QuestionActivity.class);
                 i.putExtra("contrat", con);
@@ -220,14 +273,14 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
             @Override
             public void onClick(View v) {
                 img3.setBackgroundColor(Color.RED);
-                rep.setBackgroundColor(Color.GREEN);
+                img0.setBackgroundColor(Color.GREEN);
                 jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
                 Intent i = new Intent(QuestionActivity.this, QuestionActivity.class);
                 i.putExtra("contrat", con);
                 i.putExtra("jeu", jeu);
                 startActivity(i);
             }
-        });
+        });*/
 
     }
 

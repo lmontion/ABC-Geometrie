@@ -1,7 +1,9 @@
 package com.abcgeometrie.activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ListActivity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -16,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import com.abcgeometrie.R;
+import com.abcgeometrie.metier.Contrat;
 import com.abcgeometrie.metier.DbAdapter;
 import com.abcgeometrie.metier.Gagnant;
 
@@ -46,9 +49,6 @@ public class BoardActivity extends ListActivity implements TextToSpeech.OnInitLi
         // Animation
         overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
 
-        // Boite de dialogue changement langue et affichage drapeaux
-        dl = new DialogLang(BoardActivity.this);
-
         // Application de la police
         txtViewBoard = (TextView) findViewById(R.id.txtViewBoard);
         Typeface tfLight = Typeface.createFromAsset(getAssets(), "fonts/orbitron-light.otf");
@@ -64,6 +64,19 @@ public class BoardActivity extends ListActivity implements TextToSpeech.OnInitLi
                 startActivity(i);
             }
         });
+
+        // Génération de la liste des gagnants
+        db = new DbAdapter(this);
+        db.open();
+        Contrat currentContrat = (Contrat) getIntent().getExtras().get("contrat");
+        lstGagnants = db.getGagnantsByIdContrat(currentContrat.getId());
+        ColorArrayAdapter dataAdapter = new ColorArrayAdapter(this, R.layout.textview_gagnants, lstGagnants);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+        setListAdapter(dataAdapter);
+
+
+        // Boite de dialogue changement langue et affichage drapeaux
+        dl = new DialogLang(BoardActivity.this, currentContrat);
 
         // Récupération langue en cours + event speaker
         tts = new TextToSpeech(this,this);
@@ -83,28 +96,6 @@ public class BoardActivity extends ListActivity implements TextToSpeech.OnInitLi
                 dl.onCreateDialog();
             }
         });
-
-        // Insertion d'un nouveau gagnant
-        db = new DbAdapter(this);
-        db.open();
-        try{
-            if(getIntent().getExtras().get("pseudo") != null && getIntent().getExtras().get("score") != null){
-                String pseudo = (String) getIntent().getExtras().get("pseudo");
-                int score = Integer.parseInt((String)getIntent().getExtras().get("score"));
-                // TODO récupérer l'id du contrat passé
-                db.insertScore(pseudo, score, 15);
-            }
-        }catch(Exception e){
-
-        }
-
-        // Génération de la liste des gagnants
-        DbAdapter db = new DbAdapter(this);
-        db.open();
-        lstGagnants = db.getGagnantsByIdContrat(15);
-        ColorArrayAdapter dataAdapter = new ColorArrayAdapter(this, R.layout.textview_gagnants, lstGagnants);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
-        setListAdapter(dataAdapter);
     }
 
     @Override
@@ -112,6 +103,30 @@ public class BoardActivity extends ListActivity implements TextToSpeech.OnInitLi
         super.onRestart();
         onNewIntent(getIntent());
         overridePendingTransition(0,R.anim.slide_out_return);
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Aller a l'accueil");
+        DialogInterface.OnClickListener ok = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(BoardActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        };
+        DialogInterface.OnClickListener annuler = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent();
+                setResult(RESULT_OK, intent);
+                finish();
+            }
+        };
+        builder.setPositiveButton("OK", ok);
+        builder.setNegativeButton("Annuler", null);
+        builder.show();
     }
 
     @Override

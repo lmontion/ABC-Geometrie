@@ -32,7 +32,9 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         // Animation
-        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+        if (getIntent().getExtras() == null) {
+            overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+        }
 
         // Boite de dialogue changement langue et affichage drapeaux
         dl = new DialogLang(ChooseLevelActivity.this);
@@ -116,4 +118,11 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
 
     @Override
     public void onInit(int status) {}
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(ChooseLevelActivity.this, MainActivity.class);
+        intent.putExtra("retour", true);
+        startActivity(intent);
+    }
 }

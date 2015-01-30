@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import com.abcgeometrie.R;
 import com.abcgeometrie.metier.Contrat;
+import com.abcgeometrie.metier.Jeu;
 import com.abcgeometrie.metier.Question;
 
 import java.util.Locale;
@@ -22,13 +23,28 @@ public class DialogLang {
     private Activity act = null;
     private Contrat con = null;
     private Question  question = null;
+    private Jeu jeu = null;
     private String theme;
     private int level;
 
-    public DialogLang(Activity a, Contrat c, Question q) {
+    public DialogLang(Activity a, Contrat c, Question q, Jeu j) {
         this.act = a;
         this.con = c;
         this.question = q;
+        this.jeu = j;
+        hiddenFlags();
+    }
+
+    public DialogLang(Activity a, Contrat contrat){
+        this.act = a;
+        this.con = contrat;
+        hiddenFlags();
+    }
+
+    public DialogLang(Activity a, Contrat contrat, Jeu jeu) {
+        this.act = a;
+        this.con = contrat;
+        this.jeu = jeu;
         hiddenFlags();
     }
 
@@ -75,6 +91,14 @@ public class DialogLang {
                     i.putExtra("contrat", con);
                     i.putExtra("question", question);
                     i.putExtra("change", true);
+                    i.putExtra("jeu", jeu);
+                }
+                if(act.getClass() == BoardActivity.class){
+                    i.putExtra("contrat", con);
+                }
+                if(act.getClass() == EndGameActivity.class ){
+                    i.putExtra("jeu", jeu);
+                    i.putExtra("contrat", con);
                 }
                 act.startActivity(i);
             }
@@ -93,6 +117,14 @@ public class DialogLang {
                     i.putExtra("contrat", con);
                     i.putExtra("question", question);
                     i.putExtra("change", true);
+                    i.putExtra("jeu", jeu);
+                }
+                if(act.getClass() == BoardActivity.class){
+                    i.putExtra("contrat", con);
+                }
+                if(act.getClass() == EndGameActivity.class ){
+                    i.putExtra("jeu", jeu);
+                    i.putExtra("contrat", con);
                 }
                 act.startActivity(i);
             }
@@ -111,6 +143,14 @@ public class DialogLang {
                     i.putExtra("contrat", con);
                     i.putExtra("question", question);
                     i.putExtra("change", true);
+                    i.putExtra("jeu", jeu);
+                }
+                if(act.getClass() == BoardActivity.class){
+                    i.putExtra("contrat", con);
+                }
+                if(act.getClass() == EndGameActivity.class ){
+                    i.putExtra("jeu", jeu);
+                    i.putExtra("contrat", con);
                 }
                 act.startActivity(i);
             }
