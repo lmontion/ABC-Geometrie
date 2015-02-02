@@ -30,7 +30,7 @@ import java.text.DecimalFormat;
 public class EndGameActivity extends Activity implements TextToSpeech.OnInitListener{
 
     private TextView txtViewBravo, score, scoreJoueur, nbQuestion, nbQuestionJoueur, newRecord, pseudo, goScoreBoard, temps, tempsJoueur;
-    private ImageView speak;
+    private ImageView speak, home;
     private Button btnOk, btnLang;
     private EditText saisiePseudo;
     private TextToSpeech tts;
@@ -138,6 +138,16 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
                     i.putExtra("contrat", currentContrat);
                     startActivity(i);
                 }
+            }
+        });
+
+        // Retour accueil
+        home = (ImageView) findViewById(R.id.btnHome);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(EndGameActivity.this, MainActivity.class);
+                startActivity(i);
             }
         });
 

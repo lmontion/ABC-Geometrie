@@ -1,15 +1,18 @@
 Jeu :
-L -> Ajout d'un timer avant de passer à la question suivante + affichage bonnes/mauvaises rep
+L -> Ajout d'un timer avant de passer à la question suivante + mauvaises rep
+L -> Voir pour les "'" dans les questions
+L -> Lvl 2 - 3
 
-T -> Design
+T -> Design page de fin de jeu
 T -> Design dialog bouton retour
 T -> Descriptif des niveaux
+T -> Choix drapeau
 
-Y -> Animation par élément
-Y -> Progress dialog
+Y -> Animation par élément 
 
 M -> Maquettes affiches
 
-Autres:
 
--> Voir pour les "'" dans les questions
+Mis de coté :
+Y(Vaincu par K.O) -> Progress dialog
+

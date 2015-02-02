@@ -39,6 +39,7 @@
     <string name="newRecord">New record !! </string>
     <string name="pseudo">Enter your username : </string>
     <string name="ok">OK</string>
+    <string name="goScoreBoard">View the scoreboard -></string>
 
     <string name="board">ScoreBoard</string>
 

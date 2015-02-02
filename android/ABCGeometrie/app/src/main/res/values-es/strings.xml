@@ -39,6 +39,7 @@
     <string name="newRecord">Nuevo récord !! </string>
     <string name="pseudo">Introduzca su nombre de usuario : </string>
     <string name="ok">OKAY</string>
+    <string name="goScoreBoard">Ver la tabla de puntuación -></string>
 
     <string name="board">Tabla puntuación</string>
 

@@ -16,17 +16,25 @@
         android:layout_gravity="bottom"/>
 
     <ImageView
+        android:id="@+id/btnHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:height="46px"
+        android:src="@drawable/btnaccueil"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/btnHome"
         android:id="@+id/btnTTS"
         android:src="@drawable/btnspeaker"
-        android:layout_marginLeft="50px"/>
+        android:layout_marginLeft="30dp"/>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
 
         <Button
             android:layout_width="@dimen/size_flag_lang_width"

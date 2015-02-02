@@ -10,18 +10,16 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import java.util.Locale;
-
 import com.abcgeometrie.R;
 
 public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInitListener{
 
     private TextView txtViewLvl2, txtViewLvl3, txtViewLvl1, txtViewSelectLvl;
     private ImageView speak, home;
-    private TextToSpeech tts;
     private Button btnLang;
     private String lang = "";
     private DialogLang dl;
+    private TextToSpeech tts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,9 +88,9 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
         });
 
         // Récupération langue en cours + event speaker
+        lang = getBaseContext().getResources().getConfiguration().locale.getLanguage();
         tts = new TextToSpeech(this,this);
         speak = (ImageView) findViewById(R.id.btnTTS);
-        lang = getBaseContext().getResources().getConfiguration().locale.getLanguage();
         speak.setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
