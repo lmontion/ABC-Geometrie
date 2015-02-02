@@ -44,6 +44,8 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
     private boolean changementLang = false;
     private ProgressBar pb;
     private int i;
+    private ImageButton mauvais;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -188,7 +190,9 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
                 tabImg[i].setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        //tabImg[i].setBackgroundColor(Color.RED);
+                        //tabImg[i-1].setBackgroundColor(Color.RED);
+                        //mauvais = tabImg[i-1];
+                        v.setBackgroundColor(Color.RED);
                         tabImg[indexRandom].setBackgroundColor(Color.GREEN);
                         jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
                         Intent intent = new Intent(QuestionActivity.this, QuestionActivity.class);
@@ -199,8 +203,12 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
                 });
                 j++;
             }
-
         }
+
+       /* if (mauvais != null){
+            mauvais.setBackgroundColor(Color.RED);
+        }*/
+
 
         tabImg[indexRandom].setOnClickListener(new View.OnClickListener() {
             @Override
@@ -208,6 +216,7 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
                 jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
                 jeu.setNbQuestionsReussis(jeu.getNbQuestionsReussis() + 1);
                 tabImg[indexRandom].setBackgroundColor(Color.GREEN);
+                AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang,"gagné !",tts);
                 con.getLstQuestions().remove(question);
                 //pb.setProgress(pb.getProgress() + 1);
                 Intent i;

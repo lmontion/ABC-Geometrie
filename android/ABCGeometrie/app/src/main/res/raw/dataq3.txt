@@ -1,0 +1,53 @@
+INSERT INTO question VALUES
+(211,'clique sur l angle aigu OÂB','Click on the acute angle OÂB.','Selecciona el ángulo agudo OÂB.','86.png','82.png','84.png','87.png'),
+(212,'Clique sur l angle de 120°','Click on the 120 degree angle.','Selecciona el ángulo de 120 grados.','76.png','68.png','73.png','77.png'),
+(213,'Clique sur l angle de 120°','Click on the 120 degree angle.','Selecciona el ángulo de 120 grados.','75.png','68.png','72.png','77.png'),
+(214,'Clique sur l angle de 120°','Click on the 120 degree angle.','Selecciona el ángulo de 120 grados.','76.png','69.png','71.png','77.png'),
+(215,'Clique sur l angle de 45°','Click on the 45 degree angle.','Selecciona el ángulo de 45 grados.','67.png','71.png','74.png','77.png'),
+(216,'Clique sur l angle de 45°','Click on the 45 degree angle.','Selecciona el ángulo de 45 grados.','69.png','72.png','74.png','77.png'),
+(217,'Clique sur l angle de 45°','Click on the 45 degree angle.','Selecciona el ángulo de 45 grados.','70.png','71.png','75.png','78.png'),
+(218,'Clique sur l angle de 60°','Click on the 60 degree angle.','Selecciona el ángulo de 60 grados.','72.png','69.png','75.png','78.png'),
+(219,'Clique sur l angle de 60°','Click on the 60 degree angle.','Selecciona el ángulo de 60 grados.','73.png','68.png','76.png','78.png'),
+(220,'Clique sur l angle de 60°','Click on the 60 degree angle.','Selecciona el ángulo de 60 grados.','72.png','69.png','75.png','78.png'),
+(221,'Clique sur l angle de 90°','Click on the 90 degree angle.','Selecciona el ángulo de 90 grados.','78.png','70.png','71.png','75.png'),
+(222,'Clique sur l angle de 90°','Click on the 90 degree angle.','Selecciona el ángulo de 90 grados.','77.png','68.png','71.png','74.png'),
+(223,'clique sur l angle obtus  CÂB','Click on the obtuse angle CÂB.','Selecciona el ángulo obtuso CÂB.','83.png','81.png','86.png','87.png'),
+(224,'clique sur l hexagone','Click on the hexagonal.','Selecciona el hexágono.','106.png','121.png','123.png','127.png'),
+(225,'clique sur l hexagone ','Click on the hexagonal.','Selecciona el hexágono.','107.png','102.png','109.png','123.png'),
+(226,'clique sur l octogone','Click on the octagone.','Selecciona el octógono. ','123.png','106.png','108.png','131.png'),
+(227,'clique sur la demi-droite (GD]','Click on the (GD] half straight line.','Selecciona la semirrecta (GD].','174.png','171.png','172.png','173.png'),
+(228,'clique sur la demi-droite [GD)','Click on the [GD) half straight line.','Selecciona la semirrecta [GD).','171.png','172.png','173.png','174.png'),
+(229,'clique sur la droite (GD)','Click on the (GD) straight line.','Selecciona la recta (GD).','173.png','171.png','172.png','174.png'),
+(230,'clique sur la figure avec un angle droit','Click on the figure with the right angle.','Selecciona la figura con el ángulo recto. ','128.png','112.png','120.png','135.png'),
+(231,'clique sur la figure concave','Click on the figure with a concave part.','Selecciona la figura con una forma  cóncava.','104.png','109.png','113.png','134.png'),
+(232,'clique sur la figure concave','Click on the figure with a concave part.','Selecciona la figura con una forma  cóncava.','105.png','106.png','121.png','122.png'),
+(233,'clique sur la figure convexe','Click on the figure with a convex shape.','Selecciona la figura con una forma convexa.','128.png','104.png','105.png','125.png'),
+(234,'clique sur la figure à 6 sommets','Click on the figure with 6 vertices.','Selecciona la figura con 6 vértices.','179.png','108.png','123.png','129.png'),
+(235,'clique sur la pyramide à base carrée','Click on the pyramid with a square base. ','Selecciona el pirámide una base cuadrada.','124.png','112.png','117.png','138.png'),
+(236,'clique sur la pyramide à base triangulaire','Click on the pyramid with a triangular base. ','Selecciona el pirámide una base triangular.','119.png','105.png','124.png','130.png'),
+(237,'Clique sur la sphère','Click on the sphere.','Selecciona la esfera.','122.png','100.png','90.png','91.png'),
+(238,'clique sur le cercle dont le diamètre est le segment [AB]','Click on the circle whose diameter is the segment [AB].','Selecciona el círculo cuyo diámetro es el segmento [AB].','139.png','140.png','142.png','143.png'),
+(239,'clique sur le cercle dont le diamètre est le segment [OZ]','Click on the circle whose diameter is the segment [OZ].','Selecciona el círculo cuyo diámetro es el segmento [OZ].','164.png','163.png','165.png','166.png'),
+(240,'clique sur le cercle dont le rayon est le segment [AN]','Click on the circle whose radius is the segment [AN].','Selecciona el círculo cuyo radio es el segmento [AN].','141.png','140.png','142.png','144.png'),
+(241,'clique sur le cercle dont le rayon est le segment [OZ]','Click on the circle whose radius is the segment [OZ].','Selecciona el círculo cuyo radio es el segmento [OZ].','163.png','164.png','165.png','166.png'),
+(242,'clique sur le cylindre','Click on the cylinder.','Selecciona el cilindro.','97.png','122.png','47.png','96.png'),
+(243,'clique sur le cylindre','Click on the cylinder.','Selecciona el cilindro.','98.png','115.png','122.png','95.png'),
+(244,'clique sur le cylindre','Click on the cylinder.','Selecciona el cilindro.','99.png','122.png','93.png','95.png'),
+(245,'clique sur le cône','Click on the cone.','Selecciona el cono.','94.png','124.png','137.png','93.png'),
+(246,'clique sur le cône','Click on the cone.','Selecciona el cono.','94.png','119.png','92.png','99.png'),
+(247,'clique sur le cône','Click on the cone.','Selecciona el cono.','95.png','88.png','92.png','99.png'),
+(248,'clique sur le cône','Click on the cone.','Selecciona el cono.','96.png','117.png','88.png','97.png'),
+(249,'clique sur le dodécagone','Click on the dodecagon.','Selecciona el dodecágono.','178.png','100.png','104.png','107.png'),
+(250,'clique sur le dodécagone','Click on the dodecagon.','Selecciona el dodecágono.','177.png','103.png','108.png','123.png'),
+(251,'clique sur le décagone','Click on the decagon.','Selecciona el decágono.','101.png','108.png','123.png','92.png'),
+(252,'clique sur le parallèlépipède rectangle','Click on the cuboid shape.','Selecciona el paralelepípedo recto rectangular.','116.png','92.png','94.png','98.png'),
+(253,'clique sur le parallèlépipède rectangle','Click on the cuboid shape.','Selecciona el paralelepípedo recto rectangular.','115.png','93.png','96.png','97.png'),
+(254,'clique sur le pentagone','Click on the pentagon.','Selecciona el pentágono.','108.png','101.png','106.png','138.png'),
+(255,'clique sur le pentagone','Click on the pentagon.','Selecciona el pentágono.','108.png','105.png','106.png','110.png'),
+(256,'clique sur le segment [FL] dont J est le milieu','Click on the [FL]segment which middle is J.','Selecciona el segmento [FL] con J como medio.','156.png','145.png','153.png','159.png'),
+(257,'clique sur le segment [GD]','Click on the [GD] segment.','Selecciona el segmento [GD].','172.png','171.png','173.png','174.png'),
+(258,'clique sur le trapèze','Click on the trapeze.','Selecciona el trapecio.','120.png','112.png','131.png','134.png'),
+(259,'clique sur le triangle isocèle','Click on the an isosceles triangle.','Selecciona el triángulo isósceles.','132.png','129.png','135.png','137.png'),
+(260,'clique sur le triangle rectangle','Click on the square triangle.','Selecciona el triángulo rectángulo.','138.png','124.png','131.png','135.png'),
+(261,'clique sur N symétrique de F par rapport à la demi-droite [BD)','Click on the vertex N, symetrical vertex from vertex F respect to the half straight line [BD).','Selecciona el punto N, simétrico del punto F respeto a la semirrecta [BD).','150.png','149.png','151.png','152.png'),
+(262,'clique sur Z symétrique de F par rapport à la droite D','Click on the vertex Z, symetrical vertex from vertex F respect to the straight line D.','Selecciona el punto Z, simétrico del punto F respeto a la recta D.','160.png','147.png','149.png','150.png');
