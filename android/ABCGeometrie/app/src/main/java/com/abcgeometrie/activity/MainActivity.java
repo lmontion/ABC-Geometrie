@@ -26,7 +26,7 @@ import java.util.Timer;
 public class MainActivity extends Activity implements TextToSpeech.OnInitListener{
 
     private ImageButton btnTeam, btnAlizaza, france, angleterre, espagne;
-    private RelativeLayout relativeLayout, bandeSuperieur, bandeInferieur;
+    private RelativeLayout relativeLayout, bandeSuperieur, bandeInferieur, bandeMilieu;
     private TextView abc, dela, geo1, geo2, baseLine;
     private TextToSpeech tts;
     private String lang = "";
@@ -71,8 +71,10 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
             public void onClick(View v) {
                 bandeInferieur = (RelativeLayout) findViewById(R.id.bandeInferieur);
                 bandeSuperieur = (RelativeLayout) findViewById(R.id.bandeSuperieur);
+                bandeMilieu = (RelativeLayout) findViewById(R.id.bandeMilieu);
                 bandeInferieur.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,  R.anim.slide_out));
                 bandeSuperieur.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,  R.anim.slide_out));
+                bandeMilieu.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,  R.anim.slide_out_return));
                 final Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override

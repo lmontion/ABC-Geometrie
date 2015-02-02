@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -31,7 +32,7 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
 
         // Animation
         if (getIntent().getExtras() == null) {
-            overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+            //overridePendingTransition(0,0);
         }
 
         // Boite de dialogue changement langue et affichage drapeaux
@@ -44,8 +45,9 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
         txtViewLvl1.setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ChooseLevelActivity.this, ChooseThemeActivity.class);
-                startActivity(i);
+                txtViewLvl1.startAnimation(AnimationUtils.loadAnimation(ChooseLevelActivity.this, R.anim.abc_fade_out));
+                /*Intent i = new Intent(ChooseLevelActivity.this, ChooseThemeActivity.class);
+                startActivity(i);*/
             }
         });
         txtViewLvl2.setOnClickListener(new TextView.OnClickListener() {
