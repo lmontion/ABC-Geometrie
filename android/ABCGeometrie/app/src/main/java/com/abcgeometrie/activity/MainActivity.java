@@ -6,9 +6,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -19,11 +21,12 @@ import com.abcgeometrie.metier.Gagnant;
 import com.abcgeometrie.metier.Question;
 import java.util.ArrayList;
 import java.util.Locale;
+import java.util.Timer;
 
 public class MainActivity extends Activity implements TextToSpeech.OnInitListener{
 
     private ImageButton btnTeam, btnAlizaza, france, angleterre, espagne;
-    private RelativeLayout relativeLayout;
+    private RelativeLayout relativeLayout, bandeSuperieur, bandeInferieur;
     private TextView abc, dela, geo1, geo2, baseLine;
     private TextToSpeech tts;
     private String lang = "";
@@ -66,8 +69,18 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, ChooseLevelActivity.class);
-                startActivity(i);
+                bandeInferieur = (RelativeLayout) findViewById(R.id.bandeInferieur);
+                bandeSuperieur = (RelativeLayout) findViewById(R.id.bandeSuperieur);
+                bandeInferieur.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,  R.anim.slide_out));
+                bandeSuperieur.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,  R.anim.slide_out));
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent i = new Intent(MainActivity.this, ChooseLevelActivity.class);
+                        startActivity(i);
+                    }
+                }, 300);
             }
         });
 

@@ -120,6 +120,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="170dp"
+        android:id="@+id/bandeInferieur"
         android:background="@drawable/bande_inferieur_accueil"
         android:layout_alignParentBottom="true">
 
