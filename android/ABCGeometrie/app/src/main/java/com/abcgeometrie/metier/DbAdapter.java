@@ -85,7 +85,7 @@ public class DbAdapter {
                     "('Namie', 300, 15)," + "('Maxime', 200, 15)," + "('Julien', 250, 15)," + "('Jule', 300, 15)," +
                     "('Hakim', 200, 15)," + "('Carlos', 50, 15)," + "('Adrien', 600, 15)," + "('Sophie', 150, 15)," +
                     "('Serge', 450, 15)," + "('Pascale', 150, 15)," + "('Mathieu', 650, 15)," + "('Valentin', 550, 15)," +
-                    "('Hubert', 300, 15)," + "('Seb', 400, 15)," + "('Mohammed', 200, 15)," + "('Aziz', 700, 15);";
+                    "('Hubert', 300, 15)," + "('Seb', 400, 15)," + "('Mohammed', 200, 15)," + "('Lucas le champion !!', 10000, 12);";
 
 
 
@@ -112,10 +112,12 @@ public class DbAdapter {
     private static String INSERT_TABLE_APPARTENIR_LVL1;
     private static String INSERT_TABLE_QUESTION_LVL2;
     private static String INSERT_TABLE_APPARTENIR_LVL2;
+    private static String INSERT_TABLE_QUESTION_LVL3;
+    private static String INSERT_TABLE_APPARTENIR_LVL3;
 
 
     private static final String DATABASE_NAME = "ABC_Geometrie";
-    private static final int DATABASE_VERSION = 14;
+    private static final int DATABASE_VERSION = 21;
     private final Context mCtx;
 
 
@@ -139,6 +141,8 @@ public class DbAdapter {
             db.execSQL(INSERT_TABLE_APPARTENIR_LVL1);
             db.execSQL(INSERT_TABLE_QUESTION_LVL2);
             db.execSQL(INSERT_TABLE_APPARTENIR_LVL2);
+            db.execSQL(INSERT_TABLE_QUESTION_LVL3);
+            db.execSQL(INSERT_TABLE_APPARTENIR_LVL3);
         }
 
         @Override
@@ -159,6 +163,8 @@ public class DbAdapter {
         INSERT_TABLE_APPARTENIR_LVL1 = getValueAppartenirNiv1();
         INSERT_TABLE_QUESTION_LVL2 = getValueQuestionNiv2();
         INSERT_TABLE_APPARTENIR_LVL2 = getValueAppartenirNiv2();
+        INSERT_TABLE_QUESTION_LVL3 = getValueQuestionNiv3();
+        INSERT_TABLE_APPARTENIR_LVL3 = getValueAppartenirNiv3();
     }
 
     public DbAdapter open() throws SQLException {
@@ -232,6 +238,46 @@ public class DbAdapter {
         String temp = "";
         StringBuffer buf = new StringBuffer();
         InputStream is = mCtx.getResources().openRawResource(R.raw.dataapp2);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        try {
+            if (is!=null) {
+                while ((ligne = reader.readLine()) != null) {
+                    temp += ligne;
+                }
+
+            }
+            is.close();
+        } catch(IOException e) {
+            Log.e("file", e.getMessage());
+        }
+        return temp;
+    }
+
+    public String getValueQuestionNiv3(){
+        String ligne;
+        String temp = "";
+        StringBuffer buf = new StringBuffer();
+        InputStream is = mCtx.getResources().openRawResource(R.raw.dataq3);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        try {
+            if (is!=null) {
+                while ((ligne = reader.readLine()) != null) {
+                    temp += ligne;
+                }
+
+            }
+            is.close();
+        } catch(IOException e) {
+            Log.e("file", e.getMessage());
+        }
+        return temp;
+    }
+
+    public String getValueAppartenirNiv3(){
+        String ligne;
+        String temp = "";
+        StringBuffer buf = new StringBuffer();
+        InputStream is = mCtx.getResources().openRawResource(R.raw.dataapp3);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         try {
             if (is!=null) {

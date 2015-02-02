@@ -151,6 +151,7 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
             }
         });
 
+
         // Boite de dialogue changement langue et affichage drapeaux
         dl = new DialogLang(EndGameActivity.this, currentContrat, currentJeu);
 
