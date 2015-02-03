@@ -9,5 +9,7 @@
     <color name="vertProgressBar">#ff4cff09</color>
     <color name="monBlanc">#ffffff</color>
     <color name="monNoir">#000000</color>
-    <color name="transparent">#00000000</color>
+    <color name="transparent">#00000000</color>39E347
+    <color name="couleurBonneReponse">#39FF47</color>
+    <color name="couleurMauvaiseReponse">#FF0000</color>
 </resources>

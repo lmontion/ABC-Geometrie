@@ -49,6 +49,11 @@
     <dimen name="progressbar_text_margin_top">20dp</dimen>
     <dimen name="progressbar_width">50dp</dimen>
     <dimen name="progressbar_height">355dp</dimen>
+    <dimen name="good_bad_answer_icon_dim">90dp</dimen>
+    <dimen name="good_bad_answer_icon_margin">-15dp</dimen>
+    <dimen name="answers_block_width">740dp</dimen>
+    <dimen name="answers_block_height">440dp</dimen>
+    <dimen name="progressbar_margin_bottom">15dp</dimen>
 
     <!-- POP-UP changement langue -->
     <dimen name="popup_flag_width">150dp</dimen>
