@@ -12,7 +12,7 @@
         android:layout_height="175px"
         android:layout_marginTop="25px"
         android:id="@+id/imgRecord"
-        android:src="@drawable/record"
+        android:src="@drawable/record_gif"
         android:layout_gravity="bottom"/>
 
     <ImageView
