@@ -223,7 +223,7 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
                         }
                         v.setBackgroundColor(Color.RED);
                         tabCroix[position].setVisibility(View.VISIBLE);
-                        tabImg[indexRandom].setBackgroundColor(Color.GREEN);
+                        tabImg[indexRandom].setBackgroundResource(R.color.vertRep);
                         jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
                         /*try{
                             Thread.sleep(5000);
@@ -251,7 +251,7 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
             public void onClick(View v) {
                 jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
                 jeu.setNbQuestionsReussis(jeu.getNbQuestionsReussis() + 1);
-                tabImg[indexRandom].setBackgroundColor(Color.GREEN);
+                tabImg[indexRandom].setBackgroundResource(R.color.vertRep);
                 tabNike[indexRandom].setVisibility(View.VISIBLE);
                 AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang,reussi[indexReussi],tts);
                 con.getLstQuestions().remove(question);

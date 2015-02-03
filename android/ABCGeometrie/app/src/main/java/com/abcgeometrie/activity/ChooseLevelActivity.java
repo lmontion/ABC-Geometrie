@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.view.WindowManager;
@@ -47,7 +48,6 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
         txtViewLvl1.setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //txtViewLvl1.startAnimation(AnimationUtils.loadAnimation(ChooseLevelActivity.this, R.anim.abc_fade_out));
                 Intent i = new Intent(ChooseLevelActivity.this, ChooseThemeActivity.class);
                 startActivity(i);
             }
