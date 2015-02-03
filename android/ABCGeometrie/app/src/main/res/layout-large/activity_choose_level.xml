@@ -28,6 +28,15 @@
             android:src="@drawable/btnspeaker"
             android:layout_marginLeft="30dp"/>
 
+        <ImageView
+            android:layout_width="@dimen/size_flag_lang_height"
+            android:layout_height="@dimen/size_flag_lang_height"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/btnLang"
+            android:id="@+id/btnAbout"
+            android:src="@drawable/btn_information"
+            android:layout_marginRight="30dp"/>
+
         <Button
             android:id="@+id/btnLang"
             android:layout_width="@dimen/size_flag_lang_width"
