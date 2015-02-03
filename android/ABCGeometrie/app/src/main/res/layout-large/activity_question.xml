@@ -85,7 +85,7 @@
             android:layout_alignRight="@+id/rep1"
             android:layout_marginBottom="@dimen/good_bad_answer_icon_margin"
             android:layout_marginRight="@dimen/good_bad_answer_icon_margin"
-            android:visibility="visible"
+            android:visibility="invisible"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:src="@drawable/croix_mauvaise_reponse"/>
@@ -98,7 +98,7 @@
             android:layout_alignRight="@+id/rep1"
             android:layout_marginBottom="@dimen/good_bad_answer_icon_margin"
             android:layout_marginRight="@dimen/good_bad_answer_icon_margin"
-            android:visibility="visible"
+            android:visibility="invisible"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:src="@drawable/nike_bonne_reponse"/>
@@ -122,7 +122,7 @@
             android:layout_alignRight="@+id/rep2"
             android:layout_marginBottom="@dimen/good_bad_answer_icon_margin"
             android:layout_marginRight="@dimen/good_bad_answer_icon_margin"
-            android:visibility="visible"
+            android:visibility="invisible"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:src="@drawable/croix_mauvaise_reponse"/>
@@ -135,7 +135,7 @@
             android:layout_alignRight="@+id/rep2"
             android:layout_marginBottom="@dimen/good_bad_answer_icon_margin"
             android:layout_marginRight="@dimen/good_bad_answer_icon_margin"
-            android:visibility="visible"
+            android:visibility="invisible"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:src="@drawable/nike_bonne_reponse"/>
@@ -159,7 +159,7 @@
             android:layout_alignRight="@+id/rep3"
             android:layout_marginBottom="@dimen/good_bad_answer_icon_margin"
             android:layout_marginRight="@dimen/good_bad_answer_icon_margin"
-            android:visibility="visible"
+            android:visibility="invisible"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:src="@drawable/croix_mauvaise_reponse"/>
@@ -172,7 +172,7 @@
             android:layout_alignRight="@+id/rep3"
             android:layout_marginBottom="@dimen/good_bad_answer_icon_margin"
             android:layout_marginRight="@dimen/good_bad_answer_icon_margin"
-            android:visibility="visible"
+            android:visibility="invisible"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:src="@drawable/nike_bonne_reponse"/>
@@ -196,7 +196,7 @@
             android:layout_alignRight="@+id/rep4"
             android:layout_marginBottom="@dimen/good_bad_answer_icon_margin"
             android:layout_marginRight="@dimen/good_bad_answer_icon_margin"
-            android:visibility="visible"
+            android:visibility="invisible"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:src="@drawable/croix_mauvaise_reponse"/>
@@ -209,7 +209,7 @@
             android:layout_alignRight="@+id/rep4"
             android:layout_marginBottom="@dimen/good_bad_answer_icon_margin"
             android:layout_marginRight="@dimen/good_bad_answer_icon_margin"
-            android:visibility="visible"
+            android:visibility="invisible"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:src="@drawable/nike_bonne_reponse"/>
