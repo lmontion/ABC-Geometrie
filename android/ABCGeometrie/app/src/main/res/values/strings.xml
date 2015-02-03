@@ -50,6 +50,7 @@
     <string name="action_settings">Option</string>
 
     <string name="about">A propos du jeu</string>
+
     <string name="txtAbout1">Le jeu est découpé en 3 niveaux :</string>
     <string name="txtAbout2"><b>Niveau 1</b> : Les 6 formes et les 11 couleurs de bases</string>
     <string name="txtAbout3"><b>Niveau 2</b> : Géométrie intermédiaire (formes 3D)</string>

@@ -57,6 +57,7 @@
     <dimen name="answers_block_height">500dp</dimen>
     <dimen name="progressbar_margin_bottom">15dp</dimen>
 
+
     <!-- POP-UP changement langue -->
     <dimen name="popup_flag_width">150dp</dimen>
     <dimen name="popup_flag_height">81dp</dimen>
