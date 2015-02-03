@@ -1,18 +1,24 @@
 Jeu :
-L -> Ajout d'un timer avant de passer à la question suivante + mauvaises rep
+L -> Ajout d'un timer avant de passer à la question suivante
+L -> Croix pour mauvaise rep
+L -> affichage différé
+L -> Controles images (base carré contre base triangulaire, angle CAB)
+L -> Vert plus foncé
 L -> Voir pour les "'" dans les questions
-L -> Lvl 2 - 3
+L -> Tableau pour (gagné/perdu)
 
-T -> Design page de fin de jeu
+T -> Design page de fin de jeu + animation
 T -> Design dialog bouton retour
-T -> Descriptif des niveaux
-T -> Choix drapeau
+T -> Choix drapeau (transparant)
+T -> Bouton pour page a propos
 
-Y -> Animation par élément 
+Y -> Page a propos, description lvl
+Y -> Lecture auto intitulé question (lvl1)
+Y -> GIF
 
 M -> Maquettes affiches
 
-
 Mis de coté :
-Y(Vaincu par K.O) -> Progress dialog
+Progress dialog (pas important pour la cliente)
+Anim accueil a améliorer
 
