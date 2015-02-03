@@ -55,5 +55,17 @@
     <string name="txtAbout3"><b>Nivel 2</b> : Geometría Intermedio ( formas 3D)</string>
     <string name="txtAbout4"><b>Nivel 3</b> : Geometría avanzada ( ángulos , simetría, ... )</string>
 
+    <string-array name="arrayOK">
+        <item>Bien hecho</item>
+        <item>Perfecto</item>
+        <item>Félicitacion</item>
+        <item>Muy bien</item>
+    </string-array>
+
+    <string-array name="arrayPASOK">
+        <item>Perdido</item>
+        <item>Que pena</item>
+        <item>Es casi eso</item>
+    </string-array>
 
 </resources>
