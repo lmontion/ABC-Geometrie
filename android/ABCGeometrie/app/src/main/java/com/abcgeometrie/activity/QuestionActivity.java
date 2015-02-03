@@ -183,6 +183,12 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
         img2.setImageResource(getResources().getIdentifier("a"+tempUrlImg2, "drawable", getPackageName()));
         img3.setImageResource(getResources().getIdentifier("a"+tempUrlImg3, "drawable", getPackageName()));*/
 
+        //final String[] reussi = {"Bravo", "Gagné", "Félicitation", "Tu es un héros", "Wouah, quel homme", "Mais tu es une machine"};
+        final String[] reussi = getResources().getStringArray(R.array.arrayOK);
+        final String[] perdu = getResources().getStringArray(R.array.arrayPASOK);
+        final int indexReussi = r.nextInt(4);
+        final int indexPerdu = r.nextInt(3);
+
         int j = 0;
         for (i = 0; i < tabImg.length; i++){
             if (i != indexRandom){
@@ -195,6 +201,12 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
                         v.setBackgroundColor(Color.RED);
                         tabImg[indexRandom].setBackgroundColor(Color.GREEN);
                         jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
+                        /*try{
+                            Thread.sleep(5000);
+                        }catch(Exception e){
+
+                        }*/
+                        AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang,perdu[indexPerdu],tts);
                         Intent intent = new Intent(QuestionActivity.this, QuestionActivity.class);
                         intent.putExtra("contrat", con);
                         intent.putExtra("jeu", jeu);
@@ -216,7 +228,7 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
                 jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
                 jeu.setNbQuestionsReussis(jeu.getNbQuestionsReussis() + 1);
                 tabImg[indexRandom].setBackgroundColor(Color.GREEN);
-                AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang,"gagné !",tts);
+                AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang,reussi[indexReussi],tts);
                 con.getLstQuestions().remove(question);
                 //pb.setProgress(pb.getProgress() + 1);
                 Intent i;

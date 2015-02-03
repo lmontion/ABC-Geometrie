@@ -47,13 +47,25 @@
     <string name="labelSiteAlizaza"><i>http://www.lacavernedalizaza.fr/</i></string>
     <string name="activiteAlizaza">Conception, fabrication et préparation de jeux à but pédagogique</string>
 
+    <string name="action_settings">Option</string>
+
     <string name="about">A propos de l\'application</string>
     <string name="txtAbout1">Le jeu est découpé en 3 niveaux :</string>
     <string name="txtAbout2"><b>Niveau 1</b> : Les 6 formes ainsi et les 11 couleurs de bases</string>
     <string name="txtAbout3"><b>Niveau 2</b> : Géométrie de niveau intermédiaire (formes 3D)</string>
     <string name="txtAbout4"><b>Niveau 3</b> : Géométrie avancée (Angles, symétries,...)</string>
 
+    <string-array name="arrayOK">
+        <item>Bravo</item>
+        <item>Gagné</item>
+        <item>Félicitation</item>
+        <item>Très bien</item>
+    </string-array>
 
-    <string name="action_settings">Option</string>
+    <string-array name="arrayPASOK">
+        <item>Perdu</item>
+        <item>Dommage</item>
+        <item>Presque</item>
+    </string-array>
 
 </resources>

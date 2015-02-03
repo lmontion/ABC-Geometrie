@@ -55,4 +55,17 @@
     <string name="txtAbout3"><b>Level 2</b> : Intermediate geometry ( 3D shapes )</string>
     <string name="txtAbout4"><b>Level 3</b> : Advanced geometry ( angles , symmetry , ...)</string>
 
+    <string-array name="arrayOK">
+        <item>Good</item>
+        <item>Congratulation</item>
+        <item>Weel done</item>
+        <item>Very good</item>
+    </string-array>
+
+    <string-array name="arrayPASOK">
+        <item>Too bad</item>
+        <item>Try again</item>
+        <item>Don\'t give up</item>
+    </string-array>
+
 </resources>
