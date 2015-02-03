@@ -7,7 +7,9 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.speech.tts.TextToSpeech;
+import android.support.v7.internal.widget.NativeActionModeAwareLayout;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -15,6 +17,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.abcgeometrie.R;
@@ -23,6 +26,7 @@ import com.abcgeometrie.metier.DbAdapter;
 import com.abcgeometrie.metier.Jeu;
 import com.abcgeometrie.metier.Question;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class QuestionActivity extends Activity implements TextToSpeech.OnInitListener{
@@ -209,6 +213,8 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
         final int indexReussi = r.nextInt(4);
         final int indexPerdu = r.nextInt(3);
 
+       // final RelativeLayout layout = (RelativeLayout) findViewById(R.id.relativeQuestions);
+
         int j = 0;
         for (i = 0; i < tabImg.length; i++){
             if (i != indexRandom){
@@ -217,24 +223,40 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
                     @Override
                     public void onClick(View v) {
                         for (k = 0; k < tabImg.length; k++){
+                            tabImg[k].setEnabled(false);
                             if (tabImg[k] == v){
                                 position = k;
                             }
                         }
                         v.setBackgroundColor(Color.RED);
                         tabCroix[position].setVisibility(View.VISIBLE);
-                        tabImg[indexRandom].setBackgroundColor(Color.GREEN);
+                        AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang,perdu[indexPerdu],tts);
+
+                        final Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                tabImg[indexRandom].setBackgroundColor(Color.GREEN);
+                            }
+                        }, 1000);
+
                         jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
                         /*try{
                             Thread.sleep(5000);
                         }catch(Exception e){
 
                         }*/
-                        AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang,perdu[indexPerdu],tts);
-                        Intent intent = new Intent(QuestionActivity.this, QuestionActivity.class);
+
+                        final Intent intent = new Intent(QuestionActivity.this, QuestionActivity.class);
                         intent.putExtra("contrat", con);
                         intent.putExtra("jeu", jeu);
-                        startActivity(intent);
+
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                startActivity(intent);
+                            }
+                        }, 2000);
                     }
                 });
                 j++;
@@ -249,14 +271,20 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
         tabImg[indexRandom].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                for(ImageButton img : tabImg){
+                    img.setEnabled(false);
+                }
                 jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
                 jeu.setNbQuestionsReussis(jeu.getNbQuestionsReussis() + 1);
                 tabImg[indexRandom].setBackgroundColor(Color.GREEN);
                 tabNike[indexRandom].setVisibility(View.VISIBLE);
                 AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang,reussi[indexReussi],tts);
-                con.getLstQuestions().remove(question);
+                ArrayList<Question> temp = con.getLstQuestions();
+                temp.remove(question);
+                con.setLstQuestions(temp);
                 //pb.setProgress(pb.getProgress() + 1);
-                Intent i;
+
+                final Intent i;
                 if (jeu.getNbQuestionsReussis() == con.getNbPoints()) {
                     i = new Intent(QuestionActivity.this, EndGameActivity.class);
                     jeu.stopChrono();
@@ -265,7 +293,14 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
                 }
                 i.putExtra("contrat", con);
                 i.putExtra("jeu", jeu);
-                startActivity(i);
+
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(i);
+                    }
+                }, 3000);
             }
         });
 

@@ -117,9 +117,8 @@ public class DbAdapter {
 
 
     private static final String DATABASE_NAME = "ABC_Geometrie";
-    private static final int DATABASE_VERSION = 21;
+    private static final int DATABASE_VERSION = 24;
     private final Context mCtx;
-
 
     private static class DatabaseHelper extends SQLiteOpenHelper {
 

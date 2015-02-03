@@ -11,7 +11,7 @@ INSERT INTO question VALUES
 (220,'Clique sur l angle de 60°','Click on the 60 degree angle.','Selecciona el ángulo de 60 grados.','72.png','69.png','75.png','78.png'),
 (221,'Clique sur l angle de 90°','Click on the 90 degree angle.','Selecciona el ángulo de 90 grados.','78.png','70.png','71.png','75.png'),
 (222,'Clique sur l angle de 90°','Click on the 90 degree angle.','Selecciona el ángulo de 90 grados.','77.png','68.png','71.png','74.png'),
-(223,'clique sur l angle obtus  CÂB','Click on the obtuse angle CÂB.','Selecciona el ángulo obtuso CÂB.','83.png','81.png','86.png','87.png'),
+(223,'clique sur l angle obtus  BÂC','Click on the obtuse angle CÂB.','Selecciona el ángulo obtuso CÂB.','83.png','81.png','86.png','87.png'),
 (224,'clique sur l hexagone','Click on the hexagonal.','Selecciona el hexágono.','106.png','121.png','123.png','127.png'),
 (225,'clique sur l hexagone ','Click on the hexagonal.','Selecciona el hexágono.','107.png','102.png','109.png','123.png'),
 (226,'clique sur l octogone','Click on the octagone.','Selecciona el octógono. ','123.png','106.png','108.png','131.png'),
@@ -23,7 +23,7 @@ INSERT INTO question VALUES
 (232,'clique sur la figure concave','Click on the figure with a concave part.','Selecciona la figura con una forma  cóncava.','105.png','106.png','121.png','122.png'),
 (233,'clique sur la figure convexe','Click on the figure with a convex shape.','Selecciona la figura con una forma convexa.','128.png','104.png','105.png','125.png'),
 (234,'clique sur la figure à 6 sommets','Click on the figure with 6 vertices.','Selecciona la figura con 6 vértices.','179.png','108.png','123.png','129.png'),
-(235,'clique sur la pyramide à base carrée','Click on the pyramid with a square base. ','Selecciona el pirámide una base cuadrada.','124.png','112.png','117.png','138.png'),
+(235,'clique sur la pyramide à base carrée','Click on the pyramid with a square base. ','Selecciona el pirámide una base cuadrada.','124.png','112.png','119.png','138.png'),
 (236,'clique sur la pyramide à base triangulaire','Click on the pyramid with a triangular base. ','Selecciona el pirámide una base triangular.','119.png','105.png','124.png','130.png'),
 (237,'Clique sur la sphère','Click on the sphere.','Selecciona la esfera.','122.png','100.png','90.png','91.png'),
 (238,'clique sur le cercle dont le diamètre est le segment [AB]','Click on the circle whose diameter is the segment [AB].','Selecciona el círculo cuyo diámetro es el segmento [AB].','139.png','140.png','142.png','143.png'),
