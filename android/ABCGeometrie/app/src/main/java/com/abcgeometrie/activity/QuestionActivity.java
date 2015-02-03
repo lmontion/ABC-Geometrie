@@ -16,13 +16,11 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import com.abcgeometrie.R;
 import com.abcgeometrie.metier.Contrat;
 import com.abcgeometrie.metier.DbAdapter;
 import com.abcgeometrie.metier.Jeu;
 import com.abcgeometrie.metier.Question;
-
 import java.util.Random;
 
 public class QuestionActivity extends Activity implements TextToSpeech.OnInitListener{
@@ -75,7 +73,6 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
         tts = new TextToSpeech(this, this);
         speak = (ImageView) findViewById(R.id.btnTTS);
         lang = getBaseContext().getResources().getConfiguration().locale.getLanguage();
-
         //speak.isPressed();
         speak.setOnClickListener(new TextView.OnClickListener() {
             @Override
@@ -83,6 +80,9 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
                 AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang,txtViewQuestion.getText().toString(),tts);
             }
         });
+
+
+
 
         //txtViewQuestion.setText("lvl : "+currentLvl+" theme = "+currentTheme+" point contrat -> "+currentNbPointsContrat);
 
@@ -325,5 +325,9 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
     }
 
     @Override
-    public void onInit(int status) {}
+    public void onInit(int status) {
+        if(con.getNiveau().equals("1")) {
+            AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang, txtViewQuestion.getText().toString(), tts);
+        }
+    }
 }
