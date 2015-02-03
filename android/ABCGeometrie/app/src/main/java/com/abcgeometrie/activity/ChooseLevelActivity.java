@@ -18,7 +18,7 @@ import com.abcgeometrie.R;
 public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInitListener{
 
     private TextView txtViewLvl2, txtViewLvl3, txtViewLvl1, txtViewSelectLvl;
-    private ImageView speak, home;
+    private ImageView speak, home, btnAbout;
     private TextToSpeech tts;
     private Button btnLang;
     private String lang = "";
@@ -88,6 +88,16 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
                 Intent i = new Intent(ChooseLevelActivity.this, MainActivity.class);
                 startActivity(i);
                 overridePendingTransition(0, R.anim.fade_out);
+            }
+        });
+
+        // Acces à la page about
+        btnAbout = (ImageView) findViewById(R.id.btnAbout);
+        btnAbout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ChooseLevelActivity.this, AboutActivity.class);
+                startActivity(i);
             }
         });
 
