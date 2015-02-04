@@ -1,18 +1,23 @@
 Jeu :
-L -> Croix pour mauvaise rep
-L -> affichage différé
-L -> Controles images (base carré contre base triangulaire, angle CAB)
 L -> Voir pour les "'" dans les questions
+L -> Etat boutons
 
 T -> Design page de fin de jeu + animation
-T -> Design dialog bouton retour
-T -> Choix drapeau (transparant)
 
-Y -> confeti
-Y -> Ajout d'un timer avant de passer à la question suivante
-Y -> Vert plus foncé
+Y -> Design dialog bouton retour
+Y -> Regarder systeme random question
+Y -> annim avec drapeaux
+Y -> Transparence drapeaux 
+Y -> speaker sur les 3 premiers pseudo + score + speaker texte a propos
+Y -> nettoyage
 
 M -> Maquettes affiches
+
+Interfaces :
+tableau score
+A propos
+Page fin jeu
+
 
 Mis de coté :
 Progress dialog (pas important pour la cliente)
