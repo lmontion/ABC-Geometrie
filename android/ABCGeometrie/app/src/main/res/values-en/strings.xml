@@ -41,6 +41,8 @@
     <string name="pseudo">Enter your username</string>
     <string name="ok">OK</string>
     <string name="goScoreBoard">Scoreboard -></string>
+    <string name="minute"> minutes and </string>
+    <string name="seconde"> seconds</string>
 
     <string name="board">ScoreBoard</string>
 

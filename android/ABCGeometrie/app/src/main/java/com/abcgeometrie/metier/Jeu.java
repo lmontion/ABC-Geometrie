@@ -1,5 +1,11 @@
 package com.abcgeometrie.metier;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.res.Resources;
+
+import com.abcgeometrie.R;
+
 /**
  * Created by lucas on 28/01/15.
  */
@@ -57,6 +63,16 @@ public class Jeu implements java.io.Serializable{
             score = 100;
         }
         return score;
+    }
+
+    public String tempsToString(Context cont){
+        if(this.tempsPasse > 59){
+            float tempsConvert = ((float) tempsPasse)/60;
+            int minutes = (int) tempsConvert;
+            int secondes = (int) tempsPasse-(60 * minutes);
+            return String.valueOf(minutes) + " " + cont.getResources().getString(R.string.minute) + String.valueOf(secondes) + " " + cont.getResources().getString(R.string.seconde);
+        }
+        return String.valueOf(tempsPasse) + " " + cont.getResources().getString(R.string.seconde);
     }
 }
 

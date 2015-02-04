@@ -77,7 +77,7 @@ public class Gagnant implements java.io.Serializable{
         if(lang.equals("fr")){
             if(classement.equals("1")) return " ; Premier : " + gagnant.pseudo + " - " + gagnant.score + " Points";
             if(classement.equals("2")) return " ; Deuxième : " + gagnant.pseudo + " - " + gagnant.score + " Points";
-            if(classement.equals("3")) return " ; Troisème : " + gagnant.pseudo + " - " + gagnant.score + " Points";
+            if(classement.equals("3")) return " ; Troisième : " + gagnant.pseudo + " - " + gagnant.score + " Points";
         }
         if(lang.equals("es")){
             if(classement.equals("1")) return " ; Primero : " + gagnant.pseudo + " - " + gagnant.score + " Puntos";

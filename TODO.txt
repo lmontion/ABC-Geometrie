@@ -1,11 +1,9 @@
 Jeu :
-L -> Voir pour les "'" dans les questions
 L -> Score
 
-T -> Design page de fin de jeu + animation
+T -> page de fin de jeu animation
 T -> rajuster design question 3 lignes
 
-Y -> speaker sur le score 
 Y -> Design dialog bouton retour
 Y -> nettoyage
 
