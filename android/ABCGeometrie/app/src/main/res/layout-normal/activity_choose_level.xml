@@ -26,7 +26,16 @@
             android:layout_toRightOf="@+id/btnHome"
             android:id="@+id/btnTTS"
             android:src="@drawable/btnspeaker"
-            android:layout_marginLeft="30dp"/>
+            android:layout_marginLeft="@dimen/btn_up_margin"/>
+
+        <ImageView
+            android:layout_width="@dimen/size_flag_lang_height"
+            android:layout_height="@dimen/size_flag_lang_height"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/btnLang"
+            android:id="@+id/btnAbout"
+            android:src="@drawable/btn_information"
+            android:layout_marginRight="@dimen/btn_up_margin"/>
 
         <Button
             android:id="@+id/btnLang"

@@ -29,7 +29,7 @@ import java.text.DecimalFormat;
  */
 public class EndGameActivity extends Activity implements TextToSpeech.OnInitListener{
 
-    private TextView txtViewBravo, score, scoreJoueur, nbQuestion, nbQuestionJoueur, newRecord, pseudo, goScoreBoard, temps, tempsJoueur;
+    private TextView txtViewBravo, score, scorePts, scoreJoueur, nbQuestion, nbQuestionJoueur, newRecord, goScoreBoard, temps, tempsJoueur;
     private ImageView speak, home;
     private Button btnOk, btnLang;
     private EditText saisiePseudo;
@@ -53,33 +53,39 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
         // Application de la police
         saisiePseudo = (EditText) findViewById(R.id.saisiePseudo);
         btnOk = (Button) findViewById(R.id.btnOk);
-        txtViewBravo = (TextView) findViewById(R.id.txtViewBravo);
         score = (TextView) findViewById(R.id.score);
+        scorePts = (TextView) findViewById(R.id.scorePts);
         scoreJoueur = (TextView) findViewById(R.id.scoreJoueur);
         nbQuestion = (TextView) findViewById(R.id.nbQuestion);
         nbQuestionJoueur = (TextView) findViewById(R.id.nbQuestionJoueur);
         newRecord = (TextView) findViewById(R.id.newRecord);
-        pseudo = (TextView) findViewById(R.id.pseudo);
         temps = (TextView) findViewById(R.id.temps);
         tempsJoueur = (TextView) findViewById(R.id.tempsJoueur);
         Typeface tfLight = Typeface.createFromAsset(getAssets(), "fonts/orbitron-light.otf");
         Typeface tfMedium = Typeface.createFromAsset(getAssets(),"fonts/orbitron-medium.otf");
         saisiePseudo.setTypeface(tfLight);
         btnOk.setTypeface(tfMedium);
-        txtViewBravo.setTypeface(tfLight);
         score.setTypeface(tfLight);
-        scoreJoueur.setTypeface(tfLight);
+        scorePts.setTypeface(tfMedium);
+        scoreJoueur.setTypeface(tfMedium);
         nbQuestion.setTypeface(tfLight);
         temps.setTypeface(tfLight);
         tempsJoueur.setTypeface(tfLight);
         nbQuestionJoueur.setTypeface(tfLight);
-        pseudo.setTypeface(tfLight);
         newRecord.setTypeface(tfMedium);
 
         // Vérification que le score soit dans les 10 premiers
         boolean nouveauRecord = true;
         Jeu currentJeu = (Jeu) getIntent().getExtras().get("jeu");
-        nbQuestionJoueur.setText(String.valueOf(currentJeu.getNbQuestionsNecessaires()));
+
+        // Calcul des mauvaises réponses
+        int mauvaiseReponse = currentJeu.getNbQuestionsNecessaires() - currentJeu.getNbQuestionsReussis();
+        nbQuestionJoueur.setText(String.valueOf(mauvaiseReponse));
+
+        // Mise au pluriel de la phrase "mauvaises réponses"
+        if (mauvaiseReponse > 1)
+            nbQuestion.setText(getResources().getString(R.string.nbQuestionPluriel));
+
         long tempsPasse = currentJeu.getTempsPasse();
         if(tempsPasse > 59){
             float tempsConvert = ((float) tempsPasse)/60;
@@ -130,8 +136,8 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(saisiePseudo.getText().toString().equals("")){
-                    saisiePseudo.setBackgroundColor(R.color.monRouge);
+                if(saisiePseudo.getText().toString().equals("")) {
+                    saisiePseudo.setBackgroundColor(Color.RED);
                 }else{
                     db.insertScore(saisiePseudo.getText().toString(), Integer.valueOf(scoreJoueur.getText().toString()), currentContrat.getId());
                     Intent i = new Intent(EndGameActivity.this, BoardActivity.class);
@@ -148,6 +154,14 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
             public void onClick(View v) {
                 Intent i = new Intent(EndGameActivity.this, MainActivity.class);
                 startActivity(i);
+            }
+        });
+
+        // Remise du fond en blanc de l'édit text
+        saisiePseudo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saisiePseudo.setBackgroundColor(Color.WHITE);
             }
         });
 

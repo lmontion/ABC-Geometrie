@@ -32,15 +32,16 @@
     <string name="couleursformes">Mixte</string>
 
     <string name="gg">Bravo !!</string>
-    <string name="score">Ton score : </string>
-    <string name="temps">Ton temps : </string>
-    <string name="nbQuestion">Nombre de questions nécessaires : </string>
+    <string name="score">"Score : "</string>
+    <string name="temps">"Temps : "</string>
+    <string name="nbQuestion">"Mauvaise Réponse : "</string>
+    <string name="nbQuestionPluriel">"Mauvaises Réponses : "</string>
     <string name="newRecord">Nouveau record !! </string>
-    <string name="pseudo">Entre ton pseudo : </string>
+    <string name="pseudo">Entre ton pseudo</string>
     <string name="ok">OK</string>
 
     <string name="board">Tableau des scores</string>
-    <string name="goScoreBoard">Voir le tableau des scores -></string>
+    <string name="goScoreBoard">Tableau des scores</string>
 
 
     <string name="labeleAlizaza">La Caverne d\'Alizaza</string>

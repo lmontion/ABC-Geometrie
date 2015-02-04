@@ -33,13 +33,14 @@
     <string name="couleursformes">Formas y Colores</string>
 
     <string name="gg">Bien Hecho !!</string>
-    <string name="score">Su puntaje : </string>
-    <string name="temps">Su tiempo : </string>
-    <string name="nbQuestion">Número requerido de preguntas : </string>
+    <string name="score">"Puntaje : "</string>
+    <string name="temps">"Tiempo : "</string>
+    <string name="nbQuestion">"Respuesta incorrecta : "</string>
+    <string name="nbQuestionPluriel">"Respuestas incorrectas : "</string>
     <string name="newRecord">Nuevo récord !! </string>
-    <string name="pseudo">Introduzca su nombre de usuario : </string>
-    <string name="ok">OKAY</string>
-    <string name="goScoreBoard">Ver la tabla de puntuación -></string>
+    <string name="pseudo">Escribe un apodo</string>
+    <string name="ok">OK</string>
+    <string name="goScoreBoard">Tabla de puncrtuatión</string>
 
     <string name="board">Tabla puntuación</string>
 

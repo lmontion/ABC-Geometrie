@@ -33,13 +33,14 @@
     <string name="couleursformes">Formes and Shapes</string>
 
     <string name="gg">Well done !!</string>
-    <string name="score">Your score : </string>
-    <string name="temps">Your time : </string>
-    <string name="nbQuestion">Required number of questions : </string>
+    <string name="score">"Score : "</string>
+    <string name="temps">"Time : "</string>
+    <string name="nbQuestion">"Wrong answer : "</string>
+    <string name="nbQuestionPluriel">"Wrong answers : "</string>
     <string name="newRecord">New record !! </string>
-    <string name="pseudo">Enter your username : </string>
+    <string name="pseudo">Enter your username</string>
     <string name="ok">OK</string>
-    <string name="goScoreBoard">View the scoreboard -></string>
+    <string name="goScoreBoard">Scoreboard -></string>
 
     <string name="board">ScoreBoard</string>
 
