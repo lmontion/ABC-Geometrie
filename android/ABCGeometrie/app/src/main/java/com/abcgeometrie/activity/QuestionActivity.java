@@ -11,8 +11,10 @@ import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.internal.widget.NativeActionModeAwareLayout;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -299,68 +301,27 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
                     public void run() {
                         startActivity(i);
                     }
-                }, 3000);
+                }, 2000);
             }
         });
 
-       /* // Récupération bouton et evenement
-        img0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
-                jeu.setNbQuestionsReussis(jeu.getNbQuestionsReussis() + 1);
-                img0.setBackgroundColor(Color.GREEN);
-                //pb.setProgress(pb.getProgress() + 1);
-                Intent i;
-                if (jeu.getNbQuestionsReussis() == con.getNbPoints()) {
-                    i = new Intent(QuestionActivity.this, EndGameActivity.class);
-                } else {
-                    i = new Intent(QuestionActivity.this, QuestionActivity.class);
-                    i.putExtra("contrat", con);
+        View[] views = {btnLang, speak};
+        for (View btn : views){
+            btn.setOnTouchListener(new View.OnTouchListener() {
+
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    //v.setLayoutParams(resize(v));
+                    if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                        v.setAlpha((float) 0.7);
+                    }
+                    if (event.getAction() == MotionEvent.ACTION_UP){
+                        v.setAlpha((float) 1);
+                    }
+                    return false;
                 }
-                i.putExtra("jeu", jeu);
-                startActivity(i);
-            }
-        });
-        // Récupération bouton et evenement
-        img1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                img1.setBackgroundColor(Color.RED);
-                img0.setBackgroundColor(Color.GREEN);
-                jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
-                Intent i = new Intent(QuestionActivity.this, QuestionActivity.class);
-                i.putExtra("contrat", con);
-                i.putExtra("jeu", jeu);
-                startActivity(i);
-            }
-        });
-        // Récupération bouton et evenement
-        img2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                img2.setBackgroundColor(Color.RED);
-                img0.setBackgroundColor(Color.GREEN);
-                jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
-                Intent i = new Intent(QuestionActivity.this, QuestionActivity.class);
-                i.putExtra("contrat", con);
-                i.putExtra("jeu", jeu);
-                startActivity(i);
-            }
-        });
-        // Récupération bouton et evenement
-        img3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                img3.setBackgroundColor(Color.RED);
-                img0.setBackgroundColor(Color.GREEN);
-                jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
-                Intent i = new Intent(QuestionActivity.this, QuestionActivity.class);
-                i.putExtra("contrat", con);
-                i.putExtra("jeu", jeu);
-                startActivity(i);
-            }
-        });*/
+            });
+        }
 
     }
 

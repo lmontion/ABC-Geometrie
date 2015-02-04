@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -20,7 +21,7 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
 
     private TextView txtViewChooseTheme;
     private Button btnThemeColor, btnThemeForm, btnThemeColorAndForm,btnLang;
-	private ImageButton arrowThemeColor;
+	private ImageButton arrowThemeColor, arrowThemeForm, arrowThemeColorAndForm;
     private ImageView speak, home;
     private TextToSpeech tts;
     private String lang = "";
@@ -44,6 +45,8 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
 
         // Récupération des Boutons choix du theme + event
 		arrowThemeColor = (ImageButton) findViewById(R.id.flecheGauche);
+        arrowThemeForm = (ImageButton) findViewById(R.id.flecheCentre);
+        arrowThemeColorAndForm = (ImageButton) findViewById(R.id.flecheDroite);
         btnThemeColor = (Button) findViewById(R.id.btnThemeColor);
         btnThemeForm = (Button) findViewById(R.id.btnThemeForm);
         btnThemeColorAndForm = (Button) findViewById(R.id.btnThemeColorAndForm);
@@ -60,6 +63,8 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ChooseThemeActivity.this, ChooseDefiActivity.class);
+                i.putExtra("lvl",1);
+                i.putExtra("theme","couleurs");
                 startActivity(i);
                 }
         });
@@ -72,7 +77,25 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
                 startActivity(i);
             }
         });
+        arrowThemeForm.setOnClickListener(new TextView.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ChooseThemeActivity.this, ChooseDefiActivity.class);
+                i.putExtra("lvl",1);
+                i.putExtra("theme","formes");
+                startActivity(i);
+            }
+        });
         btnThemeColorAndForm.setOnClickListener(new TextView.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ChooseThemeActivity.this, ChooseDefiActivity.class);
+                i.putExtra("lvl",1);
+                i.putExtra("theme","couleurs et formes");
+                startActivity(i);
+            }
+        });
+        arrowThemeColorAndForm.setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ChooseThemeActivity.this, ChooseDefiActivity.class);
@@ -120,6 +143,24 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
                 dl.onCreateDialog();
             }
         });
+
+        View[] views = {btnThemeColor, btnThemeForm, btnThemeColorAndForm, arrowThemeColor, arrowThemeForm, arrowThemeColorAndForm, btnLang, home, speak};
+        for (View btn : views){
+            btn.setOnTouchListener(new View.OnTouchListener() {
+
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    //v.setLayoutParams(resize(v));
+                    if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                        v.setAlpha((float) 0.7);
+                    }
+                    if (event.getAction() == MotionEvent.ACTION_UP){
+                        v.setAlpha((float) 1);
+                    }
+                    return false;
+                }
+            });
+        }
     }
 
     @Override

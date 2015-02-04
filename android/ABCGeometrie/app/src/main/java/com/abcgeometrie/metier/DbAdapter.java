@@ -3,6 +3,7 @@ package com.abcgeometrie.metier;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -114,10 +115,11 @@ public class DbAdapter {
     private static String INSERT_TABLE_APPARTENIR_LVL2;
     private static String INSERT_TABLE_QUESTION_LVL3;
     private static String INSERT_TABLE_APPARTENIR_LVL3;
+    //private static String INSERT_BIDON;
 
 
     private static final String DATABASE_NAME = "ABC_Geometrie";
-    private static final int DATABASE_VERSION = 24;
+    private static final int DATABASE_VERSION = 28;
     private final Context mCtx;
 
     private static class DatabaseHelper extends SQLiteOpenHelper {
@@ -142,6 +144,14 @@ public class DbAdapter {
             db.execSQL(INSERT_TABLE_APPARTENIR_LVL2);
             db.execSQL(INSERT_TABLE_QUESTION_LVL3);
             db.execSQL(INSERT_TABLE_APPARTENIR_LVL3);
+
+            //db.execSQL(INSERT_BIDON);
+
+            /*ContentValues values = new ContentValues();
+            long retvalue = 0;
+            values.put("_id", id_here);
+            values.put("text", your_text_here);
+            retvalue = db.insertWithOnConflict(table, null, values, CONFLICT_REPLACE);*/
         }
 
         @Override
@@ -164,12 +174,42 @@ public class DbAdapter {
         INSERT_TABLE_APPARTENIR_LVL2 = getValueAppartenirNiv2();
         INSERT_TABLE_QUESTION_LVL3 = getValueQuestionNiv3();
         INSERT_TABLE_APPARTENIR_LVL3 = getValueAppartenirNiv3();
+        //INSERT_BIDON = getValueBidon();
     }
 
     public DbAdapter open() throws SQLException {
         mDbHelper = new DatabaseHelper(mCtx);
         mDb = mDbHelper.getWritableDatabase();
         return this;
+    }
+
+    public String getValueBidon(){
+        String ligne;
+        String temp = "";
+        StringBuffer buf = new StringBuffer();
+        InputStream is = mCtx.getResources().openRawResource(R.raw.test);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        boolean ok = false;
+        try {
+            if (is!=null) {
+                while ((ligne = reader.readLine()) != null) {
+                    /*if (ligne.contains("'")){
+                        if (!ok){
+                            ligne = DatabaseUtils.sqlEscapeString(ligne);
+                            ok = true;
+                        }
+
+                    }*/
+                    temp += ligne;
+                    // temp += DatabaseUtils.sqlEscapeString(ligne);
+                }
+
+            }
+            is.close();
+        } catch(IOException e) {
+            Log.e("file", e.getMessage());
+        }
+        return temp;
     }
 
     public String getValueQuestionNiv1(){
