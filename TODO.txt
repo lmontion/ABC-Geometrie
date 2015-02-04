@@ -3,12 +3,11 @@ L -> Voir pour les "'" dans les questions
 L -> Etat boutons
 
 T -> Design page de fin de jeu + animation
+T -> rajuster design question 3 lignes
 
-Y -> Design dialog bouton retour
-Y -> Regarder systeme random question
-Y -> annim avec drapeaux
-Y -> Transparence drapeaux 
 Y -> speaker sur les 3 premiers pseudo + score + speaker texte a propos
+Y -> Regarder systeme random question
+Y -> Design dialog bouton retour
 Y -> nettoyage
 
 M -> Maquettes affiches

@@ -58,8 +58,8 @@
 
 
     <!-- POP-UP changement langue -->
-    <dimen name="popup_flag_width">150dp</dimen>
-    <dimen name="popup_flag_height">81dp</dimen>
+    <dimen name="popup_flag_width">225dp</dimen>
+    <dimen name="popup_flag_height">120dp</dimen>
 
     <!-- Présentation ALIZAZA-->
     <dimen name="alizaza_logo_dimension">185dp</dimen>

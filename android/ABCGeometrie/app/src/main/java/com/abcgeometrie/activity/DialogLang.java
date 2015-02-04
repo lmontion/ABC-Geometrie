@@ -2,10 +2,18 @@ package com.abcgeometrie.activity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.RelativeLayout;
+
 import com.abcgeometrie.R;
 import com.abcgeometrie.metier.Contrat;
 import com.abcgeometrie.metier.Jeu;
@@ -74,10 +82,19 @@ public class DialogLang {
     }
 
     public void onCreateDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(act);
-        LayoutInflater layout = act.getLayoutInflater();
-        View v = layout.inflate(R.layout.actvity_dialog, null);
-        Button esp = (Button) v.findViewById(R.id.btnEs);
+        //Theme_Holo_Dialog_NoActionBar
+        final Dialog dial = new Dialog(act, android.R.style.Theme_Holo_NoActionBar_Fullscreen);
+        Drawable d = new ColorDrawable(Color.BLACK);
+        d.setAlpha(220);
+        dial.getWindow().setBackgroundDrawable(d);
+        dial.setContentView(R.layout.actvity_dialog);
+        Button esp = (Button) dial.findViewById(R.id.btnEs);
+        RelativeLayout rl = (RelativeLayout) dial.findViewById(R.id.rl);
+        rl.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                dial.cancel();
+            }
+        });
         esp.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 lang = "es";
@@ -103,7 +120,7 @@ public class DialogLang {
                 act.startActivity(i);
             }
         });
-        Button fr = (Button) v.findViewById(R.id.btnLang);
+        Button fr = (Button) dial.findViewById(R.id.btnLang);
         fr.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 lang = "fr";
@@ -129,34 +146,33 @@ public class DialogLang {
                 act.startActivity(i);
             }
         });
-        Button eng = (Button) v.findViewById(R.id.btnEn);
+        Button eng = (Button) dial.findViewById(R.id.btnEn);
         eng.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 lang = "en";
                 changeLang(lang);
                 Intent i = new Intent(act.getBaseContext(), act.getClass());
-                if(act.getClass() == ChooseDefiActivity.class){
+                if (act.getClass() == ChooseDefiActivity.class) {
                     i.putExtra("theme", theme);
                     i.putExtra("lvl", level);
                 }
-                if (act.getClass() == QuestionActivity.class){
+                if (act.getClass() == QuestionActivity.class) {
                     i.putExtra("contrat", con);
                     i.putExtra("question", question);
                     i.putExtra("change", true);
                     i.putExtra("jeu", jeu);
                 }
-                if(act.getClass() == BoardActivity.class){
+                if (act.getClass() == BoardActivity.class) {
                     i.putExtra("contrat", con);
                 }
-                if(act.getClass() == EndGameActivity.class ){
+                if (act.getClass() == EndGameActivity.class) {
                     i.putExtra("jeu", jeu);
                     i.putExtra("contrat", con);
                 }
                 act.startActivity(i);
             }
         });
-        builder.setView(v);
-        builder.show();
+        dial.show();
     }
 
     public void changeLang(String lang){
