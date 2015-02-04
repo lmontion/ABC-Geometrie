@@ -2,10 +2,14 @@ package com.abcgeometrie.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.speech.tts.TextToSpeech;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -47,11 +51,26 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
         txtViewLvl1.setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //txtViewLvl1.startAnimation(AnimationUtils.loadAnimation(ChooseLevelActivity.this, R.anim.abc_fade_out));
+                //v.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slide_out_return));
                 Intent i = new Intent(ChooseLevelActivity.this, ChooseThemeActivity.class);
                 startActivity(i);
+
             }
         });
+        /*txtViewLvl1.setOnTouchListener(new View.OnTouchListener() {
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                //v.setLayoutParams(resize(v));
+               if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                   v.setAlpha((float) 0.7);
+               }
+                if (event.getAction() == MotionEvent.ACTION_UP){
+                    v.setAlpha((float) 1);
+                }
+                return false;
+            }
+        });*/
         txtViewLvl2.setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +80,7 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
                 startActivity(i);
             }
         });
+
         txtViewLvl3.setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,6 +139,24 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
                 dl.onCreateDialog();
             }
         });
+
+        View[] views = {txtViewLvl1, txtViewLvl2, txtViewLvl3, btnAbout, btnLang, home, speak};
+        for (View btn : views){
+            btn.setOnTouchListener(new View.OnTouchListener() {
+
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    //v.setLayoutParams(resize(v));
+                    if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                        v.setAlpha((float) 0.7);
+                    }
+                    if (event.getAction() == MotionEvent.ACTION_UP){
+                        v.setAlpha((float) 1);
+                    }
+                    return false;
+                }
+            });
+        }
     }
 
     @Override
@@ -137,4 +175,13 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
         intent.putExtra("retour", true);
         startActivity(intent);
     }
+
+    /*private ViewGroup.LayoutParams resize(View v){
+        double newWidth = v.getWidth() * 1.1;
+        double newHeight = v.getHeight() * 1.1;
+        ViewGroup.LayoutParams params = v.getLayoutParams();
+        params.width = (int)newWidth;
+        params.height = (int)newHeight;
+        return params;
+    }*/
 }

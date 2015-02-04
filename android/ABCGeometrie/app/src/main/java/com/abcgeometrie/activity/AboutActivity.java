@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -22,6 +23,7 @@ public class AboutActivity extends Activity implements TextToSpeech.OnInitListen
     private TextToSpeech tts;
     private DialogLang dl;
     private String lang = "";
+    private TextView txtViewAbout, txtAbout1, txtAbout2, txtAbout3, txtAbout4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +40,18 @@ public class AboutActivity extends Activity implements TextToSpeech.OnInitListen
         dl = new DialogLang(AboutActivity.this);
 
         // Application de la police
+        txtViewAbout = (TextView) findViewById(R.id.txtViewAbout);
+        txtAbout1 = (TextView) findViewById(R.id.txtAbout1);
+        txtAbout2 = (TextView) findViewById(R.id.txtAbout2);
+        txtAbout3 = (TextView) findViewById(R.id.txtAbout3);
+        txtAbout4 = (TextView) findViewById(R.id.txtAbout4);
         Typeface tfLight = Typeface.createFromAsset(getAssets(),"fonts/orbitron-light.otf");
         Typeface tfMedium = Typeface.createFromAsset(getAssets(),"fonts/orbitron-medium.otf");
+        txtViewAbout.setTypeface(tfLight);
+        txtAbout1.setTypeface(tfLight);
+        txtAbout2.setTypeface(tfLight);
+        txtAbout3.setTypeface(tfLight);
+        txtAbout4.setTypeface(tfLight);
 
         // Retour accueil
         home = (ImageView) findViewById(R.id.btnHome);
@@ -58,7 +70,7 @@ public class AboutActivity extends Activity implements TextToSpeech.OnInitListen
         speak.setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang,"toto",tts);
+                AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang, txtViewAbout.getText().toString(), tts);
             }
         });
 
@@ -69,6 +81,24 @@ public class AboutActivity extends Activity implements TextToSpeech.OnInitListen
                 dl.onCreateDialog();
             }
         });
+
+        View[] views = {btnLang, home, speak};
+        for (View btn : views){
+            btn.setOnTouchListener(new View.OnTouchListener() {
+
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    //v.setLayoutParams(resize(v));
+                    if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                        v.setAlpha((float) 0.7);
+                    }
+                    if (event.getAction() == MotionEvent.ACTION_UP){
+                        v.setAlpha((float) 1);
+                    }
+                    return false;
+                }
+            });
+        }
     }
 
     @Override

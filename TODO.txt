@@ -1,22 +1,22 @@
 Jeu :
-L -> Ajout d'un timer avant de passer à la question suivante
-L -> Croix pour mauvaise rep
-L -> affichage différé
-L -> Controles images (base carré contre base triangulaire, angle CAB)
-L -> Vert plus foncé
 L -> Voir pour les "'" dans les questions
-L -> Tableau pour (gagné/perdu)
+L -> Etat boutons
 
 T -> Design page de fin de jeu + animation
-T -> Design dialog bouton retour
-T -> Choix drapeau (transparant)
-T -> Bouton pour page a propos
+T -> rajuster design question 3 lignes
 
-Y -> Page a propos, description lvl
-Y -> Lecture auto intitulé question (lvl1)
-Y -> GIF
+Y -> speaker sur les 3 premiers pseudo + score + speaker texte a propos
+Y -> Regarder systeme random question
+Y -> Design dialog bouton retour
+Y -> nettoyage
 
 M -> Maquettes affiches
+
+Interfaces :
+tableau score
+A propos
+Page fin jeu
+
 
 Mis de coté :
 Progress dialog (pas important pour la cliente)

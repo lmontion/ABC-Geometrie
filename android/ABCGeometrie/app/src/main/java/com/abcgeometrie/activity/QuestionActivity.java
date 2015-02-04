@@ -7,14 +7,19 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.speech.tts.TextToSpeech;
+import android.support.v7.internal.widget.NativeActionModeAwareLayout;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.abcgeometrie.R;
@@ -23,6 +28,7 @@ import com.abcgeometrie.metier.DbAdapter;
 import com.abcgeometrie.metier.Jeu;
 import com.abcgeometrie.metier.Question;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class QuestionActivity extends Activity implements TextToSpeech.OnInitListener{
@@ -32,6 +38,7 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
     private TextView txtViewQuestion, txtViewProgressBar;
     private Button btnLang;
     private ImageButton img0, img1, img2, img3;
+    private ImageView croix1, croix2, croix3, croix4, nike1, nike2, nike3, nike4;
     private DialogLang dl;
     private String lang = "";
     private String currentTheme;
@@ -43,7 +50,7 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
     private Jeu jeu = null;
     private boolean changementLang = false;
     private ProgressBar pb;
-    private int i;
+    private int i, k, position;
     private ImageButton mauvais;
 
     @Override
@@ -63,6 +70,25 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
         img3 = (ImageButton) findViewById(R.id.rep4);
         pb = (ProgressBar) findViewById(R.id.progressBarVertical);
 
+        croix1 = (ImageView) findViewById(R.id.croixRep1);
+        croix2 = (ImageView) findViewById(R.id.croixRep2);
+        croix3 = (ImageView) findViewById(R.id.croixRep3);
+        croix4 = (ImageView) findViewById(R.id.croixRep4);
+        nike1 = (ImageView) findViewById(R.id.nikeRep1);
+        nike2 = (ImageView) findViewById(R.id.nikeRep2);
+        nike3 = (ImageView) findViewById(R.id.nikeRep3);
+        nike4 = (ImageView) findViewById(R.id.nikeRep4);
+
+        final ImageView[] tabCroix = {croix1, croix2, croix3, croix4};
+        final ImageView[] tabNike = {nike1, nike2, nike3, nike4};
+/*
+        for(ImageView i : tabCroix){
+            i.setVisibility(View.INVISIBLE);
+        }
+        for(ImageView i : tabNike){
+            i.setVisibility(View.INVISIBLE);
+        }
+*/
         // Application de la police
         txtViewProgressBar = (TextView) findViewById(R.id.textViewProgressBar);
         txtViewQuestion = (TextView) findViewById(R.id.txtViewQuestion);
@@ -189,6 +215,8 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
         final int indexReussi = r.nextInt(4);
         final int indexPerdu = r.nextInt(3);
 
+       // final RelativeLayout layout = (RelativeLayout) findViewById(R.id.relativeQuestions);
+
         int j = 0;
         for (i = 0; i < tabImg.length; i++){
             if (i != indexRandom){
@@ -196,21 +224,40 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
                 tabImg[i].setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        //tabImg[i-1].setBackgroundColor(Color.RED);
-                        //mauvais = tabImg[i-1];
+                        for (k = 0; k < tabImg.length; k++){
+                            tabImg[k].setEnabled(false);
+                            if (tabImg[k] == v){
+                                position = k;
+                            }
+                        }
                         v.setBackgroundColor(Color.RED);
-                        tabImg[indexRandom].setBackgroundColor(Color.GREEN);
+                        tabCroix[position].setVisibility(View.VISIBLE);
+                        AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang,perdu[indexPerdu],tts);
+
+                        final Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                tabImg[indexRandom].setBackgroundResource(R.color.vertRep);
+                            }
+                        }, 1000);
                         jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
                         /*try{
                             Thread.sleep(5000);
                         }catch(Exception e){
 
                         }*/
-                        AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang,perdu[indexPerdu],tts);
-                        Intent intent = new Intent(QuestionActivity.this, QuestionActivity.class);
+
+                        final Intent intent = new Intent(QuestionActivity.this, QuestionActivity.class);
                         intent.putExtra("contrat", con);
                         intent.putExtra("jeu", jeu);
-                        startActivity(intent);
+
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                startActivity(intent);
+                            }
+                        }, 2000);
                     }
                 });
                 j++;
@@ -225,13 +272,20 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
         tabImg[indexRandom].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                for(ImageButton img : tabImg){
+                    img.setEnabled(false);
+                }
                 jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
                 jeu.setNbQuestionsReussis(jeu.getNbQuestionsReussis() + 1);
-                tabImg[indexRandom].setBackgroundColor(Color.GREEN);
+                tabImg[indexRandom].setBackgroundResource(R.color.vertRep);
+                tabNike[indexRandom].setVisibility(View.VISIBLE);
                 AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang,reussi[indexReussi],tts);
-                con.getLstQuestions().remove(question);
+                ArrayList<Question> temp = con.getLstQuestions();
+                temp.remove(question);
+                con.setLstQuestions(temp);
                 //pb.setProgress(pb.getProgress() + 1);
-                Intent i;
+
+                final Intent i;
                 if (jeu.getNbQuestionsReussis() == con.getNbPoints()) {
                     i = new Intent(QuestionActivity.this, EndGameActivity.class);
                     jeu.stopChrono();
@@ -240,68 +294,34 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
                 }
                 i.putExtra("contrat", con);
                 i.putExtra("jeu", jeu);
-                startActivity(i);
+
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(i);
+                    }
+                }, 2000);
             }
         });
 
-       /* // Récupération bouton et evenement
-        img0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
-                jeu.setNbQuestionsReussis(jeu.getNbQuestionsReussis() + 1);
-                img0.setBackgroundColor(Color.GREEN);
-                //pb.setProgress(pb.getProgress() + 1);
-                Intent i;
-                if (jeu.getNbQuestionsReussis() == con.getNbPoints()) {
-                    i = new Intent(QuestionActivity.this, EndGameActivity.class);
-                } else {
-                    i = new Intent(QuestionActivity.this, QuestionActivity.class);
-                    i.putExtra("contrat", con);
+        View[] views = {btnLang, speak};
+        for (View btn : views){
+            btn.setOnTouchListener(new View.OnTouchListener() {
+
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    //v.setLayoutParams(resize(v));
+                    if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                        v.setAlpha((float) 0.7);
+                    }
+                    if (event.getAction() == MotionEvent.ACTION_UP){
+                        v.setAlpha((float) 1);
+                    }
+                    return false;
                 }
-                i.putExtra("jeu", jeu);
-                startActivity(i);
-            }
-        });
-        // Récupération bouton et evenement
-        img1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                img1.setBackgroundColor(Color.RED);
-                img0.setBackgroundColor(Color.GREEN);
-                jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
-                Intent i = new Intent(QuestionActivity.this, QuestionActivity.class);
-                i.putExtra("contrat", con);
-                i.putExtra("jeu", jeu);
-                startActivity(i);
-            }
-        });
-        // Récupération bouton et evenement
-        img2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                img2.setBackgroundColor(Color.RED);
-                img0.setBackgroundColor(Color.GREEN);
-                jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
-                Intent i = new Intent(QuestionActivity.this, QuestionActivity.class);
-                i.putExtra("contrat", con);
-                i.putExtra("jeu", jeu);
-                startActivity(i);
-            }
-        });
-        // Récupération bouton et evenement
-        img3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                img3.setBackgroundColor(Color.RED);
-                img0.setBackgroundColor(Color.GREEN);
-                jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
-                Intent i = new Intent(QuestionActivity.this, QuestionActivity.class);
-                i.putExtra("contrat", con);
-                i.putExtra("jeu", jeu);
-                startActivity(i);
-            }
-        });*/
+            });
+        }
 
     }
 
@@ -337,5 +357,10 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
     }
 
     @Override
-    public void onInit(int status) {}
+    public void onInit(int status) {
+        if(con.getNiveau().equals("1")) {
+            AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang, txtViewQuestion.getText().toString(), tts);
+        }
+
+    }
 }

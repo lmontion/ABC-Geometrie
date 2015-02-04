@@ -1,8 +1,6 @@
 package com.abcgeometrie.activity;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -15,13 +13,7 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.abcgeometrie.R;
-import com.abcgeometrie.metier.Contrat;
-import com.abcgeometrie.metier.DbAdapter;
-import com.abcgeometrie.metier.Gagnant;
-import com.abcgeometrie.metier.Question;
-import java.util.ArrayList;
 import java.util.Locale;
-import java.util.Timer;
 
 public class MainActivity extends Activity implements TextToSpeech.OnInitListener{
 
@@ -66,12 +58,15 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
                 startActivity(i);
             }
         });
+
+        // Animations
+        bandeInferieur = (RelativeLayout) findViewById(R.id.bandeInferieur);
+        bandeSuperieur = (RelativeLayout) findViewById(R.id.bandeSuperieur);
+        bandeMilieu = (RelativeLayout) findViewById(R.id.bandeMilieu);
         relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bandeInferieur = (RelativeLayout) findViewById(R.id.bandeInferieur);
-                bandeSuperieur = (RelativeLayout) findViewById(R.id.bandeSuperieur);
-                bandeMilieu = (RelativeLayout) findViewById(R.id.bandeMilieu);
+                bloquer();
                 bandeInferieur.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,  R.anim.slide_out));
                 bandeSuperieur.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,  R.anim.slide_out));
                 bandeMilieu.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,  R.anim.slide_out_return));
@@ -93,37 +88,11 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         geo2 = (TextView) findViewById(R.id.textViewGeometrie02);
         baseLine = (TextView) findViewById(R.id.textViewBaseLine);
         Typeface tfLight = Typeface.createFromAsset(getAssets(),"fonts/orbitron-light.otf");
-        Typeface tfMedium = Typeface.createFromAsset(getAssets(),"fonts/orbitron-medium.otf");
         abc.setTypeface(tfLight);
         dela.setTypeface(tfLight);
         geo1.setTypeface(tfLight);
         geo2.setTypeface(tfLight);
         baseLine.setTypeface(tfLight);
-
-        // Test avec les requetes
-        DbAdapter db = new DbAdapter(this);
-        db.open();
-        // Tests insert
-        //ArrayList<Contrat> lstContrats = db.getContrat();
-        //ArrayList<Gagnan> lstGagnants = db.getGagnant();
-        //ArrayList<Question> lstQuestions = db.getQuestion();
-        //ArrayList<String> appartenir = db.getAppartenir();
-        // Récupération des 10 premiers gagnant d'un contrat avec classes
-        //ArrayList<Gagnant> lstGagnants = db.getGagnantsByIdContrat(15);
-        // Récupération des contrats selon le niveau selectionné avec classes
-        //ArrayList<Contrat> lstContrats = db.getContratsByNiveau(2);
-        // Récupération des contrats selon un niveau et un theme avec classes
-        //ArrayList<Contrat> lstContrats2 = db.getcontratsByNiveauAndTheme(1, "couleurs");
-        // Récupération d'un contrat selon son id avec classes
-        Contrat contrat = db.getContratById(2);
-        Question q1 = contrat.chooseAQuestion();
-        Question q2 = contrat.chooseAQuestion();
-        Question q3 = contrat.chooseAQuestion();
-
-        // Insertion d'un nouveau meilleure score si score meilleur que les 10 sortis
-        //db.insertScore("Paul", 850, 15);
-        // Vérification
-        //ArrayList<Gagnant> lstGagnants = db.getGagnantsByIdContrat(15);
 
         // Récupération des images boutons + event
         france = (ImageButton) findViewById(R.id.drapeauFrance);
@@ -131,25 +100,64 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         espagne = (ImageButton) findViewById(R.id.drapeauEspagne);
         france.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                bloquer();
                 lang = "fr";
                 changeLang(lang);
-                startActivity(new Intent(MainActivity.this, ChooseLevelActivity.class));
+                bandeInferieur.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,  R.anim.slide_out));
+                bandeSuperieur.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,  R.anim.slide_out));
+                bandeMilieu.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,  R.anim.slide_out_return));
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(new Intent(MainActivity.this, ChooseLevelActivity.class));
+                    }
+                }, 300);
             }
         });
         angleterre.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                bloquer();
                 lang = "en";
                 changeLang(lang);
-                startActivity(new Intent(MainActivity.this, ChooseLevelActivity.class));
+                bandeInferieur.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,  R.anim.slide_out));
+                bandeSuperieur.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,  R.anim.slide_out));
+                bandeMilieu.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,  R.anim.slide_out_return));
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(new Intent(MainActivity.this, ChooseLevelActivity.class));
+                    }
+                }, 300);
             }
         });
         espagne.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                bloquer();
                 lang = "es";
                 changeLang(lang);
-                startActivity(new Intent(MainActivity.this, ChooseLevelActivity.class));
+                bandeInferieur.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,  R.anim.slide_out));
+                bandeSuperieur.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,  R.anim.slide_out));
+                bandeMilieu.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,  R.anim.slide_out_return));
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(new Intent(MainActivity.this, ChooseLevelActivity.class));
+                    }
+                }, 300);
             }
         });
+    }
+
+    public void bloquer(){
+        relativeLayout.setEnabled(false);
+        btnAlizaza.setEnabled(false);
+        btnTeam.setEnabled(false);
+        france.setEnabled(false);
+        angleterre.setEnabled(false);
+        espagne.setEnabled(false);
     }
 
     public void changeLang(String lang){

@@ -50,7 +50,8 @@
     <string name="labelSiteAlizaza"><i>http://www.lacavernedalizaza.fr/</i></string>
     <string name="activiteAlizaza">Diseño, fabricación y preparación juegos educativos</string>
 
-    <string name="about">Acerca de la aplicación </string>
+    <string name="about">Sobre el juego </string>
+
     <string name="txtAbout1">El juego se divide en 3 niveles :</string>
     <string name="txtAbout2"><b>Nivel 1</b> : El 6 formas y 11 colores básicos</string>
     <string name="txtAbout3"><b>Nivel 2</b> : Geometría Intermedio ( formas 3D)</string>

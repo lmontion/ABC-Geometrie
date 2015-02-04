@@ -6,8 +6,6 @@
     tools:context="com.abcgeometrie.activity.AdminQuestionsActivity"
     android:background="@color/monBleu">
 
-
-
     <!--Bande de Boutons en haut -->
     <RelativeLayout
         android:id="@+id/barreBoutonHaut"
@@ -207,8 +205,9 @@
     </RelativeLayout>
             <LinearLayout
                 android:orientation="horizontal"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="-5000dp"
                 android:background="@color/monVert"
                 android:layout_marginTop="25px"
                 android:layout_marginBottom="15px"
