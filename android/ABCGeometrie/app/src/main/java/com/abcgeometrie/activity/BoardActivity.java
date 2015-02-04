@@ -85,7 +85,9 @@ public class BoardActivity extends ListActivity implements TextToSpeech.OnInitLi
         speak.setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang,txtViewBoard.getText().toString(),tts);
+                String read = "";
+                if (lstGagnants.length >= 1) read = lstGagnants[0].read(lstGagnants, lang);
+                AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang,txtViewBoard.getText().toString() + read,tts);
             }
         });
 

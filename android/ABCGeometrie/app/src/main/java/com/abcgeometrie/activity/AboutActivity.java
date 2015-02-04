@@ -69,7 +69,8 @@ public class AboutActivity extends Activity implements TextToSpeech.OnInitListen
         speak.setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang, txtViewAbout.getText().toString(), tts);
+                AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang, txtAbout1.getText().toString() + " ; " +
+                        txtAbout2.getText().toString() + " ;  " + txtAbout3.getText().toString() + " ; " + txtAbout4.getText().toString() , tts);
             }
         });
 

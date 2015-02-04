@@ -1,12 +1,11 @@
 Jeu :
 L -> Voir pour les "'" dans les questions
-L -> Etat boutons
+L -> Score
 
 T -> Design page de fin de jeu + animation
 T -> rajuster design question 3 lignes
 
-Y -> speaker sur les 3 premiers pseudo + score + speaker texte a propos
-Y -> Regarder systeme random question
+Y -> speaker sur le score 
 Y -> Design dialog bouton retour
 Y -> nettoyage
 
@@ -21,4 +20,5 @@ Page fin jeu
 Mis de coté :
 Progress dialog (pas important pour la cliente)
 Anim accueil a améliorer
+Amélioration : temps entre les phrases du speaker
 
