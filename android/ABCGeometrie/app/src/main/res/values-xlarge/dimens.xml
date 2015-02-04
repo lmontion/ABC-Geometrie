@@ -8,6 +8,7 @@
     <dimen name="size_flag_lang_width">108dp</dimen>
     <dimen name="size_flag_lang_height">63dp</dimen>
     <dimen name="title_size">75dp</dimen>
+    <dimen name="btn_up_margin">30dp</dimen>
 
     <!-- Page Choix défis -->
     <dimen name="pts_size">65dp</dimen>

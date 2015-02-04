@@ -8,6 +8,7 @@
     <dimen name="size_flag_lang_width">108dp</dimen>
     <dimen name="size_flag_lang_height">63dp</dimen>
     <dimen name="title_size">65dp</dimen>
+    <dimen name="btn_up_margin">30dp</dimen>
 
     <!-- Page Choix défis -->
     <dimen name="pts_size">53dp</dimen>
@@ -67,5 +68,20 @@
     <dimen name="alizaza_logo_margin_right">35dp</dimen>
     <dimen name="alizaza_description_margin_top">55dp</dimen>
     <dimen name="alizaza_description_padding">15dp</dimen>
+
+    <!-- End Game-->
+    <dimen name="end_game_score_bande_height">135dp</dimen>
+    <dimen name="end_game_score_bande_margin_top">30dp</dimen>
+    <dimen name="end_game_score_bande_margin_bottom">10dp</dimen>
+    <dimen name="end_game_text_basiq_size">40dp</dimen>
+    <dimen name="end_game_text_value_size">45dp</dimen>
+    <dimen name="end_game_triangle_size">40dp</dimen>
+    <dimen name="end_game_triangle_margin_right">15dp</dimen>
+    <dimen name="end_game_edit_text_width">540dp</dimen>
+    <dimen name="end_game_interligne">-10dp</dimen>
+    <dimen name="end_game_pseudo_margin_top">12dp</dimen>
+    <dimen name="end_game_pseudo_padding_horizontal">15dp</dimen>
+    <dimen name="end_game_pseudo_padding_vertical">5dp</dimen>
+    <dimen name="end_game_scoreboard_padding_right">200dp</dimen>
 
 </resources>

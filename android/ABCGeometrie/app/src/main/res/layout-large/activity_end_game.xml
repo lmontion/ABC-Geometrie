@@ -1,176 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.abcgeometrie.activity.AdminQuestionsActivity"
     android:background="@color/monBleu">
 
-
-    <ImageView
+    <!--Bande de Boutons en haut -->
+    <RelativeLayout
+        android:id="@+id/barreBoutonHaut"
         android:layout_width="match_parent"
-        android:layout_height="175px"
-        android:layout_marginTop="25px"
-        android:id="@+id/imgRecord"
-        android:src="@drawable/record_gif"
-        android:layout_gravity="bottom"/>
-
-    <ImageView
-        android:id="@+id/btnHome"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/btnaccueil"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_alignParentTop="true">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/btnHome"
-        android:id="@+id/btnTTS"
-        android:src="@drawable/btnspeaker"
-        android:layout_marginLeft="30dp"/>
+        <ImageView
+            android:id="@+id/btnHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btnaccueil"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btnHome"
+            android:id="@+id/btnTTS"
+            android:src="@drawable/btnspeaker"
+            android:layout_marginLeft="@dimen/btn_up_margin"/>
 
         <Button
+            android:id="@+id/btnLang"
             android:layout_width="@dimen/size_flag_lang_width"
             android:layout_height="@dimen/size_flag_lang_height"
-            android:id="@+id/btnLang"
-            android:layout_gravity="right"
-            android:background="@drawable/france"
-            android:layout_marginRight="20px"/>
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:background="@drawable/france"/>
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:gravity="center"
-            android:layout_height="97dp"
-            android:text="@string/gg"
-            android:textSize="85px"
-            android:layout_marginTop="125px"
-            android:id="@+id/txtViewBravo"
-            android:textColor="@color/monBlanc"/>
+    </RelativeLayout>
+
+       <!-- Affichage SCORE-->
+    <RelativeLayout
+        android:id="@+id/bandeScore"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/end_game_score_bande_height"
+        android:layout_marginTop="@dimen/end_game_score_bande_margin_top"
+        android:layout_marginBottom="@dimen/end_game_score_bande_margin_bottom"
+        android:layout_below="@+id/barreBoutonHaut"
+        android:background="@color/monJaune">
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/score"
+                android:textSize="@dimen/title_size"
+                android:textColor="@color/monBlanc"/>
+
+            <TextView
+                android:id="@+id/scoreJoueur"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1385"
+                android:textSize="@dimen/title_size"
+                android:textColor="@color/monBlanc"/>
+
+            <TextView
+                android:id="@+id/scorePts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" pts"
+                android:textSize="@dimen/title_size"
+                android:textColor="@color/monBlanc"/>
+
+         </LinearLayout>
+    </RelativeLayout>
+
+
+    <!--Affichage Temps, Mauvaise Reponse et Pseudo-->
+    <RelativeLayout
+        android:id="@+id/layoutInfoDiverse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bandeScore"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin">
 
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:id="@+id/ligneTemps"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/score"
-                    android:textSize="50px"
-                    android:layout_marginLeft="100px"
-                    android:id="@+id/score"
-                    android:textColor="@color/monBlanc"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="100"
-                    android:textSize="50px"
-                    android:layout_marginLeft="20px"
-                    android:layout_weight="1"
-                    android:id="@+id/scoreJoueur"
-                    android:textColor="@color/monBlanc"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-
-                <!--<TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/temps"
-                    android:textSize="50px"
-                    android:layout_marginLeft="100px"
-                    android:id="@+id/temps"
-                    android:textColor="@color/monBlanc"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="2'29"
-                    android:textSize="50px"
-                    android:layout_marginLeft="20px"
-                    android:layout_weight="1"
-                    android:id="@+id/tempsJoueur"
-                    android:textColor="@color/monBlanc"/>-->
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/nbQuestion"
-                    android:textSize="50px"
-                    android:layout_marginLeft="100px"
-                    android:id="@+id/nbQuestion"
-                    android:textColor="@color/monBlanc"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="12"
-                    android:textSize="50px"
-                    android:layout_marginLeft="20px"
-                    android:layout_weight="1"
-                    android:id="@+id/nbQuestionJoueur"
-                    android:textColor="@color/monBlanc"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/temps"
-                    android:textSize="50px"
-                    android:layout_marginLeft="100px"
-                    android:id="@+id/temps"
-                    android:textColor="@color/monBlanc"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="50px"
-                    android:layout_marginLeft="20px"
-                    android:layout_weight="1"
-                    android:id="@+id/tempsJoueur"
-                    android:textColor="@color/monBlanc"/>
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
+            <ImageView
+                android:layout_width="@dimen/end_game_triangle_size"
                 android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:layout_marginRight="@dimen/end_game_triangle_margin_right"
+                android:src="@drawable/triangle_accueil_fin"/>
+
+            <TextView
+                android:id="@+id/temps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/temps"
+                android:textSize="@dimen/end_game_text_basiq_size"
+                android:textColor="@color/monBlanc"/>
+
+            <TextView
+                android:id="@+id/tempsJoueur"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="1min 25s"
+                android:textSize="@dimen/end_game_text_value_size"
+                android:textColor="@color/monBlanc"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ligneMauvaiseReponse"
+            android:orientation="horizontal"
+            android:layout_below="@+id/ligneTemps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/end_game_interligne">
+
+            <ImageView
+                android:layout_width="@dimen/end_game_triangle_size"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:layout_marginRight="@dimen/end_game_triangle_margin_right"
+                android:src="@drawable/triangle_accueil_fin"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/nbQuestion"
+                android:textSize="@dimen/end_game_text_basiq_size"
+                android:id="@+id/nbQuestion"
+                android:textColor="@color/monBlanc"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/end_game_text_value_size"
+                android:id="@+id/nbQuestionJoueur"
+                android:textColor="@color/monBlanc"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layoutSaisieNewRecord"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ligneMauvaiseReponse"
+            android:layout_marginTop="@dimen/end_game_pseudo_margin_top">
+
+            <EditText
+                android:id="@+id/saisiePseudo"
+                android:layout_width="@dimen/end_game_edit_text_width"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/end_game_pseudo_padding_horizontal"
+                android:paddingTop="@dimen/end_game_pseudo_padding_vertical"
+                android:paddingBottom="@dimen/end_game_pseudo_padding_vertical"
+                android:textSize="@dimen/end_game_text_basiq_size"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:maxLength="20"
+                android:hint="@string/pseudo"
+                android:textColor="@color/monGris"
+                android:background="@color/monBlanc"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/btnOk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/end_game_pseudo_padding_horizontal"
+                android:paddingRight="@dimen/end_game_pseudo_padding_horizontal"
+                android:paddingTop="@dimen/end_game_pseudo_padding_vertical"
+                android:paddingBottom="@dimen/end_game_pseudo_padding_vertical"
+                android:text="@string/ok"
+                android:textAllCaps="false"
+                android:textSize="@dimen/end_game_text_basiq_size"
+                android:textColor="@color/monBlanc"
+                android:background="@color/monVert"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-5000dp"
                 android:background="@color/monVert"
                 android:layout_marginTop="25px"
                 android:layout_marginBottom="15px"
                 android:id="@+id/layoutNewRecord">
 
                 <TextView
-                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
                     android:textSize="50px"
                     android:text="@string/newRecord"
                     android:gravity="center"
@@ -179,55 +224,20 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/layoutSaisieNewRecord"
-                android:paddingBottom="10px">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="50px"
-                    android:layout_marginLeft="100px"
-                    android:text="@string/pseudo"
-                    android:id="@+id/pseudo"
-                    android:textColor="@color/monBlanc"/>
-
-                <EditText
-                    android:layout_width="500px"
-                    android:layout_height="50px"
-                    android:layout_marginLeft="10px"
-                    android:textSize="40px"
-                    android:maxLines="1"
-                    android:singleLine="true"
-                    android:maxLength="20"
-                    android:background="@color/monBlanc"
-                    android:id="@+id/saisiePseudo" />
-
-                <Button
-                    android:layout_width="70px"
-                    android:layout_height="50px"
-                    android:text="@string/ok"
-                    android:textAllCaps="false"
-                    android:textSize="40px"
-                    android:textColor="@color/monBlanc"
-                    android:background="@color/monVert"
-                    android:id="@+id/btnOk" />
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
-
     <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="50px"
-        android:background="@color/monRouge"
-        android:text="@string/goScoreBoard"
-        android:layout_alignParentBottom="true"
-        android:gravity="center"
         android:id="@+id/goScoreBoard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/layoutInfoDiverse"
+        android:textSize="@dimen/end_game_text_basiq_size"
+        android:background="@color/monVert"
+        android:paddingLeft="@dimen/end_game_pseudo_padding_horizontal"
+        android:paddingRight="@dimen/end_game_scoreboard_padding_right"
+        android:paddingTop="@dimen/end_game_pseudo_padding_vertical"
+        android:paddingBottom="@dimen/end_game_pseudo_padding_vertical"
+        android:gravity="left"
+        android:layout_alignParentRight="true"
+        android:text="@string/goScoreBoard"
         android:textColor="@color/monBlanc"/>
 
 </RelativeLayout>

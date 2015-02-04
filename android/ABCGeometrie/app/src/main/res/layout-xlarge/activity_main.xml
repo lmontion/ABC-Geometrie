@@ -51,6 +51,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/bandeMilieu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/bandeSuperieur"

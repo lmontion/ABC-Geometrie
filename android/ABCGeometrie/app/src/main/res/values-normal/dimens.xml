@@ -9,6 +9,7 @@
     <dimen name="size_flag_lang_height">52dp</dimen>
     <dimen name="size_btn_home_speak">70dp</dimen>
     <dimen name="title_size">43dp</dimen>
+    <dimen name="btn_up_margin">30dp</dimen>
 
     <!-- Page Choix défis -->
     <dimen name="pts_size">32dp</dimen>
