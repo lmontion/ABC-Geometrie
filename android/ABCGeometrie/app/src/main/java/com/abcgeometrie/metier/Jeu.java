@@ -55,7 +55,8 @@ public class Jeu implements java.io.Serializable{
     public int calculScore(){
         int nbMauvaiseRep = this.nbQuestionsNecessaires - this.nbQuestionsReussis;
         int score = 50*this.nbQuestionsReussis - 25*nbMauvaiseRep;
-        float newTempsPasse = ((float)this.tempsPasse)/60;
+        float pause = this.nbQuestionsReussis*3;
+        float newTempsPasse = ((float)this.tempsPasse-pause)/60;
         score = (int)(score / newTempsPasse);
         if(score < 100) {
             score = 100;
