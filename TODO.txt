@@ -1,7 +1,6 @@
 Jeu :
 L -> Score
 
-T -> page de fin de jeu animation
 T -> rajuster design question 3 lignes
 
 Y -> Design dialog bouton retour
@@ -12,11 +11,8 @@ M -> Maquettes affiches
 Interfaces :
 tableau score
 A propos
-Page fin jeu
-
 
 Mis de coté :
-Progress dialog (pas important pour la cliente)
 Anim accueil a améliorer
 Amélioration : temps entre les phrases du speaker
 
