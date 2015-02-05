@@ -1,8 +1,6 @@
 package com.abcgeometrie.metier;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.res.Resources;
 
 import com.abcgeometrie.R;
 

@@ -1,8 +1,6 @@
 package com.abcgeometrie.activity;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -81,6 +79,7 @@ public class AlizazaActivity extends Activity implements TextToSpeech.OnInitList
             }
         });
 
+        // Changement état au click
         View[] views = {btnLang, home, speak};
         for (View btn : views){
             btn.setOnTouchListener(new View.OnTouchListener() {

@@ -47,7 +47,6 @@ public class TeamActivity extends Activity implements TextToSpeech.OnInitListene
         txtLucas = (TextView) findViewById(R.id.txtLucas);
         txtViewDawin = (TextView) findViewById(R.id.txtViewDawin);
         Typeface tfLight = Typeface.createFromAsset(getAssets(),"fonts/orbitron-light.otf");
-        Typeface tfMedium = Typeface.createFromAsset(getAssets(),"fonts/orbitron-medium.otf");
         txtViewTeam.setTypeface(tfLight);
         txtViewDawin.setTypeface(tfLight);
         txtTristant.setTypeface(tfLight);
@@ -84,13 +83,13 @@ public class TeamActivity extends Activity implements TextToSpeech.OnInitListene
             }
         });
 
+        // Changement état au click
         View[] views = {btnLang, home, speak};
         for (View btn : views){
             btn.setOnTouchListener(new View.OnTouchListener() {
 
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
-                    //v.setLayoutParams(resize(v));
                     if (event.getAction() == MotionEvent.ACTION_DOWN) {
                         v.setAlpha((float) 0.7);
                     }

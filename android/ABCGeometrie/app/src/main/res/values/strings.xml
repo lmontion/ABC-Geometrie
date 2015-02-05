@@ -37,7 +37,7 @@
     <string name="nbQuestion">"Mauvaise Réponse : "</string>
     <string name="nbQuestionPluriel">"Mauvaises Réponses : "</string>
     <string name="newRecord">Nouveau record !! </string>
-    <string name="pseudo">Entre ton pseudo</string>
+    <string name="pseudo">Entre ton prenom</string>
     <string name="ok">OK</string>
     <string name="minute"> minutes et </string>
     <string name="seconde"> secondes</string>

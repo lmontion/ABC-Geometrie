@@ -3,18 +3,12 @@ package com.abcgeometrie.metier;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-
-
 import com.abcgeometrie.R;
-
 import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -36,42 +30,9 @@ public class DbAdapter {
     private static final String CREATE_TABLE_APPARTENIR =
             "create table appartenir (idContrat integer, idQuestion integer, primary key(idContrat,idQuestion));";
 
-    /*
-    private static final String INSERT_TABLE_APPARTENIR =
-            "insert into appartenir (idContrat, idQuestion) values" +
-                    "(1,1)," + "(2,1)," + "(3,1)," + "(4,1)," + "(5,1)," + "(6,1)," + "(7,1)," + "(8,1)," +
-                    "(9,1)," + "(1,2)," + "(2,2)," + "(3,2)," + "(4,2)," + "(5,2)," + "(6,2)," + "(7,2)," +
-                    "(8,2)," + "(9,2)," + "(10,2)," + "(11,2)," + "(13,2)," + "(14,2)," + "(15,2)," + "(10,1)," +
-                    "(11,1)," + "(12,1)," + "(13,1)," + "(14,1)," + "(15,1)," + "(1,3)," + "(2,3)," + "(4,3)," +
-                    "(5,3)," + "(6,3)," + "(7,3)," + "(8,3)," + "(9,3);";
-
-    private static final String INSERT_TABLE_QUESTION =
-            "insert into question (libelleFR, libelleEN, libelleES, urlImgSol, urlImg1, urlImg2, urlImg3) values" +
-                    "('Trouves le carré blanc', 'Find the white square', 'je sais pas dire', '/bonneImg.png', '/mauvaiseImg1.png', '/mauvaiseImg2.png', '/mauvaiseImg3.png')," +
-                    "('Trouves le carré bleu', 'Find the blue square', 'je sais pas dire', '/bonneImg.png', '/mauvaiseImg1.png', '/mauvaiseImg2.png', '/mauvaiseImg3.png'), " +
-                    "('Trouves le carré vert', 'Find the green square', 'je sais pas dire', '/bonneImg.png', '/mauvaiseImg1.png', '/mauvaiseImg2.png', '/mauvaiseImg3.png'); ";
-
-    private static final String INSERT_TABLE_CONTRAT =
-            "insert into contrat (libelle, nbPoints, niveau, theme) values" +
-                    "('Contrat 10 points', 10, 1, 'couleurs')," +
-                    "('Contrat 20 points', 20, 1, 'couleurs')," +
-                    "('Contrat 40 points', 40, 1, 'couleurs')," +
-                    "('Contrat 10 points', 10, 1, 'formes')," +
-                    "('Contrat 20 points', 20, 1, 'formes')," +
-                    "('Contrat 40 points', 40, 1, 'formes')," +
-                    "('Contrat 10 points', 10, 1, 'couleurs et formes')," +
-                    "('Contrat 20 points', 20, 1, 'couleurs et formes')," +
-                    "('Contrat 40 points', 40, 1, 'couleurs et formes')," +
-                    "('Contrat 10 points', 10, 2, '')," +
-                    "('Contrat 20 points', 20, 2, '')," +
-                    "('Contrat 40 points', 40, 2, '')," +
-                    "('Contrat 10 points', 10, 3, '')," +
-                    "('Contrat 20 points', 20, 3, '')," +
-                    "('Contrat 40 points', 40, 3, '');";*/
-
-    private static final String INSERT_TABLE_GAGNANT =
+    /*private static final String INSERT_TABLE_GAGNANT =
             "insert into gagnant (pseudo, score, idContrat) values" +
-                    "('Bob', 450, 1)," + "('Willy', 250, 1)," + "('Steeve', 350, 1)," + "('Tom', 500, 1)," +
+                    "('Bob', 450, 0)," + "('Willy', 250, 1)," + "('Steeve', 350, 1)," + "('Tom', 500, 1)," +
                     "('Louis', 100, 1)," + "('Edmond', 150, 2)," + "('Lucas', 50, 2)," + "('Cathy', 450, 2)," +
                     "('Enzo', 600, 2)," + "('Vivient', 250, 2)," + "('Kathleen', 100, 2)," + "('Léa', 450, 3)," +
                     "('Andréa', 500, 3)," + "('Lucienne', 100, 3)," + "('Evian', 50, 3)," + "('Patrick', 800, 3)," +
@@ -86,9 +47,7 @@ public class DbAdapter {
                     "('Namie', 300, 15)," + "('Maxime', 200, 15)," + "('Julien', 250, 15)," + "('Jule', 300, 15)," +
                     "('Hakim', 200, 15)," + "('Carlos', 50, 15)," + "('Adrien', 600, 15)," + "('Sophie', 150, 15)," +
                     "('Serge', 450, 15)," + "('Pascale', 150, 15)," + "('Mathieu', 650, 15)," + "('Valentin', 550, 15)," +
-                    "('Hubert', 300, 15)," + "('Seb', 400, 15)," + "('Mohammed', 200, 15)," + "('Lucas le champion !!', 10000, 12);";
-
-
+                    "('Hubert', 300, 15)," + "('Seb', 400, 15)," + "('Mohammed', 200, 15)," + "('Lucas le champion !!', 10000, 12);";*/
 
     private static final String INSERT_TABLE_CONTRAT =
             "insert into contrat values" +
@@ -108,18 +67,15 @@ public class DbAdapter {
                     "(13,'Contrat 20 points', 20, 3, '')," +
                     "(14,'Contrat 40 points', 40, 3, '');";
 
-
     private static String INSERT_TABLE_QUESTION_LVL1;
     private static String INSERT_TABLE_APPARTENIR_LVL1;
     private static String INSERT_TABLE_QUESTION_LVL2;
     private static String INSERT_TABLE_APPARTENIR_LVL2;
     private static String INSERT_TABLE_QUESTION_LVL3;
     private static String INSERT_TABLE_APPARTENIR_LVL3;
-    //private static String INSERT_BIDON;
-
 
     private static final String DATABASE_NAME = "ABC_Geometrie";
-    private static final int DATABASE_VERSION = 45;
+    private static final int DATABASE_VERSION = 46;
     private final Context mCtx;
 
     private static class DatabaseHelper extends SQLiteOpenHelper {
@@ -135,16 +91,15 @@ public class DbAdapter {
             db.execSQL(CREATE_TABLE_QUESTION);
             db.execSQL(CREATE_TABLE_APPARTENIR);
             db.execSQL(INSERT_TABLE_CONTRAT);
-            db.execSQL(INSERT_TABLE_GAGNANT);
-            /*db.execSQL(INSERT_TABLE_QUESTION);
-            db.execSQL(INSERT_TABLE_APPARTENIR);*/
+            //db.execSQL(INSERT_TABLE_GAGNANT);
+            //db.execSQL(INSERT_TABLE_QUESTION);
+            //db.execSQL(INSERT_TABLE_APPARTENIR);
             db.execSQL(INSERT_TABLE_QUESTION_LVL1);
             db.execSQL(INSERT_TABLE_APPARTENIR_LVL1);
             db.execSQL(INSERT_TABLE_QUESTION_LVL2);
             db.execSQL(INSERT_TABLE_APPARTENIR_LVL2);
             db.execSQL(INSERT_TABLE_QUESTION_LVL3);
             db.execSQL(INSERT_TABLE_APPARTENIR_LVL3);
-
         }
 
         @Override
@@ -189,7 +144,6 @@ public class DbAdapter {
                     }
                     temp += ligne;
                 }
-
             }
             is.close();
         } catch(IOException e) {
@@ -209,7 +163,6 @@ public class DbAdapter {
                 while ((ligne = reader.readLine()) != null) {
                     temp += ligne;
                 }
-
             }
             is.close();
         } catch(IOException e) {
@@ -232,7 +185,6 @@ public class DbAdapter {
                     }
                     temp += ligne;
                 }
-
             }
             is.close();
         } catch(IOException e) {
@@ -252,7 +204,6 @@ public class DbAdapter {
                 while ((ligne = reader.readLine()) != null) {
                     temp += ligne;
                 }
-
             }
             is.close();
         } catch(IOException e) {
@@ -275,7 +226,6 @@ public class DbAdapter {
                     }
                     temp += ligne;
                 }
-
             }
             is.close();
         } catch(IOException e) {
@@ -287,7 +237,6 @@ public class DbAdapter {
     public String getValueAppartenirNiv3(){
         String ligne;
         String temp = "";
-        StringBuffer buf = new StringBuffer();
         InputStream is = mCtx.getResources().openRawResource(R.raw.dataapp3);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         try {
@@ -295,7 +244,6 @@ public class DbAdapter {
                 while ((ligne = reader.readLine()) != null) {
                     temp += ligne;
                 }
-
             }
             is.close();
         } catch(IOException e) {
@@ -312,7 +260,6 @@ public class DbAdapter {
         Récupère la liste des questions d'un contrat
         @Param idContrat : id du contrat dont on veut la liste de questions
     */
-
     public ArrayList<Question> getQuestionByContrat(int idContrat){
         Cursor c = mDb.query("contrat as c, appartenir as a, question", new String[]{"question._id", "question.libelleFR", "question.libelleEN", "question.libelleES",
                             "question.urlImgSol", "question.urlImg1", "question.urlImg2", "question.urlImg3" }, "(a.idQuestion=question._id AND c._id="+idContrat+" " +
@@ -324,36 +271,6 @@ public class DbAdapter {
         }
         return lstQuestions;
     }
-
-    /*
-    public ArrayList<Question> getQuestionByNiveauAndContrat(int niveau, int nbPointsContrat){
-        Cursor c = mDb.query("contrat as c, appartenir as a, question",
-                new String[]{"question._id", "question.libelleFR", "question.libelleEN", "question.libelleES",
-                "question.urlImgSol", "question.urlImg1", "question.urlImg2", "question.urlImg3" },
-                "(a.idQuestion=question._id AND c._id = a.idContrat AND niveau="+niveau+" AND nbPoints="+nbPointsContrat+")"
-                , null, null, null, null);
-        ArrayList<Question> lstQuestions = new ArrayList<Question>();
-        while(c.moveToNext()){
-            Question question = new Question(c.getInt(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4), c.getString(5), c.getString(6), c.getString(7));
-            lstQuestions.add(question);
-        }
-        return lstQuestions;
-    }
-
-
-    public ArrayList<> getQuestionByNiveauAndContrat(int niveau, int nbPointsContrat, String theme){
-        Cursor c = mDb.query("contrat as c, appartenir as a, question",
-                new String[]{"question._id", "question.libelleFR", "question.libelleEN", "question.libelleES",
-                        "question.urlImgSol", "question.urlImg1", "question.urlImg2", "question.urlImg3" },
-                "(a.idQuestion=question._id AND c._id = a.idContrat AND niveau="+niveau+" AND nbPoints="+nbPointsContrat+" AND theme="+theme+")"
-                , null, null, null, null);
-        ArrayList<Question> lstQuestions = new ArrayList<Question>();
-        while(c.moveToNext()){
-            Question question = new Question(c.getInt(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4), c.getString(5), c.getString(6), c.getString(7));
-            lstQuestions.add(question);
-        }
-        return lstQuestions;
-    }*/
 
     /*
         Récupèration d'un contrat spécifique avec sa liste de question
@@ -384,32 +301,12 @@ public class DbAdapter {
         return lstContrats;
     }
 
-    /*
-        Récupère la liste des contrats selon le niveau selectionné ainsi que le theme
-        @Param niveau : niveau selectionné par le joueur
-        @Param theme : theme selectionné par le joueur
-    */
-
-   /* public Contrat getcontratByNiveauAndTheme(int niveau, int nbPointsContrat){
-        Cursor c = mDb.query("contrat", new String[]{"_id, nbPoints, libelle, niveau, theme"}, "(niveau="+niveau+" AND nbPoints="+nbPointsContrat+")", null, null, null, null);
-        //ArrayList<Contrat> lstContrats = new ArrayList<Contrat>();
-        Contrat contrat = null;
-        while(c.moveToNext()){
-            ArrayList<Question> lstQuestion = getQuestionByContrat(c.getInt(0));
-            contrat = new Contrat(c.getInt(0), c.getInt(1), c.getString(2), c.getString(3), c.getString(4), lstQuestion);
-            //lstContrats.add(contrat);
-        }
-        return contrat;
-    }
-*/
     public Contrat getcontratByNiveauAndTheme(int niveau, int nbPointsContrat, String theme){
         Cursor c = mDb.query("contrat", new String[]{"_id, nbPoints, libelle, niveau, theme"}, "(niveau="+niveau+" AND theme='"+theme+"' AND nbPoints="+nbPointsContrat+")", null, null, null, null);
-        //ArrayList<Contrat> lstContrats = new ArrayList<Contrat>();
         Contrat contrat = null;
         while(c.moveToNext()){
             ArrayList<Question> lstQuestion = getQuestionByContrat(c.getInt(0));
             contrat = new Contrat(c.getInt(0), c.getInt(1), c.getString(2), c.getString(3), c.getString(4), lstQuestion);
-            //lstContrats.add(contrat);
         }
         return contrat;
     }
@@ -431,12 +328,6 @@ public class DbAdapter {
 
     }
 
-    /*
-        Insertion d'un nouveau gagnant selon son pseudo, son score et l'id du contrat effectué
-        @Param pseudo : pseudo indiqué par le joueur
-        @Param score : score effectué a la fin du contrat
-        @Param idContrat : id du contrat effectué
-    */
     public void insertScore(String pseudo, int score, int idContrat){
         ContentValues val = new ContentValues();
         val.put("pseudo", pseudo);
@@ -444,9 +335,6 @@ public class DbAdapter {
         val.put("idContrat", idContrat);
         mDb.insert("gagnant", null, val);
     }
-
-
-
 
     /*******************************************************************************************/
     /*******************************************************************************************/
