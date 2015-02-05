@@ -9,7 +9,6 @@
     <dimen name="size_flag_lang_height">52dp</dimen>
     <dimen name="size_btn_home_speak">70dp</dimen>
     <dimen name="title_size">43dp</dimen>
-    <dimen name="btn_up_margin">30dp</dimen>
 
     <!-- Page Choix défis -->
     <dimen name="pts_size">32dp</dimen>
@@ -52,12 +51,11 @@
     <dimen name="progressbar_text_margin_top">10dp</dimen>
     <dimen name="progressbar_width">35dp</dimen>
     <dimen name="progressbar_height">180dp</dimen>
-    <dimen name="good_bad_answer_icon_dim">90dp</dimen>
-    <dimen name="good_bad_answer_icon_margin">-15dp</dimen>
-    <dimen name="answers_block_width">685dp</dimen>
-    <dimen name="answers_block_height">500dp</dimen>
-    <dimen name="progressbar_margin_bottom">15dp</dimen>
-
+    <dimen name="good_bad_answer_icon_dim">62dp</dimen>
+    <dimen name="good_bad_answer_icon_margin">-9dp</dimen>
+    <dimen name="answers_block_width">430dp</dimen>
+    <dimen name="answers_block_height">218dp</dimen>
+    <dimen name="progressbar_margin_bottom">5dp</dimen>
 
     <!-- POP-UP changement langue -->
     <dimen name="popup_flag_width">150dp</dimen>
@@ -69,4 +67,19 @@
     <dimen name="alizaza_logo_margin_right">25dp</dimen>
     <dimen name="alizaza_description_margin_top">25dp</dimen>
     <dimen name="alizaza_description_padding">15dp</dimen>
+
+    <!-- End Game-->
+    <dimen name="end_game_score_bande_height">70dp</dimen>
+    <dimen name="end_game_score_bande_margin_top">15dp</dimen>
+    <dimen name="end_game_score_bande_margin_bottom">-15dp</dimen>
+    <dimen name="end_game_text_basiq_size">30dp</dimen>
+    <dimen name="end_game_text_value_size">35dp</dimen>
+    <dimen name="end_game_triangle_size">25dp</dimen>
+    <dimen name="end_game_triangle_margin_right">10dp</dimen>
+    <dimen name="end_game_edit_text_width">400dp</dimen>
+    <dimen name="end_game_interligne">-40dp</dimen>
+    <dimen name="end_game_pseudo_margin_top">-11dp</dimen>
+    <dimen name="end_game_pseudo_padding_horizontal">15dp</dimen>
+    <dimen name="end_game_pseudo_padding_vertical">5dp</dimen>
+    <dimen name="end_game_scoreboard_padding_right">170dp</dimen>
 </resources>

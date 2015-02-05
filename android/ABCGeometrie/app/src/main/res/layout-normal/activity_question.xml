@@ -58,8 +58,8 @@
     <!-- Affichage des choix-->
     <RelativeLayout
         android:id="@+id/blocReponse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/answers_block_width"
+        android:layout_height="@dimen/answers_block_height"
         android:layout_below="@+id/libelleQuestion"
         android:layout_marginLeft="@dimen/question_answer_left_margin"
         android:layout_centerVertical="true">
@@ -77,6 +77,32 @@
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"/>
 
+        <ImageView
+            android:id="@+id/croixRep1"
+            android:layout_width="@dimen/good_bad_answer_icon_dim"
+            android:layout_height="@dimen/good_bad_answer_icon_dim"
+            android:layout_alignBottom="@+id/rep1"
+            android:layout_alignRight="@+id/rep1"
+            android:layout_marginBottom="@dimen/good_bad_answer_icon_margin"
+            android:layout_marginRight="@dimen/good_bad_answer_icon_margin"
+            android:visibility="invisible"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/croix_mauvaise_reponse"/>
+
+        <ImageView
+            android:id="@+id/nikeRep1"
+            android:layout_width="@dimen/good_bad_answer_icon_dim"
+            android:layout_height="@dimen/good_bad_answer_icon_dim"
+            android:layout_alignBottom="@+id/rep1"
+            android:layout_alignRight="@+id/rep1"
+            android:layout_marginBottom="@dimen/good_bad_answer_icon_margin"
+            android:layout_marginRight="@dimen/good_bad_answer_icon_margin"
+            android:visibility="invisible"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/nike_bonne_reponse"/>
+
         <ImageButton
             android:id="@+id/rep2"
             android:layout_width="@dimen/question_block_answer_width"
@@ -87,6 +113,32 @@
             android:src="@drawable/carreorange"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"/>
+
+        <ImageView
+            android:id="@+id/croixRep2"
+            android:layout_width="@dimen/good_bad_answer_icon_dim"
+            android:layout_height="@dimen/good_bad_answer_icon_dim"
+            android:layout_alignBottom="@+id/rep2"
+            android:layout_alignRight="@+id/rep2"
+            android:layout_marginBottom="@dimen/good_bad_answer_icon_margin"
+            android:layout_marginRight="@dimen/good_bad_answer_icon_margin"
+            android:visibility="invisible"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/croix_mauvaise_reponse"/>
+
+        <ImageView
+            android:id="@+id/nikeRep2"
+            android:layout_width="@dimen/good_bad_answer_icon_dim"
+            android:layout_height="@dimen/good_bad_answer_icon_dim"
+            android:layout_alignBottom="@+id/rep2"
+            android:layout_alignRight="@+id/rep2"
+            android:layout_marginBottom="@dimen/good_bad_answer_icon_margin"
+            android:layout_marginRight="@dimen/good_bad_answer_icon_margin"
+            android:visibility="invisible"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/nike_bonne_reponse"/>
 
         <ImageButton
             android:id="@+id/rep3"
@@ -99,16 +151,70 @@
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"/>
 
+        <ImageView
+            android:id="@+id/croixRep3"
+            android:layout_width="@dimen/good_bad_answer_icon_dim"
+            android:layout_height="@dimen/good_bad_answer_icon_dim"
+            android:layout_alignBottom="@+id/rep3"
+            android:layout_alignRight="@+id/rep3"
+            android:layout_marginBottom="@dimen/good_bad_answer_icon_margin"
+            android:layout_marginRight="@dimen/good_bad_answer_icon_margin"
+            android:visibility="invisible"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/croix_mauvaise_reponse"/>
+
+        <ImageView
+            android:id="@+id/nikeRep3"
+            android:layout_width="@dimen/good_bad_answer_icon_dim"
+            android:layout_height="@dimen/good_bad_answer_icon_dim"
+            android:layout_alignBottom="@+id/rep3"
+            android:layout_alignRight="@+id/rep3"
+            android:layout_marginBottom="@dimen/good_bad_answer_icon_margin"
+            android:layout_marginRight="@dimen/good_bad_answer_icon_margin"
+            android:visibility="invisible"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/nike_bonne_reponse"/>
+
         <ImageButton
             android:id="@+id/rep4"
             android:layout_width="@dimen/question_block_answer_width"
             android:layout_height="@dimen/question_block_answer_height"
-            android:layout_alignBottom="@+id/rep3"
+            android:layout_alignTop="@+id/rep3"
             android:layout_alignRight="@+id/rep2"
             android:background="@color/monBlanc"
             android:src="@drawable/carrevert"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"/>
+
+        <ImageView
+            android:id="@+id/croixRep4"
+            android:layout_width="@dimen/good_bad_answer_icon_dim"
+            android:layout_height="@dimen/good_bad_answer_icon_dim"
+            android:layout_alignBottom="@+id/rep4"
+            android:layout_alignRight="@+id/rep4"
+            android:layout_marginBottom="@dimen/good_bad_answer_icon_margin"
+            android:layout_marginRight="@dimen/good_bad_answer_icon_margin"
+            android:visibility="invisible"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/croix_mauvaise_reponse"/>
+
+        <ImageView
+            android:id="@+id/nikeRep4"
+            android:layout_width="@dimen/good_bad_answer_icon_dim"
+            android:layout_height="@dimen/good_bad_answer_icon_dim"
+            android:layout_alignBottom="@+id/rep4"
+            android:layout_alignRight="@+id/rep4"
+            android:layout_marginBottom="@dimen/good_bad_answer_icon_margin"
+            android:layout_marginRight="@dimen/good_bad_answer_icon_margin"
+            android:visibility="invisible"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/nike_bonne_reponse"/>
+
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -116,6 +222,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/blocReponse"
         android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/progressbar_margin_bottom"
         android:layout_marginRight="@dimen/block_progressbar_margin_left"
         android:layout_marginLeft="@dimen/block_progressbar_margin_left">
 

@@ -47,7 +47,7 @@
             android:layout_toRightOf="@+id/btnTTS"
             android:layout_marginLeft="@dimen/label_question_left_margin"
             android:layout_centerVertical="true"
-            android:text="@string/labelQuest"
+            android:text="dans la jungle tropical lala la lala la lal lal al vit un étrange animal"
             android:textSize="@dimen/question_text_size"
             android:textColor="@color/monBlanc"
             android:id="@+id/txtViewQuestion"/>
