@@ -3,9 +3,6 @@ L -> Score
 
 T -> rajuster design question 3 lignes
 
-Y -> Design dialog bouton retour
-Y -> nettoyage
-
 M -> Maquettes affiches
 
 Interfaces :
