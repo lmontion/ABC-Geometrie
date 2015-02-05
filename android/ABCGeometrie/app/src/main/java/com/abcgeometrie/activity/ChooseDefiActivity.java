@@ -115,6 +115,7 @@ public class ChooseDefiActivity extends Activity implements TextToSpeech.OnInitL
             }
         });
 
+        // Changement d'état au click
         View[] views = {btn10, btn20, btn40, btnLang, home, speak};
         for (View btn : views){
             btn.setOnTouchListener(new View.OnTouchListener() {
@@ -146,6 +147,7 @@ public class ChooseDefiActivity extends Activity implements TextToSpeech.OnInitL
 
     @Override
     public void onBackPressed() {
+        // Redirection avec le bouton retour selon le niveau selectionné
         if (currentLvl == 1){
             Intent intent = new Intent(ChooseDefiActivity.this, ChooseThemeActivity.class);
             intent.putExtra("retour", true);

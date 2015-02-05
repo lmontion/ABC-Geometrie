@@ -2,10 +2,13 @@ package com.abcgeometrie.activity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -327,26 +330,30 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
 
     @Override
     public void onBackPressed() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Aller a l'accueil");
-        DialogInterface.OnClickListener ok = new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Intent intent = new Intent(QuestionActivity.this, MainActivity.class);
-                startActivity(intent);
+        final Dialog dial = new Dialog(this, android.R.style.Theme_Holo_NoActionBar_Fullscreen);
+        Drawable d = new ColorDrawable(Color.BLACK);
+        d.setAlpha(220);
+        dial.getWindow().setBackgroundDrawable(d);
+        dial.setContentView(R.layout.actvity_dialogreturn);
+        ImageView backHome = (ImageView) dial.findViewById(R.id.backHome);
+        backHome.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                startActivity( new Intent(QuestionActivity.this, MainActivity.class));
             }
-        };
-        DialogInterface.OnClickListener annuler = new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Intent intent = new Intent();
-                setResult(RESULT_OK, intent);
-                finish();
+        });
+        ImageView backGame = (ImageView) dial.findViewById(R.id.backGame);
+        backGame.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                dial.cancel();
             }
-        };
-        builder.setPositiveButton("OK", ok);
-        builder.setNegativeButton("Annuler", null);
-        builder.show();
+        });
+        RelativeLayout rl = (RelativeLayout) dial.findViewById(R.id.rl);
+        rl.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                dial.cancel();
+            }
+        });
+        dial.show();
     }
 
     @Override

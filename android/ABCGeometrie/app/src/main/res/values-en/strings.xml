@@ -38,7 +38,7 @@
     <string name="nbQuestion">"Wrong answer : "</string>
     <string name="nbQuestionPluriel">"Wrong answers : "</string>
     <string name="newRecord">New record !! </string>
-    <string name="pseudo">Enter your username</string>
+    <string name="pseudo">Enter your name</string>
     <string name="ok">OK</string>
     <string name="goScoreBoard">Scoreboard -></string>
     <string name="minute"> minutes and </string>

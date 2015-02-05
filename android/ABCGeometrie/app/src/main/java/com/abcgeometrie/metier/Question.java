@@ -1,7 +1,5 @@
 package com.abcgeometrie.metier;
 
-import java.util.ArrayList;
-
 /**
  * Created by lucas on 21/01/15.
  */
