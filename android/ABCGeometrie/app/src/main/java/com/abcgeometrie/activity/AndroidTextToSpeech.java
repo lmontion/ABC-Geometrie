@@ -23,7 +23,6 @@ public class AndroidTextToSpeech implements TextToSpeech.OnInitListener {
 
     private void langue(){
         int result = 0;
-
         if (lang == "fr"){
             result = tts.setLanguage(Locale.FRENCH);
         }
@@ -34,13 +33,9 @@ public class AndroidTextToSpeech implements TextToSpeech.OnInitListener {
             Locale locSpanish = new Locale("spa", "ESP");
             result = tts.setLanguage(locSpanish);
         }
-        // tts.setPitch(5); // set pitch level
-        // tts.setSpeechRate(2); // set speech speed rate
-
         if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
             Log.e("TTS", "Language is not supported");
         } else {
-            //btnSpeak.setEnabled(true);
             speakOut();
         }
     }

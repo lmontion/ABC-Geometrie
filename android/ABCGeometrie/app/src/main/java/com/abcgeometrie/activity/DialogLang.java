@@ -1,24 +1,18 @@
 package com.abcgeometrie.activity;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-
 import com.abcgeometrie.R;
 import com.abcgeometrie.metier.Contrat;
 import com.abcgeometrie.metier.Jeu;
 import com.abcgeometrie.metier.Question;
-
 import java.util.Locale;
 
 /**
@@ -82,7 +76,6 @@ public class DialogLang {
     }
 
     public void onCreateDialog() {
-        //Theme_Holo_Dialog_NoActionBar
         final Dialog dial = new Dialog(act, android.R.style.Theme_Holo_NoActionBar_Fullscreen);
         Drawable d = new ColorDrawable(Color.BLACK);
         d.setAlpha(220);

@@ -46,7 +46,6 @@ public class AboutActivity extends Activity implements TextToSpeech.OnInitListen
         txtAbout3 = (TextView) findViewById(R.id.txtAbout3);
         txtAbout4 = (TextView) findViewById(R.id.txtAbout4);
         Typeface tfLight = Typeface.createFromAsset(getAssets(),"fonts/orbitron-light.otf");
-        Typeface tfMedium = Typeface.createFromAsset(getAssets(),"fonts/orbitron-medium.otf");
         txtViewAbout.setTypeface(tfLight);
         txtAbout1.setTypeface(tfLight);
         txtAbout2.setTypeface(tfLight);
@@ -83,6 +82,7 @@ public class AboutActivity extends Activity implements TextToSpeech.OnInitListen
             }
         });
 
+        // Changement d'état au click
         View[] views = {btnLang, home, speak};
         for (View btn : views){
             btn.setOnTouchListener(new View.OnTouchListener() {

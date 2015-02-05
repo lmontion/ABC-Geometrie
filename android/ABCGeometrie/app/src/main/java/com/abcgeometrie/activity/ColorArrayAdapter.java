@@ -1,13 +1,9 @@
 package com.abcgeometrie.activity;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.TextView;
-
-import com.abcgeometrie.R;
 import com.abcgeometrie.metier.Gagnant;
 
 /**

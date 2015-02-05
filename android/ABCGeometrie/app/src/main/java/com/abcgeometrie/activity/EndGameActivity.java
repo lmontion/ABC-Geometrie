@@ -2,10 +2,13 @@ package com.abcgeometrie.activity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.MotionEvent;
@@ -15,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.abcgeometrie.R;
 import com.abcgeometrie.metier.Contrat;
@@ -22,15 +26,12 @@ import com.abcgeometrie.metier.DbAdapter;
 import com.abcgeometrie.metier.Gagnant;
 import com.abcgeometrie.metier.Jeu;
 
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
-
 /**
  * Created by Yanick on 22/01/2015.
  */
 public class EndGameActivity extends Activity implements TextToSpeech.OnInitListener{
 
-    private TextView txtViewBravo, score, scorePts, scoreJoueur, nbQuestion, nbQuestionJoueur, newRecord, goScoreBoard, temps, tempsJoueur;
+    private TextView score, scorePts, scoreJoueur, nbQuestion, nbQuestionJoueur, newRecord, goScoreBoard, temps, tempsJoueur;
     private ImageView speak, home;
     private Button btnOk, btnLang;
     private EditText saisiePseudo;
@@ -87,6 +88,7 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
         if (mauvaiseReponse > 1)
             nbQuestion.setText(getResources().getString(R.string.nbQuestionPluriel));
 
+        // Calcule du temps et affichage
         long tempsPasse = currentJeu.getTempsPasse();
         if(tempsPasse > 59){
             float tempsConvert = ((float) tempsPasse)/60;
@@ -96,6 +98,8 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
         }else{
             tempsJoueur.setText(String.valueOf(tempsPasse)+"s");
         }
+
+        // Gestion du nombre de question passées + affichage + saisie pseudo
         int sj = currentJeu.calculScore();
         scoreJoueur.setText(String.valueOf(sj));
         final Contrat currentContrat = (Contrat) getIntent().getExtras().get("contrat");
@@ -166,7 +170,6 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
             }
         });
 
-
         // Boite de dialogue changement langue et affichage drapeaux
         dl = new DialogLang(EndGameActivity.this, currentContrat, currentJeu);
 
@@ -192,6 +195,7 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
             }
         });
 
+        // Changement état au click
         View[] views = {btnLang, home, speak};
         for (View btn : views){
             btn.setOnTouchListener(new View.OnTouchListener() {
@@ -213,26 +217,30 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
 
     @Override
     public void onBackPressed() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Aller a l'accueil");
-        DialogInterface.OnClickListener ok = new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Intent intent = new Intent(EndGameActivity.this, MainActivity.class);
-                startActivity(intent);
+        final Dialog dial = new Dialog(this, android.R.style.Theme_Holo_NoActionBar_Fullscreen);
+        Drawable d = new ColorDrawable(Color.BLACK);
+        d.setAlpha(220);
+        dial.getWindow().setBackgroundDrawable(d);
+        dial.setContentView(R.layout.actvity_dialogreturn);
+        ImageView backHome = (ImageView) dial.findViewById(R.id.backHome);
+        backHome.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                startActivity( new Intent(EndGameActivity.this, MainActivity.class));
             }
-        };
-        DialogInterface.OnClickListener annuler = new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Intent intent = new Intent();
-                setResult(RESULT_OK, intent);
-                finish();
+        });
+        ImageView backGame = (ImageView) dial.findViewById(R.id.backGame);
+        backGame.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                dial.cancel();
             }
-        };
-        builder.setPositiveButton("OK", ok);
-        builder.setNegativeButton("Annuler", null);
-        builder.show();
+        });
+        RelativeLayout rl = (RelativeLayout) dial.findViewById(R.id.rl);
+        rl.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                dial.cancel();
+            }
+        });
+        dial.show();
     }
 
     @Override

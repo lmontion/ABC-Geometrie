@@ -144,6 +144,7 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
             }
         });
 
+        // Changement d'état au click
         View[] views = {btnThemeColor, btnThemeForm, btnThemeColorAndForm, arrowThemeColor, arrowThemeForm, arrowThemeColorAndForm, btnLang, home, speak};
         for (View btn : views){
             btn.setOnTouchListener(new View.OnTouchListener() {
