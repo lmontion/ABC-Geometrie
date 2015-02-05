@@ -15,14 +15,14 @@
 
         <ImageView
             android:id="@+id/btnHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/size_btn_home_speak"
+            android:layout_height="@dimen/size_btn_home_speak"
             android:src="@drawable/btnaccueil"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/size_btn_home_speak"
+            android:layout_height="@dimen/size_btn_home_speak"
             android:layout_toRightOf="@+id/btnHome"
             android:id="@+id/btnTTS"
             android:src="@drawable/btnspeaker"
@@ -43,10 +43,10 @@
         android:id="@+id/logoEtTitre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp">
+        android:layout_marginTop="100dp">
 
         <TextView
-            android:id="@+id/txtViewAlizaza"
+            android:id="@+id/txtViewAbout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -65,12 +65,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/logoEtTitre"
         android:text="@string/txtAbout1"
-        android:textSize="@dimen/alizaza_text_size"
+        android:textSize="23dp"
         android:textColor="@color/monBlanc"
-        android:layout_marginTop="@dimen/alizaza_description_margin_top"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/alizaza_description_padding"
-        android:paddingLeft="@dimen/alizaza_description_padding"/>
+        android:paddingRight="@dimen/alizaza_description_padding"/>
 
     <TextView
         android:id="@+id/txtAbout2"
@@ -78,11 +77,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtAbout1"
         android:text="@string/txtAbout2"
-        android:textSize="@dimen/alizaza_text_size"
+        android:textSize="23dp"
         android:textColor="@color/monBlanc"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/alizaza_description_padding"
-        android:paddingLeft="@dimen/alizaza_description_padding"/>
+        android:paddingRight="@dimen/alizaza_description_padding"/>
 
     <TextView
         android:id="@+id/txtAbout3"
@@ -90,11 +88,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtAbout2"
         android:text="@string/txtAbout3"
-        android:textSize="@dimen/alizaza_text_size"
+        android:textSize="23dp"
         android:textColor="@color/monBlanc"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/alizaza_description_padding"
-        android:paddingLeft="@dimen/alizaza_description_padding"/>
+        android:paddingRight="@dimen/alizaza_description_padding"/>
 
     <TextView
         android:id="@+id/txtAbout4"
@@ -102,11 +99,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtAbout3"
         android:text="@string/txtAbout4"
-        android:textSize="@dimen/alizaza_text_size"
+        android:textSize="23dp"
         android:textColor="@color/monBlanc"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/alizaza_description_padding"
-        android:paddingLeft="@dimen/alizaza_description_padding"/>
+        android:paddingRight="@dimen/alizaza_description_padding"/>
 
 
 </RelativeLayout>

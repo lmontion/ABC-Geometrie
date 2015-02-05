@@ -9,6 +9,10 @@ Y -> nettoyage
 
 M -> Maquettes affiches
 
+bloquer le clic quelque mili-secondes avant une question pour éviter les miss-click
+
+faire un message d'erreur si la langue n'est pas supporté par la l'appareil
+
 Interfaces :
 tableau score
 A propos

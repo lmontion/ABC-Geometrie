@@ -82,4 +82,11 @@
     <dimen name="end_game_pseudo_padding_vertical">5dp</dimen>
     <dimen name="end_game_scoreboard_padding_right">200dp</dimen>
 
+    <!-- ScoreBoard-->
+    <dimen name="scoreboard_margin_top">25dp</dimen>
+    <dimen name="scoreboard_margin_bottom">20dp</dimen>
+    <dimen name="scoreboard_text_size">34dp</dimen>
+    <dimen name="scoreboard_text_padding">3dp</dimen>
+    <dimen name="scoreboard_listview_width">400dp</dimen>
+
 </resources>

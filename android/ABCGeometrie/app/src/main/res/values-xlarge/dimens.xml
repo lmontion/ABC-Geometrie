@@ -56,8 +56,8 @@
     <dimen name="progressbar_margin_bottom">15dp</dimen>
 
     <!-- POP-UP changement langue -->
-    <dimen name="popup_flag_width">150dp</dimen>
-    <dimen name="popup_flag_height">81dp</dimen>
+    <dimen name="popup_flag_width">210dp</dimen>
+    <dimen name="popup_flag_height">123dp</dimen>
 
     <!-- Présentation ALIZAZA-->
     <dimen name="alizaza_logo_dimension">195dp</dimen>
@@ -80,4 +80,11 @@
     <dimen name="end_game_pseudo_padding_horizontal">20dp</dimen>
     <dimen name="end_game_pseudo_padding_vertical">9dp</dimen>
     <dimen name="end_game_scoreboard_padding_right">220dp</dimen>
+
+    <!-- ScoreBoard-->
+    <dimen name="scoreboard_margin_top">25dp</dimen>
+    <dimen name="scoreboard_margin_bottom">20dp</dimen>
+    <dimen name="scoreboard_text_size">34dp</dimen>
+    <dimen name="scoreboard_text_padding">3dp</dimen>
+    <dimen name="scoreboard_listview_width">820dp</dimen>
 </resources>
