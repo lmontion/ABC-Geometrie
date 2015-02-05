@@ -30,7 +30,7 @@
     <string name="choixtheme">Choose a theme</string>
     <string name="couleurs">Colors</string>
     <string name="formes">Shapes</string>
-    <string name="couleursformes">Formes and Shapes</string>
+    <string name="couleursformes">Both</string>
 
     <string name="gg">Well done !!</string>
     <string name="score">"Score : "</string>

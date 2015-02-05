@@ -4,7 +4,8 @@
     android:gravity="center"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="5px"
-    android:paddingBottom="5px"
+    android:paddingTop="@dimen/scoreboard_text_padding"
+    android:paddingBottom="@dimen/scoreboard_text_padding"
     android:textAllCaps="true"
-    android:textSize="40px" />
+    android:text="gui"
+    android:textSize="@dimen/scoreboard_text_size" />
