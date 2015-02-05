@@ -77,7 +77,7 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
 
         // Vérification que le score soit dans les 10 premiers
         boolean nouveauRecord = true;
-        Jeu currentJeu = (Jeu) getIntent().getExtras().get("jeu");
+        final Jeu currentJeu = (Jeu) getIntent().getExtras().get("jeu");
 
         // Calcul des mauvaises réponses
         int mauvaiseReponse = currentJeu.getNbQuestionsNecessaires() - currentJeu.getNbQuestionsReussis();
@@ -177,7 +177,10 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
         speak.setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang,txtViewBravo.getText().toString(),tts);
+                String tempsToString = currentJeu.tempsToString(getApplicationContext());
+                AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang,score.getText().toString() + scoreJoueur.getText().toString() + " ; " +
+                        temps.getText().toString() + tempsToString + " ; "+
+                        nbQuestion.getText().toString() + nbQuestionJoueur.getText().toString(),tts);
             }
         });
 

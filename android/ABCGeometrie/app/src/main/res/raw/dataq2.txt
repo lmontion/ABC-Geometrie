@@ -1,8 +1,8 @@
 INSERT INTO question VALUES
-(164,'Clique sur l hexagone','Click on the hexagonal.','Selecciona el hexágono.','107.png','113.png','123.png','127.png'),
-(165,'Clique sur l hexagone','Click on the hexagonal.','Selecciona el hexágono.','106.png','102.png','127.png','175.png'),
-(166,'Clique sur l octogone','Click on the octagone.','Selecciona el octógono. ','123.png','103.png','107.png','125.png'),
-(167,'Clique sur l octogone','Click on the octagone.','Selecciona el octógono. ','123.png','101.png','106.png','108.png'),
+(164,'Clique sur l@hexagone','Click on the hexagonal.','Selecciona el hexágono.','107.png','113.png','123.png','127.png'),
+(165,'Clique sur l@hexagone','Click on the hexagonal.','Selecciona el hexágono.','106.png','102.png','127.png','175.png'),
+(166,'Clique sur l@octogone','Click on the octagone.','Selecciona el octógono. ','123.png','103.png','107.png','125.png'),
+(167,'Clique sur l@octogone','Click on the octagone.','Selecciona el octógono. ','123.png','101.png','106.png','108.png'),
 (168,'Clique sur la figure avec un angle droit','Click on the figure with the right angle.','Selecciona la figura con el ángulo recto. ','127.png','123.png','130.png','132.png'),
 (169,'Clique sur la figure à 3 sommets','Click on the figure 3 vertices.','Selecciona la figura con 3 vértices.','133.png','100.png','125.png','89.png'),
 (170,'Clique sur la figure à 3 sommets','Click on the figure 3 vertices.','Selecciona la figura con 3 vértices.','130.png','100.png','112.png','125.png'),

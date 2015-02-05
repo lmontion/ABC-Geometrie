@@ -1,20 +1,20 @@
 INSERT INTO question VALUES
-(211,'clique sur l angle aigu OÂB','Click on the acute angle OÂB.','Selecciona el ángulo agudo OÂB.','86.png','82.png','84.png','87.png'),
-(212,'Clique sur l angle de 120°','Click on the 120 degree angle.','Selecciona el ángulo de 120 grados.','76.png','68.png','73.png','77.png'),
-(213,'Clique sur l angle de 120°','Click on the 120 degree angle.','Selecciona el ángulo de 120 grados.','75.png','68.png','72.png','77.png'),
-(214,'Clique sur l angle de 120°','Click on the 120 degree angle.','Selecciona el ángulo de 120 grados.','76.png','69.png','71.png','77.png'),
-(215,'Clique sur l angle de 45°','Click on the 45 degree angle.','Selecciona el ángulo de 45 grados.','67.png','71.png','74.png','77.png'),
-(216,'Clique sur l angle de 45°','Click on the 45 degree angle.','Selecciona el ángulo de 45 grados.','69.png','72.png','74.png','77.png'),
-(217,'Clique sur l angle de 45°','Click on the 45 degree angle.','Selecciona el ángulo de 45 grados.','70.png','71.png','75.png','78.png'),
-(218,'Clique sur l angle de 60°','Click on the 60 degree angle.','Selecciona el ángulo de 60 grados.','72.png','69.png','75.png','78.png'),
-(219,'Clique sur l angle de 60°','Click on the 60 degree angle.','Selecciona el ángulo de 60 grados.','73.png','68.png','76.png','78.png'),
-(220,'Clique sur l angle de 60°','Click on the 60 degree angle.','Selecciona el ángulo de 60 grados.','72.png','69.png','75.png','78.png'),
-(221,'Clique sur l angle de 90°','Click on the 90 degree angle.','Selecciona el ángulo de 90 grados.','78.png','70.png','71.png','75.png'),
-(222,'Clique sur l angle de 90°','Click on the 90 degree angle.','Selecciona el ángulo de 90 grados.','77.png','68.png','71.png','74.png'),
-(223,'clique sur l angle obtus  BÂC','Click on the obtuse angle CÂB.','Selecciona el ángulo obtuso CÂB.','83.png','81.png','86.png','87.png'),
-(224,'clique sur l hexagone','Click on the hexagonal.','Selecciona el hexágono.','106.png','121.png','123.png','127.png'),
-(225,'clique sur l hexagone ','Click on the hexagonal.','Selecciona el hexágono.','107.png','102.png','109.png','123.png'),
-(226,'clique sur l octogone','Click on the octagone.','Selecciona el octógono. ','123.png','106.png','108.png','131.png'),
+(211,'clique sur l@angle aigu OÂB','Click on the acute angle OÂB.','Selecciona el ángulo agudo OÂB.','86.png','82.png','84.png','87.png'),
+(212,'Clique sur l@angle de 120°','Click on the 120 degree angle.','Selecciona el ángulo de 120 grados.','76.png','68.png','73.png','77.png'),
+(213,'Clique sur l@angle de 120°','Click on the 120 degree angle.','Selecciona el ángulo de 120 grados.','75.png','68.png','72.png','77.png'),
+(214,'Clique sur l@angle de 120°','Click on the 120 degree angle.','Selecciona el ángulo de 120 grados.','76.png','69.png','71.png','77.png'),
+(215,'Clique sur l@angle de 45°','Click on the 45 degree angle.','Selecciona el ángulo de 45 grados.','67.png','71.png','74.png','77.png'),
+(216,'Clique sur l@angle de 45°','Click on the 45 degree angle.','Selecciona el ángulo de 45 grados.','69.png','72.png','74.png','77.png'),
+(217,'Clique sur l@angle de 45°','Click on the 45 degree angle.','Selecciona el ángulo de 45 grados.','70.png','71.png','75.png','78.png'),
+(218,'Clique sur l@angle de 60°','Click on the 60 degree angle.','Selecciona el ángulo de 60 grados.','72.png','69.png','75.png','78.png'),
+(219,'Clique sur l@angle de 60°','Click on the 60 degree angle.','Selecciona el ángulo de 60 grados.','73.png','68.png','76.png','78.png'),
+(220,'Clique sur l@angle de 60°','Click on the 60 degree angle.','Selecciona el ángulo de 60 grados.','72.png','69.png','75.png','78.png'),
+(221,'Clique sur l@angle de 90°','Click on the 90 degree angle.','Selecciona el ángulo de 90 grados.','78.png','70.png','71.png','75.png'),
+(222,'Clique sur l@angle de 90°','Click on the 90 degree angle.','Selecciona el ángulo de 90 grados.','77.png','68.png','71.png','74.png'),
+(223,'clique sur l@angle obtus  BÂC','Click on the obtuse angle CÂB.','Selecciona el ángulo obtuso CÂB.','83.png','81.png','86.png','87.png'),
+(224,'clique sur l@hexagone','Click on the hexagonal.','Selecciona el hexágono.','106.png','121.png','123.png','127.png'),
+(225,'clique sur l@hexagone ','Click on the hexagonal.','Selecciona el hexágono.','107.png','102.png','109.png','123.png'),
+(226,'clique sur l@octogone','Click on the octagone.','Selecciona el octógono. ','123.png','106.png','108.png','131.png'),
 (227,'clique sur la demi-droite (GD]','Click on the (GD] half straight line.','Selecciona la semirrecta (GD].','174.png','171.png','172.png','173.png'),
 (228,'clique sur la demi-droite [GD)','Click on the [GD) half straight line.','Selecciona la semirrecta [GD).','171.png','172.png','173.png','174.png'),
 (229,'clique sur la droite (GD)','Click on the (GD) straight line.','Selecciona la recta (GD).','173.png','171.png','172.png','174.png'),

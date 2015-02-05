@@ -41,6 +41,8 @@
     <string name="pseudo">Escribe un apodo</string>
     <string name="ok">OK</string>
     <string name="goScoreBoard">Tabla de puncrtuatión</string>
+    <string name="minute"> acta y </string>
+    <string name="seconde"> segundo</string>
 
     <string name="board">Tabla puntuación</string>
 
