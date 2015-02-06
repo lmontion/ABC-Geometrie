@@ -41,8 +41,10 @@
     <string name="pseudo">Escribe un nombre</string>
     <string name="ok">OK</string>
     <string name="goScoreBoard">Tabla de puncrtuatión</string>
-    <string name="minute">minutos y </string>
-    <string name="seconde"> segunda</string>
+    <string name="minute">minuto y </string>
+    <string name="minutes">minutos y </string>
+    <string name="seconde"> segundo</string>
+    <string name="secondes"> segundos</string>
 
     <string name="board">Tabla puntuación</string>
 

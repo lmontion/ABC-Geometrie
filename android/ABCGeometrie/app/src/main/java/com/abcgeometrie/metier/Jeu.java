@@ -69,9 +69,26 @@ public class Jeu implements java.io.Serializable{
             float tempsConvert = ((float) tempsPasse)/60;
             int minutes = (int) tempsConvert;
             int secondes = (int) tempsPasse-(60 * minutes);
-            return String.valueOf(minutes) + " " + cont.getResources().getString(R.string.minute) + String.valueOf(secondes) + " " + cont.getResources().getString(R.string.seconde);
+
+            // GESTION PLURIEL ET SINGULIER
+            // singulier par défault
+            String resSecondes = cont.getResources().getString(R.string.seconde);
+            String resMinutes = cont.getResources().getString(R.string.minute);
+
+            if (secondes > 1)
+                resSecondes = cont.getResources().getString(R.string.secondes);
+            if (minutes > 1)
+                resMinutes = cont.getResources().getString(R.string.minutes);
+
+            return String.valueOf(minutes) + " " + resMinutes + String.valueOf(secondes) + " " + resSecondes;
         }
-        return String.valueOf(tempsPasse) + " " + cont.getResources().getString(R.string.seconde);
+        else {
+            // gestion pluriel et singulier
+            if (this.tempsPasse > 1)
+                return String.valueOf(tempsPasse) + " " + cont.getResources().getString(R.string.secondes);
+            else
+                return String.valueOf(tempsPasse) + " " + cont.getResources().getString(R.string.seconde);
+        }
     }
 }
 

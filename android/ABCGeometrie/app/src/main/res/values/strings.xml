@@ -39,8 +39,10 @@
     <string name="newRecord">Nouveau record !! </string>
     <string name="pseudo">Entre ton prenom</string>
     <string name="ok">OK</string>
-    <string name="minute"> minutes et </string>
-    <string name="seconde"> secondes</string>
+    <string name="minute"> minute et </string>
+    <string name="minutes"> minutes et </string>
+    <string name="seconde"> seconde</string>
+    <string name="secondes"> secondes</string>
 
     <string name="board">Tableau des scores</string>
     <string name="goScoreBoard">Tableau des scores</string>
