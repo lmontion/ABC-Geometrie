@@ -1,19 +1,18 @@
 Jeu :
-L -> Score
 
-T -> rajuster design question 3 lignes
+T -> Gestion pluriel
+T -> interfaces, images 
 
-M -> Maquettes affiches
+Y -> Rapport
+Y -> rajuster design question 3 lignes
 
-bloquer le clic quelque mili-secondes avant une question pour éviter les miss-click
-
-faire un message d'erreur si la langue n'est pas supporté par la l'appareil
-
-Interfaces :
-tableau score
-A propos
+L -> Bloquer le clic quelque mili-secondes avant une question pour éviter les miss-click
+L -> Click accueil retour
+L -> Faire un message d'erreur si la langue n'est pas supporté par la l'appareil
+L -> Noter l'application
 
 Mis de coté :
 Anim accueil a améliorer
-Amélioration : temps entre les phrases du speaker
+Temps entre les phrases du speaker
+
 
