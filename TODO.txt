@@ -1,6 +1,5 @@
 Jeu :
 
-T -> Gestion pluriel
 T -> interfaces, images 
 
 Y -> Rapport
@@ -10,6 +9,8 @@ L -> Bloquer le clic quelque mili-secondes avant une question pour éviter les mi
 L -> Click accueil retour
 L -> Faire un message d'erreur si la langue n'est pas supporté par la l'appareil
 L -> Noter l'application
+
+Changer l'état des boutons quand on appuie dessus dans le fenêtre changement de langue
 
 Mis de coté :
 Anim accueil a améliorer
