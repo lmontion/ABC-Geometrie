@@ -1,9 +1,7 @@
 package com.abcgeometrie.activity;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -12,25 +10,22 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
-import android.support.v7.internal.widget.NativeActionModeAwareLayout;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.abcgeometrie.R;
 import com.abcgeometrie.metier.Contrat;
 import com.abcgeometrie.metier.DbAdapter;
 import com.abcgeometrie.metier.Jeu;
 import com.abcgeometrie.metier.Question;
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -72,7 +67,6 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
         img2 = (ImageButton) findViewById(R.id.rep3);
         img3 = (ImageButton) findViewById(R.id.rep4);
         pb = (ProgressBar) findViewById(R.id.progressBarVertical);
-
         croix1 = (ImageView) findViewById(R.id.croixRep1);
         croix2 = (ImageView) findViewById(R.id.croixRep2);
         croix3 = (ImageView) findViewById(R.id.croixRep3);
@@ -84,14 +78,7 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
 
         final ImageView[] tabCroix = {croix1, croix2, croix3, croix4};
         final ImageView[] tabNike = {nike1, nike2, nike3, nike4};
-/*
-        for(ImageView i : tabCroix){
-            i.setVisibility(View.INVISIBLE);
-        }
-        for(ImageView i : tabNike){
-            i.setVisibility(View.INVISIBLE);
-        }
-*/
+
         // Application de la police
         txtViewProgressBar = (TextView) findViewById(R.id.textViewProgressBar);
         txtViewQuestion = (TextView) findViewById(R.id.txtViewQuestion);
@@ -113,13 +100,6 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
             }
         });
 
-        //txtViewQuestion.setText("lvl : "+currentLvl+" theme = "+currentTheme+" point contrat -> "+currentNbPointsContrat);
-
-        // Drapeaux et event changement langue
-
-
-        //lang = getBaseContext().getResources().getConfiguration().locale.getLanguage();
-
         DbAdapter db = new DbAdapter(this);
         db.open();
         try {
@@ -134,7 +114,6 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
         }catch (Exception e){
             Log.i("test","pas de contrat");
         }
-
 
         if (con == null){
             currentTheme = (String) getIntent().getExtras().get("theme");
@@ -158,24 +137,16 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
         }else{
             question = con.chooseAQuestion();
         }
-
-        //tts = new TextToSpeech(this, this);
-        //if (con.getNiveau() == "1"){
-        //new AndroidTextToSpeech("fr","BONJOUR LES AMIS !!",tts);
-        //}
-
         pb.setMax(con.getNbPoints());
 
         // Boite de dialogue changement langue et affichage drapeaux
         dl = new DialogLang(QuestionActivity.this, con, question, jeu);
-
         btnLang = (Button) findViewById(R.id.btnLang);
         btnLang.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 dl.onCreateDialog();
             }
         });
-
         if(lang.equals("fr")){
             txtViewQuestion.setText(question.getLibelleFR());
         }
@@ -185,6 +156,9 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
         if(lang.equals("en")){
             txtViewQuestion.setText(question.getLibelleEN());
         }
+
+        // Retaillage du texte
+        resize();
 
         final ImageButton[] tabImg = {img0, img1, img2, img3};
 
@@ -204,21 +178,12 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
         tempUrlImg3 = tempUrlImg3.split("\\.")[0];
 
         String[] urls = {tempUrlImg1, tempUrlImg2, tempUrlImg3};
-
         tabImg[indexRandom].setImageResource(getResources().getIdentifier("a" + tempUrlSol, "drawable", getPackageName()));
 
-        /*img0.setImageResource(getResources().getIdentifier("a" + tempUrlSol, "drawable", getPackageName()));
-        img1.setImageResource(getResources().getIdentifier("a"+tempUrlImg1, "drawable", getPackageName()));
-        img2.setImageResource(getResources().getIdentifier("a"+tempUrlImg2, "drawable", getPackageName()));
-        img3.setImageResource(getResources().getIdentifier("a"+tempUrlImg3, "drawable", getPackageName()));*/
-
-        //final String[] reussi = {"Bravo", "Gagné", "Félicitation", "Tu es un héros", "Wouah, quel homme", "Mais tu es une machine"};
         final String[] reussi = getResources().getStringArray(R.array.arrayOK);
         final String[] perdu = getResources().getStringArray(R.array.arrayPASOK);
         final int indexReussi = r.nextInt(4);
         final int indexPerdu = r.nextInt(3);
-
-       // final RelativeLayout layout = (RelativeLayout) findViewById(R.id.relativeQuestions);
 
         int j = 0;
         for (i = 0; i < tabImg.length; i++){
@@ -236,7 +201,6 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
                         v.setBackgroundColor(Color.RED);
                         tabCroix[position].setVisibility(View.VISIBLE);
                         AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang,perdu[indexPerdu],tts);
-
                         final Handler handler = new Handler();
                         handler.postDelayed(new Runnable() {
                             @Override
@@ -245,12 +209,6 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
                             }
                         }, 1000);
                         jeu.setNbQuestionsNecessaires(jeu.getNbQuestionsNecessaires() + 1);
-                        /*try{
-                            Thread.sleep(5000);
-                        }catch(Exception e){
-
-                        }*/
-
                         final Intent intent = new Intent(QuestionActivity.this, QuestionActivity.class);
                         intent.putExtra("contrat", con);
                         intent.putExtra("jeu", jeu);
@@ -267,11 +225,6 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
             }
         }
 
-       /* if (mauvais != null){
-            mauvais.setBackgroundColor(Color.RED);
-        }*/
-
-
         tabImg[indexRandom].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -286,7 +239,6 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
                 ArrayList<Question> temp = con.getLstQuestions();
                 temp.remove(question);
                 con.setLstQuestions(temp);
-                //pb.setProgress(pb.getProgress() + 1);
 
                 final Intent i;
                 if (jeu.getNbQuestionsReussis() == con.getNbPoints()) {
@@ -314,7 +266,6 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
 
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
-                    //v.setLayoutParams(resize(v));
                     if (event.getAction() == MotionEvent.ACTION_DOWN) {
                         v.setAlpha((float) 0.7);
                     }
@@ -368,6 +319,18 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
         if(con.getNiveau().equals("1")) {
             AndroidTextToSpeech textToSpeech = new AndroidTextToSpeech(lang, txtViewQuestion.getText().toString(), tts);
         }
+    }
 
+    public void resize(){
+        txtViewQuestion.post(new Runnable() {
+            @Override
+            public void run() {
+                int nbLignes = txtViewQuestion.getLineCount();
+                if(nbLignes >= 3){
+                    txtViewQuestion.setTextSize(TypedValue.COMPLEX_UNIT_PX,(txtViewQuestion.getTextSize() - 2));
+                    resize();
+                }
+            }
+        });
     }
 }
