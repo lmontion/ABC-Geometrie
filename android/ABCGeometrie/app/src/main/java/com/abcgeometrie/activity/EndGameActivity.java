@@ -135,6 +135,7 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
             public void onClick(View v) {
                 Intent i = new Intent(EndGameActivity.this, BoardActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -167,6 +168,7 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
             public void onClick(View v) {
                 Intent i = new Intent(EndGameActivity.this, MainActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -234,6 +236,7 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
         backHome.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 startActivity( new Intent(EndGameActivity.this, MainActivity.class));
+                finish();
             }
         });
         ImageView backGame = (ImageView) dial.findViewById(R.id.backGame);
@@ -270,6 +273,7 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
             Intent i = new Intent(EndGameActivity.this, BoardActivity.class);
             i.putExtra("contrat", contratCourant);
             startActivity(i);
+            finish();
         }
     }
 
