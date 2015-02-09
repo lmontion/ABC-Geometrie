@@ -75,19 +75,19 @@ public class Gagnant implements java.io.Serializable{
 
     public String stringByLang(Gagnant gagnant, String lang, String classement){
         if(lang.equals("fr")){
-            if(classement.equals("1")) return " ; Premier : " + gagnant.pseudo + " - " + gagnant.score + " Points";
-            if(classement.equals("2")) return " ; Deuxième : " + gagnant.pseudo + " - " + gagnant.score + " Points";
-            if(classement.equals("3")) return " ; Troisième : " + gagnant.pseudo + " - " + gagnant.score + " Points";
+            if(classement.equals("1")) return " ; Premier : " + gagnant.pseudo + "   " + gagnant.score + " Points";
+            if(classement.equals("2")) return " ; Deuxième : " + gagnant.pseudo + "   " + gagnant.score + " Points";
+            if(classement.equals("3")) return " ; Troisième : " + gagnant.pseudo + "   " + gagnant.score + " Points";
         }
         if(lang.equals("es")){
-            if(classement.equals("1")) return " ; Primero : " + gagnant.pseudo + " - " + gagnant.score + " Puntos";
-            if(classement.equals("2")) return " ; Segundo : " + gagnant.pseudo + " - " + gagnant.score + " Puntos";
-            if(classement.equals("3")) return " ; Tercera : " + gagnant.pseudo + " - " + gagnant.score + " Puntos";
+            if(classement.equals("1")) return " ; Primero : " + gagnant.pseudo + "   " + gagnant.score + " Puntos";
+            if(classement.equals("2")) return " ; Segundo : " + gagnant.pseudo + "   " + gagnant.score + " Puntos";
+            if(classement.equals("3")) return " ; Tercera : " + gagnant.pseudo + "   " + gagnant.score + " Puntos";
         }
         if(lang.equals("en")){
-            if(classement.equals("1")) return " ; First : " + gagnant.pseudo + " - " + gagnant.score + " Points";
-            if(classement.equals("2")) return " ; Second : " + gagnant.pseudo + " - " + gagnant.score + " Points";
-            if(classement.equals("3")) return " ; Third : " + gagnant.pseudo + " - " + gagnant.score + " Points";
+            if(classement.equals("1")) return " ; First : " + gagnant.pseudo + "   " + gagnant.score + " Points";
+            if(classement.equals("2")) return " ; Second : " + gagnant.pseudo + "   " + gagnant.score + " Points";
+            if(classement.equals("3")) return " ; Third : " + gagnant.pseudo + "   " + gagnant.score + " Points";
         }
         return "";
     }
