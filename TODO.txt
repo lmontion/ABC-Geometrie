@@ -1,19 +1,11 @@
 Jeu :
 
 T -> interfaces, images 
-
-Y -> Rapport
-Y -> rajuster design question 3 lignes
+T -> Btn ok fin de partie
 
 L -> Bloquer le clic quelque mili-secondes avant une question pour éviter les miss-click
-L -> Click accueil retour
-L -> Faire un message d'erreur si la langue n'est pas supporté par la l'appareil
-L -> Noter l'application
 
-Changer l'état des boutons quand on appuie dessus dans le fenêtre changement de langue
+DEBUG TELEPHONE + PowerPoint
 
-Mis de coté :
-Anim accueil a améliorer
-Temps entre les phrases du speaker
 
 
