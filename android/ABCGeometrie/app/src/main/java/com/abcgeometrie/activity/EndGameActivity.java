@@ -11,6 +11,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -141,15 +142,22 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(saisiePseudo.getText().toString().equals("")) {
-                    saisiePseudo.setBackgroundColor(Color.RED);
-                }else{
-                    db.insertScore(saisiePseudo.getText().toString(), Integer.valueOf(scoreJoueur.getText().toString()), currentContrat.getId());
-                    Intent i = new Intent(EndGameActivity.this, BoardActivity.class);
-                    i.putExtra("contrat", currentContrat);
-                    startActivity(i);
-                }
+                validationScore(currentContrat);
             }
+        });
+
+
+
+        // valide le pseudo quand on appuie sur le ok du clavier
+        saisiePseudo.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+            if (KeyEvent.KEYCODE_ENTER == keyCode && event.getAction() != KeyEvent.ACTION_DOWN ) {
+                btnOk.performClick();
+                return true;
+            }
+            return false;
+        }
         });
 
         // Retour accueil
@@ -250,7 +258,24 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
         overridePendingTransition(0,R.anim.slide_out_return);
     }
 
+    /***
+     * Vérifie si on a bien rentré un pseudo valide et insère le nouveau score dans la BDD
+     * @param contratCourant
+     */
+    private void validationScore(Contrat contratCourant) {
+        if(saisiePseudo.getText().toString().equals("")) {
+            saisiePseudo.setBackgroundColor(Color.RED);
+        }else{
+            db.insertScore(saisiePseudo.getText().toString(), Integer.valueOf(scoreJoueur.getText().toString()), contratCourant.getId());
+            Intent i = new Intent(EndGameActivity.this, BoardActivity.class);
+            i.putExtra("contrat", contratCourant);
+            startActivity(i);
+        }
+    }
+
     @Override
     public void onInit(int status) {}
 }
+
+
 
