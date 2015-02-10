@@ -40,13 +40,13 @@
     <string name="newRecord">Nuevo récord !! </string>
     <string name="pseudo">Escribe un nombre</string>
     <string name="ok">OK</string>
-    <string name="goScoreBoard">Tabla de puncrtuatión</string>
+    <string name="goScoreBoard">Tabla de punctuatión</string>
     <string name="minute">minuto y </string>
     <string name="minutes">minutos y </string>
     <string name="seconde"> segundo</string>
     <string name="secondes"> segundos</string>
 
-    <string name="board">Tabla puntuación</string>
+    <string name="board">Tabla de puntuación</string>
 
     <string name="action_settings">Settings</string>
 
