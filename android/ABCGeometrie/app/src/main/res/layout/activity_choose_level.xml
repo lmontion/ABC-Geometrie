@@ -53,8 +53,8 @@
             android:id="@+id/txtViewSelectLvl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:layout_marginTop="112dp"
+            android:layout_below="@+id/barreBoutonHaut"
+            android:layout_marginTop="@dimen/title_margin_top"
             android:layout_centerHorizontal="true"
             android:text="@string/selectLvl"
             android:textSize="@dimen/title_size"
@@ -69,8 +69,8 @@
 
             <TextView
                 android:id="@+id/txtViewLvl1"
-                android:layout_width="125dp"
-                android:layout_height="125dp"
+                android:layout_width="@dimen/btn_pick_level1_size"
+                android:layout_height="@dimen/btn_pick_level1_size"
                 android:layout_toLeftOf="@+id/txtViewLvl2"
                 android:background="@drawable/circle"
                 android:gravity="center"
@@ -81,8 +81,8 @@
 
             <TextView
                 android:id="@+id/txtViewLvl2"
-                android:layout_width="115dp"
-                android:layout_height="115dp"
+                android:layout_width="@dimen/btn_pick_level2_size"
+                android:layout_height="@dimen/btn_pick_level2_size"
                 android:background="@drawable/square"
                 android:gravity="center"
                 android:layout_marginLeft="@dimen/margin_btn_lvl"
@@ -95,8 +95,8 @@
 
             <TextView
                 android:id="@+id/txtViewLvl3"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="@dimen/btn_pick_level3_size"
+                android:layout_height="@dimen/btn_pick_level3_size"
                 android:layout_toRightOf="@+id/txtViewLvl2"
                 android:gravity="center"
                 android:layout_centerVertical="true"

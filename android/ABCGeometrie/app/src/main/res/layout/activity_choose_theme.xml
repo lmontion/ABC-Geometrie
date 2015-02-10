@@ -15,18 +15,18 @@
 
         <ImageView
             android:id="@+id/btnHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/size_btn_home_speak"
+            android:layout_height="@dimen/size_btn_home_speak"
             android:src="@drawable/btnaccueil"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/size_btn_home_speak"
+            android:layout_height="@dimen/size_btn_home_speak"
             android:layout_toRightOf="@+id/btnHome"
             android:id="@+id/btnTTS"
             android:src="@drawable/btnspeaker"
-            android:layout_marginLeft="30dp"/>
+            android:layout_marginLeft="@dimen/btn_up_margin"/>
 
         <Button
             android:id="@+id/btnLang"
@@ -44,7 +44,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="140dp"
+        android:layout_below="@+id/barreBoutonHaut"
+        android:layout_marginTop="@dimen/title_margin_top"
         android:gravity="center"
         android:text="@string/choixtheme"
         android:textSize="@dimen/title_size"
@@ -57,18 +58,17 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="@dimen/choose_theme_margin_bottom">
 
-        <Button
+            <Button
             android:id="@+id/btnThemeColor"
-            android:layout_width="220dp"
-            android:layout_height="200dp"
+            android:layout_width="@dimen/choose_theme_color_width"
+            android:layout_height="@dimen/choose_theme_img_height"
             android:layout_toLeftOf="@+id/btnThemeForm"
             android:text="@string/couleurs"
             android:textAllCaps="false"
             android:background="@drawable/theme_couleur"
             android:textSize="@dimen/btn_theme_size_typo"
             android:textColor="@color/monBlanc"
-            android:gravity="bottom|center"
-            android:height="300dp"/>
+            android:gravity="bottom|center"/>
 
         <ImageButton
             android:id="@+id/flecheGauche"
@@ -99,8 +99,8 @@
 
         <Button
             android:id="@+id/btnThemeForm"
-            android:layout_width="237dp"
-            android:layout_height="200dp"
+            android:layout_width="@dimen/choose_theme_shape_mixed_width"
+            android:layout_height="@dimen/choose_theme_img_height"
             android:layout_marginLeft="@dimen/theme_btn_margin"
             android:layout_marginRight="@dimen/theme_btn_margin"
             android:layout_centerHorizontal="true"
@@ -114,13 +114,12 @@
 
         <Button
             android:id="@+id/btnThemeColorAndForm"
-            android:layout_width="237dp"
-            android:layout_height="200dp"
+            android:layout_width="@dimen/choose_theme_shape_mixed_width"
+            android:layout_height="@dimen/choose_theme_img_height"
             android:layout_toRightOf="@+id/btnThemeForm"
             android:text="@string/couleursformes"
             android:textAllCaps="false"
             android:background="@drawable/theme_mixte"
-            android:width="650px"
             android:textSize="@dimen/btn_theme_size_typo"
             android:gravity="bottom|center"
             android:textColor="@color/monBlanc"/>

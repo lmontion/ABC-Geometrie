@@ -15,18 +15,18 @@
 
         <ImageView
             android:id="@+id/btnHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/size_btn_home_speak"
+            android:layout_height="@dimen/size_btn_home_speak"
             android:src="@drawable/btnaccueil"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/size_btn_home_speak"
+            android:layout_height="@dimen/size_btn_home_speak"
             android:layout_toRightOf="@+id/btnHome"
             android:id="@+id/btnTTS"
             android:src="@drawable/btnspeaker"
-            android:layout_marginLeft="30dp"/>
+            android:layout_marginLeft="@dimen/btn_up_margin"/>
 
         <Button
             android:id="@+id/btnLang"
@@ -44,16 +44,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:layout_below="@+id/barreBoutonHaut"
             android:text="@string/chooseDefi"
             android:textSize="@dimen/title_size"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="@dimen/title_margin_top"
             android:textColor="@color/monBlanc"/>
 
         <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="310dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="@dimen/activity_vertical_margin">
+            android:layout_marginBottom="@dimen/band_margin_bottom">
 
             <Button
                 android:id="@+id/btn10"
@@ -65,7 +66,7 @@
                 android:textColor="@color/monBlanc"
                 android:textAllCaps="false"
                 android:singleLine="true"
-                android:gravity="right"
+                android:gravity="right|center"
                 android:paddingRight="@dimen/band_margin_right"/>
 
             <Button
@@ -77,11 +78,11 @@
                 android:background="@color/monJaune"
                 android:textAllCaps="false"
                 android:textSize="@dimen/pts_size"
-                android:layout_marginTop="25dp"
-                android:layout_marginBottom="25dp"
+                android:layout_marginTop="@dimen/band_margin_top_bottom"
+                android:layout_marginBottom="@dimen/band_margin_top_bottom"
                 android:textColor="@color/monBlanc"
                 android:singleLine="true"
-                android:gravity="right"
+                android:gravity="right|center"
                 android:paddingRight="@dimen/band_margin_right"/>
 
             <Button
@@ -95,7 +96,7 @@
                 android:textSize="@dimen/pts_size"
                 android:textColor="@color/monBlanc"
                 android:singleLine="true"
-                android:gravity="right"
+                android:gravity="right|center"
                 android:paddingRight="@dimen/band_margin_right"/>
         </RelativeLayout>
 

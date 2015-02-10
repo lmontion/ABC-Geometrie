@@ -8,9 +8,8 @@
 
     <RelativeLayout
         android:id="@+id/bandeSuperieur"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="@dimen/main_band_above_height"
         android:background="@color/monVert"
         android:layout_alignParentTop="true">
 
@@ -19,8 +18,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/abc"
-            android:textSize="150dp"
-            android:layout_marginLeft="50dp"
+            android:textSize="@dimen/main_abc_size"
+            android:layout_marginLeft="@dimen/main_margin_left"
             android:textColor="@color/monBlanc"/>
 
         <TextView
@@ -30,13 +29,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/of_the"
-            android:textSize="65dp"
+            android:textSize="@dimen/main_dela_size"
             android:textColor="@color/monBlanc"/>
 
         <ImageButton
             android:id="@+id/btnIUT"
             android:layout_toLeftOf="@+id/btnAlizaza"
-            android:layout_width="270dp"
+            android:layout_width="@dimen/main_btn_iut_width"
             android:background="@drawable/btn_iut"
             android:layout_height="wrap_content" />
 
@@ -45,26 +44,26 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:background="@drawable/btn_alizaza"
-            android:layout_width="180dp"
+            android:layout_width="@dimen/main_btn_alizaza_width"
             android:layout_height="match_parent" />
 
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/bandeMilieu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/bandeSuperieur"
-        android:id="@+id/bandeMilieu">
+        android:layout_below="@+id/bandeSuperieur">
 
 
         <TextView
             android:id="@+id/textViewGeometrie01"
-            android:layout_marginLeft="55dp"
+            android:layout_marginLeft="@dimen/main_margin_left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-15dp"
+            android:layout_marginTop="@dimen/main_G_margin_top"
             android:text="@string/geometry1"
-            android:textSize="120dp"
+            android:textSize="@dimen/main_G_size"
             android:textColor="@color/monBlanc"/>
 
         <TextView
@@ -74,44 +73,44 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/geometry2"
-            android:textSize="82dp"
+            android:textSize="@dimen/main_eometrie_size"
             android:textColor="@color/monBlanc"/>
 
         <ImageView
             android:id="@+id/triangleDebut"
             android:layout_toRightOf="@+id/textViewGeometrie02"
             android:background="@drawable/triangle_accueil_debut"
-            android:layout_marginTop="46dp"
-            android:layout_width="57dp"
-            android:layout_height="65dp"/>
+            android:layout_marginTop="@dimen/main_triangle_margin_top"
+            android:layout_width="@dimen/main_triangles_width"
+            android:layout_height="@dimen/main_triangles_height"/>
 
         <ImageView
             android:id="@+id/rectangle"
             android:layout_toRightOf="@+id/triangleDebut"
             android:layout_alignBottom="@+id/triangleDebut"
             android:background="@drawable/rectangle_accueil"
-            android:layout_width="42dp"
-            android:layout_height="65dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
+            android:layout_width="@dimen/main_rectangle_width"
+            android:layout_height="@dimen/main_triangles_height"
+            android:layout_marginLeft="@dimen/main_triangle_margin_side"
+            android:layout_marginRight="@dimen/main_triangle_margin_side"/>
 
         <ImageView
             android:id="@+id/triangleFin"
             android:layout_toRightOf="@+id/rectangle"
             android:layout_alignBottom="@+id/triangleDebut"
-            android:layout_width="56dp"
-            android:layout_height="65dp"
+            android:layout_width="@dimen/main_triangles_width"
+            android:layout_height="@dimen/main_triangles_height"
             android:background="@drawable/triangle_accueil_fin"/>
 
         <TextView
             android:id="@+id/textViewBaseLine"
             android:layout_below="@+id/textViewGeometrie01"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="-10dp"
+            android:layout_marginLeft="@dimen/main_baseline_margin_left"
+            android:layout_marginTop="@dimen/main_baseline_margin_top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/baseLine"
-            android:textSize="33dp"
+            android:textSize="@dimen/main_baseline_size"
             android:textColor="@color/monBlanc"/>
 
     </RelativeLayout>
@@ -120,7 +119,7 @@
     <RelativeLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="@dimen/main_band_bottom_height"
         android:id="@+id/bandeInferieur"
         android:background="@drawable/bande_inferieur_accueil"
         android:layout_alignParentBottom="true">
@@ -130,26 +129,26 @@
             android:layout_toLeftOf="@+id/drapeauFrance"
             android:layout_centerVertical="true"
             android:background="@drawable/angleterre"
-            android:layout_width="150dp"
-            android:layout_height="87dp" />
+            android:layout_width="@dimen/main_flag_width"
+            android:layout_height="@dimen/main_flag_height" />
 
         <ImageButton
             android:id="@+id/drapeauFrance"
             android:layout_centerVertical="true"
             android:layout_centerInParent="true"
             android:background="@drawable/france"
-            android:layout_marginLeft="35dp"
-            android:layout_marginRight="35dp"
-            android:layout_width="150dp"
-            android:layout_height="87dp" />
+            android:layout_marginLeft="@dimen/main_flag_margin_side"
+            android:layout_marginRight="@dimen/main_flag_margin_side"
+            android:layout_width="@dimen/main_flag_width"
+            android:layout_height="@dimen/main_flag_height" />
 
         <ImageButton
             android:id="@+id/drapeauEspagne"
             android:layout_toRightOf="@+id/drapeauFrance"
             android:layout_centerVertical="true"
             android:background="@drawable/espagne"
-            android:layout_width="150dp"
-            android:layout_height="87dp" />
+            android:layout_width="@dimen/main_flag_width"
+            android:layout_height="@dimen/main_flag_height" />
 
     </RelativeLayout>
 

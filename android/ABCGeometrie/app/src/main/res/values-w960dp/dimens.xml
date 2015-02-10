@@ -7,16 +7,46 @@
     <dimen name="choose_lvl_margin_bottom">55dp</dimen>
     <dimen name="size_flag_lang_width">108dp</dimen>
     <dimen name="size_flag_lang_height">63dp</dimen>
+    <dimen name="size_btn_home_speak">80dp</dimen>
     <dimen name="title_size">65dp</dimen>
     <dimen name="btn_up_margin">30dp</dimen>
+    <dimen name="title_margin_top">43dp</dimen>
+    <dimen name="btn_pick_level1_size">190dp</dimen>
+    <dimen name="btn_pick_level2_size">175dp</dimen>
+    <dimen name="btn_pick_level3_size">230dp</dimen>
+
+    <!-- Accueil -->
+    <dimen name="main_band_above_height">180dp</dimen>
+    <dimen name="main_band_bottom_height">170dp</dimen>
+    <dimen name="main_abc_size">150dp</dimen>
+    <dimen name="main_dela_size">65dp</dimen>
+    <dimen name="main_G_size">120dp</dimen>
+    <dimen name="main_G_margin_top">-15dp</dimen>
+    <dimen name="main_eometrie_size">82dp</dimen>
+    <dimen name="main_baseline_size">33dp</dimen>
+    <dimen name="main_baseline_margin_top">-10dp</dimen>
+    <dimen name="main_baseline_margin_left">65dp</dimen>
+    <dimen name="main_margin_left">50dp</dimen>
+    <dimen name="main_btn_iut_width">270dp</dimen>
+    <dimen name="main_btn_alizaza_width">180dp</dimen>
+    <dimen name="main_flag_width">150dp</dimen>
+    <dimen name="main_flag_height">87dp</dimen>
+    <dimen name="main_flag_margin_side">35dp</dimen>
+    <dimen name="main_triangle_margin_top">46dp</dimen>
+    <dimen name="main_triangle_margin_side">20dp</dimen>
+    <dimen name="main_triangles_width">57dp</dimen>
+    <dimen name="main_triangles_height">65dp</dimen>
+    <dimen name="main_rectangle_width">42dp</dimen>
 
     <!-- Page Choix défis -->
     <dimen name="pts_size">53dp</dimen>
     <dimen name="band_10pts_width">526dp</dimen>
     <dimen name="band_20pts_width">675dp</dimen>
     <dimen name="band_40pts_width">825dp</dimen>
+    <dimen name="band_margin_top_bottom">20dp</dimen>
     <dimen name="band_height">71dp</dimen>
     <dimen name="band_margin_right">70dp</dimen>
+    <dimen name="band_margin_bottom">30dp</dimen>
 
     <!-- Page Choix theme -->
     <dimen name="btn_theme_size_typo">40dp</dimen>
@@ -24,8 +54,12 @@
     <dimen name="choose_theme_margin_bottom">35dp</dimen>
     <dimen name="choose_theme_arrow_margin">265dp</dimen>
     <dimen name="choose_theme_arrow_margin_top">15dp</dimen>
+    <dimen name="choose_theme_img_height">200dp</dimen>
+    <dimen name="choose_theme_color_width">220dp</dimen>
+    <dimen name="choose_theme_shape_mixed_width">237dp</dimen>
 
     <!-- Page Equipe -->
+    <dimen name="team_title_text_size">65dp</dimen>
     <dimen name="team_picture_margin">75dp</dimen>
     <dimen name="team_text_margin">78dp</dimen>
     <dimen name="team_text_size">34dp</dimen>
@@ -46,16 +80,16 @@
     <dimen name="question_block_answer_width">315dp</dimen>
     <dimen name="question_block_answer_height">171dp</dimen>
     <dimen name="block_progressbar_width">145dp</dimen>
-    <dimen name="block_progressbar_margin_left">7dp</dimen>
+    <dimen name="block_progressbar_margin_left">27dp</dimen>
     <dimen name="progressbar_text_size">33dp</dimen>
     <dimen name="progressbar_text_margin_top">15dp</dimen>
     <dimen name="progressbar_width">50dp</dimen>
-    <dimen name="progressbar_height">305dp</dimen>
+    <dimen name="progressbar_height">310dp</dimen>
     <dimen name="good_bad_answer_icon_dim">90dp</dimen>
     <dimen name="good_bad_answer_icon_margin">-15dp</dimen>
     <dimen name="answers_block_width">685dp</dimen>
     <dimen name="answers_block_height">500dp</dimen>
-    <dimen name="progressbar_margin_bottom">15dp</dimen>
+    <dimen name="progressbar_margin_bottom">25dp</dimen>
 
 
     <!-- POP-UP changement langue -->
@@ -68,6 +102,7 @@
     <dimen name="alizaza_logo_margin_right">35dp</dimen>
     <dimen name="alizaza_description_margin_top">55dp</dimen>
     <dimen name="alizaza_description_padding">15dp</dimen>
+    <dimen name="alizaza_logo_margin_top">22dp</dimen>
 
     <!-- End Game-->
     <dimen name="end_game_score_bande_height">135dp</dimen>
@@ -89,6 +124,10 @@
     <dimen name="scoreboard_margin_bottom">20dp</dimen>
     <dimen name="scoreboard_text_size">33dp</dimen>
     <dimen name="scoreboard_text_padding">3dp</dimen>
-    <dimen name="scoreboard_listview_width">680dp</dimen>
+    <dimen name="scoreboard_listview_width">770dp</dimen>
+
+    <!-- A propos-->
+    <dimen name="about_title_margin_bottom">30dp</dimen>
+    <dimen name="about_text_size">34dp</dimen>
 
 </resources>

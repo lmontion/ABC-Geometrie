@@ -4,18 +4,48 @@
     <dimen name="activity_vertical_margin">50dp</dimen>
     <dimen name="size_text_btn_pick_lvl">125dp</dimen>
     <dimen name="margin_btn_lvl">100dp</dimen>
-    <dimen name="choose_lvl_margin_bottom">85dp</dimen>
+    <dimen name="choose_lvl_margin_bottom">100dp</dimen>
     <dimen name="size_flag_lang_width">108dp</dimen>
     <dimen name="size_flag_lang_height">63dp</dimen>
+    <dimen name="size_btn_home_speak">80dp</dimen>
     <dimen name="title_size">75dp</dimen>
+    <dimen name="title_margin_top">55dp</dimen>
+    <dimen name="btn_pick_level1_size">215dp</dimen>
+    <dimen name="btn_pick_level2_size">200dp</dimen>
+    <dimen name="btn_pick_level3_size">255dp</dimen>
+
+    <!-- Accueil -->
+    <dimen name="main_band_above_height">235dp</dimen>
+    <dimen name="main_band_bottom_height">200dp</dimen>
+    <dimen name="main_abc_size">185dp</dimen>
+    <dimen name="main_dela_size">70dp</dimen>
+    <dimen name="main_G_size">170dp</dimen>
+    <dimen name="main_G_margin_top">-10dp</dimen>
+    <dimen name="main_eometrie_size">105dp</dimen>
+    <dimen name="main_baseline_size">45dp</dimen>
+    <dimen name="main_baseline_margin_top">-10dp</dimen>
+    <dimen name="main_baseline_margin_left">55dp</dimen>
+    <dimen name="main_margin_left">40dp</dimen>
+    <dimen name="main_btn_iut_width">330dp</dimen>
+    <dimen name="main_btn_alizaza_width">240dp</dimen>
+    <dimen name="main_flag_width">170dp</dimen>
+    <dimen name="main_flag_height">99dp</dimen>
+    <dimen name="main_flag_margin_side">60dp</dimen>
+    <dimen name="main_triangle_margin_top">79dp</dimen>
+    <dimen name="main_triangle_margin_side">20dp</dimen>
+    <dimen name="main_triangles_width">69dp</dimen>
+    <dimen name="main_triangles_height">80dp</dimen>
+    <dimen name="main_rectangle_width">51dp</dimen>
 
     <!-- Page Choix défis -->
     <dimen name="pts_size">65dp</dimen>
-    <dimen name="band_10pts_width">600dp</dimen>
-    <dimen name="band_20pts_width">750dp</dimen>
-    <dimen name="band_40pts_width">900dp</dimen>
-    <dimen name="band_height">80dp</dimen>
+    <dimen name="band_10pts_width">580dp</dimen>
+    <dimen name="band_20pts_width">730dp</dimen>
+    <dimen name="band_40pts_width">880dp</dimen>
+    <dimen name="band_height">85dp</dimen>
+    <dimen name="band_margin_top_bottom">25dp</dimen>
     <dimen name="band_margin_right">70dp</dimen>
+    <dimen name="band_margin_bottom">65dp</dimen>
 
     <!-- Page Choix theme -->
     <dimen name="btn_theme_size_typo">40dp</dimen>
@@ -23,8 +53,12 @@
     <dimen name="choose_theme_margin_bottom">85dp</dimen>
     <dimen name="choose_theme_arrow_margin">290dp</dimen>
     <dimen name="choose_theme_arrow_margin_top">15dp</dimen>
+    <dimen name="choose_theme_img_height">200dp</dimen>
+    <dimen name="choose_theme_color_width">220dp</dimen>
+    <dimen name="choose_theme_shape_mixed_width">237dp</dimen>
 
     <!-- Page Equipe -->
+    <dimen name="team_title_text_size">75dp</dimen>
     <dimen name="team_picture_margin">75dp</dimen>
     <dimen name="team_text_margin">78dp</dimen>
     <dimen name="team_text_size">38dp</dimen>
@@ -39,10 +73,10 @@
     <dimen name="label_question_bottom_margin">45dp</dimen>
     <dimen name="label_question_left_margin">40dp</dimen>
     <dimen name="question_text_size">50dp</dimen>
-    <dimen name="question_block_width">640dp</dimen>
+    <dimen name="question_block_width">660dp</dimen>
     <dimen name="question_answer_margin">25dp</dimen>
     <dimen name="question_block_answer_width">340dp</dimen>
-    <dimen name="question_block_answer_height">200dp</dimen>
+    <dimen name="question_block_answer_height">218dp</dimen>
     <dimen name="block_progressbar_width">150dp</dimen>
     <dimen name="block_progressbar_margin_left">42dp</dimen>
     <dimen name="progressbar_text_size">40dp</dimen>
@@ -52,7 +86,7 @@
     <dimen name="good_bad_answer_icon_dim">90dp</dimen>
     <dimen name="good_bad_answer_icon_margin">-15dp</dimen>
     <dimen name="answers_block_width">740dp</dimen>
-    <dimen name="answers_block_height">440dp</dimen>
+    <dimen name="answers_block_height">470dp</dimen>
     <dimen name="progressbar_margin_bottom">15dp</dimen>
 
     <!-- POP-UP changement langue -->
@@ -65,6 +99,7 @@
     <dimen name="alizaza_logo_margin_right">35dp</dimen>
     <dimen name="alizaza_description_margin_top">80dp</dimen>
     <dimen name="alizaza_description_padding">25dp</dimen>
+    <dimen name="alizaza_logo_margin_top">50dp</dimen>
 
     <!-- End Game-->
     <dimen name="end_game_score_bande_height">150dp</dimen>
@@ -84,7 +119,11 @@
     <!-- ScoreBoard-->
     <dimen name="scoreboard_margin_top">25dp</dimen>
     <dimen name="scoreboard_margin_bottom">20dp</dimen>
-    <dimen name="scoreboard_text_size">34dp</dimen>
+    <dimen name="scoreboard_text_size">39dp</dimen>
     <dimen name="scoreboard_text_padding">3dp</dimen>
     <dimen name="scoreboard_listview_width">820dp</dimen>
+
+    <!-- A propos-->
+    <dimen name="about_title_margin_bottom">30dp</dimen>
+    <dimen name="about_text_size">32dp</dimen>
 </resources>

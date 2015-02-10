@@ -27,7 +27,7 @@
             android:layout_toRightOf="@+id/btnHome"
             android:id="@+id/btnTTS"
             android:src="@drawable/btnspeaker"
-            android:layout_marginLeft="30dp"/>
+            android:layout_marginLeft="@dimen/btn_up_margin"/>
 
         <Button
             android:id="@+id/btnLang"

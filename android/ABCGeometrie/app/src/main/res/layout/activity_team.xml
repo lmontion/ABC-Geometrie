@@ -15,18 +15,18 @@
 
         <ImageView
             android:id="@+id/btnHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/size_btn_home_speak"
+            android:layout_height="@dimen/size_btn_home_speak"
             android:src="@drawable/btnaccueil"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/size_btn_home_speak"
+            android:layout_height="@dimen/size_btn_home_speak"
             android:layout_toRightOf="@+id/btnHome"
             android:id="@+id/btnTTS"
             android:src="@drawable/btnspeaker"
-            android:layout_marginLeft="30dp"/>
+            android:layout_marginLeft="@dimen/btn_up_margin"/>
 
         <Button
             android:id="@+id/btnLang"
@@ -44,7 +44,8 @@
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="135dp">
+        android:layout_below="@+id/barreBoutonHaut"
+        android:layout_marginTop="@dimen/title_margin_top">
 
         <TextView
             android:id="@+id/txtViewTeam"
@@ -52,7 +53,7 @@
             android:layout_height="fill_parent"
             android:layout_marginBottom="@dimen/team_title_margin_botom"
             android:text="@string/labelTeam"
-            android:textSize="@dimen/title_size"
+            android:textSize="@dimen/team_title_text_size"
             android:textColor="@color/monBlanc"
             android:gravity="center"/>
     </LinearLayout>

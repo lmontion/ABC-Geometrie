@@ -15,18 +15,18 @@
 
         <ImageView
             android:id="@+id/btnHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/size_btn_home_speak"
+            android:layout_height="@dimen/size_btn_home_speak"
             android:src="@drawable/btnaccueil"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/size_btn_home_speak"
+            android:layout_height="@dimen/size_btn_home_speak"
             android:layout_toRightOf="@+id/btnHome"
             android:id="@+id/btnTTS"
             android:src="@drawable/btnspeaker"
-            android:layout_marginLeft="30dp"/>
+            android:layout_marginLeft="@dimen/btn_up_margin"/>
 
         <Button
             android:id="@+id/btnLang"
@@ -43,70 +43,55 @@
         android:id="@+id/logoEtTitre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp">
+        android:layout_below="@+id/barreBoutonHaut"
+        android:layout_marginTop="@dimen/alizaza_logo_margin_top">
 
         <TextView
-            android:id="@+id/txtViewAbout"
-            android:layout_width="wrap_content"
+            android:id="@+id/txtViewAlizaza"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_toRightOf="@+id/logoAlizaza"
-            android:text="@string/about"
+            android:text="@string/labeleAlizaza"
             android:textSize="@dimen/title_size"
             android:textColor="@color/monBlanc"
+            android:paddingRight="@dimen/alizaza_logo_margin_right"
+            android:layout_centerVertical="true" />
+
+
+        <ImageView
+            android:id="@+id/logoAlizaza"
+            android:layout_marginRight="@dimen/alizaza_logo_margin_right"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_width="@dimen/alizaza_logo_dimension"
+            android:layout_height="@dimen/alizaza_logo_dimension"
+            android:layout_centerVertical="true"
+            android:src="@drawable/logo_alizaza"
             android:scaleType="fitCenter"
-            android:paddingRight="@dimen/alizaza_logo_margin_right"/>
+            android:adjustViewBounds="true"/>
 
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/txtAbout1"
+        android:id="@+id/txtActiviteAlizaza"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/logoEtTitre"
-        android:text="@string/txtAbout1"
+        android:text="@string/activiteAlizaza"
         android:textSize="@dimen/alizaza_text_size"
         android:textColor="@color/monBlanc"
         android:layout_marginTop="@dimen/alizaza_description_margin_top"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:gravity="center"
         android:paddingRight="@dimen/alizaza_description_padding"
         android:paddingLeft="@dimen/alizaza_description_padding"/>
 
     <TextView
-        android:id="@+id/txtAbout2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtAbout1"
-        android:text="@string/txtAbout2"
-        android:textSize="@dimen/alizaza_text_size"
+        android:text="@string/labelSiteAlizaza"
+        android:textSize="@dimen/team_footer_text_size"
         android:textColor="@color/monBlanc"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/alizaza_description_padding"
-        android:paddingLeft="@dimen/alizaza_description_padding"/>
-
-    <TextView
-        android:id="@+id/txtAbout3"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtAbout2"
-        android:text="@string/txtAbout3"
-        android:textSize="@dimen/alizaza_text_size"
-        android:textColor="@color/monBlanc"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/alizaza_description_padding"
-        android:paddingLeft="@dimen/alizaza_description_padding"/>
-
-    <TextView
-        android:id="@+id/txtAbout4"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtAbout3"
-        android:text="@string/txtAbout4"
-        android:textSize="@dimen/alizaza_text_size"
-        android:textColor="@color/monBlanc"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/alizaza_description_padding"
-        android:paddingLeft="@dimen/alizaza_description_padding"/>
-
-
+        android:background="@color/monBleuFonce"
+        android:gravity="center"
+        android:id="@+id/txtViewSiteAlizaza"
+        android:layout_alignParentBottom="true"/>
 </RelativeLayout>
