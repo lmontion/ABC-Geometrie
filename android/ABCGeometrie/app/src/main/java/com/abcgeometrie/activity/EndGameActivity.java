@@ -279,6 +279,13 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
 
     @Override
     public void onInit(int status) {}
+
+    @Override
+    protected void onDestroy() {
+        if(tts != null)
+            tts.shutdown();
+        super.onDestroy();
+    }
 }
 
 

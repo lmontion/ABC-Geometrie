@@ -113,4 +113,11 @@ public class AboutActivity extends Activity implements TextToSpeech.OnInitListen
         startActivity(intent);
         finish();
     }
+
+    @Override
+    protected void onDestroy() {
+        if(tts != null)
+            tts.shutdown();
+        super.onDestroy();
+    }
 }

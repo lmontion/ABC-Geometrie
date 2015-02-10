@@ -336,4 +336,11 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
             }
         });
     }
+
+    @Override
+    protected void onDestroy() {
+        if(tts != null)
+            tts.shutdown();
+        super.onDestroy();
+    }
 }

@@ -189,4 +189,11 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 
     @Override
     public void onInit(int status) {}
+
+    @Override
+    protected void onDestroy() {
+        if(tts != null)
+            tts.shutdown();
+        super.onDestroy();
+    }
 }

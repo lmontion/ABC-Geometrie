@@ -157,4 +157,11 @@ public class BoardActivity extends ListActivity implements TextToSpeech.OnInitLi
 
     @Override
     public void onInit(int status) {}
+
+    @Override
+    protected void onDestroy() {
+        if(tts != null)
+            tts.shutdown();
+        super.onDestroy();
+    }
 }

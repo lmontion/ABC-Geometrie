@@ -109,6 +109,12 @@ public class AlizazaActivity extends Activity implements TextToSpeech.OnInitList
         intent.putExtra("retour", true);
         startActivity(intent);
         finish();
+    }
 
+    @Override
+    protected void onDestroy() {
+        if(tts != null)
+            tts.shutdown();
+        super.onDestroy();
     }
 }

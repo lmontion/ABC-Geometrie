@@ -164,5 +164,13 @@ public class ChooseDefiActivity extends Activity implements TextToSpeech.OnInitL
             startActivity(intent);
             finish();
         }
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        if(tts != null)
+            tts.shutdown();
+        super.onDestroy();
     }
 }

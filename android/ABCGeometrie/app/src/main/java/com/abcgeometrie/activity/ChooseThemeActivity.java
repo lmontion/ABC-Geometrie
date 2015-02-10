@@ -188,4 +188,11 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
         startActivity(intent);
         finish();
     }
+
+    @Override
+    protected void onDestroy() {
+        if(tts != null)
+            tts.shutdown();
+        super.onDestroy();
+    }
 }

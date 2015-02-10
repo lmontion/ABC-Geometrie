@@ -113,4 +113,11 @@ public class TeamActivity extends Activity implements TextToSpeech.OnInitListene
         startActivity(intent);
         finish();
     }
+
+    @Override
+    protected void onDestroy() {
+        if(tts != null)
+            tts.shutdown();
+        super.onDestroy();
+    }
 }
