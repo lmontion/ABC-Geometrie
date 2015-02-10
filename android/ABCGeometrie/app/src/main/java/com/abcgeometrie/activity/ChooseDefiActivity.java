@@ -54,6 +54,7 @@ public class ChooseDefiActivity extends Activity implements TextToSpeech.OnInitL
                 i.putExtra("theme", currentTheme);
                 i.putExtra("lvl", currentLvl);
                 startActivity(i);
+                finish();
             }
         });
         btn20.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +65,7 @@ public class ChooseDefiActivity extends Activity implements TextToSpeech.OnInitL
                 i.putExtra("theme", currentTheme);
                 i.putExtra("lvl", currentLvl);
                 startActivity(i);
+                finish();
             }
         });
         btn40.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +76,7 @@ public class ChooseDefiActivity extends Activity implements TextToSpeech.OnInitL
                 i.putExtra("theme", currentTheme);
                 i.putExtra("lvl", currentLvl);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -93,6 +96,7 @@ public class ChooseDefiActivity extends Activity implements TextToSpeech.OnInitL
             public void onClick(View v) {
                 Intent i = new Intent(ChooseDefiActivity.this, MainActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -152,11 +156,21 @@ public class ChooseDefiActivity extends Activity implements TextToSpeech.OnInitL
             Intent intent = new Intent(ChooseDefiActivity.this, ChooseThemeActivity.class);
             intent.putExtra("retour", true);
             startActivity(intent);
+            finish();
         }
         if (currentLvl == 2 || currentLvl == 3){
             Intent intent = new Intent(ChooseDefiActivity.this, ChooseLevelActivity.class);
             intent.putExtra("retour", true);
             startActivity(intent);
+            finish();
         }
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        if(tts != null)
+            tts.shutdown();
+        super.onDestroy();
     }
 }

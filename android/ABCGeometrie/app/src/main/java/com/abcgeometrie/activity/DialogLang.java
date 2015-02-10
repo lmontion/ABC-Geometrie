@@ -111,6 +111,7 @@ public class DialogLang {
                     i.putExtra("contrat", con);
                 }
                 act.startActivity(i);
+                act.finish();
             }
         });
         Button fr = (Button) dial.findViewById(R.id.btnLang);
@@ -137,6 +138,7 @@ public class DialogLang {
                     i.putExtra("contrat", con);
                 }
                 act.startActivity(i);
+                act.finish();
             }
         });
         Button eng = (Button) dial.findViewById(R.id.btnEn);
@@ -163,6 +165,7 @@ public class DialogLang {
                     i.putExtra("contrat", con);
                 }
                 act.startActivity(i);
+                act.finish();
             }
         });
         dial.show();

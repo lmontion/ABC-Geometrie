@@ -217,6 +217,7 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
                             @Override
                             public void run() {
                                 startActivity(intent);
+                                finish();
                             }
                         }, 2000);
                     }
@@ -255,6 +256,7 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
                     @Override
                     public void run() {
                         startActivity(i);
+                        finish();
                     }
                 }, 2000);
             }
@@ -290,6 +292,7 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
         backHome.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 startActivity( new Intent(QuestionActivity.this, MainActivity.class));
+                finish();
             }
         });
         ImageView backGame = (ImageView) dial.findViewById(R.id.backGame);
@@ -332,5 +335,12 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
                 }
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        if(tts != null)
+            tts.shutdown();
+        super.onDestroy();
     }
 }

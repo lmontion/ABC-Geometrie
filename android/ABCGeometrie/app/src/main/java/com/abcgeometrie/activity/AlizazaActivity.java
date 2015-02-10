@@ -57,6 +57,7 @@ public class AlizazaActivity extends Activity implements TextToSpeech.OnInitList
             public void onClick(View v) {
                 Intent i = new Intent(AlizazaActivity.this, MainActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -107,5 +108,13 @@ public class AlizazaActivity extends Activity implements TextToSpeech.OnInitList
         Intent intent = new Intent(AlizazaActivity.this, MainActivity.class);
         intent.putExtra("retour", true);
         startActivity(intent);
+        finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if(tts != null)
+            tts.shutdown();
+        super.onDestroy();
     }
 }

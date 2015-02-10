@@ -63,6 +63,7 @@ public class BoardActivity extends ListActivity implements TextToSpeech.OnInitLi
             public void onClick(View v) {
                 Intent i = new Intent(BoardActivity.this, MainActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -136,6 +137,7 @@ public class BoardActivity extends ListActivity implements TextToSpeech.OnInitLi
         backHome.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 startActivity( new Intent(BoardActivity.this, MainActivity.class));
+                finish();
             }
         });
         ImageView backGame = (ImageView) dial.findViewById(R.id.backGame);
@@ -155,4 +157,11 @@ public class BoardActivity extends ListActivity implements TextToSpeech.OnInitLi
 
     @Override
     public void onInit(int status) {}
+
+    @Override
+    protected void onDestroy() {
+        if(tts != null)
+            tts.shutdown();
+        super.onDestroy();
+    }
 }

@@ -49,6 +49,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, TeamActivity.class);
                 startActivity(i);
+                finish();
             }
         });
         btnAlizaza.setOnClickListener(new View.OnClickListener() {
@@ -56,6 +57,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, AlizazaActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -76,6 +78,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
                     public void run() {
                         Intent i = new Intent(MainActivity.this, ChooseLevelActivity.class);
                         startActivity(i);
+                        finish();
                     }
                 }, 300);
             }
@@ -111,6 +114,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
                     @Override
                     public void run() {
                         startActivity(new Intent(MainActivity.this, ChooseLevelActivity.class));
+                        finish();
                     }
                 }, 300);
             }
@@ -128,6 +132,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
                     @Override
                     public void run() {
                         startActivity(new Intent(MainActivity.this, ChooseLevelActivity.class));
+                        finish();
                     }
                 }, 300);
             }
@@ -145,6 +150,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
                     @Override
                     public void run() {
                         startActivity(new Intent(MainActivity.this, ChooseLevelActivity.class));
+                        finish();
                     }
                 }, 300);
             }
@@ -183,4 +189,11 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 
     @Override
     public void onInit(int status) {}
+
+    @Override
+    protected void onDestroy() {
+        if(tts != null)
+            tts.shutdown();
+        super.onDestroy();
+    }
 }

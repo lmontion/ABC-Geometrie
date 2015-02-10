@@ -42,6 +42,7 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
             public void onClick(View v) {
                 Intent i = new Intent(ChooseLevelActivity.this, ChooseThemeActivity.class);
                 startActivity(i);
+                finish();
             }
         });
         txtViewLvl2.setOnClickListener(new TextView.OnClickListener() {
@@ -51,6 +52,7 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
                 i.putExtra("lvl",2);
                 i.putExtra("theme","");
                 startActivity(i);
+                finish();
             }
         });
         txtViewLvl3.setOnClickListener(new TextView.OnClickListener() {
@@ -60,6 +62,7 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
                 i.putExtra("lvl",3);
                 i.putExtra("theme","");
                 startActivity(i);
+                finish();
             }
         });
 
@@ -79,6 +82,7 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
             public void onClick(View v) {
                 Intent i = new Intent(ChooseLevelActivity.this, MainActivity.class);
                 startActivity(i);
+                finish();
                 overridePendingTransition(0, R.anim.fade_out);
             }
         });
@@ -90,6 +94,7 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
             public void onClick(View v) {
                 Intent i = new Intent(ChooseLevelActivity.this, AboutActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -147,5 +152,13 @@ public class ChooseLevelActivity extends Activity implements TextToSpeech.OnInit
         Intent intent = new Intent(ChooseLevelActivity.this, MainActivity.class);
         intent.putExtra("retour", true);
         startActivity(intent);
+        finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if(tts != null)
+            tts.shutdown();
+        super.onDestroy();
     }
 }

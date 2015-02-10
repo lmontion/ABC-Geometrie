@@ -61,6 +61,7 @@ public class TeamActivity extends Activity implements TextToSpeech.OnInitListene
             public void onClick(View v) {
                 Intent i = new Intent(TeamActivity.this, MainActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -110,5 +111,13 @@ public class TeamActivity extends Activity implements TextToSpeech.OnInitListene
         Intent intent = new Intent(TeamActivity.this, MainActivity.class);
         intent.putExtra("retour", true);
         startActivity(intent);
+        finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if(tts != null)
+            tts.shutdown();
+        super.onDestroy();
     }
 }

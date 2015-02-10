@@ -59,6 +59,7 @@ public class AboutActivity extends Activity implements TextToSpeech.OnInitListen
             public void onClick(View v) {
                 Intent i = new Intent(AboutActivity.this, MainActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -110,5 +111,13 @@ public class AboutActivity extends Activity implements TextToSpeech.OnInitListen
         Intent intent = new Intent(AboutActivity.this, ChooseLevelActivity.class);
         intent.putExtra("retour", true);
         startActivity(intent);
+        finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if(tts != null)
+            tts.shutdown();
+        super.onDestroy();
     }
 }

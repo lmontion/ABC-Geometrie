@@ -57,6 +57,7 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
                 i.putExtra("lvl",1);
                 i.putExtra("theme","couleurs");
                 startActivity(i);
+                finish();
             }
         });
 		 arrowThemeColor.setOnClickListener(new ImageButton.OnClickListener() {
@@ -66,6 +67,7 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
                 i.putExtra("lvl",1);
                 i.putExtra("theme","couleurs");
                 startActivity(i);
+                finish();
                 }
         });
         btnThemeForm.setOnClickListener(new TextView.OnClickListener() {
@@ -75,6 +77,7 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
                 i.putExtra("lvl",1);
                 i.putExtra("theme","formes");
                 startActivity(i);
+                finish();
             }
         });
         arrowThemeForm.setOnClickListener(new TextView.OnClickListener() {
@@ -84,6 +87,7 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
                 i.putExtra("lvl",1);
                 i.putExtra("theme","formes");
                 startActivity(i);
+                finish();
             }
         });
         btnThemeColorAndForm.setOnClickListener(new TextView.OnClickListener() {
@@ -93,6 +97,7 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
                 i.putExtra("lvl",1);
                 i.putExtra("theme","couleurs et formes");
                 startActivity(i);
+                finish();
             }
         });
         arrowThemeColorAndForm.setOnClickListener(new TextView.OnClickListener() {
@@ -102,6 +107,7 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
                 i.putExtra("lvl",1);
                 i.putExtra("theme","couleurs et formes");
                 startActivity(i);
+                finish();
             }
         });
 
@@ -121,6 +127,7 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
             public void onClick(View v) {
                 Intent i = new Intent(ChooseThemeActivity.this, MainActivity.class);
                 startActivity(i);
+                finish();
                 overridePendingTransition(0,R.anim.fade_out);
             }
         });
@@ -179,5 +186,13 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
         Intent intent = new Intent(ChooseThemeActivity.this, ChooseLevelActivity.class);
         intent.putExtra("retour", true);
         startActivity(intent);
+        finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if(tts != null)
+            tts.shutdown();
+        super.onDestroy();
     }
 }
