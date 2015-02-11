@@ -1,13 +1,11 @@
-Y -> PowerPoint (Avec image en anglais + bilan)
-
-L -> bug changement langue
 L -> MAJ store (appli, description, image,...)
 
 T -> Screen pour store (avec les bonnes taille et tout pour que ca...)
 T -> Envoi du code
+T -> bug chelou de tristan
+
+Y -> Vérifier code (commentaire, lisibilité,...)
 
 Truc Uni
-Vérifier code (commentaire, lisibilité,...)
-
 
 

@@ -109,7 +109,7 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
         Gagnant[] lesGagnants = db.getGagnantsByIdContrat(currentContrat.getId());
         int compteurScore = 0;
         for(int i = 0; i<lesGagnants.length; i++){
-            if(lesGagnants[i].getScore() > sj){
+            if(lesGagnants[i].getScore() >= sj){
                 compteurScore++;
             }
             if(compteurScore == 10){
@@ -134,6 +134,7 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(EndGameActivity.this, BoardActivity.class);
+                i.putExtra("contrat", currentContrat);
                 startActivity(i);
                 finish();
             }
