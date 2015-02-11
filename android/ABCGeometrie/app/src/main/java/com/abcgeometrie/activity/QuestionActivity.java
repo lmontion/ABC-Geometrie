@@ -50,6 +50,7 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
     private ProgressBar pb;
     private int i, k, position;
     private ImageButton mauvais;
+    private Dialog dial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -283,7 +284,7 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
 
     @Override
     public void onBackPressed() {
-        final Dialog dial = new Dialog(this, android.R.style.Theme_Holo_NoActionBar_Fullscreen);
+        dial = new Dialog(this, android.R.style.Theme_Holo_NoActionBar_Fullscreen);
         Drawable d = new ColorDrawable(Color.BLACK);
         d.setAlpha(220);
         dial.getWindow().setBackgroundDrawable(d);
@@ -339,6 +340,9 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
 
     @Override
     protected void onDestroy() {
+        if(dial != null){
+            dial.dismiss();
+        }
         if(tts != null)
             tts.shutdown();
         super.onDestroy();

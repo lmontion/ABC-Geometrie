@@ -27,7 +27,7 @@ INSERT INTO question VALUES
 (189,'Clique sur le cercle dont le rayon est le segment [ZU]','Click on the circle whose radius is the segment [ZU].','Selecciona el círculo cuyo radio es el segmento [ZU].','166.png','163.png','164.png','165.png'),
 (190,'Clique sur le cube','Click on the cube.','Selecciona el cubo.','93.png','124.png','89.png','99.png'),
 (191,'Clique sur le cube','Click on the cube.','Selecciona el cubo.','92.png','114.png','115.png','89.png'),
-(192,'Clique sur le disque','Click on the full circle.','Selecciona el círculo lleno.','90.png','101.png','122.png','91.png'),
+(192,'Clique sur le disque','Click on the full circle.','Selecciona el círculo lleno.','91.png','101.png','122.png','90.png'),
 (193,'Clique sur le parallèlogramme','Click on the parallelogram.','Selecciona el paralelogramo.','111.png','103.png','109.png','120.png'),
 (194,'Clique sur le parallélogramme','Click on the parallelogram.','Selecciona el paralelogramo.','110.png','121.png','123.png','135.png'),
 (195,'Clique sur le rectangle','Click on the rectangle.','Selecciona el rectángulo.','28.png','110.png','115.png','89.png'),

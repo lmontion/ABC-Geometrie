@@ -41,6 +41,7 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
     private String lang = "";
     protected DbAdapter db;
     private LinearLayout layoutSaisieNewRecord, layoutNewRecord;
+    private Dialog dial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -227,7 +228,7 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
 
     @Override
     public void onBackPressed() {
-        final Dialog dial = new Dialog(this, android.R.style.Theme_Holo_NoActionBar_Fullscreen);
+        dial = new Dialog(this, android.R.style.Theme_Holo_NoActionBar_Fullscreen);
         Drawable d = new ColorDrawable(Color.BLACK);
         d.setAlpha(220);
         dial.getWindow().setBackgroundDrawable(d);
@@ -282,6 +283,9 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
 
     @Override
     protected void onDestroy() {
+        if(dial != null){
+            dial.dismiss();
+        }
         if(tts != null)
             tts.shutdown();
         super.onDestroy();
