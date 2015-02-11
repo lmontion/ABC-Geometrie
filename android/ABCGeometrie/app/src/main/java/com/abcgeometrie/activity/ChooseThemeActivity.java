@@ -158,7 +158,6 @@ public class ChooseThemeActivity extends Activity implements TextToSpeech.OnInit
 
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
-                    //v.setLayoutParams(resize(v));
                     if (event.getAction() == MotionEvent.ACTION_DOWN) {
                         v.setAlpha((float) 0.7);
                     }

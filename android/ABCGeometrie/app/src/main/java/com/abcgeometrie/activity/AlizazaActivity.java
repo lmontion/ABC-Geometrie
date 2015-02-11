@@ -11,7 +11,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.abcgeometrie.R;
 
 /**
@@ -45,7 +44,6 @@ public class AlizazaActivity extends Activity implements TextToSpeech.OnInitList
         activiteAlizaza = (TextView) findViewById(R.id.txtActiviteAlizaza);
         txtViewSiteAlizaza = (TextView) findViewById(R.id.txtViewSiteAlizaza);
         Typeface tfLight = Typeface.createFromAsset(getAssets(),"fonts/orbitron-light.otf");
-        Typeface tfMedium = Typeface.createFromAsset(getAssets(),"fonts/orbitron-medium.otf");
         txtViewSiteAlizaza.setTypeface(tfLight);
         activiteAlizaza.setTypeface(tfLight);
         txtViewAlizaza.setTypeface(tfLight);
@@ -87,7 +85,6 @@ public class AlizazaActivity extends Activity implements TextToSpeech.OnInitList
 
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
-                    //v.setLayoutParams(resize(v));
                     if (event.getAction() == MotionEvent.ACTION_DOWN) {
                         v.setAlpha((float) 0.7);
                     }

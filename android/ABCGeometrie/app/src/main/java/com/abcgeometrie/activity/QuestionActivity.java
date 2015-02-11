@@ -120,15 +120,12 @@ public class QuestionActivity extends Activity implements TextToSpeech.OnInitLis
             currentTheme = (String) getIntent().getExtras().get("theme");
             currentLvl = (int) getIntent().getExtras().get("lvl");
             currentNbPointsContrat = (int) getIntent().getExtras().get("nbPoints");
-
             con = db.getcontratByNiveauAndTheme(currentLvl, currentNbPointsContrat, currentTheme);
-
             jeu = new Jeu(0,0);
             pb.setProgress(0);
             txtViewProgressBar.setText("O / "+con.getNbPoints());
         }else{
             jeu = (Jeu) getIntent().getExtras().get("jeu");
-
             pb.setProgress(jeu.getNbQuestionsReussis());
             txtViewProgressBar.setText(jeu.getNbQuestionsReussis() + " / " + con.getNbPoints());
         }

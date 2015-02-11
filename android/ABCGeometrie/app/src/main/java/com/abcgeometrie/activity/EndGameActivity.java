@@ -1,9 +1,7 @@
 package com.abcgeometrie.activity;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -149,8 +147,6 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
             }
         });
 
-
-
         // valide le pseudo quand on appuie sur le ok du clavier
         saisiePseudo.setOnKeyListener(new View.OnKeyListener() {
             @Override
@@ -214,7 +210,6 @@ public class EndGameActivity extends Activity implements TextToSpeech.OnInitList
 
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
-                    //v.setLayoutParams(resize(v));
                     if (event.getAction() == MotionEvent.ACTION_DOWN) {
                         v.setAlpha((float) 0.7);
                     }

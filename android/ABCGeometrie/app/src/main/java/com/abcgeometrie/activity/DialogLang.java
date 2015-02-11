@@ -183,6 +183,4 @@ public class DialogLang {
         config.locale = myLocale;
         act.getBaseContext().getResources().updateConfiguration(config, act.getBaseContext().getResources().getDisplayMetrics());
     }
-
-
 }

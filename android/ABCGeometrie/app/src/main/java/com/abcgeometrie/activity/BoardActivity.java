@@ -1,9 +1,7 @@
 package com.abcgeometrie.activity;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ListActivity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -22,8 +20,6 @@ import com.abcgeometrie.R;
 import com.abcgeometrie.metier.Contrat;
 import com.abcgeometrie.metier.DbAdapter;
 import com.abcgeometrie.metier.Gagnant;
-
-import java.util.ArrayList;
 
 /**
  * Created by Yanick on 22/01/2015.
@@ -101,13 +97,13 @@ public class BoardActivity extends ListActivity implements TextToSpeech.OnInitLi
             }
         });
 
+        // Changement état au click
         View[] views = {btnLang, home, speak};
         for (View btn : views){
             btn.setOnTouchListener(new View.OnTouchListener() {
 
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
-                    //v.setLayoutParams(resize(v));
                     if (event.getAction() == MotionEvent.ACTION_DOWN) {
                         v.setAlpha((float) 0.7);
                     }
