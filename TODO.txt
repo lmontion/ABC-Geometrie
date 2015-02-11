@@ -1,11 +1,11 @@
-Jeu :
+L -> MAJ store (appli, description, image,...)
 
-T -> interfaces, images 
-T -> Btn ok fin de partie
+T -> Screen pour store (avec les bonnes taille et tout pour que ca...)
+T -> Envoi du code
+T -> bug chelou de tristan
 
-L -> Bloquer le clic quelque mili-secondes avant une question pour éviter les miss-click
+Y -> Vérifier code (commentaire, lisibilité,...)
 
-DEBUG TELEPHONE + PowerPoint
-
+Truc Uni
 
 

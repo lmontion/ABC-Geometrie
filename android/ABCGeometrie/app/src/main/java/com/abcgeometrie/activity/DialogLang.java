@@ -112,6 +112,7 @@ public class DialogLang {
                 }
                 act.startActivity(i);
                 act.finish();
+                dial.dismiss();
             }
         });
         Button fr = (Button) dial.findViewById(R.id.btnLang);
@@ -139,6 +140,7 @@ public class DialogLang {
                 }
                 act.startActivity(i);
                 act.finish();
+                dial.dismiss();
             }
         });
         Button eng = (Button) dial.findViewById(R.id.btnEn);
@@ -166,6 +168,7 @@ public class DialogLang {
                 }
                 act.startActivity(i);
                 act.finish();
+                dial.dismiss();
             }
         });
         dial.show();
@@ -180,4 +183,6 @@ public class DialogLang {
         config.locale = myLocale;
         act.getBaseContext().getResources().updateConfiguration(config, act.getBaseContext().getResources().getDisplayMetrics());
     }
+
+
 }

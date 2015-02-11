@@ -42,12 +42,12 @@ public class DbAdapter {
                     "('Gustave', 250, 8)," + "('Fred', 450, 8)," + "('Fanny', 600, 8)," + "('Mickeal', 200, 9)," +
                     "('Lucie', 200, 10)," + "('Lydie', 250, 10)," + "('Linda', 300, 10)," + "('Julie', 450, 11)," +
                     "('Thomas', 200, 11)," + "('Timéo', 150, 12)," + "('Manon', 200, 12)," + "('Tristan', 200, 12)," +
-                    "('Yanick', 900, 13)," + "('Luc', 50, 13)," + "('Valérie', 150, 14)," + "('Sylvain', 450, 15)," +
-                    "('Ludivine', 450, 15)," + "('Solène', 200, 15)," + "('Morgane', 300, 15)," + "('Mylène', 550, 15)," +
-                    "('Namie', 300, 15)," + "('Maxime', 200, 15)," + "('Julien', 250, 15)," + "('Jule', 300, 15)," +
-                    "('Hakim', 200, 15)," + "('Carlos', 50, 15)," + "('Adrien', 600, 15)," + "('Sophie', 150, 15)," +
-                    "('Serge', 450, 15)," + "('Pascale', 150, 15)," + "('Mathieu', 650, 15)," + "('Valentin', 550, 15)," +
-                    "('Hubert', 300, 15)," + "('Seb', 400, 15)," + "('Mohammed', 200, 15)," + "('Lucas le champion !!', 10000, 12);";*/
+                    "('Yanick', 900, 13)," + "('Luc', 50, 13)," + "('Valérie', 150, 14)," + "('Sylvain', 4500, 0)," +
+                    "('Ludivine', 4500, 0)," + "('Solène', 20000, 0)," + "('Morgane', 3000, 0)," + "('Mylène', 5500, 0)," +
+                    "('Namie', 3000, 0)," + "('Maxime', 2000, 0)," + "('Julien', 25000, 0)," + "('Jule', 30000, 0)," +
+                    "('Hakim', 20000, 0)," + "('Carlos', 5000, 0)," + "('Adrien', 6000, 0)," + "('Sophie', 150, 15)," +
+                    "('Serge', 4500, 0)," + "('Pascale', 15000, 0)," + "('Mathieu', 65000, 0)," + "('Valentin', 5500, 0)," +
+                    "('Hubert', 30000, 0)," + "('Seb', 4000, 0)," + "('Mohammed', 20000, 0)," + "('Lucas le champion !!', 100000, 0);";*/
 
     private static final String INSERT_TABLE_CONTRAT =
             "insert into contrat values" +
@@ -75,7 +75,7 @@ public class DbAdapter {
     private static String INSERT_TABLE_APPARTENIR_LVL3;
 
     private static final String DATABASE_NAME = "ABC_Geometrie";
-    private static final int DATABASE_VERSION = 46;
+    private static final int DATABASE_VERSION = 55;
     private final Context mCtx;
 
     private static class DatabaseHelper extends SQLiteOpenHelper {
