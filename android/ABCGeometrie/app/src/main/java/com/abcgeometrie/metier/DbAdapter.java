@@ -75,7 +75,7 @@ public class DbAdapter {
     private static String INSERT_TABLE_APPARTENIR_LVL3;
 
     private static final String DATABASE_NAME = "ABC_Geometrie";
-    private static final int DATABASE_VERSION = 54;
+    private static final int DATABASE_VERSION = 55;
     private final Context mCtx;
 
     private static class DatabaseHelper extends SQLiteOpenHelper {

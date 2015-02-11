@@ -38,6 +38,7 @@ public class BoardActivity extends ListActivity implements TextToSpeech.OnInitLi
     private String lang = "";
     private Gagnant[] lstGagnants;
     protected DbAdapter db;
+    private Dialog dial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,7 +129,7 @@ public class BoardActivity extends ListActivity implements TextToSpeech.OnInitLi
 
     @Override
     public void onBackPressed() {
-        final Dialog dial = new Dialog(this, android.R.style.Theme_Holo_NoActionBar_Fullscreen);
+        dial = new Dialog(this, android.R.style.Theme_Holo_NoActionBar_Fullscreen);
         Drawable d = new ColorDrawable(Color.BLACK);
         d.setAlpha(220);
         dial.getWindow().setBackgroundDrawable(d);
@@ -160,6 +161,9 @@ public class BoardActivity extends ListActivity implements TextToSpeech.OnInitLi
 
     @Override
     protected void onDestroy() {
+        if(dial != null){
+            dial.dismiss();
+        }
         if(tts != null)
             tts.shutdown();
         super.onDestroy();
