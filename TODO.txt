@@ -1,11 +1,13 @@
-Jeu :
+Y -> PowerPoint (Avec image en anglais + bilan)
 
-T -> interfaces, images 
-T -> Btn ok fin de partie
+L -> bug changement langue
+L -> MAJ store (appli, description, image,...)
 
-L -> Bloquer le clic quelque mili-secondes avant une question pour éviter les miss-click
+T -> Screen pour store (avec les bonnes taille et tout pour que ca...)
+T -> Envoi du code
 
-DEBUG TELEPHONE + PowerPoint
+Truc Uni
+Vérifier code (commentaire, lisibilité,...)
 
 
 
